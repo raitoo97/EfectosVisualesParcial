@@ -1,12 +1,16 @@
 using UnityEngine;
-public class PlayerInputs
+public class PlayerInputs : MonoBehaviour
 {
     private PlayerMap _playerMap;
-    public PlayerInputs()
+    public static PlayerInputs instance;
+    private void Awake()
     {
-        ConfigOnEnable();
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
     }
-    private void ConfigOnEnable()
+    private void OnEnable()
     {
         _playerMap = new PlayerMap();
         _playerMap.Enable();
@@ -19,7 +23,7 @@ public class PlayerInputs
     {
         return _playerMap.MoveMap.Rotate.ReadValue<Vector2>();
     }
-    public void ConfigOnDisable()
+    private void OnDisable()
     {
         _playerMap.Disable();
         _playerMap = null;

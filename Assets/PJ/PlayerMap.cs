@@ -83,7 +83,7 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""94d7a234-230d-4199-968c-909849bbe411"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -94,7 +94,7 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""f57e5d85-c619-4af2-b9f4-0c49649d4911"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

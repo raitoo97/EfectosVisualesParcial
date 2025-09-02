@@ -1,27 +1,31 @@
 using Cinemachine;
 using UnityEngine;
-public class PlayerCameraMovement
+public class PlayerCameraMovement : CinemachineExtension
 {
     private PlayerInputs _characterInputs;
-    private CinemachineVirtualCamera _camera;
-    float sensitivity = 100f;
-    public PlayerCameraMovement(PlayerInputs _characterInputs , CinemachineVirtualCamera _camera)
+    private Vector3 _startingRotation;
+    [SerializeField]private float ClampleAngle = 80f;
+    [SerializeField]private float Sensitivity = 1000000f;
+    protected override void Awake()
     {
-        this._characterInputs = _characterInputs;
-        this._camera = _camera;
+        _characterInputs = PlayerInputs.instance;
+        base.Awake();
     }
-    public void OnStart()
+    protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam, CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
     {
-        var config = _camera.GetCinemachineComponent<CinemachinePOV>();
-        config.m_VerticalAxis.m_MaxValue = 30;
-        config.m_VerticalAxis.m_MinValue = -30;
-        config.m_VerticalAxis.m_InvertInput = false;
-    }
-    public void OnUpdate()
-    {
-        Vector2 lookDelta = _characterInputs.GetMouseMovement();
-        var config = _camera.GetCinemachineComponent<CinemachinePOV>();
-        config.m_HorizontalAxis.Value += lookDelta.x * sensitivity * Time.deltaTime;
-        config.m_VerticalAxis.Value -= lookDelta.y * sensitivity * Time.deltaTime;
+        if (vcam.Follow)
+        {
+            if (stage == CinemachineCore.Stage.Aim)
+            {
+                if (_startingRotation == Vector3.zero)
+                    _startingRotation = transform.localRotation.eulerAngles;
+                if (_characterInputs == null) return;
+                Vector2 mouseMovement = _characterInputs.GetMouseMovement();
+                _startingRotation.x += mouseMovement.x * Sensitivity * Time.deltaTime;
+                _startingRotation.y += mouseMovement.y * Sensitivity *Time.deltaTime;
+                _startingRotation.y = Mathf.Clamp(_startingRotation.y, -ClampleAngle, ClampleAngle);
+                state.RawOrientation = Quaternion.Euler(-_startingRotation.y, _startingRotation.x,0f);
+            }
+        }
     }
 }

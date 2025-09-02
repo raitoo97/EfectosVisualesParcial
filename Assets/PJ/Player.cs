@@ -1,27 +1,25 @@
 using Cinemachine;
 using UnityEngine;
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(PlayerInputs))]
 public class Player : MonoBehaviour
 {
-    private PlayerInputs _characterInputs;
-    private PlayerCameraMovement _playerCameraMovement;
+    private PlayerBodyMovement _playerBodyMovement;
     [SerializeField]private CinemachineVirtualCamera _camera;
     private void OnEnable()
     {
-        _characterInputs = new PlayerInputs();
-        _playerCameraMovement = new PlayerCameraMovement(_characterInputs, _camera);
-    }
-    private void Start()
-    {
-        _playerCameraMovement.OnStart();
+        _playerBodyMovement = new PlayerBodyMovement(GetComponent<Rigidbody>());
     }
     private void Update()
     {
-        _playerCameraMovement.OnUpdate();
+        _playerBodyMovement.GetInputs();
+    }
+    private void FixedUpdate()
+    {
+        _playerBodyMovement.Move();
     }
     private void OnDisable()
     {
-        _characterInputs.ConfigOnDisable();
-        _characterInputs = null;
-        _playerCameraMovement = null;
+        _playerBodyMovement = null;
     }
 }
