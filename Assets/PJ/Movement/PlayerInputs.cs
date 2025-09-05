@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class PlayerInputs : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class PlayerInputs : MonoBehaviour
     public Vector2 GetMouseMovement()
     {
         return _playerMap.MoveMap.Rotate.ReadValue<Vector2>();
+    }
+    public bool GetInteract()
+    {
+        return _playerMap.MoveMap.Interact.IsPressed();
     }
     private void OnDisable()
     {
