@@ -508,6 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7668426294929055632}
   - component: {fileID: 3890940793071180921}
+  - component: {fileID: 169095690006040428}
   m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
@@ -558,8 +559,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f646227dd5643684882e4bf6e8db07cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 169095690006040428}
   gunSight: {fileID: 5957439328374765588}
   gunLight: {fileID: 4492423081394262549}
+--- !u!95 &169095690006040428
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2540882652262795618}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a153862bf60f4a345859bc5398da02ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2795979712509824640
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,8 +909,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.0473478, g: 0.41510928, b: 0.5283019, a: 0}
-  m_Intensity: 20
-  m_Range: 1.38
+  m_Intensity: 100
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

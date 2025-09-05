@@ -23,9 +23,13 @@ public class PlayerInputs : MonoBehaviour
     {
         return _playerMap.PlayerInputs.Rotate.ReadValue<Vector2>();
     }
-    public bool GetInteract()
+    public bool ShootAction()
     {
         return _playerMap.PlayerInputs.Interact.IsPressed();
+    }
+    public bool IsRunning()
+    {
+        return _playerMap.PlayerInputs.Run.IsPressed();
     }
     private void OnDisable()
     {
