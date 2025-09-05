@@ -17,6 +17,7 @@ public class Gun : MonoBehaviour
         var IsShooting = PlayerInputs.instance.ShootAction();
         var IsRunning = PlayerInputs.instance.RunAction();
         var IsGrounded = GameManager.instance.player.IsGrounded;
+        var MoveVector = GameManager.instance.player.MoveVector;
         if (IsShooting && !IsRunning)
         {
             _gunAnimation?.ShootAnimation();
@@ -25,7 +26,7 @@ public class Gun : MonoBehaviour
         {
             _gunAnimation?.CancelShootAnimation();
         }
-        if (IsRunning)
+        if (IsRunning && MoveVector != Vector2.zero)
         {
             _gunAnimation?.RunningAnimation(true);
         }

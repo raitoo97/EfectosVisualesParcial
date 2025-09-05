@@ -51,4 +51,5 @@ public class PlayerController
         _playerBodyMovement = null;
     }
     public bool IsGrounded { get => _isGrounded; }
+    public Vector2 GetMoveVector { get => _moveInputs; }
 }

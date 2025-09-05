@@ -24,4 +24,5 @@ public class Player : MonoBehaviour
         _playerController?.Disable();
     }
     public bool IsGrounded { get => _playerController.IsGrounded; }
+    public Vector2 MoveVector { get => _playerController.GetMoveVector; }
 }
