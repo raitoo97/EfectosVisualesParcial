@@ -17,11 +17,11 @@ public class GunShoot
     {
         if (Cooldown > 0) return;
         Cooldown = _timeBetweenShots;
+        _flashTimer = _flashDuration;
         var bullet = PoolBullets.instance.GetBullet();
         bullet.transform.position = _gunSight.position;
         bullet.transform.rotation = _gunSight.rotation;
         _light.intensity = 100;
-        _flashTimer = _flashDuration;
     }
     public void OnUpdate()
     {
