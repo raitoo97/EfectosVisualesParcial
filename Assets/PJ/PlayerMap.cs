@@ -62,6 +62,15 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""a7f2b9c8-62fc-4114-bc27-f5c61aa0d789"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,17 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4fe5fa5c-d004-4264-ba35-817ce616be1a"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +184,7 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
         m_PlayerInputs_Rotate = m_PlayerInputs.FindAction("Rotate", throwIfNotFound: true);
         m_PlayerInputs_Interact = m_PlayerInputs.FindAction("Interact", throwIfNotFound: true);
         m_PlayerInputs_Run = m_PlayerInputs.FindAction("Run", throwIfNotFound: true);
+        m_PlayerInputs_Jump = m_PlayerInputs.FindAction("Jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,6 +250,7 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerInputs_Rotate;
     private readonly InputAction m_PlayerInputs_Interact;
     private readonly InputAction m_PlayerInputs_Run;
+    private readonly InputAction m_PlayerInputs_Jump;
     public struct PlayerInputsActions
     {
         private @PlayerMap m_Wrapper;
@@ -237,6 +259,7 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
         public InputAction @Rotate => m_Wrapper.m_PlayerInputs_Rotate;
         public InputAction @Interact => m_Wrapper.m_PlayerInputs_Interact;
         public InputAction @Run => m_Wrapper.m_PlayerInputs_Run;
+        public InputAction @Jump => m_Wrapper.m_PlayerInputs_Jump;
         public InputActionMap Get() { return m_Wrapper.m_PlayerInputs; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -258,6 +281,9 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
             @Run.started += instance.OnRun;
             @Run.performed += instance.OnRun;
             @Run.canceled += instance.OnRun;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
         }
 
         private void UnregisterCallbacks(IPlayerInputsActions instance)
@@ -274,6 +300,9 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
             @Run.started -= instance.OnRun;
             @Run.performed -= instance.OnRun;
             @Run.canceled -= instance.OnRun;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
         }
 
         public void RemoveCallbacks(IPlayerInputsActions instance)
@@ -297,5 +326,6 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
         void OnRotate(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }

@@ -27,10 +27,6 @@ public class Player : MonoBehaviour
         else
             _playerBodyMovement.ChangeSpeed(_walkSpeed);
     }
-    private void ChageFOV()
-    {
-
-    }
     private void OnDisable()
     {
         _playerBodyMovement = null;
