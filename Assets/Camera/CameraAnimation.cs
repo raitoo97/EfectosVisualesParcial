@@ -11,7 +11,7 @@ public class CameraAnimation : MonoBehaviour
     private Coroutine _coroutineFov;
     private void Update()
     {
-        if (PlayerInputs.instance.IsRunning())
+        if (PlayerInputs.instance.RunAction())
         {
             if (_coroutineFov != null)
                 StopCoroutine(_coroutineFov);

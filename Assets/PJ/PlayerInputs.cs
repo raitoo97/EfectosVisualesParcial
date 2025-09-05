@@ -27,9 +27,13 @@ public class PlayerInputs : MonoBehaviour
     {
         return _playerMap.PlayerInputs.Interact.IsPressed();
     }
-    public bool IsRunning()
+    public bool RunAction()
     {
         return _playerMap.PlayerInputs.Run.IsPressed();
+    }
+    public bool JumpAction()
+    {
+        return _playerMap.PlayerInputs.Jump.triggered;
     }
     private void OnDisable()
     {

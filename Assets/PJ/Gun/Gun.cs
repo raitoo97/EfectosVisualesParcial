@@ -15,7 +15,7 @@ public class Gun : MonoBehaviour
     {
         _gunShoot?.OnUpdate();
         var IsShooting = PlayerInputs.instance.ShootAction();
-        var IsRunning = PlayerInputs.instance.IsRunning();
+        var IsRunning = PlayerInputs.instance.RunAction();
         if (IsShooting && !IsRunning)
         {
             _gunAnimation?.ShootAnimation();
