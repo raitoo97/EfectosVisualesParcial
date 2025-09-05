@@ -16,13 +16,14 @@ public class Gun : MonoBehaviour
         _gunShoot?.OnUpdate();
         var IsShooting = PlayerInputs.instance.ShootAction();
         var IsRunning = PlayerInputs.instance.RunAction();
+        var IsGrounded = GameManager.instance.player.IsGrounded;
         if (IsShooting && !IsRunning)
         {
             _gunAnimation?.ShootAnimation();
         }
         else
         {
-            _gunAnimation?.CancelAnimation();
+            _gunAnimation?.CancelShootAnimation();
         }
         if (IsRunning)
         {
@@ -31,6 +32,14 @@ public class Gun : MonoBehaviour
         else
         {
             _gunAnimation?.RunningAnimation(false);
+        }
+        if (!IsGrounded)
+        {
+            _gunAnimation?.JumpAnimation(true);
+        }
+        else
+        {
+            _gunAnimation?.JumpAnimation(false);
         }
     }
     public void CallShootFunction()
