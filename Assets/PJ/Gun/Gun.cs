@@ -1,18 +1,22 @@
 using UnityEngine;
 public class Gun : MonoBehaviour
 {
+    private GunShoot _gunShoot;
+    public Transform gunSight;
     private void OnEnable()
     {
+        _gunShoot = new GunShoot(gunSight);
     }
     private void Update()
     {
+        _gunShoot?.OnUpdate();
         if (PlayerInputs.instance.GetInteract())
         {
-            Shoot();
+            _gunShoot?.Shoot();
         }
     }
-    public void Shoot()
+    private void OnDisable()
     {
-        print("Pew Pew");
+        _gunShoot = null;
     }
 }
