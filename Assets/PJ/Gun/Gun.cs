@@ -3,9 +3,10 @@ public class Gun : MonoBehaviour
 {
     private GunShoot _gunShoot;
     public Transform gunSight;
+    public Light gunLight;
     private void OnEnable()
     {
-        _gunShoot = new GunShoot(gunSight);
+        _gunShoot = new GunShoot(gunSight, gunLight);
     }
     private void Update()
     {
