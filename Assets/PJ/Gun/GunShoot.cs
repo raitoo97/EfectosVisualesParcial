@@ -1,5 +1,5 @@
 using UnityEngine;
-public class GunShoot
+public class GunShoot: IShoot
 {
     private Transform _gunSight;
     private Light _light;
