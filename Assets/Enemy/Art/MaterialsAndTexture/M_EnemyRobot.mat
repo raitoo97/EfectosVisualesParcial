@@ -24,6 +24,22 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: 20fc9881d38a91b438bec3ae3db922f0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: a5798ba7ff8d7984c9b50981d6dd8e6b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_832d42aa978a4659b42d9cbe14ec70e5_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a5798ba7ff8d7984c9b50981d6dd8e6b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_9cb460051d9b43d296fe475277fa5a24_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: cf17bce15458a584ba4c432acf10f1ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -38,9 +54,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Dissolve: 0
+    - _Lerp: 0.1
+    - _OffsetEdge: 0.01
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    m_Colors:
+    - _AnimPannerSpeed: {r: 0.3, g: 0, b: 0, a: 0}
+    - _ColorEdge: {r: 128, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2863263909817110932
 MonoBehaviour:
