@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.TryGetComponent<IShield>(out var shield))
         {
-            shield.OnImpact();
+            shield.OnImpact(this.transform.position);
             DesactivateBullet();
         }
     }
