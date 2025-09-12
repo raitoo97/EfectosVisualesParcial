@@ -22,8 +22,8 @@ public class PoolBullets : MonoBehaviour
     {
         for (int i = 0; i < num; i++)
         {
-            GameObject go = Instantiate(_bulletPrefab, transform);
-            go.SetActive(false);
+            GameObject go = Instantiate(_bulletPrefab, this.transform);
+            go?.SetActive(false);
             _bullets.Add(go);
         }
     }
@@ -37,9 +37,9 @@ public class PoolBullets : MonoBehaviour
                 return bullet;
             }
         }
-        CompleteList(5);
+        CompleteList(1);
         var aux = _bullets[_bullets.Count - 1];
-        aux.SetActive(true);
+        aux?.SetActive(true);
         return aux;
     }
 }

@@ -1,7 +1,12 @@
 using UnityEngine;
 public class Bullet : MonoBehaviour
 {
-    private void Start()
+    private TrailRenderer _trail;
+    private void Awake()
+    {
+        _trail = GetComponent<TrailRenderer>();
+    }
+    private void OnEnable()
     {
         Invoke("DesactivateBullet", 2f);
     }
@@ -12,5 +17,10 @@ public class Bullet : MonoBehaviour
     public void DesactivateBullet()
     {
         this.gameObject.SetActive(false);
+    }
+    private void OnDisable()
+    {
+        _trail.Clear();
+        CancelInvoke();
     }
 }
