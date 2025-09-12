@@ -18,6 +18,13 @@ public class Bullet : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent<IShield>(out var shield))
+        {
+            DesactivateBullet();
+        }
+    }
     private void OnDisable()
     {
         _trail.Clear();
