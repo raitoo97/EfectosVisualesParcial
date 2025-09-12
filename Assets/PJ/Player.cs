@@ -1,27 +1,28 @@
-using Cinemachine;
 using UnityEngine;
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(PlayerInputs))]
 public class Player : MonoBehaviour
 {
-    private PlayerInputs _characterInputs;
-    private PlayerCameraMovement _playerCameraMovement;
-    [SerializeField]private CinemachineVirtualCamera _camera;
+    private PlayerController _playerController;
+    [Header("Jump")]
+    [SerializeField]private Transform _groundChecker;
+    [SerializeField]private LayerMask _groundLayer;
     private void OnEnable()
     {
-        _characterInputs = new PlayerInputs();
-        _playerCameraMovement = new PlayerCameraMovement(_characterInputs, _camera);
-    }
-    private void Start()
-    {
-        _playerCameraMovement.OnStart();
+        _playerController = new PlayerController(GetComponent<Rigidbody>(), _groundChecker, _groundLayer);
     }
     private void Update()
     {
-        _playerCameraMovement.OnUpdate();
+        _playerController.OnUpdate();
+    }
+    private void FixedUpdate()
+    {
+        _playerController.OnFixedUpdate();
     }
     private void OnDisable()
     {
-        _characterInputs.ConfigOnDisable();
-        _characterInputs = null;
-        _playerCameraMovement = null;
+        _playerController?.Disable();
     }
+    public bool IsGrounded { get => _playerController.IsGrounded; }
+    public Vector2 MoveVector { get => _playerController.GetMoveVector; }
 }
