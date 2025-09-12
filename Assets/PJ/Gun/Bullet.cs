@@ -20,6 +20,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        print(other.name);
         if (other.TryGetComponent<IShield>(out var shield))
         {
             DesactivateBullet();
