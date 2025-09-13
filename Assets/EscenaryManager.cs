@@ -1,16 +1,17 @@
-using System.Collections.Generic;
 using UnityEngine;
 public class EscenaryManager : MonoBehaviour
 {
-    public List <Material> materials;
+    private WallAnimation _wallAnimation;
+    private void OnEnable()
+    {
+        _wallAnimation = new WallAnimation(this);
+    }
     void Start()
     {
-        
+        _wallAnimation.Onstart();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        _wallAnimation.OnUpdate();
     }
 }
