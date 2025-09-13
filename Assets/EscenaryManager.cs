@@ -14,4 +14,8 @@ public class EscenaryManager : MonoBehaviour
     {
         _wallAnimation.OnUpdate();
     }
+    private void OnDisable()
+    {
+        _wallAnimation = null;
+    }
 }
