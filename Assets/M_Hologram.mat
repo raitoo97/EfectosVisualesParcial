@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5383803213663385513
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 7
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Shield
-  m_Shader: {fileID: -6465566751694194690, guid: 84e3643161f20674bb2d3cff61b743b5,
+  m_Name: M_Hologram
+  m_Shader: {fileID: -6465566751694194690, guid: 5df67ff2978dfb4418395723c0898fcf,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -51,19 +38,25 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorIntensity: 1
-    - _Depth: 1.74
-    - _DisplacementStrenght: 0
-    - _Distance: 0.6
-    - _Frequency: 7.7
-    - _Fresnel: 0.954
+    - _ColorIntensity: 5.9
+    - _Frequency: 50
+    - _FresnelPower: 0.388
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 7.85
-    - _SphereMaskHardness: 0.04
-    - _SphereMaskRadius: -0.2
+    - _Speed: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.092620246, b: 0, a: 0}
-    - _ColorEdges: {r: 1, g: 0.27581558, b: 0, a: 0}
-    - _HitPos: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 0, g: 0.41960785, b: 1, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &7169577226874132605
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
