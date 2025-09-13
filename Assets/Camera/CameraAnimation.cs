@@ -6,7 +6,7 @@ public class CameraAnimation : MonoBehaviour
     [SerializeField]private CinemachineVirtualCamera _camera;
     [Header("FOV")]
     private float _defaultFOV = 60f;
-    private float _runningFOV = 120f;
+    private float _runningFOV = 85f;
     private float _transitionDuration = 0.5f;
     private Coroutine _coroutineFov;
     private void Update()
