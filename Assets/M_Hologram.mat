@@ -38,14 +38,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorIntensity: 5.9
-    - _Frequency: 50
-    - _FresnelPower: 0.388
+    - _CellsDensity: 5
+    - _ColorIntensity: 10.87
+    - _DistorisionIntensity: 1
+    - _DistorsionSpeed: 0.154
+    - _DistorsionStrenght: 1.631
+    - _Frequency: 39.7
+    - _FresnelPower: 0.103
+    - _LerpDistorsion: 0.5
+    - _LerpGradientNoise: 0.5
+    - _LerpNoise: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 1
+    - _Speed: 5.08
     m_Colors:
     - _BaseColor: {r: 0, g: 0.41960785, b: 1, a: 0}
+    - _PannerOffset: {r: 0, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7169577226874132605
 MonoBehaviour:
