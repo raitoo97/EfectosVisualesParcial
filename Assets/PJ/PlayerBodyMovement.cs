@@ -18,6 +18,15 @@ public class PlayerBodyMovement
         moveVector.y = 0f;
         _rigidbody.MovePosition(_rigidbody.position + moveVector.normalized * _speed * Time.fixedDeltaTime);
     }
+    public void MoveBlockForward(Vector2 MoveVector)
+    {
+        Vector3 moveVector = new Vector3(MoveVector.x, 0, MoveVector.y);
+        if (moveVector.z > 0f)
+            moveVector.z = 0f;
+        moveVector = _cameraTransform.forward * moveVector.z + _cameraTransform.right * moveVector.x;
+        moveVector.y = 0f;
+        _rigidbody.MovePosition(_rigidbody.position + moveVector.normalized * _speed * Time.fixedDeltaTime);
+    }
     public void Jump()
     {
         _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);

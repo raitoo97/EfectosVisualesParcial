@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 public class Bullet : MonoBehaviour
 {
@@ -18,9 +19,9 @@ public class Bullet : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.TryGetComponent<IShield>(out var shield))
+        if (collision.gameObject.TryGetComponent<IShield>(out var shield))
         {
             shield.OnImpact(this.transform.position);
             DesactivateBullet();
