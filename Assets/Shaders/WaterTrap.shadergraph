@@ -36,6 +36,15 @@
     "m_CategoryData": [
         {
             "m_Id": "7b2acf3195b34beaa605e84861948283"
+        },
+        {
+            "m_Id": "9ef2c2f0afb449e993f215997a6b8d5e"
+        },
+        {
+            "m_Id": "9b13e4a27c1f402baa7ba2cc860bc810"
+        },
+        {
+            "m_Id": "d69aa715d2714e89b1d9828091d39922"
         }
     ],
     "m_Nodes": [
@@ -2177,35 +2186,7 @@
     "m_Type": "UnityEditor.ShaderGraph.CategoryData",
     "m_ObjectId": "7b2acf3195b34beaa605e84861948283",
     "m_Name": "",
-    "m_ChildObjectList": [
-        {
-            "m_Id": "fe9439dfb77847b283a761358b3bf438"
-        },
-        {
-            "m_Id": "9aae2f2e831a48319f8b5892e42d69c5"
-        },
-        {
-            "m_Id": "ea685ba723e04029b61ec20d53688531"
-        },
-        {
-            "m_Id": "9520b533723f48a4a8c52dd25d76e923"
-        },
-        {
-            "m_Id": "d1ef704871e3426abb9d367d046129c3"
-        },
-        {
-            "m_Id": "2537e69091834ab789c89ad76c5f5e17"
-        },
-        {
-            "m_Id": "74b99e22cee34993856070be5f67a2e7"
-        },
-        {
-            "m_Id": "7eb933773d7e4af68def0d56e3a1811e"
-        },
-        {
-            "m_Id": "965fe20b52b949a1b93b65676550b263"
-        }
-    ]
+    "m_ChildObjectList": []
 }
 
 {
@@ -2687,6 +2668,30 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "9b13e4a27c1f402baa7ba2cc860bc810",
+    "m_Name": "MoveWave",
+    "m_ChildObjectList": [
+        {
+            "m_Id": "9520b533723f48a4a8c52dd25d76e923"
+        },
+        {
+            "m_Id": "ea685ba723e04029b61ec20d53688531"
+        },
+        {
+            "m_Id": "7eb933773d7e4af68def0d56e3a1811e"
+        },
+        {
+            "m_Id": "965fe20b52b949a1b93b65676550b263"
+        },
+        {
+            "m_Id": "74b99e22cee34993856070be5f67a2e7"
+        }
+    ]
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "9b1ffc718db24bfb9f8e89c68b0cb4a7",
     "m_Id": 0,
@@ -2788,6 +2793,21 @@
         "y": 0.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "9ef2c2f0afb449e993f215997a6b8d5e",
+    "m_Name": "Colors",
+    "m_ChildObjectList": [
+        {
+            "m_Id": "d1ef704871e3426abb9d367d046129c3"
+        },
+        {
+            "m_Id": "2537e69091834ab789c89ad76c5f5e17"
+        }
+    ]
 }
 
 {
@@ -3478,6 +3498,21 @@
     "m_Value": 10.0,
     "m_DefaultValue": 10.0,
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "d69aa715d2714e89b1d9828091d39922",
+    "m_Name": "DepthFade",
+    "m_ChildObjectList": [
+        {
+            "m_Id": "9aae2f2e831a48319f8b5892e42d69c5"
+        },
+        {
+            "m_Id": "fe9439dfb77847b283a761358b3bf438"
+        }
+    ]
 }
 
 {
