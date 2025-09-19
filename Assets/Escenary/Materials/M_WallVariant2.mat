@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Sky
-  m_Shader: {fileID: -6465566751694194690, guid: ab97b3a1dae5b974792eeefd92cb81a4,
+  m_Name: M_WallVariant2
+  m_Shader: {fileID: -6465566751694194690, guid: e01c0b13812ab544fb3e138763c0c8ab,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -24,16 +24,20 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Height:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainText:
-        m_Texture: {fileID: 2800000, guid: c0ced9a699c6adb4296eb0ec3c7fc975, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2f934c4b033457247a8ac55c293322f7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SecondText:
-        m_Texture: {fileID: 2800000, guid: 4969c1e839a27d3459190cba1272d066, type: 3}
+    - _NormalText:
+        m_Texture: {fileID: 2800000, guid: 1153af84499b94845918edffb27b71fa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _StarsText:
-        m_Texture: {fileID: 2800000, guid: c92df4040e2e84946bd9e39b4cd1a5a5, type: 3}
+    - _Smoothness:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -50,18 +54,25 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FlowMapIntensity: 0.5
-    - _IntensityStars: 20
-    - _NoiseScale: 50
+    - _AmplitudParallax: 0
+    - _AngleOffsetVoranoi: 18.8
+    - _CellsDensity: 5.6
+    - _Metallic: 0.663
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _SmoothStepEdge1: 0.045
+    - _SmoothStepEdge2: 0.694
+    - _Smothness: 0.142
+    - _SpotAmount: 627
+    - _SpotStrengNormal: 10
+    - _WallStrenghtNormal: 10
     m_Colors:
-    - _ColorOffset: {r: 0.47597012, g: 0.50736916, b: 0.5283019, a: 0}
-    - _PannerNoise: {r: 0.03, g: 0, b: 0, a: 0}
-    - _PannerStars: {r: 0.003, g: 0, b: 0, a: 0}
-    - _PannerUV: {r: 0.003, g: 0, b: 0, a: 0}
+    - _ColorSpots: {r: 0.22541907, g: 0.2735849, b: 0.09162514, a: 0}
+    - _PannerNoise: {r: 0, g: 0.003, b: 0, a: 0}
+    - _PannerVoranoi: {r: 0.003, g: 0, b: 0, a: 0}
+    - _TillingWall: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &8309417862588336236
+--- !u!114 &624162009319288356
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

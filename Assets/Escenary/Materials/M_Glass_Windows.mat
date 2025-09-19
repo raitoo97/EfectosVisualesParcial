@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Sky
-  m_Shader: {fileID: -6465566751694194690, guid: ab97b3a1dae5b974792eeefd92cb81a4,
+  m_Name: M_Glass_Windows
+  m_Shader: {fileID: -6465566751694194690, guid: 6b5e0f37f91a8bd49a6e517ea6f0a663,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -24,18 +24,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainText:
-        m_Texture: {fileID: 2800000, guid: c0ced9a699c6adb4296eb0ec3c7fc975, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondText:
-        m_Texture: {fileID: 2800000, guid: 4969c1e839a27d3459190cba1272d066, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _StarsText:
-        m_Texture: {fileID: 2800000, guid: c92df4040e2e84946bd9e39b4cd1a5a5, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -50,18 +38,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FlowMapIntensity: 0.5
-    - _IntensityStars: 20
-    - _NoiseScale: 50
+    - _Alpha: 0.1
+    - _Metallic: 1
+    - _NoiseScale: 41.9
+    - _NormalStrenght: 1.45
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _ReflectionStrenght: 0.7
+    - _Smothness: 0.557
     m_Colors:
-    - _ColorOffset: {r: 0.47597012, g: 0.50736916, b: 0.5283019, a: 0}
-    - _PannerNoise: {r: 0.03, g: 0, b: 0, a: 0}
-    - _PannerStars: {r: 0.003, g: 0, b: 0, a: 0}
-    - _PannerUV: {r: 0.003, g: 0, b: 0, a: 0}
+    - _GlassColor: {r: 0.43867922, g: 0.5983753, b: 1, a: 0}
+    - _PannerGlass: {r: 0.003, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &8309417862588336236
+--- !u!114 &4788131382896630559
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
