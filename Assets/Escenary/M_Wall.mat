@@ -24,6 +24,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Height:
+        m_Texture: {fileID: 2800000, guid: 3a3ba3a9ddbe65b44a1736d878563894, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_0d9d83c86a0746fa8fe514ae58a039e0_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 41d1ef13da6c15e4da1d58b6d9c8f6b7, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -66,15 +70,24 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AmplitudParallax: 7.45
     - _LerpSpot: 0
     - _NormalStrenght: 50
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _SmoothStepEdge1: 0
+    - _SmoothStepEdge2: 0.903
+    - _SpotAmount: 78
+    - _SpotStreng: 5
+    - _StrenghtNormal: 1.64
     m_Colors:
     - _Color: {r: 0.32101834, g: 1, b: 0, a: 0}
+    - _ColorSpots: {r: 0.7377024, g: 1, b: 0.01415092, a: 0}
     - _OffsetColor: {r: 0, g: 0, b: 0, a: 0}
     - _OffsetPanner: {r: 0, g: -0.009, b: 0, a: 0}
     - _OffsetPanner2: {r: -0.009, g: 0, b: 0, a: 0}
+    - _PannerNoise: {r: 0, g: -0.03, b: 0, a: 0}
+    - _PannerVoranoi: {r: 0.03, g: 0, b: 0, a: 0}
     - _SpotsColor: {r: 0.43137255, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5282404365764889458
