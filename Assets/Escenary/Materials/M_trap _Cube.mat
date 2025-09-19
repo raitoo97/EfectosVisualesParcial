@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_trap
+  m_Name: M_trap _Cube
   m_Shader: {fileID: -6465566751694194690, guid: ac348008e2b0aca438f3126c05453f96,
     type: 3}
   m_Parent: {fileID: 0}
@@ -40,11 +40,11 @@ Material:
     m_Floats:
     - _Depth: 0.58
     - _Distance: 4.37
-    - _MultiplicadorWaves: 2.16
+    - _MultiplicadorWaves: 0
     - _NormalWaterStrenght: 12.65
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _StrenghNoiseWaves: 37.5
+    - _StrenghNoiseWaves: 28
     m_Colors:
     - _ColorDepth: {r: 0.38365948, g: 0.44339618, b: 0.21960655, a: 0}
     - _ColorEdges: {r: 0.737255, g: 1, b: 0.01568628, a: 0}
