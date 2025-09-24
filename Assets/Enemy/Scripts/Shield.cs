@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-public class Shield : MonoBehaviour, IShield
+public class Shield : MonoBehaviour, IShield ,IImpact
 {
     [SerializeField] private ParticleSystem impactParticlesPrefab;
     private Material _material;
