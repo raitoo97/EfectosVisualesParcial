@@ -4,6 +4,7 @@ public class Assistant : MonoBehaviour
     [SerializeField]private Animator _animator;
     private AssistantAnimations _assistantAnimations;
     public bool IsTalking;
+    public bool OverHere;
     private void Awake()
     {
         _assistantAnimations = new AssistantAnimations(_animator);
@@ -11,5 +12,6 @@ public class Assistant : MonoBehaviour
     private void Start()
     {
         _assistantAnimations.SetBool("IsTalking", IsTalking);
+        _assistantAnimations.SetBool("OverHere", OverHere);
     }
 }
