@@ -3,6 +3,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Player player;
+    public ParticleSystem impactParticlesPrefab;
     private void Awake()
     {
         if(instance == null)

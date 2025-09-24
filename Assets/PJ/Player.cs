@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField]private LayerMask _wallLayer;
     private float _walkSpeed = 5f;
     private float _runSpeed = 10;
-    private float _rayDistance = 1.25f;
+    private float _rayDistance = 1.5f;
     private void OnEnable()
     {
         _playerBodyMovement = new PlayerBodyMovement(GetComponent<Rigidbody>(), _walkSpeed);

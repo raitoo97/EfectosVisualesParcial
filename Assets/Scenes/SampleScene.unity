@@ -156,6 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  impactParticlesPrefab: {fileID: 2873823370989727376, guid: 86343074feb3f8844988f3e76dbfb881,
+    type: 3}
 --- !u!4 &34804024
 Transform:
   m_ObjectHideFlags: 0
@@ -318,7 +320,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3959
+    m_Bits: 16247
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1515,35 +1517,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 348379581013169996, guid: d4f04e1c0be6f5f419e9cb8902580950,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2407097632876274890, guid: d4f04e1c0be6f5f419e9cb8902580950,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5078702345340877102, guid: d4f04e1c0be6f5f419e9cb8902580950,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652843031267282634, guid: d4f04e1c0be6f5f419e9cb8902580950,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 6455388402161034794, guid: d4f04e1c0be6f5f419e9cb8902580950,
         type: 3}
       propertyPath: m_Name
       value: Escenary
       objectReference: {fileID: 0}
-    - target: {fileID: 8198238133862793618, guid: d4f04e1c0be6f5f419e9cb8902580950,
+    - target: {fileID: 7275821402211711397, guid: d4f04e1c0be6f5f419e9cb8902580950,
         type: 3}
-      propertyPath: m_Intensity
-      value: 30
+      propertyPath: m_LocalPosition.x
+      value: -0.128
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470546575870475628, guid: d4f04e1c0be6f5f419e9cb8902580950,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.98728
       objectReference: {fileID: 0}
     - target: {fileID: 8502896326198236373, guid: d4f04e1c0be6f5f419e9cb8902580950,
         type: 3}
@@ -1594,11 +1581,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8812809866813197502, guid: d4f04e1c0be6f5f419e9cb8902580950,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
