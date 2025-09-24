@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-public class Shield : MonoBehaviour, IShield ,IImpact
+public class Shield : MonoBehaviour, IShield ,IImpact , IEnemy
 {
     private Material _material;
     private Coroutine _flashCoroutine;

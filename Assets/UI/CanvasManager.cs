@@ -1,8 +1,9 @@
 using UnityEngine;
-public class ControlCanvas : MonoBehaviour
+public class CanvasManager : MonoBehaviour
 {
     private AnimationCanvas _animationCanvas;
     [SerializeField]private Animator _animator;
+    [SerializeField]private GameObject _aim;
     private void OnEnable()
     {
         _animationCanvas = new AnimationCanvas(_animator);
@@ -20,9 +21,21 @@ public class ControlCanvas : MonoBehaviour
         {
             _animationCanvas?.StopAimAnimation();
         }
+        if (GameManager.instance.player.GetComponent<Player>().GetPlayerController.ViewEnemy)
+        {
+            ChangeColorAim(Color.red);
+        }
+        else
+        {
+            ChangeColorAim(Color.green);
+        }
     }
     private void OnDisable()
     {
         _animationCanvas = null;
+    }
+    public void ChangeColorAim(Color color)
+    {
+        _aim.GetComponent<UnityEngine.UI.Image>().color = color;
     }
 }

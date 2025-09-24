@@ -11,6 +11,8 @@ public class PlayerController
     [Header("Jump")]
     private bool _isGrounded;
     private bool _triggerJump;
+    [Header("ViewEnemy")]
+    private bool _viewEnemy;
     public PlayerController(PlayerBodyMovement playerBodyMovement, PlayerRayCast playerRayCast, float walkSpeed, float runSpeed)
     {
         _playerBodyMovement = playerBodyMovement;
@@ -34,6 +36,7 @@ public class PlayerController
             _triggerJump = true;
         _isGrounded = _playerRayCast.CheckGrounded();
         _canMove = _playerRayCast.CheckWall();
+        _viewEnemy = _playerRayCast.CheckViewEnemy();
     }
     public void OnFixedUpdate()
     {
@@ -55,4 +58,5 @@ public class PlayerController
     public bool IsGrounded { get => _isGrounded; }
     public Vector2 GetMoveVector { get => _moveInputs; }
     public bool CanMove { get => _canMove; set => _canMove = value; }
+    public bool ViewEnemy { get => _viewEnemy; }
 }
