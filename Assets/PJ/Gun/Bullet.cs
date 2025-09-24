@@ -19,9 +19,9 @@ public class Bullet : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.TryGetComponent<IShield>(out var shield))
+        if (other.gameObject.TryGetComponent<IShield>(out var shield))
         {
             shield.OnImpact(this.transform.position);
             DesactivateBullet();
