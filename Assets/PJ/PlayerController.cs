@@ -37,6 +37,8 @@ public class PlayerController
         _isGrounded = _playerRayCast.CheckGrounded();
         _canMove = _playerRayCast.CheckWall();
         _viewEnemy = _playerRayCast.CheckViewEnemy();
+        if (PlayerInputs.instance.InteractAction())
+            _playerRayCast.CheckInteract();
     }
     public void OnFixedUpdate()
     {

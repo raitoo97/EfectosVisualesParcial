@@ -25,7 +25,7 @@ public class PlayerInputs : MonoBehaviour
     }
     public bool ShootAction()
     {
-        return _playerMap.PlayerInputs.Interact.IsPressed();
+        return _playerMap.PlayerInputs.Shoot.IsPressed();
     }
     public bool RunAction()
     {
@@ -34,6 +34,10 @@ public class PlayerInputs : MonoBehaviour
     public bool JumpAction()
     {
         return _playerMap.PlayerInputs.Jump.triggered;
+    }
+    public bool InteractAction()
+    {
+        return _playerMap.PlayerInputs.Interact.triggered;
     }
     private void OnDisable()
     {

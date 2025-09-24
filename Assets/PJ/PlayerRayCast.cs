@@ -8,8 +8,9 @@ public class PlayerRayCast
     private LayerMask _groundLayer;
     private float radiusChecker = 0.5f;
     private float _enemyViewDistance;
+    private float _interactDistance;
     private LayerMask _enemyLayer;
-    public PlayerRayCast(Transform playerTransform, Transform groundChecker, LayerMask wallLayer, LayerMask groundLayer,LayerMask enemyLayer, float rayDistance,float enemyViewDistance)
+    public PlayerRayCast(Transform playerTransform, Transform groundChecker, LayerMask wallLayer, LayerMask groundLayer,LayerMask enemyLayer, float rayDistance,float enemyViewDistance,float interactDistance)
     {
         _CamerTransform = playerTransform;
         _groundChecker = groundChecker;
@@ -18,6 +19,7 @@ public class PlayerRayCast
         _rayDistance = rayDistance;
         _enemyLayer = enemyLayer;
         _enemyViewDistance = enemyViewDistance;
+        _interactDistance = interactDistance;
     }
     public bool CheckWall()
     {
@@ -46,5 +48,16 @@ public class PlayerRayCast
             return true;
         }
         return false;
+    }
+    public void CheckInteract()
+    {
+        Ray ray = new Ray(_CamerTransform.position, _CamerTransform.forward);
+        if (Physics.Raycast(ray, out RaycastHit hit, _interactDistance))
+        {
+            if(hit.transform.gameObject.TryGetComponent<IInteractiveObject>(out var ObjectInteract))
+            {
+                ObjectInteract.Interact();
+            }
+        }
     }
 }
