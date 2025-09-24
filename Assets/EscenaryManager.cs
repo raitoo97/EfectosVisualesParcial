@@ -1,21 +1,13 @@
 using UnityEngine;
 public class EscenaryManager : MonoBehaviour
 {
-    private WallAnimation _wallAnimation;
+    private GetStaticObjectsHandler _getStaticObjectsHandler;
     private void OnEnable()
     {
-        _wallAnimation = new WallAnimation(this);
-    }
-    void Start()
-    {
-        _wallAnimation.Onstart();
-    }
-    private void Update()
-    {
-        _wallAnimation.OnUpdate();
+        _getStaticObjectsHandler = new GetStaticObjectsHandler();
     }
     private void OnDisable()
     {
-        _wallAnimation = null;
+        _getStaticObjectsHandler = null;
     }
 }

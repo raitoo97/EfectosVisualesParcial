@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
-public class Shield : MonoBehaviour, IShield
+public class Shield : MonoBehaviour, IShield ,IImpact , IEnemy
 {
-    [SerializeField] private ParticleSystem impactParticlesPrefab;
     private Material _material;
     private Coroutine _flashCoroutine;
     private float _maxIntensity;
@@ -32,9 +31,9 @@ public class Shield : MonoBehaviour, IShield
         }
         if(_flashCoroutine == null)
             _flashCoroutine = StartCoroutine(FlashDuration());
-        if (impactParticlesPrefab != null)
+        if (GameManager.instance.impactParticlesPrefab != null)
         {
-            ParticleSystem ps = Instantiate(impactParticlesPrefab, hitPosition,Quaternion.identity);
+            ParticleSystem ps = Instantiate(GameManager.instance.impactParticlesPrefab, hitPosition,Quaternion.identity);
             ps.Play();
             Destroy(ps.gameObject, ps.main.duration);
         }

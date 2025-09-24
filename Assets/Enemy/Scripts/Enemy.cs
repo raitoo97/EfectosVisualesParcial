@@ -1,5 +1,5 @@
 using UnityEngine;
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour , IEnemy
 {
     public Animator animator;
     private FSM _fsm;

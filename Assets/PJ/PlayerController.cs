@@ -2,21 +2,24 @@ using UnityEngine;
 public class PlayerController
 {
     private PlayerBodyMovement _playerBodyMovement;
+    private PlayerRayCast _playerRayCast;
     private Vector2 _moveInputs;
-    [Header("Run")]
-    private float _walkSpeed = 5f;
-    private float _runSpeed = 10;
+    [Header("RunAndMove")]
+    private float _walkSpeed;
+    private float _runSpeed;
+    private bool _canMove;
     [Header("Jump")]
-    private Transform _groundChecker;
-    private LayerMask _groundLayer;
-    private float radiusChecker = 0.5f;
     private bool _isGrounded;
     private bool _triggerJump;
-    public PlayerController(Rigidbody _rigidbody, Transform _groundChecker, LayerMask _groundLayer)
+    [Header("ViewEnemy")]
+    private bool _viewEnemy;
+    public PlayerController(PlayerBodyMovement playerBodyMovement, PlayerRayCast playerRayCast, float walkSpeed, float runSpeed)
     {
-        _playerBodyMovement = new PlayerBodyMovement(_rigidbody, _walkSpeed);
-        this._groundChecker = _groundChecker;
-        this._groundLayer = _groundLayer;
+        _playerBodyMovement = playerBodyMovement;
+        _walkSpeed = walkSpeed;
+        _runSpeed = runSpeed;
+        _playerRayCast = playerRayCast;
+        _canMove = true;
     }
     private void Running()
     {
@@ -25,21 +28,22 @@ public class PlayerController
         else
             _playerBodyMovement.ChangeSpeed(_walkSpeed);
     }
-    private bool CheckGrounded()
-    {
-        return Physics.CheckSphere(_groundChecker.position, radiusChecker, _groundLayer);
-    }
     public void OnUpdate()
     {
         _moveInputs = PlayerInputs.instance.GetMovement();
         Running();
         if (PlayerInputs.instance.JumpAction())
             _triggerJump = true;
-        _isGrounded = CheckGrounded();
+        _isGrounded = _playerRayCast.CheckGrounded();
+        _canMove = _playerRayCast.CheckWall();
+        _viewEnemy = _playerRayCast.CheckViewEnemy();
     }
     public void OnFixedUpdate()
     {
-        _playerBodyMovement.Move(_moveInputs);
+        if (_canMove)
+            _playerBodyMovement.Move(_moveInputs);
+        else
+            _playerBodyMovement.MoveBlockForward(_moveInputs);
         if (_triggerJump && _isGrounded)
         {
             _playerBodyMovement.Jump();
@@ -49,7 +53,10 @@ public class PlayerController
     public void Disable()
     {
         _playerBodyMovement = null;
+        _playerRayCast = null;
     }
     public bool IsGrounded { get => _isGrounded; }
     public Vector2 GetMoveVector { get => _moveInputs; }
+    public bool CanMove { get => _canMove; set => _canMove = value; }
+    public bool ViewEnemy { get => _viewEnemy; }
 }

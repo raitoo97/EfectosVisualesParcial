@@ -20,9 +20,9 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<IShield>(out var shield))
+        if (other.gameObject.TryGetComponent<IImpact>(out var impact))
         {
-            shield.OnImpact(this.transform.position);
+            impact.OnImpact(this.transform.position);
             DesactivateBullet();
         }
     }
