@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Wall
-  m_Shader: {fileID: -6465566751694194690, guid: e01c0b13812ab544fb3e138763c0c8ab,
+  m_Shader: {fileID: -6465566751694194690, guid: 6a8284aeb4f15c4488a41d15751aac55,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -36,10 +36,6 @@ Material:
         m_Texture: {fileID: 2800000, guid: 1153af84499b94845918edffb27b71fa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Smoothness:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -54,25 +50,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AmplitudParallax: 0
-    - _AngleOffsetVoranoi: 37.5
-    - _CellsDensity: 10.8
-    - _Metallic: 0.663
+    - _ParallaxOffset: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SmoothStepEdge1: 0.149
-    - _SmoothStepEdge2: 0.749
-    - _Smothness: 0.142
-    - _SpotAmount: 74
-    - _SpotStrengNormal: 10
-    - _WallStrenghtNormal: 10
     m_Colors:
-    - _ColorSpots: {r: 0.7377024, g: 1, b: 0.01415092, a: 0}
-    - _PannerNoise: {r: 0, g: 0.03, b: 0, a: 0}
-    - _PannerVoranoi: {r: 0.03, g: 0, b: 0, a: 0}
-    - _TillingWall: {r: 1, g: 1, b: 0, a: 0}
+    - _Tilling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &624162009319288356
+--- !u!114 &2609359065511384133
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
