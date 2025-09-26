@@ -11,7 +11,7 @@ public class FirstCinematic
         _monoBehaviour = monoBehaviour;
         _waterDrop = waterDrop;
         _initPos = _waterDrop.position;
-        _finalPos = new Vector3(_initPos.x, _initPos.y - 5f, _initPos.z);
+        _finalPos = new Vector3(_initPos.x, _initPos.y - 10f, _initPos.z);
     }
     public void StartCinematic()
     {
@@ -20,7 +20,7 @@ public class FirstCinematic
     IEnumerator WaterDrop()
     {
         float elapsedTime = 0f;
-        float duration = 3f;
+        float duration =3f;
         yield return new WaitForSeconds(2f);
         while (elapsedTime < duration)
         {
