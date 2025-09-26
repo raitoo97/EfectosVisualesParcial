@@ -6,13 +6,17 @@ public class PlayerCameraMovement : CinemachineExtension
     private Vector3 _startingRotation;
     [SerializeField]private float ClampleAngle = 80f;
     [SerializeField]private float Sensitivity = 10f;
+    private Player _player;
     protected override void Awake()
     {
-        _characterInputs = PlayerInputs.instance;
         base.Awake();
+        _characterInputs = PlayerInputs.instance;
     }
     protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam, CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
     {
+        if (GameManager.instance != null)
+            _player = GameManager.instance.player;
+        if (_player?.GetPlayerController?._isOnCinematic == true) return;
         if (vcam.Follow)
         {
             if (stage == CinemachineCore.Stage.Aim)

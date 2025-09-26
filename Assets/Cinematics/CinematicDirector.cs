@@ -3,20 +3,42 @@ using UnityEngine;
 using UnityEngine.Playables;
 public class CinematicDirector : MonoBehaviour
 {
-    public List <GameObject> objectsToDesactivate;
-    public PlayableDirector director;
-    public void DesactivateGun()
+    [SerializeField]private List <GameObject> objectsToDesactivate;
+    [SerializeField]private PlayableDirector directorFirstCinematic;
+    [Header("FirstCinematic")]
+    [SerializeField]private GameObject _waterDrop;
+    private FirstCinematic _firstCinematic;
+    public static CinematicDirector instance;
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+    private void OnEnable()
+    {
+        _firstCinematic = new FirstCinematic(_waterDrop.transform, this);
+    }
+    public void DesactivateGunAndPlayer()
     {
         foreach (GameObject _currentObject in objectsToDesactivate)
         {
             _currentObject.SetActive(false);
         }
+        GameManager.instance.player.GetPlayerController._isOnCinematic = true;
     }
-    private void Update()
+    public void ActivateGunAndPlayer()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        foreach (GameObject _currentObject in objectsToDesactivate)
         {
-            director.Play();
+            _currentObject.SetActive(true);
         }
+        GameManager.instance.player.GetPlayerController._isOnCinematic = false;
     }
+    public void ActivateFirstCinematic()
+    {
+        _firstCinematic.StartCinematic();
+    }
+    public PlayableDirector GetDirectorFirstCinematic { get => directorFirstCinematic; }
 }

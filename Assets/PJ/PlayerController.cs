@@ -4,6 +4,7 @@ public class PlayerController
     private PlayerBodyMovement _playerBodyMovement;
     private PlayerRayCast _playerRayCast;
     private Vector2 _moveInputs;
+    public bool _isOnCinematic;
     [Header("RunAndMove")]
     private float _walkSpeed;
     private float _runSpeed;
@@ -20,6 +21,7 @@ public class PlayerController
         _runSpeed = runSpeed;
         _playerRayCast = playerRayCast;
         _canMove = true;
+        _isOnCinematic = false;
     }
     private void Running()
     {
@@ -42,6 +44,7 @@ public class PlayerController
     }
     public void OnFixedUpdate()
     {
+        if (_isOnCinematic) return;
         if (_canMove)
             _playerBodyMovement.Move(_moveInputs);
         else
