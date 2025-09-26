@@ -22,15 +22,18 @@ public class GetStaticObjectsHandler
         }
         foreach (var wall in Walls)
         {
-            wall.AddComponent<StaticObjects>();
+            if (wall.GetComponent<StaticObjects>() == null)
+                wall.AddComponent<StaticObjects>();
         }
         foreach (var roof in Roof)
         {
-            roof.AddComponent<StaticObjects>();
+            if (roof.GetComponent<StaticObjects>() == null)
+                roof.AddComponent<StaticObjects>();
         }
         foreach (var floor in Floor)
         {
-            floor.AddComponent<StaticObjects>();
+            if (floor.GetComponent<StaticObjects>() == null)
+                floor.AddComponent<StaticObjects>();
         }
     }
 }

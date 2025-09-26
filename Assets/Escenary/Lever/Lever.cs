@@ -1,7 +1,14 @@
 using UnityEngine;
+public enum LeverAction
+{
+    FirstCinematic,
+    SecondCinematic,
+    OpenDoor
+}
 public class Lever : MonoBehaviour ,IInteractiveObject
 {
     [SerializeField] private Animator leverAnimator;
+    public LeverAction leverAction;
     private void Awake()
     {
         leverAnimator = GetComponent<Animator>();
@@ -13,5 +20,14 @@ public class Lever : MonoBehaviour ,IInteractiveObject
     public void ActivateFirstCinematic()
     {
         CinematicDirector.instance?.GetDirectorFirstCinematic.Play();
+    }
+    public void OnAnimationEvent()
+    {
+        switch (leverAction)
+        {
+            case LeverAction.FirstCinematic:
+                CinematicDirector.instance?.GetDirectorFirstCinematic.Play();
+                break;
+        }
     }
 }

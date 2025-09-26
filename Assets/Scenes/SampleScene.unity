@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 72024610}
   - component: {fileID: 72024609}
   - component: {fileID: 72024608}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (128)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 103628624}
   - component: {fileID: 103628623}
   - component: {fileID: 103628622}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (126)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1323,7 +1323,7 @@ GameObject:
   - component: {fileID: 172754793}
   - component: {fileID: 172754792}
   - component: {fileID: 172754791}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (154)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1780,7 +1780,7 @@ GameObject:
   - component: {fileID: 197986655}
   - component: {fileID: 197986654}
   - component: {fileID: 197986653}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (137)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2186,7 +2186,7 @@ GameObject:
   - component: {fileID: 233414950}
   - component: {fileID: 233414949}
   - component: {fileID: 233414948}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (127)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2628,7 +2628,7 @@ GameObject:
   - component: {fileID: 283285373}
   - component: {fileID: 283285372}
   - component: {fileID: 283285371}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (165)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2934,7 +2934,7 @@ Transform:
   m_GameObject: {fileID: 327219636}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.383, y: -3.973, z: -0.533}
+  m_LocalPosition: {x: 4.3830004, y: -3.9729996, z: -0.53299713}
   m_LocalScale: {x: 0.98728, y: 1.7704214, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2944,7 +2944,7 @@ Transform:
   - {fileID: 1377083394}
   - {fileID: 1798608442}
   - {fileID: 60402599}
-  m_Father: {fileID: 772496343}
+  m_Father: {fileID: 2117661508}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
@@ -3134,7 +3134,7 @@ GameObject:
   - component: {fileID: 359352736}
   - component: {fileID: 359352735}
   - component: {fileID: 359352734}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (150)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3728,7 +3728,7 @@ GameObject:
   - component: {fileID: 388646493}
   - component: {fileID: 388646492}
   - component: {fileID: 388646491}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (151)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3836,7 +3836,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 399820496}
-  m_Layer: 0
+  - component: {fileID: 399820497}
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3928,6 +3929,33 @@ Transform:
   - {fileID: 487491158}
   m_Father: {fileID: 772496343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &399820497
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399820495}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &402258329
 GameObject:
   m_ObjectHideFlags: 0
@@ -3940,7 +3968,7 @@ GameObject:
   - component: {fileID: 402258333}
   - component: {fileID: 402258332}
   - component: {fileID: 402258331}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (142)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4129,7 +4157,7 @@ GameObject:
   - component: {fileID: 414970828}
   - component: {fileID: 414970827}
   - component: {fileID: 414970826}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (148)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4700,7 +4728,7 @@ Transform:
   m_GameObject: {fileID: 431343271}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.383, y: -3.973, z: 5.467}
+  m_LocalPosition: {x: 4.3830004, y: -3.9729996, z: 5.467003}
   m_LocalScale: {x: 0.98728, y: 1.7704214, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4710,7 +4738,7 @@ Transform:
   - {fileID: 583700603}
   - {fileID: 386093225}
   - {fileID: 488185603}
-  m_Father: {fileID: 772496343}
+  m_Father: {fileID: 2117661508}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &436248179
 GameObject:
@@ -6091,7 +6119,7 @@ GameObject:
   - component: {fileID: 489015468}
   - component: {fileID: 489015467}
   - component: {fileID: 489015466}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (117)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6651,7 +6679,7 @@ GameObject:
   - component: {fileID: 537790700}
   - component: {fileID: 537790699}
   - component: {fileID: 537790698}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (149)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6779,7 +6807,7 @@ Transform:
   - {fileID: 407858157}
   - {fileID: 463621249}
   - {fileID: 822351098}
-  m_Father: {fileID: 772496343}
+  m_Father: {fileID: 2117661508}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540344826
 GameObject:
@@ -7213,7 +7241,7 @@ GameObject:
   - component: {fileID: 549563875}
   - component: {fileID: 549563874}
   - component: {fileID: 549563873}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (158)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8446,7 +8474,7 @@ GameObject:
   - component: {fileID: 601010218}
   - component: {fileID: 601010217}
   - component: {fileID: 601010216}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (121)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8551,7 +8579,7 @@ GameObject:
   - component: {fileID: 606287599}
   - component: {fileID: 606287598}
   - component: {fileID: 606287597}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (122)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8795,7 +8823,7 @@ GameObject:
   - component: {fileID: 617810643}
   - component: {fileID: 617810642}
   - component: {fileID: 617810641}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (164)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10090,7 +10118,7 @@ GameObject:
   - component: {fileID: 747459872}
   - component: {fileID: 747459871}
   - component: {fileID: 747459870}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (166)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10842,11 +10870,7 @@ Transform:
   - {fileID: 1873495597}
   - {fileID: 890652375}
   - {fileID: 992891097}
-  - {fileID: 538079188}
-  - {fileID: 1072361520}
-  - {fileID: 327219637}
-  - {fileID: 431343272}
-  - {fileID: 1192906243}
+  - {fileID: 2117661508}
   m_Father: {fileID: 380109218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &773753075
@@ -11343,7 +11367,7 @@ GameObject:
   - component: {fileID: 816236333}
   - component: {fileID: 816236332}
   - component: {fileID: 816236331}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (119)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11741,7 +11765,7 @@ GameObject:
   - component: {fileID: 822795770}
   - component: {fileID: 822795769}
   - component: {fileID: 822795768}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (152)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12452,13 +12476,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 890652375}
-  m_Layer: 0
+  - component: {fileID: 890652376}
+  m_Layer: 12
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &890652375
 Transform:
   m_ObjectHideFlags: 0
@@ -12526,6 +12551,33 @@ Transform:
   - {fileID: 489015465}
   m_Father: {fileID: 772496343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &890652376
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890652374}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &891469351
 GameObject:
   m_ObjectHideFlags: 0
@@ -12643,7 +12695,7 @@ GameObject:
   - component: {fileID: 905892311}
   - component: {fileID: 905892310}
   - component: {fileID: 905892309}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (132)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13887,7 +13939,7 @@ GameObject:
   - component: {fileID: 959533548}
   - component: {fileID: 959533547}
   - component: {fileID: 959533546}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (162)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14283,6 +14335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 992891097}
+  - component: {fileID: 992891098}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -14361,6 +14414,33 @@ Transform:
   - {fileID: 450945129}
   m_Father: {fileID: 772496343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &992891098
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992891096}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1011040089
 GameObject:
   m_ObjectHideFlags: 0
@@ -14373,7 +14453,7 @@ GameObject:
   - component: {fileID: 1011040093}
   - component: {fileID: 1011040092}
   - component: {fileID: 1011040091}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (118)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14748,7 +14828,7 @@ Transform:
   m_GameObject: {fileID: 1072361519}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.383, y: -3.973, z: -6.533}
+  m_LocalPosition: {x: 4.3830004, y: -3.9729996, z: -6.532997}
   m_LocalScale: {x: 0.98728, y: 1.7704214, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14758,7 +14838,7 @@ Transform:
   - {fileID: 1910211833}
   - {fileID: 260766538}
   - {fileID: 1761148123}
-  m_Father: {fileID: 772496343}
+  m_Father: {fileID: 2117661508}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073397431
 GameObject:
@@ -15586,7 +15666,7 @@ GameObject:
   - component: {fileID: 1131038227}
   - component: {fileID: 1131038226}
   - component: {fileID: 1131038225}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (153)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15796,7 +15876,7 @@ GameObject:
   - component: {fileID: 1133189840}
   - component: {fileID: 1133189839}
   - component: {fileID: 1133189838}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (138)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16373,7 +16453,7 @@ GameObject:
   - component: {fileID: 1189854180}
   - component: {fileID: 1189854179}
   - component: {fileID: 1189854178}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (160)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16609,7 +16689,7 @@ Transform:
   m_GameObject: {fileID: 1192906242}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.383, y: -3.973, z: 11.467}
+  m_LocalPosition: {x: 4.3830004, y: -3.9729996, z: 11.467003}
   m_LocalScale: {x: 0.98728, y: 1.7704214, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16619,7 +16699,7 @@ Transform:
   - {fileID: 965062888}
   - {fileID: 10050995}
   - {fileID: 1305434776}
-  m_Father: {fileID: 772496343}
+  m_Father: {fileID: 2117661508}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1193346927
 GameObject:
@@ -16633,7 +16713,7 @@ GameObject:
   - component: {fileID: 1193346931}
   - component: {fileID: 1193346930}
   - component: {fileID: 1193346929}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (129)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17949,7 +18029,7 @@ GameObject:
   - component: {fileID: 1255467350}
   - component: {fileID: 1255467349}
   - component: {fileID: 1255467348}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (125)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18054,7 +18134,7 @@ GameObject:
   - component: {fileID: 1260285553}
   - component: {fileID: 1260285552}
   - component: {fileID: 1260285551}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (134)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18369,7 +18449,7 @@ GameObject:
   - component: {fileID: 1294897243}
   - component: {fileID: 1294897242}
   - component: {fileID: 1294897241}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (146)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19096,7 +19176,7 @@ GameObject:
   - component: {fileID: 1337239326}
   - component: {fileID: 1337239325}
   - component: {fileID: 1337239324}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (161)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19201,7 +19281,7 @@ GameObject:
   - component: {fileID: 1352590709}
   - component: {fileID: 1352590708}
   - component: {fileID: 1352590707}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (136)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19621,7 +19701,7 @@ GameObject:
   - component: {fileID: 1374552823}
   - component: {fileID: 1374552822}
   - component: {fileID: 1374552821}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (133)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19810,7 +19890,7 @@ GameObject:
   - component: {fileID: 1378120974}
   - component: {fileID: 1378120973}
   - component: {fileID: 1378120972}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (124)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20632,7 +20712,7 @@ GameObject:
   - component: {fileID: 1432262003}
   - component: {fileID: 1432262002}
   - component: {fileID: 1432262001}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (130)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20743,7 +20823,7 @@ GameObject:
   - component: {fileID: 1443487457}
   - component: {fileID: 1443487456}
   - component: {fileID: 1443487455}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (156)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21136,7 +21216,7 @@ GameObject:
   - component: {fileID: 1473472267}
   - component: {fileID: 1473472266}
   - component: {fileID: 1473472265}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (155)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21764,7 +21844,7 @@ GameObject:
   - component: {fileID: 1532817734}
   - component: {fileID: 1532817733}
   - component: {fileID: 1532817732}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (141)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21974,7 +22054,7 @@ GameObject:
   - component: {fileID: 1571430892}
   - component: {fileID: 1571430891}
   - component: {fileID: 1571430890}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (163)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22368,7 +22448,7 @@ GameObject:
   - component: {fileID: 1628691067}
   - component: {fileID: 1628691066}
   - component: {fileID: 1628691065}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (147)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22473,7 +22553,7 @@ GameObject:
   - component: {fileID: 1640254640}
   - component: {fileID: 1640254639}
   - component: {fileID: 1640254638}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (143)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22788,7 +22868,7 @@ GameObject:
   - component: {fileID: 1658891724}
   - component: {fileID: 1658891723}
   - component: {fileID: 1658891722}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (144)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23187,7 +23267,7 @@ GameObject:
   - component: {fileID: 1690058534}
   - component: {fileID: 1690058533}
   - component: {fileID: 1690058532}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (131)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24042,7 +24122,7 @@ GameObject:
   - component: {fileID: 1746269869}
   - component: {fileID: 1746269868}
   - component: {fileID: 1746269867}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (145)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24457,7 +24537,7 @@ GameObject:
   - component: {fileID: 1765336512}
   - component: {fileID: 1765336511}
   - component: {fileID: 1765336510}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (123)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24562,7 +24642,7 @@ GameObject:
   - component: {fileID: 1765504195}
   - component: {fileID: 1765504194}
   - component: {fileID: 1765504193}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (139)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25945,7 +26025,7 @@ GameObject:
   - component: {fileID: 1890111707}
   - component: {fileID: 1890111706}
   - component: {fileID: 1890111705}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (157)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27110,7 +27190,7 @@ GameObject:
   - component: {fileID: 1992218543}
   - component: {fileID: 1992218542}
   - component: {fileID: 1992218541}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (140)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27398,7 +27478,7 @@ GameObject:
   - component: {fileID: 2047402671}
   - component: {fileID: 2047402670}
   - component: {fileID: 2047402669}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (135)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27503,7 +27583,7 @@ GameObject:
   - component: {fileID: 2055370534}
   - component: {fileID: 2055370533}
   - component: {fileID: 2055370532}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (168)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27818,7 +27898,7 @@ GameObject:
   - component: {fileID: 2063588659}
   - component: {fileID: 2063588658}
   - component: {fileID: 2063588657}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (159)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28129,7 +28209,7 @@ GameObject:
   - component: {fileID: 2092504952}
   - component: {fileID: 2092504951}
   - component: {fileID: 2092504950}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (167)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28234,7 +28314,7 @@ GameObject:
   - component: {fileID: 2093885131}
   - component: {fileID: 2093885130}
   - component: {fileID: 2093885129}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Floor Tile (120)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28327,6 +28407,70 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093885127}
   m_Mesh: {fileID: 4300000, guid: ce1e1c6afeb8a4c4da4ab18e701d36cc, type: 3}
+--- !u!1 &2117661507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2117661508}
+  - component: {fileID: 2117661509}
+  m_Layer: 0
+  m_Name: Doors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2117661508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117661507}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 538079188}
+  - {fileID: 1072361520}
+  - {fileID: 327219637}
+  - {fileID: 431343272}
+  - {fileID: 1192906243}
+  m_Father: {fileID: 772496343}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2117661509
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117661507}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2127370786
 GameObject:
   m_ObjectHideFlags: 0
@@ -28549,7 +28693,6 @@ GameObject:
   - component: {fileID: 1076821817495850910}
   - component: {fileID: 6986078704358808130}
   - component: {fileID: 2717786467677183882}
-  - component: {fileID: 6675231536720510108}
   m_Layer: 12
   m_Name: Floor Tile (122)
   m_TagString: Untagged
@@ -28557,33 +28700,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &5389444470324839
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263317931541124661}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &5406020739117620
 Transform:
   m_ObjectHideFlags: 0
@@ -28980,33 +29096,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!54 &50853108637607997
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3194345093836394846}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &51509805241432880
 Transform:
   m_ObjectHideFlags: 0
@@ -29082,7 +29171,6 @@ GameObject:
   - component: {fileID: 7961471072158324503}
   - component: {fileID: 1356052351876331087}
   - component: {fileID: 5147956478047513177}
-  - component: {fileID: 6653003370779920018}
   m_Layer: 12
   m_Name: Floor Tile (112)
   m_TagString: Untagged
@@ -29733,7 +29821,6 @@ GameObject:
   - component: {fileID: 5918585366065836854}
   - component: {fileID: 4990550190824683149}
   - component: {fileID: 1110937200973263211}
-  - component: {fileID: 1644635911782619829}
   m_Layer: 12
   m_Name: Floor Tile (41)
   m_TagString: Untagged
@@ -29844,7 +29931,6 @@ GameObject:
   - component: {fileID: 9103887830920077342}
   - component: {fileID: 3028010388761861737}
   - component: {fileID: 4578007552182923814}
-  - component: {fileID: 7414951987444671682}
   m_Layer: 12
   m_Name: Floor Tile (50)
   m_TagString: Untagged
@@ -30014,33 +30100,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445579905553029245}
   m_Mesh: {fileID: 4300000, guid: 150f1d6c324cb0741ab28ddb5fe215de, type: 3}
---- !u!54 &184465391233203698
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5279525913234470428}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &187486912604269730
 Transform:
   m_ObjectHideFlags: 0
@@ -30489,33 +30548,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &248835411710625832
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7100202635863509040}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &249959641981872256
 GameObject:
   m_ObjectHideFlags: 0
@@ -30673,33 +30705,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &260184984864926024
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4579537013399339378}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &261461774715485135
 GameObject:
   m_ObjectHideFlags: 0
@@ -30731,7 +30736,6 @@ GameObject:
   - component: {fileID: 6288536997861374612}
   - component: {fileID: 3298479986627417145}
   - component: {fileID: 5063189074602320769}
-  - component: {fileID: 5389444470324839}
   m_Layer: 12
   m_Name: Floor Tile (73)
   m_TagString: Untagged
@@ -30766,7 +30770,6 @@ GameObject:
   - component: {fileID: 3898515713114864148}
   - component: {fileID: 5264915191425572421}
   - component: {fileID: 7582662083976190731}
-  - component: {fileID: 6977637407666477731}
   m_Layer: 12
   m_Name: Floor Tile (70)
   m_TagString: Untagged
@@ -30786,7 +30789,6 @@ GameObject:
   - component: {fileID: 6815989840977651094}
   - component: {fileID: 8635064312400000282}
   - component: {fileID: 5690580759521065314}
-  - component: {fileID: 5068384942567180919}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -31118,33 +31120,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &309075228072986903
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2794920536690202801}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &312285600869944467
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31337,7 +31312,6 @@ GameObject:
   - component: {fileID: 1923927616999707391}
   - component: {fileID: 1575162758547223984}
   - component: {fileID: 6222128579064053579}
-  - component: {fileID: 1719026838754027775}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -31480,7 +31454,6 @@ GameObject:
   - component: {fileID: 3192282105323389736}
   - component: {fileID: 4696933435807449110}
   - component: {fileID: 7695631934154537469}
-  - component: {fileID: 7216322763297972003}
   m_Layer: 12
   m_Name: Floor Tile (55)
   m_TagString: Untagged
@@ -32175,33 +32148,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &431690523165630199
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4246805178970683155}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &431863254377457040
 Transform:
   m_ObjectHideFlags: 0
@@ -32371,7 +32317,6 @@ GameObject:
   - component: {fileID: 181336927055135623}
   - component: {fileID: 192544861179775321}
   - component: {fileID: 1859256540108469119}
-  - component: {fileID: 704320892795969137}
   m_Layer: 12
   m_Name: Floor Tile (13)
   m_TagString: Untagged
@@ -32506,7 +32451,6 @@ GameObject:
   - component: {fileID: 4130964894972976692}
   - component: {fileID: 4926020180176745890}
   - component: {fileID: 1115336422114682439}
-  - component: {fileID: 7363276871392939629}
   m_Layer: 12
   m_Name: Floor Tile (1)
   m_TagString: Untagged
@@ -32786,7 +32730,6 @@ GameObject:
   - component: {fileID: 1302169125270800580}
   - component: {fileID: 1831760494761609450}
   - component: {fileID: 7636870178225265068}
-  - component: {fileID: 7581626902588843389}
   m_Layer: 12
   m_Name: Floor Tile (7)
   m_TagString: Untagged
@@ -33565,7 +33508,6 @@ GameObject:
   - component: {fileID: 8470908125981249496}
   - component: {fileID: 5424609048398040664}
   - component: {fileID: 1374282704780468307}
-  - component: {fileID: 5239521724892778683}
   m_Layer: 12
   m_Name: Floor Tile (124)
   m_TagString: Untagged
@@ -33864,7 +33806,6 @@ GameObject:
   - component: {fileID: 8187766056446078871}
   - component: {fileID: 1348888839449771269}
   - component: {fileID: 2863406850640670359}
-  - component: {fileID: 8189719781480938716}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -33934,7 +33875,6 @@ GameObject:
   - component: {fileID: 572395607419768685}
   - component: {fileID: 23477329132381918}
   - component: {fileID: 7017799507162183992}
-  - component: {fileID: 4678056283749111918}
   m_Layer: 12
   m_Name: Floor Tile (49)
   m_TagString: Untagged
@@ -34767,33 +34707,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &704320892795969137
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445579905553029245}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!108 &704617101009181029
 Light:
   m_ObjectHideFlags: 0
@@ -34883,60 +34796,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &714836192416027513
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7668112557605619356}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!54 &717677326462879029
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5156894023020686826}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &718051576080722688
 GameObject:
   m_ObjectHideFlags: 0
@@ -35150,7 +35009,6 @@ GameObject:
   - component: {fileID: 5527208828480004056}
   - component: {fileID: 6066631829756719436}
   - component: {fileID: 1792824368387262607}
-  - component: {fileID: 7825442905726409114}
   m_Layer: 12
   m_Name: Floor Tile (19)
   m_TagString: Untagged
@@ -35173,33 +35031,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2638768444321237066}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &744234325313986398
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2869070427097371659}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &744547318521143028
 Transform:
   m_ObjectHideFlags: 0
@@ -35388,7 +35219,6 @@ GameObject:
   - component: {fileID: 8418567133225065477}
   - component: {fileID: 8434633958054393749}
   - component: {fileID: 4704083985264072468}
-  - component: {fileID: 6601637439539234542}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -35636,7 +35466,6 @@ GameObject:
   - component: {fileID: 5984391885104069271}
   - component: {fileID: 4544104588941811796}
   - component: {fileID: 189619230733507685}
-  - component: {fileID: 6426395825783944407}
   m_Layer: 12
   m_Name: Floor Tile (21)
   m_TagString: Untagged
@@ -35724,33 +35553,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &795522133853273417
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3460847280583308378}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &796715335722045371
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36450,33 +36252,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &905960900548195141
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5381268960198071051}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &912547443400932874
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -36592,33 +36367,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6723377621003214782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &925995431483615084
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5205535456406731193}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &926121338441666514
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36919,33 +36667,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.099257, y: 1.74346, z: 0.092067696}
   m_Center: {x: -3.0307577, y: -0.00069886446, z: 3.5539885}
---- !u!54 &952199502437071557
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101353276362905572}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &952817628088689727
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37229,7 +36950,6 @@ GameObject:
   - component: {fileID: 8349027673699535806}
   - component: {fileID: 926121338441666514}
   - component: {fileID: 6793149147561572904}
-  - component: {fileID: 5147375381307939375}
   m_Layer: 12
   m_Name: Floor Tile (121)
   m_TagString: Untagged
@@ -37800,7 +37520,6 @@ GameObject:
   - component: {fileID: 6622572723965513476}
   - component: {fileID: 2070469139817476446}
   - component: {fileID: 4649198181002196961}
-  - component: {fileID: 2545168589267481008}
   m_Layer: 12
   m_Name: Floor Tile (98)
   m_TagString: Untagged
@@ -37912,7 +37631,6 @@ GameObject:
   - component: {fileID: 7690200696075407782}
   - component: {fileID: 348601364901012047}
   - component: {fileID: 7331299908521364422}
-  - component: {fileID: 5945840734057901859}
   m_Layer: 12
   m_Name: Floor Tile (46)
   m_TagString: Untagged
@@ -38386,7 +38104,6 @@ GameObject:
   - component: {fileID: 2513233324760753793}
   - component: {fileID: 6974939615556475327}
   - component: {fileID: 8032017576560415067}
-  - component: {fileID: 7625870126242344175}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -38833,33 +38550,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.300006, y: 9.000003, z: 6.0000024}
   m_Center: {x: 0.0000022947788, y: 4.4999995, z: 3.0000012}
---- !u!54 &1169382435059929540
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8157260536028853264}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &1169558579450933607
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -39217,60 +38907,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2718669359458863631}
   m_Mesh: {fileID: 4300000, guid: ce65141939545d440ac8591812208a12, type: 3}
---- !u!54 &1221778245000605233
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5331675201138582516}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!54 &1224492829173292068
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125248980958420918}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1225740917198823314
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40360,33 +39996,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &1344999517522784350
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9181251291054210096}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1347247382750230401
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40819,7 +40428,6 @@ GameObject:
   - component: {fileID: 3607875641994299120}
   - component: {fileID: 2407682403850562577}
   - component: {fileID: 1041665517213708917}
-  - component: {fileID: 4749331455354576397}
   m_Layer: 12
   m_Name: Floor Tile (34)
   m_TagString: Untagged
@@ -40842,33 +40450,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3709216139854078232}
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
---- !u!54 &1389121060947691493
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9210602455916840742}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1389945537311766404
 GameObject:
   m_ObjectHideFlags: 0
@@ -40949,33 +40530,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &1395302435771382686
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950140151258910473}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &1396046548666997868
 Transform:
   m_ObjectHideFlags: 0
@@ -42062,33 +41616,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3807000649433929531}
   m_Mesh: {fileID: 4300000, guid: c0b2264371dda4d46b1b0a11ea4d5f03, type: 3}
---- !u!54 &1533266007849147002
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8141573927517182330}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1535460480047204955
 GameObject:
   m_ObjectHideFlags: 0
@@ -42186,7 +41713,6 @@ GameObject:
   - component: {fileID: 4367309596190206616}
   - component: {fileID: 3633984118681013572}
   - component: {fileID: 7632215870479073366}
-  - component: {fileID: 3744059790554054707}
   m_Layer: 12
   m_Name: Floor Tile (24)
   m_TagString: Untagged
@@ -42718,33 +42244,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899661011184445963}
   m_Mesh: {fileID: 4300000, guid: 7b44d744f6c37d441952d043e70b584c, type: 3}
---- !u!54 &1592641324561250171
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2649151440428239083}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &1594447072023511209
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -42810,33 +42309,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5501384912041541007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1599296054465443690
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4481398939771736731}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &1600279954828921365
 Transform:
   m_ObjectHideFlags: 0
@@ -43149,33 +42621,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.000002, y: 0.25, z: 6.000001}
   m_Center: {x: 3, y: -0.125, z: 2.9999995}
---- !u!54 &1644635911782619829
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140833669539520434}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1645249179341326833
 GameObject:
   m_ObjectHideFlags: 0
@@ -43188,7 +42633,6 @@ GameObject:
   - component: {fileID: 2090654597491855315}
   - component: {fileID: 1332157908638166455}
   - component: {fileID: 8846175171080892515}
-  - component: {fileID: 2802606857299251775}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -43683,33 +43127,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7879688912244395805}
   m_Mesh: {fileID: 4300008, guid: 0c7a4f4b9bbf44841812ab47fae3b382, type: 3}
---- !u!54 &1719026838754027775
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 345643057336833023}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1722640260941573220
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43770,33 +43187,6 @@ Transform:
   - {fileID: 8014293669609101216}
   m_Father: {fileID: 5982316709320458126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!54 &1729718943888869385
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5220079911737088214}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1732403847806070065
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43847,33 +43237,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6724883999625593039}
   m_Mesh: {fileID: 4300000, guid: ce1e1c6afeb8a4c4da4ab18e701d36cc, type: 3}
---- !u!54 &1740330242350431086
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9135372293932956434}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1742893356977862511
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44921,33 +44284,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7009457077120343885}
   m_Mesh: {fileID: 4300000, guid: ce1e1c6afeb8a4c4da4ab18e701d36cc, type: 3}
---- !u!54 &1844372911386332917
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6665159000774815419}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1850181454460586039
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45018,7 +44354,6 @@ GameObject:
   - component: {fileID: 5444778509087435718}
   - component: {fileID: 6221492593829999775}
   - component: {fileID: 7680446191552764718}
-  - component: {fileID: 5817644965257559572}
   m_Layer: 12
   m_Name: Floor Tile (31)
   m_TagString: Untagged
@@ -45269,33 +44604,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53340059451513621}
   m_Mesh: {fileID: 4300000, guid: ce1e1c6afeb8a4c4da4ab18e701d36cc, type: 3}
---- !u!54 &1884523582294009267
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3284487513719268814}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &1888632758927108579
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -45580,7 +44888,6 @@ GameObject:
   - component: {fileID: 83029862466827615}
   - component: {fileID: 3818008849133501284}
   - component: {fileID: 3842112628290758865}
-  - component: {fileID: 9204239305164597900}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -45814,7 +45121,6 @@ GameObject:
   - component: {fileID: 8931198253405682757}
   - component: {fileID: 2191082307158374202}
   - component: {fileID: 8262967277410464774}
-  - component: {fileID: 1395302435771382686}
   m_Layer: 12
   m_Name: Floor Tile (114)
   m_TagString: Untagged
@@ -45980,33 +45286,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &1977035281039216781
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7010920834585107640}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1978628154890970422
 GameObject:
   m_ObjectHideFlags: 0
@@ -46046,7 +45325,6 @@ GameObject:
   - component: {fileID: 3323242757070366368}
   - component: {fileID: 5406828822693750412}
   - component: {fileID: 3136890470470027164}
-  - component: {fileID: 4398502141084913216}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -46066,7 +45344,6 @@ GameObject:
   - component: {fileID: 2701352170165035797}
   - component: {fileID: 734934324771498716}
   - component: {fileID: 8860290035229149948}
-  - component: {fileID: 7977767205658882799}
   m_Layer: 12
   m_Name: Floor Tile (12)
   m_TagString: Untagged
@@ -46281,7 +45558,6 @@ GameObject:
   - component: {fileID: 6227766127152144443}
   - component: {fileID: 635443021145990542}
   - component: {fileID: 4463338159262706552}
-  - component: {fileID: 6135688441353484161}
   m_Layer: 12
   m_Name: Floor Tile (56)
   m_TagString: Untagged
@@ -46646,7 +45922,6 @@ GameObject:
   - component: {fileID: 2076227375853460919}
   - component: {fileID: 9081593117840811448}
   - component: {fileID: 7954740924876019321}
-  - component: {fileID: 8437394592605105430}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -46856,33 +46131,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.300006, y: 9.000003, z: 6.0000024}
   m_Center: {x: 0.0000022947788, y: 4.4999995, z: 3.0000012}
---- !u!54 &2062261148309982877
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6787113566056598528}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2070159572323711036
 GameObject:
   m_ObjectHideFlags: 0
@@ -47160,7 +46408,6 @@ GameObject:
   - component: {fileID: 105803882741627750}
   - component: {fileID: 1271513627257978141}
   - component: {fileID: 7020580291184515936}
-  - component: {fileID: 952199502437071557}
   m_Layer: 12
   m_Name: Floor Tile (102)
   m_TagString: Untagged
@@ -47180,7 +46427,6 @@ GameObject:
   - component: {fileID: 3761678318839849829}
   - component: {fileID: 6024233779155721554}
   - component: {fileID: 4575104418213760360}
-  - component: {fileID: 4663231116988719649}
   m_Layer: 12
   m_Name: Floor Tile (47)
   m_TagString: Untagged
@@ -47324,7 +46570,6 @@ GameObject:
   - component: {fileID: 7246539590627010721}
   - component: {fileID: 1225740917198823314}
   - component: {fileID: 6332421347827733181}
-  - component: {fileID: 1224492829173292068}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -47372,33 +46617,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &2133334700836139663
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4177247728093518131}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2133623111364813271
 GameObject:
   m_ObjectHideFlags: 0
@@ -48023,7 +47241,6 @@ GameObject:
   - component: {fileID: 3996007395154447594}
   - component: {fileID: 8086721149506696706}
   - component: {fileID: 3174643472194017037}
-  - component: {fileID: 2248956239906006059}
   m_Layer: 12
   m_Name: Floor Tile (103)
   m_TagString: Untagged
@@ -48043,7 +47260,6 @@ GameObject:
   - component: {fileID: 177167976677835431}
   - component: {fileID: 3932559138876862887}
   - component: {fileID: 8284622466462923996}
-  - component: {fileID: 7244746555458863704}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -48108,33 +47324,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &2248956239906006059
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2234225563370798160}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &2251387575114021158
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48774,33 +47963,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.300006, y: 9.000003, z: 6.0000024}
   m_Center: {x: 0.0000022947788, y: 4.4999995, z: 3.0000012}
---- !u!54 &2322282329195396187
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122785858655147009}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &2322364008252107703
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49068,33 +48230,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &2340912476580905192
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2547564781835840656}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &2344750083238904959
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50107,33 +49242,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &2437351105083597638
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9169477458558349600}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &2445235778144592488
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50803,7 +49911,6 @@ GameObject:
   - component: {fileID: 1791446466337598556}
   - component: {fileID: 8346513052997423038}
   - component: {fileID: 7334726981634769599}
-  - component: {fileID: 8862857269623563119}
   m_Layer: 12
   m_Name: Floor Tile (65)
   m_TagString: Untagged
@@ -50909,33 +50016,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6403392, y: 0.59972155, z: 1.2744108}
   m_Center: {x: 0.32004324, y: 0.29986495, z: 0.63720685}
---- !u!54 &2545168589267481008
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041191351791429219}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2547564781835840656
 GameObject:
   m_ObjectHideFlags: 0
@@ -50948,7 +50028,6 @@ GameObject:
   - component: {fileID: 8931721250436357199}
   - component: {fileID: 7356719536593694467}
   - component: {fileID: 6559596834130337669}
-  - component: {fileID: 2340912476580905192}
   m_Layer: 12
   m_Name: Floor Tile (5)
   m_TagString: Untagged
@@ -51378,7 +50457,6 @@ GameObject:
   - component: {fileID: 8676911653316186778}
   - component: {fileID: 5071205732636153570}
   - component: {fileID: 401238420510743736}
-  - component: {fileID: 3008958302954831521}
   m_Layer: 12
   m_Name: Floor Tile (106)
   m_TagString: Untagged
@@ -51760,33 +50838,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5501384912041541007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2647039754811607998
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8868951616460929417}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2649151440428239083
 GameObject:
   m_ObjectHideFlags: 0
@@ -51799,7 +50850,6 @@ GameObject:
   - component: {fileID: 2949771329185475741}
   - component: {fileID: 1332924724370422385}
   - component: {fileID: 4797350291568655820}
-  - component: {fileID: 1592641324561250171}
   m_Layer: 12
   m_Name: Floor Tile (3)
   m_TagString: Untagged
@@ -52179,7 +51229,6 @@ GameObject:
   - component: {fileID: 8915306584134673936}
   - component: {fileID: 4883190505735628612}
   - component: {fileID: 5233911507096574073}
-  - component: {fileID: 3554509209285234221}
   m_Layer: 12
   m_Name: Floor Tile (100)
   m_TagString: Untagged
@@ -52832,33 +51881,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2567468224404492695}
   m_Mesh: {fileID: 4300000, guid: e53378bffa67fba40888797a9016d1c4, type: 3}
---- !u!54 &2756823063654040454
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6444132393855773440}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &2757006490826438103
 Transform:
   m_ObjectHideFlags: 0
@@ -52914,33 +51936,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &2765271415648587955
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8367991249508806527}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &2770058434802765344
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53012,33 +52007,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195713672813517543}
   m_Mesh: {fileID: 4300000, guid: ce1e1c6afeb8a4c4da4ab18e701d36cc, type: 3}
---- !u!54 &2781177160392797718
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6860795580494841452}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &2783462070873461352
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -53257,7 +52225,6 @@ GameObject:
   - component: {fileID: 1251631690048015654}
   - component: {fileID: 5507479011935393678}
   - component: {fileID: 6380512780203783755}
-  - component: {fileID: 309075228072986903}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -53343,33 +52310,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.300006, y: 9.000003, z: 6.0000024}
   m_Center: {x: 0.0000022947788, y: 4.4999995, z: 3.0000012}
---- !u!54 &2802606857299251775
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645249179341326833}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &2808718945891393279
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53632,33 +52572,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &2837240762293447878
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7241211257541244471}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &2840124046276849711
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -53870,33 +52783,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &2854127204708684983
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4683470153663277604}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2854347871133343693
 GameObject:
   m_ObjectHideFlags: 0
@@ -53909,7 +52795,6 @@ GameObject:
   - component: {fileID: 4224606139795341053}
   - component: {fileID: 8384017380154989547}
   - component: {fileID: 8517010269116460408}
-  - component: {fileID: 6123045206232217862}
   m_Layer: 12
   m_Name: Floor Tile (99)
   m_TagString: Untagged
@@ -53940,33 +52825,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5261084218072524065}
   m_Mesh: {fileID: 4300002, guid: 241687f1a2ac2ac4c8c35789ba1a8468, type: 3}
---- !u!54 &2857277979097686657
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7826154748532030346}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &2859540328867516153
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54145,7 +53003,6 @@ GameObject:
   - component: {fileID: 6212880346556154052}
   - component: {fileID: 9072457170626416688}
   - component: {fileID: 7512627469801150662}
-  - component: {fileID: 744234325313986398}
   m_Layer: 12
   m_Name: Floor Tile (60)
   m_TagString: Untagged
@@ -54169,33 +53026,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4013520280031501775}
   m_Mesh: {fileID: 4300000, guid: 5cbddee6fa556ed4dbf67a4f02f826fb, type: 3}
---- !u!54 &2873868372291661862
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6856410941070863801}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &2880254936079379985
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -54561,33 +53391,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &2915811632112573143
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3371285893696542582}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &2917602689029100734
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -54837,7 +53640,6 @@ GameObject:
   - component: {fileID: 7407775403714925617}
   - component: {fileID: 2689811487360612001}
   - component: {fileID: 667217157075484368}
-  - component: {fileID: 4194679259419879159}
   m_Layer: 12
   m_Name: Floor Tile (8)
   m_TagString: Untagged
@@ -55265,33 +54067,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439981465204454683}
   m_Mesh: {fileID: 4300000, guid: c0b2264371dda4d46b1b0a11ea4d5f03, type: 3}
---- !u!54 &2998648666859457911
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8674589379621695677}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &3000348519300001542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55388,33 +54163,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &3008958302954831521
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2595361115998801356}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &3010025191065386706
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55592,33 +54340,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5501384912041541007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3054960410273899220
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6227541760944964929}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &3059450826085329873
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -55978,7 +54699,6 @@ GameObject:
   - component: {fileID: 2791756274778698198}
   - component: {fileID: 3301107323196718987}
   - component: {fileID: 667390348804910702}
-  - component: {fileID: 2322282329195396187}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -56773,7 +55493,6 @@ GameObject:
   - component: {fileID: 6192464292176253607}
   - component: {fileID: 7337448621966715354}
   - component: {fileID: 3819328766305288579}
-  - component: {fileID: 5476547122629668172}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -56801,7 +55520,6 @@ GameObject:
   - component: {fileID: 8615679489321359103}
   - component: {fileID: 4015617105627821500}
   - component: {fileID: 5040036266359508489}
-  - component: {fileID: 8924018422400962383}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -56817,33 +55535,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4628267635163216309}
   m_Mesh: {fileID: 4300000, guid: ce1e1c6afeb8a4c4da4ab18e701d36cc, type: 3}
---- !u!54 &3189964450659124031
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6724883999625593039}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &3191291278877409964
 GameObject:
   m_ObjectHideFlags: 0
@@ -56940,7 +55631,6 @@ GameObject:
   - component: {fileID: 8799286640663788194}
   - component: {fileID: 1270568937829631433}
   - component: {fileID: 8717657578136304165}
-  - component: {fileID: 50853108637607997}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -56981,7 +55671,6 @@ GameObject:
   - component: {fileID: 181109351103060627}
   - component: {fileID: 2404408172485800730}
   - component: {fileID: 3536895509171018475}
-  - component: {fileID: 6826964481591795417}
   m_Layer: 12
   m_Name: Floor Tile (51)
   m_TagString: Untagged
@@ -57394,33 +56083,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &3244770990190694739
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5876358126133619138}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &3244861655228886587
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57808,7 +56470,6 @@ GameObject:
   - component: {fileID: 8788059674465756}
   - component: {fileID: 7942581585668150634}
   - component: {fileID: 6403285381960494320}
-  - component: {fileID: 1884523582294009267}
   m_Layer: 12
   m_Name: Floor Tile (123)
   m_TagString: Untagged
@@ -58353,7 +57014,6 @@ GameObject:
   - component: {fileID: 1429468772218776720}
   - component: {fileID: 2911061373884848133}
   - component: {fileID: 3000348519300001542}
-  - component: {fileID: 8838229695076586935}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -58601,7 +57261,6 @@ GameObject:
   - component: {fileID: 8364364536790545646}
   - component: {fileID: 8783852724142481976}
   - component: {fileID: 5360386830305658110}
-  - component: {fileID: 6758114956563463222}
   m_Layer: 12
   m_Name: Floor Tile (116)
   m_TagString: Untagged
@@ -58739,7 +57398,6 @@ GameObject:
   - component: {fileID: 3613060613837287132}
   - component: {fileID: 1325073487066686057}
   - component: {fileID: 2514051779492520029}
-  - component: {fileID: 2915811632112573143}
   m_Layer: 12
   m_Name: Floor Tile (6)
   m_TagString: Untagged
@@ -59529,7 +58187,6 @@ GameObject:
   - component: {fileID: 7190702954957275752}
   - component: {fileID: 6597812411320362577}
   - component: {fileID: 1177710908190351254}
-  - component: {fileID: 795522133853273417}
   m_Layer: 12
   m_Name: Floor Tile (29)
   m_TagString: Untagged
@@ -59996,33 +58653,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.561902, y: 0.19838908, z: 1.5239612}
   m_Center: {x: 0.7777127, y: 0.09919457, z: 0.75671333}
---- !u!54 &3551640315726192311
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4766216939670539547}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &3552395262779494244
 Transform:
   m_ObjectHideFlags: 0
@@ -60038,33 +58668,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5709406482388043229}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3554509209285234221
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2687461191295323796}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &3556534024080918285
 GameObject:
   m_ObjectHideFlags: 0
@@ -60635,7 +59238,6 @@ GameObject:
   - component: {fileID: 8499273744638554342}
   - component: {fileID: 8836506987870546399}
   - component: {fileID: 5878653901995839202}
-  - component: {fileID: 4588229211259924049}
   m_Layer: 12
   m_Name: Floor Tile (75)
   m_TagString: Untagged
@@ -61309,33 +59911,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &3695207167493489950
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5525561364180928153}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &3700156726859524671
 Transform:
   m_ObjectHideFlags: 0
@@ -61560,33 +60135,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5501384912041541007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3744059790554054707
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543393568388655508}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &3746533635745471147
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -61885,7 +60433,6 @@ GameObject:
   - component: {fileID: 7908895029932281555}
   - component: {fileID: 2430658489877796761}
   - component: {fileID: 6962457670156125202}
-  - component: {fileID: 7162228597250204362}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -62271,7 +60818,6 @@ GameObject:
   - component: {fileID: 5409296492424365975}
   - component: {fileID: 3985403700486025687}
   - component: {fileID: 3578348882451723792}
-  - component: {fileID: 7227996169760706250}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -62318,7 +60864,6 @@ GameObject:
   - component: {fileID: 8760225097787935593}
   - component: {fileID: 6995450851597524407}
   - component: {fileID: 4796873570214887772}
-  - component: {fileID: 7878160746052377034}
   m_Layer: 12
   m_Name: Floor Tile (45)
   m_TagString: Untagged
@@ -62457,8 +61002,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5501384912041541007}
   - component: {fileID: 8336915506584567468}
-  m_Layer: 8
-  m_Name: Floor Tiles
+  m_Layer: 0
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63748,7 +62293,6 @@ GameObject:
   - component: {fileID: 2873571532393216913}
   - component: {fileID: 1549121701548029048}
   - component: {fileID: 9134745904444015854}
-  - component: {fileID: 8764349589581867140}
   m_Layer: 12
   m_Name: Floor Tile (118)
   m_TagString: Untagged
@@ -64063,33 +62607,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7433935103127889717}
   m_Mesh: {fileID: 4300000, guid: ce65141939545d440ac8591812208a12, type: 3}
---- !u!54 &4050222944237575877
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6990189271597463122}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &4053022422273781676
 GameObject:
   m_ObjectHideFlags: 0
@@ -64109,33 +62626,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &4057010362727850494
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6249485600486697565}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &4061757487945500551
 GameObject:
   m_ObjectHideFlags: 0
@@ -64342,33 +62832,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &4082001159009411009
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7780395954108343657}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &4082640666098325851
 Transform:
   m_ObjectHideFlags: 0
@@ -64600,33 +63063,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.000002, y: 0.25, z: 6.000001}
   m_Center: {x: 3, y: -0.125, z: 2.9999995}
---- !u!54 &4105899243619563389
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7781270234789388380}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &4111449803710525361
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65303,7 +63739,6 @@ GameObject:
   - component: {fileID: 5182729047662097048}
   - component: {fileID: 992796118445622111}
   - component: {fileID: 2172055566727814415}
-  - component: {fileID: 2133334700836139663}
   m_Layer: 12
   m_Name: Floor Tile (71)
   m_TagString: Untagged
@@ -65445,33 +63880,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &4194679259419879159
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2944553527350508608}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &4205497333004666909
 Transform:
   m_ObjectHideFlags: 0
@@ -65791,7 +64199,6 @@ GameObject:
   - component: {fileID: 2665934106372077918}
   - component: {fileID: 291036274686526250}
   - component: {fileID: 4958230679794831735}
-  - component: {fileID: 431690523165630199}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -65952,7 +64359,6 @@ GameObject:
   - component: {fileID: 8633983785585556005}
   - component: {fileID: 2944874022010440756}
   - component: {fileID: 6030499302544214829}
-  - component: {fileID: 7867562066361724075}
   m_Layer: 12
   m_Name: Floor Tile (107)
   m_TagString: Untagged
@@ -66561,33 +64967,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6723377621003214782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4341549468059789815
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8305482168776658723}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &4343723115793085482
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66943,33 +65322,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5001411075118080913}
   m_Mesh: {fileID: 4300000, guid: 241687f1a2ac2ac4c8c35789ba1a8468, type: 3}
---- !u!54 &4376285144923540437
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5104890534749433081}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &4379270830030160428
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -66978,33 +65330,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7406218345848392373}
   m_Mesh: {fileID: 4300000, guid: ce1e1c6afeb8a4c4da4ab18e701d36cc, type: 3}
---- !u!54 &4388722196048574267
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8916407923509754113}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &4390337255776436744
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -67040,7 +65365,6 @@ GameObject:
   - component: {fileID: 2118050119345882834}
   - component: {fileID: 1041877665917525958}
   - component: {fileID: 9153963219673544548}
-  - component: {fileID: 6883059266788333175}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -67071,33 +65395,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142168263904522051}
   m_Mesh: {fileID: 4300000, guid: 6d51a84963428cf4b9aaabea531eb90f, type: 3}
---- !u!54 &4398502141084913216
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980943782277698094}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &4399129159072315291
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -67187,7 +65484,6 @@ GameObject:
   - component: {fileID: 5152531287152960619}
   - component: {fileID: 7987801430506057665}
   - component: {fileID: 3965606120004198676}
-  - component: {fileID: 7822249651633070078}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -67378,7 +65674,6 @@ GameObject:
   - component: {fileID: 6362772109871058060}
   - component: {fileID: 3507219687299410573}
   - component: {fileID: 5203403599953343608}
-  - component: {fileID: 8419344596227872660}
   m_Layer: 12
   m_Name: Floor Tile (32)
   m_TagString: Untagged
@@ -67476,7 +65771,6 @@ GameObject:
   - component: {fileID: 2032974963896354236}
   - component: {fileID: 5925483220542354457}
   - component: {fileID: 1475501149818439889}
-  - component: {fileID: 6039191190167763137}
   m_Layer: 12
   m_Name: Floor Tile (53)
   m_TagString: Untagged
@@ -67646,7 +65940,6 @@ GameObject:
   - component: {fileID: 7699854711750174447}
   - component: {fileID: 1096744442979203584}
   - component: {fileID: 7840049990893268853}
-  - component: {fileID: 6700768149644766186}
   m_Layer: 12
   m_Name: Floor Tile (44)
   m_TagString: Untagged
@@ -67674,7 +65967,6 @@ GameObject:
   - component: {fileID: 5156940405332777655}
   - component: {fileID: 1441164328775895103}
   - component: {fileID: 6909734362018386882}
-  - component: {fileID: 1599296054465443690}
   m_Layer: 12
   m_Name: Floor Tile (104)
   m_TagString: Untagged
@@ -68387,7 +66679,6 @@ GameObject:
   - component: {fileID: 220331619238468002}
   - component: {fileID: 1468276658362105003}
   - component: {fileID: 7362112002708928064}
-  - component: {fileID: 8061028596341837775}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -68638,7 +66929,6 @@ GameObject:
   - component: {fileID: 3213253574822708961}
   - component: {fileID: 7399712547191855518}
   - component: {fileID: 5193899046815967449}
-  - component: {fileID: 260184984864926024}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -68696,33 +66986,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904761788479315343}
   m_Mesh: {fileID: 4300006, guid: 0c7a4f4b9bbf44841812ab47fae3b382, type: 3}
---- !u!54 &4588229211259924049
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3616487636761049786}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &4588486234278593161
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -69186,7 +67449,6 @@ GameObject:
   - component: {fileID: 3189548204866035056}
   - component: {fileID: 7920291998609955}
   - component: {fileID: 8898933628245175298}
-  - component: {fileID: 8728760870472858709}
   m_Layer: 12
   m_Name: Floor Tile (97)
   m_TagString: Untagged
@@ -69590,33 +67852,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4663231116988719649
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103331361495845147}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &4669396411645743239
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69734,33 +67969,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4678056283749111918
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627653301005760564}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &4678361557169924625
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -69860,7 +68068,6 @@ GameObject:
   - component: {fileID: 8417297173836897889}
   - component: {fileID: 2202684061287131288}
   - component: {fileID: 1207005727547324770}
-  - component: {fileID: 2854127204708684983}
   m_Layer: 12
   m_Name: Floor Tile (105)
   m_TagString: Untagged
@@ -70059,7 +68266,6 @@ GameObject:
   - component: {fileID: 659203731978823495}
   - component: {fileID: 3317962329091747271}
   - component: {fileID: 7481064882042749367}
-  - component: {fileID: 4857510759442878417}
   m_Layer: 12
   m_Name: Floor Tile (110)
   m_TagString: Untagged
@@ -70100,7 +68306,6 @@ GameObject:
   - component: {fileID: 8071311965091061532}
   - component: {fileID: 128577945872350323}
   - component: {fileID: 3802937244035214350}
-  - component: {fileID: 7876803895877539689}
   m_Layer: 12
   m_Name: Floor Tile (18)
   m_TagString: Untagged
@@ -70204,7 +68409,6 @@ GameObject:
   - component: {fileID: 1753134248972552787}
   - component: {fileID: 1609074454737534141}
   - component: {fileID: 4422935284443988782}
-  - component: {fileID: 8682477640938139005}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -70297,33 +68501,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6723377621003214782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4749331455354576397
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388683430008083029}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &4749799769552107233
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70378,7 +68555,6 @@ GameObject:
   - component: {fileID: 6388627881540908210}
   - component: {fileID: 7296065507980593938}
   - component: {fileID: 4368161642160986850}
-  - component: {fileID: 5417295784399804969}
   m_Layer: 12
   m_Name: Floor Tile (52)
   m_TagString: Untagged
@@ -70550,7 +68726,6 @@ GameObject:
   - component: {fileID: 3331197408690287320}
   - component: {fileID: 1815686768216469342}
   - component: {fileID: 1838948860770187581}
-  - component: {fileID: 3551640315726192311}
   m_Layer: 12
   m_Name: Floor Tile (33)
   m_TagString: Untagged
@@ -71258,33 +69433,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5501384912041541007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4857510759442878417
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4717511609635524405}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &4859190842639791193
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71968,7 +70116,6 @@ GameObject:
   - component: {fileID: 8594147001354227074}
   - component: {fileID: 1440021033583953281}
   - component: {fileID: 3925617111230929831}
-  - component: {fileID: 6756164768103433586}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -72086,7 +70233,6 @@ GameObject:
   - component: {fileID: 2918503764496337815}
   - component: {fileID: 2517260294593428521}
   - component: {fileID: 6603687983472509578}
-  - component: {fileID: 6465601593886985189}
   m_Layer: 12
   m_Name: Floor Tile (16)
   m_TagString: Untagged
@@ -72844,33 +70990,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6723377621003214782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &5026921949548183143
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9145782138907500434}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &5030418117998682865
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72983,33 +71102,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.000002, y: 0.25, z: 6.000001}
   m_Center: {x: 3, y: -0.125, z: 2.9999995}
---- !u!54 &5068384942567180919
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271584810019027440}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &5071205732636153570
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73298,7 +71390,6 @@ GameObject:
   - component: {fileID: 2714303759835510252}
   - component: {fileID: 8078433306822958188}
   - component: {fileID: 942536305098535067}
-  - component: {fileID: 4376285144923540437}
   m_Layer: 12
   m_Name: Floor Tile (27)
   m_TagString: Untagged
@@ -73562,33 +71653,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.300006, y: 9.000003, z: 6.0000024}
   m_Center: {x: 0.0000022947788, y: 4.4999995, z: 3.0000012}
---- !u!54 &5147375381307939375
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992730670991469363}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &5147956478047513177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73763,7 +71827,6 @@ GameObject:
   - component: {fileID: 7716226695096306304}
   - component: {fileID: 69556113316896655}
   - component: {fileID: 7276132614347060716}
-  - component: {fileID: 717677326462879029}
   m_Layer: 12
   m_Name: Floor Tile (61)
   m_TagString: Untagged
@@ -74003,33 +72066,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.000002, y: 0.25, z: 6.000001}
   m_Center: {x: 3, y: -0.125, z: 2.9999995}
---- !u!54 &5193943548969227716
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7424043822500159881}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &5194285862558277989
 GameObject:
   m_ObjectHideFlags: 0
@@ -74142,7 +72178,6 @@ GameObject:
   - component: {fileID: 2734169564242959191}
   - component: {fileID: 8222514412697522787}
   - component: {fileID: 8744442210957781249}
-  - component: {fileID: 925995431483615084}
   m_Layer: 12
   m_Name: Floor Tile (69)
   m_TagString: Untagged
@@ -74280,7 +72315,6 @@ GameObject:
   - component: {fileID: 1594447072023511209}
   - component: {fileID: 7937602707550926784}
   - component: {fileID: 5323500659323577539}
-  - component: {fileID: 1729718943888869385}
   m_Layer: 12
   m_Name: Floor Tile (120)
   m_TagString: Untagged
@@ -74462,33 +72496,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5956041332268541880}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 90.00001}
---- !u!54 &5239521724892778683
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571774130736808223}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &5240525147826375345
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74885,7 +72892,6 @@ GameObject:
   - component: {fileID: 5180131902737563881}
   - component: {fileID: 6077289304824531274}
   - component: {fileID: 7076786336737700537}
-  - component: {fileID: 184465391233203698}
   m_Layer: 12
   m_Name: Floor Tile (36)
   m_TagString: Untagged
@@ -75215,7 +73221,6 @@ GameObject:
   - component: {fileID: 559913141749850270}
   - component: {fileID: 1035173699217074140}
   - component: {fileID: 4761558789146095583}
-  - component: {fileID: 1221778245000605233}
   m_Layer: 12
   m_Name: Floor Tile (109)
   m_TagString: Untagged
@@ -75273,7 +73278,6 @@ GameObject:
   - component: {fileID: 5591914811815094797}
   - component: {fileID: 1752535793549546914}
   - component: {fileID: 434747318194935380}
-  - component: {fileID: 9125995624068860375}
   m_Layer: 12
   m_Name: Floor Tile (26)
   m_TagString: Untagged
@@ -75605,33 +73609,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &5372331884121333269
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5499512720073678385}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &5381268960198071051
 GameObject:
   m_ObjectHideFlags: 0
@@ -75644,7 +73621,6 @@ GameObject:
   - component: {fileID: 5917000636674222406}
   - component: {fileID: 9156406416751521275}
   - component: {fileID: 8102544264148750222}
-  - component: {fileID: 905960900548195141}
   m_Layer: 12
   m_Name: Floor Tile (67)
   m_TagString: Untagged
@@ -75896,33 +73872,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2759462216562166815}
   m_Mesh: {fileID: 4300002, guid: 3fc400239d07ab342a3ffee1b8cb99c3, type: 3}
---- !u!54 &5417295784399804969
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4750714219450484586}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &5420868133985017851
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -76621,33 +74570,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &5476547122629668172
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3184380176928629630}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &5483841151823375689
 Transform:
   m_ObjectHideFlags: 0
@@ -76770,7 +74692,6 @@ GameObject:
   - component: {fileID: 5991220255483004471}
   - component: {fileID: 7174717517047609671}
   - component: {fileID: 8088447358553614526}
-  - component: {fileID: 5372331884121333269}
   m_Layer: 12
   m_Name: Floor Tile (22)
   m_TagString: Untagged
@@ -77296,7 +75217,6 @@ GameObject:
   - component: {fileID: 505218386677422173}
   - component: {fileID: 8059790670991509065}
   - component: {fileID: 4255789025559742394}
-  - component: {fileID: 3695207167493489950}
   m_Layer: 12
   m_Name: Floor Tile (48)
   m_TagString: Untagged
@@ -78230,7 +76150,6 @@ GameObject:
   - component: {fileID: 4885970176152297749}
   - component: {fileID: 2302242169376508021}
   - component: {fileID: 6163368046486076096}
-  - component: {fileID: 8136440071311567540}
   m_Layer: 12
   m_Name: Floor Tile (62)
   m_TagString: Untagged
@@ -79342,33 +77261,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8691826181557875525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &5817644965257559572
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852379840958753624}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &5820266846949477065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79485,7 +77377,6 @@ GameObject:
   - component: {fileID: 8089349912141407641}
   - component: {fileID: 7122415722945222587}
   - component: {fileID: 4210516629720233836}
-  - component: {fileID: 8401936645548693541}
   m_Layer: 12
   m_Name: Floor Tile (35)
   m_TagString: Untagged
@@ -79700,7 +77591,6 @@ GameObject:
   - component: {fileID: 5584076477011374413}
   - component: {fileID: 4301238227313604604}
   - component: {fileID: 2984684978013706818}
-  - component: {fileID: 3244770990190694739}
   m_Layer: 12
   m_Name: Floor Tile (58)
   m_TagString: Untagged
@@ -80230,33 +78120,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &5945840734057901859
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047647495589870920}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &5948460752359411064
 GameObject:
   m_ObjectHideFlags: 0
@@ -81027,33 +78890,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &6039191190167763137
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4452403275198014433}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &6041965256307029220
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81816,33 +79652,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7950834020388235823}
   m_Mesh: {fileID: 4300000, guid: ce1e1c6afeb8a4c4da4ab18e701d36cc, type: 3}
---- !u!54 &6123045206232217862
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2854347871133343693}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6127829232980726768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81899,33 +79708,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &6135688441353484161
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2009359744451298184}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6140270868681040822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81947,33 +79729,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9408312, y: 5.799975, z: 5.9999995}
   m_Center: {x: -5.6795764, y: 1.9000142, z: 2.999995}
---- !u!54 &6145171980079530661
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7860235464480080801}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6145756681063789782
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82751,7 +80506,6 @@ GameObject:
   - component: {fileID: 109789949926743287}
   - component: {fileID: 2786864275698055815}
   - component: {fileID: 2605270933158577078}
-  - component: {fileID: 3054960410273899220}
   m_Layer: 12
   m_Name: Floor Tile (9)
   m_TagString: Untagged
@@ -82847,33 +80601,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &6241808526709751539
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6921782554634436657}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &6246202555615968792
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -82978,7 +80705,6 @@ GameObject:
   - component: {fileID: 6510527128208601025}
   - component: {fileID: 4360943851149061221}
   - component: {fileID: 7348000385877670304}
-  - component: {fileID: 4057010362727850494}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -84103,33 +81829,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5501384912041541007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6426395825783944407
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786932958828902741}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6427864695332957183
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84204,7 +81903,6 @@ GameObject:
   - component: {fileID: 45378381852402956}
   - component: {fileID: 815154089008117640}
   - component: {fileID: 3710653031983839226}
-  - component: {fileID: 2756823063654040454}
   m_Layer: 12
   m_Name: Floor Tile (39)
   m_TagString: Untagged
@@ -84437,33 +82135,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6465601593886985189
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934961422177868573}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &6471047723085016436
 Transform:
   m_ObjectHideFlags: 0
@@ -85758,33 +83429,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &6597153585218556890
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9026750009519110722}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &6597812411320362577
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -85842,60 +83486,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5501384912041541007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6601637439539234542
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766487129801870972}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!54 &6601789007731945614
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7232226261148616120}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6603687983472509578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -86263,33 +83853,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4402068336468759388}
   m_Mesh: {fileID: 4300000, guid: 5cbddee6fa556ed4dbf67a4f02f826fb, type: 3}
---- !u!54 &6653003370779920018
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 61927434815575780}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &6655803486314338189
 Transform:
   m_ObjectHideFlags: 0
@@ -86317,7 +83880,6 @@ GameObject:
   - component: {fileID: 1973565477925245930}
   - component: {fileID: 5229046465154987187}
   - component: {fileID: 5427497570294334404}
-  - component: {fileID: 1844372911386332917}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -86407,33 +83969,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &6675231536720510108
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3614062037660740}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &6676822417670396026
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -86617,33 +84152,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5501384912041541007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6700768149644766186
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4479237630724368454}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6702112569277585400
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87078,7 +84586,6 @@ GameObject:
   - component: {fileID: 1735105726183710132}
   - component: {fileID: 2486890316830281075}
   - component: {fileID: 7957475216504307911}
-  - component: {fileID: 3189964450659124031}
   m_Layer: 12
   m_Name: Floor Tile (14)
   m_TagString: Untagged
@@ -87210,60 +84717,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &6756164768103433586
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4922229307259271525}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!54 &6758114956563463222
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3344104342991701958}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &6761583583691135938
 Transform:
   m_ObjectHideFlags: 0
@@ -87336,33 +84789,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6622652963130179616}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6775494108663699944
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8084353234548936863}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &6781105473800543016
 Transform:
   m_ObjectHideFlags: 0
@@ -87419,7 +84845,6 @@ GameObject:
   - component: {fileID: 8058413081739970377}
   - component: {fileID: 6530662313197765197}
   - component: {fileID: 5845386535528814276}
-  - component: {fileID: 2062261148309982877}
   m_Layer: 12
   m_Name: Floor Tile (2)
   m_TagString: Untagged
@@ -87773,33 +85198,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!54 &6826964481591795417
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3201677771171588762}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &6828596869814309504
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -88027,7 +85425,6 @@ GameObject:
   - component: {fileID: 8771732564334667997}
   - component: {fileID: 7333920497153000416}
   - component: {fileID: 5582297775635058324}
-  - component: {fileID: 2873868372291661862}
   m_Layer: 12
   m_Name: Floor Tile (57)
   m_TagString: Untagged
@@ -88089,7 +85486,6 @@ GameObject:
   - component: {fileID: 4390337255776436744}
   - component: {fileID: 8416193715836647739}
   - component: {fileID: 1035898408269968272}
-  - component: {fileID: 2781177160392797718}
   m_Layer: 12
   m_Name: Floor Tile (54)
   m_TagString: Untagged
@@ -88283,33 +85679,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &6883059266788333175
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4393399752406327801}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6886400590270473664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -88629,7 +85998,6 @@ GameObject:
   - component: {fileID: 3847088242094148084}
   - component: {fileID: 8424076670907589126}
   - component: {fileID: 846597343082841579}
-  - component: {fileID: 6241808526709751539}
   m_Layer: 12
   m_Name: Floor Tile (64)
   m_TagString: Untagged
@@ -89144,33 +86512,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &6977637407666477731
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269918101587882027}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &6982944519100770374
 Transform:
   m_ObjectHideFlags: 0
@@ -89261,7 +86602,6 @@ GameObject:
   - component: {fileID: 8504969962044962552}
   - component: {fileID: 8611504205188768228}
   - component: {fileID: 7760664166499108210}
-  - component: {fileID: 4050222944237575877}
   m_Layer: 12
   m_Name: Floor Tile (38)
   m_TagString: Untagged
@@ -89541,7 +86881,6 @@ GameObject:
   - component: {fileID: 5523809324850764075}
   - component: {fileID: 8339030744019279709}
   - component: {fileID: 6532783148005229321}
-  - component: {fileID: 1977035281039216781}
   m_Layer: 12
   m_Name: Floor Tile (72)
   m_TagString: Untagged
@@ -90049,7 +87388,6 @@ GameObject:
   - component: {fileID: 4822705660180394135}
   - component: {fileID: 4528477128047976508}
   - component: {fileID: 6783960461540156846}
-  - component: {fileID: 248835411710625832}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -90505,33 +87843,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3386315524696698162}
   m_Mesh: {fileID: 4300000, guid: e53378bffa67fba40888797a9016d1c4, type: 3}
---- !u!54 &7162228597250204362
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3800064054761016295}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &7166875891557350539
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -91016,33 +88327,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &7216322763297972003
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353480113638429840}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &7227547939195749845
 Transform:
   m_ObjectHideFlags: 0
@@ -91058,33 +88342,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5501384912041541007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &7227996169760706250
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3842748063847731108}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &7229905551241147837
 GameObject:
   m_ObjectHideFlags: 0
@@ -91138,7 +88395,6 @@ GameObject:
   - component: {fileID: 3059878124021250364}
   - component: {fileID: 2859540328867516153}
   - component: {fileID: 3912214836203284905}
-  - component: {fileID: 6601789007731945614}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -91242,7 +88498,6 @@ GameObject:
   - component: {fileID: 9040840365210604607}
   - component: {fileID: 8213555902501395312}
   - component: {fileID: 2048334545992386172}
-  - component: {fileID: 2837240762293447878}
   m_Layer: 12
   m_Name: Floor Tile (15)
   m_TagString: Untagged
@@ -91287,33 +88542,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &7244746555458863704
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2239383500934201240}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &7245682526156077747
 GameObject:
   m_ObjectHideFlags: 0
@@ -91894,33 +89122,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &7333236460278476145
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7919307846499342991}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &7333920497153000416
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -92213,7 +89414,6 @@ GameObject:
   - component: {fileID: 384666257515061186}
   - component: {fileID: 8568616425238560848}
   - component: {fileID: 5424136673267026438}
-  - component: {fileID: 8060490195679571725}
   m_Layer: 12
   m_Name: Floor Tile (68)
   m_TagString: Untagged
@@ -92406,33 +89606,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 12078761235687794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &7363276871392939629
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464249487138782295}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &7366819560382474620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92765,7 +89938,6 @@ GameObject:
   - component: {fileID: 4379270830030160428}
   - component: {fileID: 5301805941254771088}
   - component: {fileID: 4302348568276486497}
-  - component: {fileID: 8261318317610605962}
   m_Layer: 12
   m_Name: Floor Tile (40)
   m_TagString: Untagged
@@ -92838,33 +90010,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &7414951987444671682
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158218752153314894}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &7424043822500159881
 GameObject:
   m_ObjectHideFlags: 0
@@ -92877,7 +90022,6 @@ GameObject:
   - component: {fileID: 9075902352029000120}
   - component: {fileID: 2357875364739787716}
   - component: {fileID: 8399378914254215659}
-  - component: {fileID: 5193943548969227716}
   m_Layer: 12
   m_Name: Floor Tile (96)
   m_TagString: Untagged
@@ -93343,7 +90487,6 @@ GameObject:
   - component: {fileID: 7004239793702615029}
   - component: {fileID: 6871342978688206704}
   - component: {fileID: 3934776427069219945}
-  - component: {fileID: 7773806357260738836}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -93523,7 +90666,6 @@ GameObject:
   - component: {fileID: 96206021339287510}
   - component: {fileID: 2509986195118581433}
   - component: {fileID: 4274997527464960858}
-  - component: {fileID: 8982063143160763193}
   m_Layer: 12
   m_Name: Floor Tile (28)
   m_TagString: Untagged
@@ -94115,33 +91257,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3541213047065449055}
   m_Mesh: {fileID: 4300000, guid: e53378bffa67fba40888797a9016d1c4, type: 3}
---- !u!54 &7581626902588843389
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490512073277589810}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &7582662083976190731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -94370,33 +91485,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.300006, y: 9.000003, z: 6.0000024}
   m_Center: {x: 0.0000022947788, y: 4.4999995, z: 3.0000012}
---- !u!54 &7625870126242344175
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101761610356754508}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &7626082077236662532
 GameObject:
   m_ObjectHideFlags: 0
@@ -94807,7 +91895,6 @@ GameObject:
   - component: {fileID: 1519281358667844078}
   - component: {fileID: 7995621144635211535}
   - component: {fileID: 3569470030276300953}
-  - component: {fileID: 714836192416027513}
   m_Layer: 12
   m_Name: Floor Tile (115)
   m_TagString: Untagged
@@ -95340,33 +92427,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4030855322991164002}
   m_Mesh: {fileID: 4300000, guid: ce1e1c6afeb8a4c4da4ab18e701d36cc, type: 3}
---- !u!54 &7773806357260738836
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7484540928876438920}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &7773884123295819508
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95431,7 +92491,6 @@ GameObject:
   - component: {fileID: 3675256558193416762}
   - component: {fileID: 1722640260941573220}
   - component: {fileID: 9036515060091573808}
-  - component: {fileID: 4082001159009411009}
   m_Layer: 12
   m_Name: Floor Tile (42)
   m_TagString: Untagged
@@ -95469,7 +92528,6 @@ GameObject:
   - component: {fileID: 7022080262622040870}
   - component: {fileID: 2081539678040471531}
   - component: {fileID: 4101754193161983522}
-  - component: {fileID: 4105899243619563389}
   m_Layer: 12
   m_Name: Floor Tile (119)
   m_TagString: Untagged
@@ -95775,60 +92833,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &7822249651633070078
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4412486096488019965}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!54 &7825442905726409114
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735983729085428010}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &7826154748532030346
 GameObject:
   m_ObjectHideFlags: 0
@@ -95841,7 +92845,6 @@ GameObject:
   - component: {fileID: 5484334381428712866}
   - component: {fileID: 5798932591009909271}
   - component: {fileID: 7279511173939158177}
-  - component: {fileID: 2857277979097686657}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -96035,7 +93038,6 @@ GameObject:
   - component: {fileID: 3746533635745471147}
   - component: {fileID: 4101475914069748173}
   - component: {fileID: 6107262122320405314}
-  - component: {fileID: 6145171980079530661}
   m_Layer: 12
   m_Name: Floor Tile (59)
   m_TagString: Untagged
@@ -96043,33 +93045,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &7867562066361724075
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4271330000106197282}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &7868599078080463502
 Transform:
   m_ObjectHideFlags: 0
@@ -96101,33 +93076,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3709216139854078232}
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
---- !u!54 &7876803895877539689
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4721274505718062779}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &7876989916121538896
 GameObject:
   m_ObjectHideFlags: 0
@@ -96163,33 +93111,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978628154890970422}
   m_Mesh: {fileID: 4300000, guid: 150f1d6c324cb0741ab28ddb5fe215de, type: 3}
---- !u!54 &7878160746052377034
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3853332377531011187}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &7879438538205568097
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -96686,7 +93607,6 @@ GameObject:
   - component: {fileID: 1607794875578286636}
   - component: {fileID: 5925863816982400458}
   - component: {fileID: 463829571541896491}
-  - component: {fileID: 7333236460278476145}
   m_Layer: 12
   m_Name: Floor Tile (117)
   m_TagString: Untagged
@@ -96717,33 +93637,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1405223828883596257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &7926627219483209379
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7934286691911450383}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &7927344164547300243
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -96841,7 +93734,6 @@ GameObject:
   - component: {fileID: 6232899595361920567}
   - component: {fileID: 7493545671748957634}
   - component: {fileID: 4597909544572787872}
-  - component: {fileID: 7926627219483209379}
   m_Layer: 12
   m_Name: Floor Tile (43)
   m_TagString: Untagged
@@ -97219,33 +94111,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.000002, y: 0.25, z: 6.000001}
   m_Center: {x: 3, y: -0.125, z: 2.9999995}
---- !u!54 &7977767205658882799
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984635512391117708}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &7979750346606983199
 GameObject:
   m_ObjectHideFlags: 0
@@ -97953,60 +94818,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &8060490195679571725
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354947046986798842}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!54 &8061028596341837775
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4552651133494703167}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &8067709436138983352
 Transform:
   m_ObjectHideFlags: 0
@@ -98220,7 +95031,6 @@ GameObject:
   - component: {fileID: 2796558146869653571}
   - component: {fileID: 950136234665082815}
   - component: {fileID: 8263351236790502036}
-  - component: {fileID: 6775494108663699944}
   m_Layer: 12
   m_Name: Floor Tile (74)
   m_TagString: Untagged
@@ -98849,33 +95659,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.000002, y: 0.25, z: 6.000001}
   m_Center: {x: 3, y: -0.125, z: 2.9999995}
---- !u!54 &8136440071311567540
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5647207102668946893}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &8137080160045878201
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -99019,7 +95802,6 @@ GameObject:
   - component: {fileID: 4515822909699212960}
   - component: {fileID: 4099462871095827839}
   - component: {fileID: 6957903738074507080}
-  - component: {fileID: 1533266007849147002}
   m_Layer: 12
   m_Name: Floor Tile (4)
   m_TagString: Untagged
@@ -99153,33 +95935,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.561902, y: 0.19838908, z: 1.5239612}
   m_Center: {x: 0.7777127, y: 0.09919457, z: 0.75671333}
---- !u!54 &8155324757305674944
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9181467066533750893}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &8155867353492463384
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -99272,7 +96027,6 @@ GameObject:
   - component: {fileID: 5355880523877446440}
   - component: {fileID: 5594758257235029032}
   - component: {fileID: 6248791910981121014}
-  - component: {fileID: 1169382435059929540}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -99607,33 +96361,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621106556291170041}
   m_Mesh: {fileID: 4300000, guid: 150f1d6c324cb0741ab28ddb5fe215de, type: 3}
---- !u!54 &8189719781480938716
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621106556291170041}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &8191037455033542557
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -100141,33 +96868,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &8261318317610605962
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7406218345848392373}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &8261576910059971611
 Transform:
   m_ObjectHideFlags: 0
@@ -100597,7 +97297,6 @@ GameObject:
   - component: {fileID: 8954913941201521245}
   - component: {fileID: 1772315735358240830}
   - component: {fileID: 9158073390702039461}
-  - component: {fileID: 4341549468059789815}
   m_Layer: 12
   m_Name: Floor Tile (66)
   m_TagString: Untagged
@@ -101384,7 +98083,6 @@ GameObject:
   - component: {fileID: 983965509230335280}
   - component: {fileID: 2705499966575669071}
   - component: {fileID: 6870840382596030032}
-  - component: {fileID: 2765271415648587955}
   m_Layer: 12
   m_Name: Floor Tile (10)
   m_TagString: Untagged
@@ -101392,33 +98090,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &8368601466470104260
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8676832016125140900}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8373219908461286320
 GameObject:
   m_ObjectHideFlags: 0
@@ -101700,33 +98371,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7b44d744f6c37d441952d043e70b584c, type: 3}
---- !u!54 &8401936645548693541
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5830177967281704673}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &8410331839913560546
 Transform:
   m_ObjectHideFlags: 0
@@ -101907,33 +98551,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766487129801870972}
   m_Mesh: {fileID: 4300000, guid: ce1e1c6afeb8a4c4da4ab18e701d36cc, type: 3}
---- !u!54 &8419344596227872660
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4438162213984626882}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &8420376929612864134
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -102166,33 +98783,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &8437394592605105430
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038632992537110772}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &8437697808212254761
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102761,7 +99351,6 @@ GameObject:
   - component: {fileID: 2924707872621720294}
   - component: {fileID: 2834188281473503371}
   - component: {fileID: 9057652194446475893}
-  - component: {fileID: 8719528792579973553}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -103719,7 +100308,6 @@ GameObject:
   - component: {fileID: 7028588174077287753}
   - component: {fileID: 4622231149902410748}
   - component: {fileID: 3143768404319169238}
-  - component: {fileID: 2998648666859457911}
   m_Layer: 12
   m_Name: Floor Tile (30)
   m_TagString: Untagged
@@ -103799,7 +100387,6 @@ GameObject:
   - component: {fileID: 8978347337039389787}
   - component: {fileID: 1827731838063033003}
   - component: {fileID: 7569876640928716692}
-  - component: {fileID: 8368601466470104260}
   m_Layer: 12
   m_Name: Floor Tile (111)
   m_TagString: Untagged
@@ -103851,33 +100438,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8156581479520071195}
   m_LocalEulerAnglesHint: {x: 0, y: 105.00001, z: 0}
---- !u!54 &8682477640938139005
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4727191705776278895}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8683682270409553841
 GameObject:
   m_ObjectHideFlags: 0
@@ -104354,33 +100914,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.000002, y: 0.25, z: 6.000001}
   m_Center: {x: 3, y: -0.125, z: 2.9999995}
---- !u!54 &8719528792579973553
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8515376020562030065}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &8720351295011616108
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -104458,33 +100991,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &8728760870472858709
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4628267635163216309}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &8732849257652355119
 Transform:
   m_ObjectHideFlags: 0
@@ -104744,33 +101250,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &8764349589581867140
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4013520280031501775}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &8767464363989308355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -105335,33 +101814,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7708367334326318700}
   m_Mesh: {fileID: 4300000, guid: e53378bffa67fba40888797a9016d1c4, type: 3}
---- !u!54 &8838229695076586935
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3322945970262403759}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8838325192275020429
 GameObject:
   m_ObjectHideFlags: 0
@@ -105562,33 +102014,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.000002, y: 0.25, z: 6.000001}
   m_Center: {x: 3, y: -0.125, z: 2.9999995}
---- !u!54 &8862857269623563119
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2529100332775067541}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &8865197863307466582
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -105653,7 +102078,6 @@ GameObject:
   - component: {fileID: 3043963596262532826}
   - component: {fileID: 1975203897603224451}
   - component: {fileID: 6246696002216492999}
-  - component: {fileID: 2647039754811607998}
   m_Layer: 12
   m_Name: Floor Tile (11)
   m_TagString: Untagged
@@ -105888,7 +102312,6 @@ GameObject:
   - component: {fileID: 1246259498789945227}
   - component: {fileID: 6545156345456078028}
   - component: {fileID: 7776638239880782679}
-  - component: {fileID: 4388722196048574267}
   m_Layer: 12
   m_Name: Floor Tile (101)
   m_TagString: Untagged
@@ -105896,33 +102319,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &8924018422400962383
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3189006849788440895}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &8925496580958587821
 Transform:
   m_ObjectHideFlags: 0
@@ -106349,33 +102745,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9004893504721815271}
   m_Mesh: {fileID: 4300000, guid: ce65141939545d440ac8591812208a12, type: 3}
---- !u!54 &8982063143160763193
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7506096675504122755}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &8982286212756234656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106815,7 +103184,6 @@ GameObject:
   - component: {fileID: 1490146244243010478}
   - component: {fileID: 701119155032906996}
   - component: {fileID: 2125656982627384014}
-  - component: {fileID: 6597153585218556890}
   m_Layer: 12
   m_Name: Floor Tile (37)
   m_TagString: Untagged
@@ -107607,33 +103975,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &9125995624068860375
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5336209537584226383}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &9129522788032383077
 Transform:
   m_ObjectHideFlags: 0
@@ -107743,7 +104084,6 @@ GameObject:
   - component: {fileID: 333120736788713114}
   - component: {fileID: 5485952621508943179}
   - component: {fileID: 5862889626829737609}
-  - component: {fileID: 1740330242350431086}
   m_Layer: 12
   m_Name: Floor Tile (63)
   m_TagString: Untagged
@@ -107843,7 +104183,6 @@ GameObject:
   - component: {fileID: 832440494405482003}
   - component: {fileID: 5370969914715486283}
   - component: {fileID: 8448752374913202565}
-  - component: {fileID: 5026921949548183143}
   m_Layer: 12
   m_Name: Floor Tile
   m_TagString: Untagged
@@ -107984,7 +104323,6 @@ GameObject:
   - component: {fileID: 5637209580598812846}
   - component: {fileID: 6450997116222063366}
   - component: {fileID: 3834751181046865772}
-  - component: {fileID: 2437351105083597638}
   m_Layer: 12
   m_Name: Floor Tile (108)
   m_TagString: Untagged
@@ -108094,7 +104432,6 @@ GameObject:
   - component: {fileID: 2599270536537383092}
   - component: {fileID: 6404484972740535118}
   - component: {fileID: 6988863991544660430}
-  - component: {fileID: 1344999517522784350}
   m_Layer: 12
   m_Name: Floor Tile (23)
   m_TagString: Untagged
@@ -108114,7 +104451,6 @@ GameObject:
   - component: {fileID: 255885793428024010}
   - component: {fileID: 625080291278984399}
   - component: {fileID: 1679719749675462036}
-  - component: {fileID: 8155324757305674944}
   m_Layer: 12
   m_Name: Floor Tile (113)
   m_TagString: Untagged
@@ -108275,33 +104611,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &9204239305164597900
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915372445995839914}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &9210252801422282819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -108335,7 +104644,6 @@ GameObject:
   - component: {fileID: 4831216679736211982}
   - component: {fileID: 8108795947980302460}
   - component: {fileID: 1293875943575240004}
-  - component: {fileID: 1389121060947691493}
   m_Layer: 12
   m_Name: Floor Tile (17)
   m_TagString: Untagged
