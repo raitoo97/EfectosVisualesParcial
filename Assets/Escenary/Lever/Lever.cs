@@ -7,11 +7,16 @@ public enum LeverAction
 }
 public class Lever : MonoBehaviour ,IInteractiveObject
 {
-    [SerializeField] private Animator leverAnimator;
+    [SerializeField]private Animator leverAnimator;
     public LeverAction leverAction;
+    [SerializeField]private CinematicDirector _cinematicDirector;
     private void Awake()
     {
         leverAnimator = GetComponent<Animator>();
+    }
+    private void Start()
+    {
+        _cinematicDirector = CinematicDirector.instance;
     }
     public void Interact()
     {
@@ -22,7 +27,7 @@ public class Lever : MonoBehaviour ,IInteractiveObject
         switch (leverAction)
         {
             case LeverAction.FirstCinematic:
-                CinematicDirector.instance?.GetDirectorFirstCinematic.Play();
+                _cinematicDirector?.GetPlayableDirector(0).Play();
                 break;
         }
     }

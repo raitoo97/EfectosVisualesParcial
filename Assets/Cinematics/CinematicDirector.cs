@@ -4,7 +4,7 @@ using UnityEngine.Playables;
 public class CinematicDirector : MonoBehaviour
 {
     [SerializeField]private List <GameObject> objectsToDesactivate;
-    [SerializeField]private PlayableDirector directorFirstCinematic;
+    [SerializeField]private List<PlayableDirector> _directorsCinematic = new List<PlayableDirector>();
     [Header("FirstCinematic")]
     [SerializeField]private GameObject _waterDrop;
     private FirstCinematic _firstCinematic;
@@ -40,5 +40,12 @@ public class CinematicDirector : MonoBehaviour
     {
         _firstCinematic.StartCinematic();
     }
-    public PlayableDirector GetDirectorFirstCinematic { get => directorFirstCinematic; }
+    public PlayableDirector GetPlayableDirector(int index)
+    {
+        if (index < 0 || index >= _directorsCinematic.Count)
+        {
+            return null;
+        }
+        return _directorsCinematic[index];
+    }
 }
