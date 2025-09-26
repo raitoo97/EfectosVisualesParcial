@@ -17,10 +17,6 @@ public class Lever : MonoBehaviour ,IInteractiveObject
     {
         leverAnimator.SetBool("IsActivate", true);
     }
-    public void ActivateFirstCinematic()
-    {
-        CinematicDirector.instance?.GetDirectorFirstCinematic.Play();
-    }
     public void OnAnimationEvent()
     {
         switch (leverAction)
