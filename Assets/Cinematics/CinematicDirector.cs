@@ -9,8 +9,7 @@ public class CinematicDirector : MonoBehaviour
     [SerializeField]private GameObject _waterDrop;
     private FirstCinematic _firstCinematic;
     [Header("SecondCinematic")]
-    public GameObject _secondCinematicPoint;
-    public GameObject _secondCinematicPoint2;
+    //Segunda CInematica
     public static CinematicDirector instance;
     private void Awake()
     {
@@ -45,14 +44,6 @@ public class CinematicDirector : MonoBehaviour
         _firstCinematic.StartCinematic();
     }
     #endregion
-    public void ToggleMessage(bool isActivate)
-    {
-        _secondCinematicPoint.SetActive(isActivate);
-    }
-    public void ToggleSecondMessage(bool isActivate)
-    {
-        _secondCinematicPoint2.SetActive(isActivate);
-    }
     public PlayableDirector GetPlayableDirector(int index)
     {
         if (index < 0 || index >= _directorsCinematic.Count)
