@@ -8,6 +8,9 @@ public class CinematicDirector : MonoBehaviour
     [Header("FirstCinematic")]
     [SerializeField]private GameObject _waterDrop;
     private FirstCinematic _firstCinematic;
+    [Header("SecondCinematic")]
+    public GameObject _secondCinematicPoint;
+    public GameObject _secondCinematicPoint2;
     public static CinematicDirector instance;
     private void Awake()
     {
@@ -36,9 +39,19 @@ public class CinematicDirector : MonoBehaviour
         }
         GameManager.instance.player.GetPlayerController._isOnCinematic = false;
     }
+    #region FirstCinematic
     public void ActivateFirstCinematic()
     {
         _firstCinematic.StartCinematic();
+    }
+    #endregion
+    public void ToggleMessage(bool isActivate)
+    {
+        _secondCinematicPoint.SetActive(isActivate);
+    }
+    public void ToggleSecondMessage(bool isActivate)
+    {
+        _secondCinematicPoint2.SetActive(isActivate);
     }
     public PlayableDirector GetPlayableDirector(int index)
     {

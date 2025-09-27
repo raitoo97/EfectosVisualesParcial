@@ -1,18 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class Console : MonoBehaviour
+public class Console : MonoBehaviour ,IInteractiveObject
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Interact()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        CinematicDirector.instance.GetPlayableDirector(1).Play();
     }
 }
