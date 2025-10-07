@@ -11,9 +11,11 @@ public class Lever : MonoBehaviour ,IInteractiveObject
     public LeverAction leverAction;
     [SerializeField]private CinematicDirector _cinematicDirector;
     [SerializeField]private Material _glowMaterial;
+    private bool _canUseGlow;
     private void Awake()
     {
         leverAnimator = GetComponent<Animator>();
+        _canUseGlow = true;
     }
     private void Start()
     {
@@ -22,9 +24,12 @@ public class Lever : MonoBehaviour ,IInteractiveObject
     public void Interact()
     {
         leverAnimator.SetBool("IsActivate", true);
+        _glowMaterial.SetInt("_Toggle", 0);
+        _canUseGlow = false;
     }
     public void Glow(bool ActivateGlow)
     {
+        if (!_canUseGlow) return;
         if (ActivateGlow)
             _glowMaterial.SetInt("_Toggle", 1);
         else
