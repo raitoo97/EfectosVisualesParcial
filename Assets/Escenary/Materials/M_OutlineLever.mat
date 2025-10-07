@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Outline
+  m_Name: M_OutlineLever
   m_Shader: {fileID: -6465566751694194690, guid: b79126472a2663444b0209d4dcba1e85,
     type: 3}
   m_Parent: {fileID: 0}
@@ -51,11 +51,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _IntensityColor: 7.74
-    - _OutLineThickness: -0.00005
+    - _IntensityColor: 20
+    - _OutLineThickness: -0.05
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Toggle: 1
     m_Colors:
-    - _ColorOutline: {r: 1, g: 0, b: 0, a: 0}
+    - _ColorOutline: {r: 0, g: 0.3476925, b: 1, a: 0}
   m_BuildTextureStacks: []
