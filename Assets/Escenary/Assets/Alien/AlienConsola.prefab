@@ -3354,8 +3354,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.089999996, y: 0.04853446, z: 0.07600277}
-  m_Center: {x: 0, y: 0.02, z: 0.02}
+  m_Size: {x: 0.089999996, y: 0.04853446, z: 0.08}
+  m_Center: {x: 0, y: 0.02, z: 0.03}
 --- !u!114 &3847900086794570249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3368,6 +3368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73694625c692c954e951fae1381fe253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _glowMaterial: {fileID: 2100000, guid: 18dfafec5538fb44f8489ab192ce5866, type: 2}
 --- !u!54 &4901519074306943829
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28679,6 +28680,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 5cfd19b3323046d46880cd286ebd86a3, type: 2}
+  - {fileID: 2100000, guid: 18dfafec5538fb44f8489ab192ce5866, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

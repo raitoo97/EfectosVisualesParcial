@@ -41,6 +41,7 @@ public class PlayerController
         _viewEnemy = _playerRayCast.CheckViewEnemy();
         if (PlayerInputs.instance.InteractAction())
             _playerRayCast.CheckInteract();
+        _playerRayCast.CheckGlow();
     }
     public void OnFixedUpdate()
     {
