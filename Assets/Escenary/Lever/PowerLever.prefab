@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3872567392493515334}
   - component: {fileID: 3869773803203781092}
   - component: {fileID: 2347924547001799353}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,32 +129,32 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7420a522767681445a38766508c78235,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 201.72995
+      value: 193.46045
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7420a522767681445a38766508c78235,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 201.72995
+      value: 193.46045
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7420a522767681445a38766508c78235,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 201.72995
+      value: 193.46045
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7420a522767681445a38766508c78235,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.045
+      value: -66.649
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7420a522767681445a38766508c78235,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.45
+      value: 1.304
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7420a522767681445a38766508c78235,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 66.531
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7420a522767681445a38766508c78235,
         type: 3}
@@ -199,13 +199,13 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 7420a522767681445a38766508c78235,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 7420a522767681445a38766508c78235,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 663c569ee7d92ac4496ede92d6c1987e, type: 2}
+      objectReference: {fileID: 2100000, guid: 235565980c4913d46af1a6f20c3c74a3, type: 2}
     - target: {fileID: -7511558181221131132, guid: 7420a522767681445a38766508c78235,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -218,8 +218,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 235565980c4913d46af1a6f20c3c74a3, type: 2}
     - target: {fileID: -5317510581126043724, guid: 7420a522767681445a38766508c78235,
         type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: -5317510581126043724, guid: 7420a522767681445a38766508c78235,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4756237597069816946, guid: 7420a522767681445a38766508c78235,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -4756237597069816946, guid: 7420a522767681445a38766508c78235,
         type: 3}
@@ -273,6 +283,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1133929033658614074, guid: 7420a522767681445a38766508c78235,
         type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: -1133929033658614074, guid: 7420a522767681445a38766508c78235,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -283,6 +298,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 235565980c4913d46af1a6f20c3c74a3, type: 2}
     - target: {fileID: 714768918688018475, guid: 7420a522767681445a38766508c78235,
         type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 714768918688018475, guid: 7420a522767681445a38766508c78235,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -290,6 +310,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PowerLever
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7420a522767681445a38766508c78235,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7420a522767681445a38766508c78235,
         type: 3}
@@ -303,6 +328,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2988202884699067419, guid: 7420a522767681445a38766508c78235,
         type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988202884699067419, guid: 7420a522767681445a38766508c78235,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -313,8 +343,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 235565980c4913d46af1a6f20c3c74a3, type: 2}
     - target: {fileID: 5108347752819487212, guid: 7420a522767681445a38766508c78235,
         type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108347752819487212, guid: 7420a522767681445a38766508c78235,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293680419448698159, guid: 7420a522767681445a38766508c78235,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6293680419448698159, guid: 7420a522767681445a38766508c78235,
         type: 3}
@@ -403,6 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b03bff3cf24c748a703c7dd5c85ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _glowMaterial: {fileID: 2100000, guid: 3bc04f40422b6474380bce66294a46e2, type: 2}
   leverAnimator: {fileID: 0}
   leverAction: 0
   _cinematicDirector: {fileID: 0}

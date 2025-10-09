@@ -4,6 +4,7 @@ using UnityEngine;
 public class CameraAnimation : MonoBehaviour
 {
     [SerializeField]private CinemachineVirtualCamera _camera;
+    [SerializeField] private Camera _glowCamera;
     [Header("FOV")]
     private float _defaultFOV = 60f;
     private float _runningFOV = 85f;
@@ -32,9 +33,12 @@ public class CameraAnimation : MonoBehaviour
         while(elapsedTime <= _transitionDuration)
         {
             elapsedTime += Time.deltaTime;
-            _camera.m_Lens.FieldOfView = Mathf.Lerp(startFov, targetFov, elapsedTime/ _transitionDuration);
+            float currentFov = Mathf.Lerp(startFov, targetFov, elapsedTime / _transitionDuration);
+            _camera.m_Lens.FieldOfView = currentFov;
+            _glowCamera.fieldOfView = currentFov;
             yield return new WaitForEndOfFrame();
         }
         _camera.m_Lens.FieldOfView = targetFov;
+        _glowCamera.fieldOfView = targetFov;
     }
 }
