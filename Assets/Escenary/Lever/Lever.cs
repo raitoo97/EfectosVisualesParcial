@@ -5,13 +5,11 @@ public enum LeverAction
     SecondCinematic,
     OpenDoor
 }
-public class Lever : MonoBehaviour ,IInteractiveObject
+public class Lever : InteractiveObject
 {
     [SerializeField]private Animator leverAnimator;
     public LeverAction leverAction;
     [SerializeField]private CinematicDirector _cinematicDirector;
-    [SerializeField]private Material _glowMaterial;
-    private bool _canUseGlow;
     private void Awake()
     {
         leverAnimator = GetComponent<Animator>();
@@ -21,19 +19,11 @@ public class Lever : MonoBehaviour ,IInteractiveObject
     {
         _cinematicDirector = CinematicDirector.instance;
     }
-    public void Interact()
+    public override void Interact()
     {
         leverAnimator.SetBool("IsActivate", true);
-        _glowMaterial.SetInt("_Toggle", 0);
+        _glowMaterial.SetInt("_ActivateOutLine", 0);
         _canUseGlow = false;
-    }
-    public void Glow(bool ActivateGlow)
-    {
-        if (!_canUseGlow) return;
-        if (ActivateGlow)
-            _glowMaterial.SetInt("_Toggle", 1);
-        else
-            _glowMaterial.SetInt("_Toggle", 0);
     }
     public void OnAnimationEvent()
     {

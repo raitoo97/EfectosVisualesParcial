@@ -10,7 +10,7 @@ public class PlayerRayCast
     private float _enemyViewDistance;
     private float _interactDistance;
     private LayerMask _enemyLayer;
-    private IInteractiveObject _currentGlowObject;
+    private IGlow _currentGlowObject;
     public PlayerRayCast(Transform playerTransform, Transform groundChecker, LayerMask wallLayer, LayerMask groundLayer,LayerMask enemyLayer, float rayDistance,float enemyViewDistance,float interactDistance)
     {
         _CamerTransform = playerTransform;
@@ -55,7 +55,7 @@ public class PlayerRayCast
         Ray ray = new Ray(_CamerTransform.position, _CamerTransform.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, _interactDistance))
         {
-            if(hit.transform.gameObject.TryGetComponent<IInteractiveObject>(out var ObjectInteract))
+            if(hit.transform.gameObject.TryGetComponent<InteractiveObject>(out var ObjectInteract))
             {
                 ObjectInteract.Interact();
             }
@@ -66,7 +66,7 @@ public class PlayerRayCast
         Ray ray = new Ray(_CamerTransform.position, _CamerTransform.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, _interactDistance))
         {
-            if (hit.transform.gameObject.TryGetComponent<IInteractiveObject>(out var ObjectInteract))
+            if (hit.transform.gameObject.TryGetComponent<InteractiveObject>(out var ObjectInteract))
             {
                 ObjectInteract.Glow(true);
                 _currentGlowObject = ObjectInteract;
