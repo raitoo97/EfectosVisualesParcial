@@ -2,7 +2,7 @@ using UnityEngine;
 public abstract class InteractiveObject : MonoBehaviour , IGlow
 {
     [SerializeField]protected Material _glowMaterial;
-    protected bool _canUseGlow;
+    protected bool _canUseGlow = true;
     protected bool _canInteract = true;
     public void Glow(bool ActivateGlow)
     {

@@ -10,5 +10,6 @@ public class Console : InteractiveObject
         CinematicDirector.instance.GetPlayableDirector(1).Play();
         _glowMaterial.SetInt("_ActivateOutLine", 0);
         _canUseGlow = false;
+        _canInteract = false;
     }
 }

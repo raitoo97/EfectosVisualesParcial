@@ -21,9 +21,11 @@ public class Lever : InteractiveObject
     }
     public override void Interact()
     {
+        if (!_canInteract) return;
         leverAnimator.SetBool("IsActivate", true);
         _glowMaterial.SetInt("_ActivateOutLine", 0);
         _canUseGlow = false;
+        _canInteract = false;
     }
     public void OnAnimationEvent()
     {
