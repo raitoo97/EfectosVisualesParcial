@@ -359,6 +359,7 @@ MonoBehaviour:
   player: {fileID: 0}
   impactParticlesPrefab: {fileID: 2873823370989727376, guid: 86343074feb3f8844988f3e76dbfb881,
     type: 3}
+  _glowMaterial: {fileID: 2100000, guid: 3bc04f40422b6474380bce66294a46e2, type: 2}
 --- !u!4 &34804024
 Transform:
   m_ObjectHideFlags: 0
@@ -3388,8 +3389,8 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras:
-  - {fileID: 1248348612}
   - {fileID: 587661793}
+  - {fileID: 1248348612}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -18484,7 +18485,7 @@ MonoBehaviour:
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
-  m_ClearDepth: 0
+  m_ClearDepth: 1
   m_AllowXRRendering: 1
   m_AllowHDROutput: 1
   m_UseScreenCoordOverride: 0
