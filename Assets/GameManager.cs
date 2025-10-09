@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Player player;
     public ParticleSystem impactParticlesPrefab;
+    public Material _glowMaterial;
     private void Awake()
     {
         if(instance == null)
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        _glowMaterial.SetInt("_ActivateOutLine", 0);
         player = FindObjectOfType<Player>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
