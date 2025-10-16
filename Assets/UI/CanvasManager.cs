@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 public class CanvasManager : MonoBehaviour
 {
     private AnimationCanvas _animationCanvas;
     [SerializeField]private Animator _animator;
     [SerializeField]private GameObject _aim;
+    [SerializeField]private Text _timer;
     private void OnEnable()
     {
         _animationCanvas = new AnimationCanvas(_animator);
@@ -29,6 +31,11 @@ public class CanvasManager : MonoBehaviour
         {
             ChangeColorAim(Color.green);
         }
+        _timer.text = GameManager.instance.GetTime;
+    }
+    public void ShowTime()
+    {
+        _timer.gameObject.SetActive(true);
     }
     private void OnDisable()
     {
