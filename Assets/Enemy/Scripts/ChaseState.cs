@@ -2,13 +2,18 @@ using UnityEngine;
 public class ChaseState : Istate
 {
     private Enemy _enemy;
-    public ChaseState(Enemy _enemy)
+    private FSM _fsm;
+    private Animator _animator;
+    public ChaseState(Enemy enemy,FSM fsm,Animator animator)
     {
-        this._enemy = _enemy;
+        _enemy = enemy;
+        _fsm = fsm;
+        _animator = animator;
     }
     public void OnEnter()
     {
-        Debug.Log("Entering Chase State");
+        _animator.SetBool("IsRunning", true);
+        _animator.SetBool("Ishoting", false);
     }
     public void OnExit()
     {

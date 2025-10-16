@@ -9,7 +9,8 @@ public class CinematicDirector : MonoBehaviour
     [SerializeField]private GameObject _waterDrop;
     private FirstCinematic _firstCinematic;
     [Header("SecondCinematic")]
-    //Segunda CInematica
+    public Transform[] _spawners;
+    private SecondCinematic _secondCinematic;
     public static CinematicDirector instance;
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class CinematicDirector : MonoBehaviour
     private void OnEnable()
     {
         _firstCinematic = new FirstCinematic(_waterDrop.transform, this);
+        _secondCinematic = new SecondCinematic(_spawners);
     }
     public void DesactivateGunAndPlayer()
     {
@@ -42,6 +44,16 @@ public class CinematicDirector : MonoBehaviour
     public void ActivateFirstCinematic()
     {
         _firstCinematic.StartCinematic();
+    }
+    #endregion
+    #region SecondCinematic
+    public void SpawnEnemies()
+    {
+        _secondCinematic.SpawnerEnemies();
+    }
+    public void ActivateCorutineSpawn()
+    {
+        _secondCinematic.ActivateCorutineSpawn();
     }
     #endregion
     public PlayableDirector GetPlayableDirector(int index)
