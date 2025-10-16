@@ -4,7 +4,6 @@ public class FSM
     public enum StateID
     {
         Idle,
-        Patrol,
         Chase,
         Attack
     }
@@ -14,6 +13,11 @@ public class FSM
     {
         if (_allStates.ContainsKey(key)) return;
         _allStates.Add(key, value);
+    }
+    public void RemoveState(StateID key)
+    {
+        if (!_allStates.ContainsKey(key)) return;
+        _allStates.Remove(key);
     }
     public void ChangeState(StateID key)
     {
