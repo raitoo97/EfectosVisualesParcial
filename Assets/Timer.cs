@@ -7,8 +7,8 @@ public class Timer
     public void OnStart()
     {
         stop = true;
-        _min = 1;
-        _seg = 30;
+        _min = 0;
+        _seg = 10;
         _mmm = 0;
     }
     public void OnUpdate()
@@ -33,6 +33,7 @@ public class Timer
                 _seg = 0;
                 _mmm = 0;
                 stop = true;
+                GameManager.OnGameOver?.Invoke();
             }
         }
         int fracciones = Mathf.FloorToInt(_mmm);

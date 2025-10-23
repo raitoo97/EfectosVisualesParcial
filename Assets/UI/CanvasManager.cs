@@ -6,6 +6,14 @@ public class CanvasManager : MonoBehaviour
     [SerializeField]private Animator _animator;
     [SerializeField]private GameObject _aim;
     [SerializeField]private Text _timer;
+    public static CanvasManager instance;
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
     private void OnEnable()
     {
         _animationCanvas = new AnimationCanvas(_animator);
@@ -44,5 +52,13 @@ public class CanvasManager : MonoBehaviour
     public void ChangeColorAim(Color color)
     {
         _aim.GetComponent<UnityEngine.UI.Image>().color = color;
+    }
+    public void FadeIn()
+    {
+        _animator.SetTrigger("FadeIn");
+    }
+    public void FadeOut()
+    {
+        _animator.SetTrigger("FadeOut");
     }
 }
