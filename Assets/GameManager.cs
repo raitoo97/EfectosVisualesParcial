@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<Player>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Time.timeScale = 1f;
         timer?.OnStart();
     }
     public void StartTimer()
@@ -44,7 +46,7 @@ public class GameManager : MonoBehaviour
     }
     public void GoToMenu()
     {
-        print("Voy al menu");
+        SceneManager.LoadScene(0);
     }
     IEnumerator OnFinishCorutine()
     {

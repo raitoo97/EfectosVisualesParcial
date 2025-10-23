@@ -45,6 +45,10 @@ public class CanvasManager : MonoBehaviour
     {
         _timer.gameObject.SetActive(true);
     }
+    public void HiddenTime()
+    {
+        _timer.gameObject.SetActive(false);
+    }
     private void OnDisable()
     {
         _animationCanvas = null;

@@ -64,6 +64,7 @@ public class CinematicDirector : MonoBehaviour
     #region ThirdCinematic
     public void ActivateThirdCinematic()
     {
+        CanvasManager.instance.HiddenTime();
         _thirdCinematic.StartCinematic();
     }
     #endregion
