@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 public class GameManager : MonoBehaviour
 {
@@ -6,6 +8,7 @@ public class GameManager : MonoBehaviour
     public ParticleSystem impactParticlesPrefab;
     public Material _glowMaterial;
     private Timer timer;
+    public static Action OnGameOver;
     private void Awake()
     {
         if(instance == null)
@@ -16,6 +19,7 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         timer = new Timer();
+        OnGameOver += GoToFinish;
     }
     private void Update()
     {
@@ -33,6 +37,20 @@ public class GameManager : MonoBehaviour
     {
         if (timer != null)
             timer.stop = false;
+    }
+    public void GoToFinish()
+    {
+        StartCoroutine(OnFinishCorutine());
+    }
+    public void GoToMenu()
+    {
+        print("Voy al menu");
+    }
+    IEnumerator OnFinishCorutine()
+    {
+        CanvasManager.instance.FadeIn();
+        yield return new WaitForSeconds(1.3f);
+        CinematicDirector.instance.GetPlayableDirector(2).Play();
     }
     public string GetTime { get => timer.GetTime; }
 }

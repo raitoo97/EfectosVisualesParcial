@@ -12,6 +12,10 @@ public class CinematicDirector : MonoBehaviour
     public Transform[] _spawners;
     private SecondCinematic _secondCinematic;
     public static CinematicDirector instance;
+    [Header("ThirdCinematic")]
+    [SerializeField] private Transform _starshipPos;
+    [SerializeField] private Transform _starshipArrivePos;
+    private ThirdCinematic _thirdCinematic;
     private void Awake()
     {
         if (instance == null)
@@ -23,6 +27,7 @@ public class CinematicDirector : MonoBehaviour
     {
         _firstCinematic = new FirstCinematic(_waterDrop.transform, this);
         _secondCinematic = new SecondCinematic(_spawners);
+        _thirdCinematic = new ThirdCinematic(_starshipPos, _starshipArrivePos,this);
     }
     public void DesactivateGunAndPlayer()
     {
@@ -54,6 +59,12 @@ public class CinematicDirector : MonoBehaviour
     public void ActivateCorutineSpawn()
     {
         _secondCinematic.ActivateCorutineSpawn();
+    }
+    #endregion
+    #region ThirdCinematic
+    public void ActivateThirdCinematic()
+    {
+        _thirdCinematic.StartCinematic();
     }
     #endregion
     public PlayableDirector GetPlayableDirector(int index)
