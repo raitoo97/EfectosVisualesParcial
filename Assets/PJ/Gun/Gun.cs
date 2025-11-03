@@ -4,11 +4,12 @@ public class Gun : MonoBehaviour
     private GunShoot _gunShoot;
     private GunAnimation _gunAnimation;
     [SerializeField]private Animator _animator;
+    [SerializeField]private ParticleSystem _bulletParticles;
     public Transform gunSight;
     public Light gunLight;
     private void OnEnable()
     {
-        _gunShoot = new GunShoot(gunSight, gunLight);
+        _gunShoot = new GunShoot(gunSight, gunLight, _bulletParticles);
         _gunAnimation = new GunAnimation(_animator);
     }
     private void Update()
