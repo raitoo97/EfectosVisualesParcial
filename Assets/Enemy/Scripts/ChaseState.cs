@@ -28,5 +28,6 @@ public class ChaseState : Istate
             var targetRotation = Quaternion.LookRotation(dir);
             _enemy.transform.rotation = Quaternion.RotateTowards(_enemy.transform.rotation, targetRotation, Time.deltaTime * 180f);
         }
+        _enemy.GetSeekForce(GameManager.instance.player.transform.position);
     }
 }
