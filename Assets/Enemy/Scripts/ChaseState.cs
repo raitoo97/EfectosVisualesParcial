@@ -11,8 +11,8 @@ public class ChaseState : Istate
     private float _rangeAtack;
     private Vector3 _lastGoalPos;
     private float _repathTimer;
-    private float _repathInterval = 5f;
-    private float _repathDistance = 10f;
+    private float _repathInterval = 10f;
+    private float _repathDistance = 25f;
     public ChaseState(Enemy enemy, FSM fsm,Animator animator, Player target,float rangeAtack)
     {
         _enemy = enemy;
@@ -32,6 +32,7 @@ public class ChaseState : Istate
     }
     public void OnUpdate()
     {
+        Debug.Log((_playerPos.transform.position - _lastGoalPos).magnitude);
         var distanceToPlayer = _playerPos.transform.position - _enemy.transform.position;
         var canSeePlayer = LineOfSight.IsOnSight(_enemy.transform.position, _playerPos.transform.position);
         if (distanceToPlayer.magnitude <= _rangeAtack && canSeePlayer)

@@ -4,7 +4,7 @@ public abstract class Agent : MonoBehaviour
     protected Vector3 _velocity;
     [SerializeField]protected float _maxVelocity;
     [SerializeField]protected float _maxSteerForce;
-    [SerializeField] protected bool _canMove;
+    [SerializeField]protected bool _canMove;
     protected virtual void Start()
     {
         _canMove = true;
