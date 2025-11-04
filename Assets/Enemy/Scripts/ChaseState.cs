@@ -32,7 +32,6 @@ public class ChaseState : Istate
     }
     public void OnUpdate()
     {
-        Debug.Log((_playerPos.transform.position - _lastGoalPos).magnitude);
         var distanceToPlayer = _playerPos.transform.position - _enemy.transform.position;
         var canSeePlayer = LineOfSight.IsOnSight(_enemy.transform.position, _playerPos.transform.position);
         if (distanceToPlayer.magnitude <= _rangeAtack && canSeePlayer)
@@ -54,7 +53,7 @@ public class ChaseState : Istate
             _lastGoalPos = _playerPos.transform.position;
             _repathTimer = 0f;
         }
-        if (_path.Count > 0 && !canSeePlayer)
+        if (_path.Count > 0)
         {
             var currentTarget = _path[0];
             var distanceToTarget = currentTarget - _enemy.transform.position;

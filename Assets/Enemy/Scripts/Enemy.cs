@@ -18,7 +18,6 @@ public class Enemy : Agent , IEnemy
         _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, atackRange));
         _fsm.AddState(FSM.StateID.Attack, new AtackState(this, _fsm, animator, _player));
         _fsm.ChangeState(FSM.StateID.Chase);
-
     }
     protected override void Update()
     {
@@ -43,10 +42,25 @@ public class Enemy : Agent , IEnemy
             this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, desiredRot, _rotateSpeed * Time.deltaTime);
         }
     }
+    public void OnShootEvent()
+    {
+        if (_fsm == null) return;
+        var currentState = _fsm.getCurrentState;
+        if (currentState is AtackState attackState)
+        {
+            attackState.Shoot();
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, atackRange);
+        Gizmos.color = Color.blue;
+        if(_player != null)
+        {
+            var dir = _player.transform.position - transform.position;
+            Debug.DrawLine(transform.position + Vector3.up, transform.position + Vector3.up + dir,Color.magenta);
+        }
     }
     public FSM GetFSM { get => _fsm; }
 }

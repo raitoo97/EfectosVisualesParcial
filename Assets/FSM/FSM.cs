@@ -29,4 +29,5 @@ public class FSM
     {
         _currentState?.OnUpdate();
     }
+    public Istate getCurrentState { get => _currentState; }
 }
