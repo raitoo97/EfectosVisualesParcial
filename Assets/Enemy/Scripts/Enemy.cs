@@ -18,7 +18,6 @@ public class Enemy : Agent , IEnemy
         _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, atackRange));
         _fsm.AddState(FSM.StateID.Attack, new AtackState(this, _fsm, animator, _player));
         _fsm.ChangeState(FSM.StateID.Chase);
-
     }
     protected override void Update()
     {
