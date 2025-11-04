@@ -15633,6 +15633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b756cda8996204ab373dbf1761d8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 5521141979847460032, guid: 90201ec0d937cb7499c23cfa3f8fee35, type: 3}
+  initialCount: 10
+  poolBulletEnemy: []
 --- !u!1 &1072282981
 GameObject:
   m_ObjectHideFlags: 0
@@ -47287,8 +47290,8 @@ Transform:
   m_GameObject: {fileID: 3123319556610783225}
   serializedVersion: 2
   m_LocalRotation: {x: 6.1728393e-14, y: 1, z: -0.000000021855705, w: 0.0000029504295}
-  m_LocalPosition: {x: 12.27, y: -1, z: 34.96}
-  m_LocalScale: {x: 1, y: 1, z: 0.9183}
+  m_LocalPosition: {x: 12.27, y: -1, z: 35.14}
+  m_LocalScale: {x: 1, y: 1, z: 0.95349383}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7633294176644258117}

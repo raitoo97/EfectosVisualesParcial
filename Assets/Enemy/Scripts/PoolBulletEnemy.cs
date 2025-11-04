@@ -33,6 +33,7 @@ public class PoolBulletEnemy : MonoBehaviour
             if (!bullet.activeSelf)
             {
                 bullet?.SetActive(true);
+                return bullet;
             }
         }
         CompleteList(1);

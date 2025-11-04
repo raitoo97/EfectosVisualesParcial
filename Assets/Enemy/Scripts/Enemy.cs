@@ -42,6 +42,15 @@ public class Enemy : Agent , IEnemy
             this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, desiredRot, _rotateSpeed * Time.deltaTime);
         }
     }
+    public void OnShootEvent()
+    {
+        if (_fsm == null) return;
+        var currentState = _fsm.getCurrentState;
+        if (currentState is AtackState attackState)
+        {
+            attackState.Shoot();
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
