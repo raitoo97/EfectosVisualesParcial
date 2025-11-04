@@ -2800,8 +2800,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e98fb290ae8baa4c98576d566d3b16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxVelocity: 5
+  _maxSteerForce: 0.1
+  _canMove: 0
   animator: {fileID: 7214884193176798465}
-  _chaseRange: 10
+  atackRange: 35
 --- !u!136 &77143642368913515
 CapsuleCollider:
   m_ObjectHideFlags: 0

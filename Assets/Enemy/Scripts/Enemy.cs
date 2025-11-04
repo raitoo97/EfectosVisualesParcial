@@ -1,21 +1,29 @@
 using UnityEngine;
-public class Enemy : MonoBehaviour , IEnemy
+public class Enemy : Agent , IEnemy
 {
     public Animator animator;
     private FSM _fsm;
-    [SerializeField]private float _chaseRange;
+    [SerializeField] private float atackRange;
+    private Player _player;
+    private float _rotateSpeed = 120f;
     private void OnEnable()
     {
         animator.SetBool("IsDead", false);
-        _fsm = new FSM();
-        _fsm.AddState(FSM.StateID.Chase, new ChaseState(this,_fsm,animator));
-        _fsm.AddState(FSM.StateID.Idle, new IdleState(this,_fsm,animator,_chaseRange));
-        _fsm.AddState(FSM.StateID.Attack, new AtackState(this,_fsm,animator));
-        _fsm.ChangeState(FSM.StateID.Idle);
     }
-    private void Update()
+    override protected void Start()
+    {
+        base.Start();
+        _fsm = new FSM();
+        _player = GameManager.instance.player;
+        _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, atackRange));
+        _fsm.AddState(FSM.StateID.Attack, new AtackState(this, _fsm, animator, _player));
+        _fsm.ChangeState(FSM.StateID.Chase);
+
+    }
+    protected override void Update()
     {
         _fsm.onUpdateState();
+        base.Update();
         if (Input.GetKeyDown(KeyCode.C))
         {
             animator.SetBool("IsDead", true);
@@ -25,10 +33,20 @@ public class Enemy : MonoBehaviour , IEnemy
     {
         gameObject.SetActive(false);
     }
+    public void RotateTo(Vector3 target)
+    {
+        Vector3 dir = target - this.transform.position;
+        dir.y = 0f;
+        if (dir != Vector3.zero)
+        {
+            Quaternion desiredRot = Quaternion.LookRotation(dir);
+            this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, desiredRot, _rotateSpeed * Time.deltaTime);
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _chaseRange);
+        Gizmos.DrawWireSphere(transform.position, atackRange);
     }
     public FSM GetFSM { get => _fsm; }
 }
