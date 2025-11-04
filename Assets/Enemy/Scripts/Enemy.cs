@@ -47,6 +47,12 @@ public class Enemy : Agent , IEnemy
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, atackRange);
+        Gizmos.color = Color.blue;
+        if(_player != null)
+        {
+            var dir = _player.transform.position - transform.position;
+            Debug.DrawLine(transform.position + Vector3.up, transform.position + Vector3.up + dir,Color.magenta);
+        }
     }
     public FSM GetFSM { get => _fsm; }
 }
