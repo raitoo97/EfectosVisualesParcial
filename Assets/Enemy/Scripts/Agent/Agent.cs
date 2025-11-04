@@ -16,6 +16,7 @@ public abstract class Agent : MonoBehaviour
     }
     protected virtual void Update()
     {
+        if(!_canMove)return;
         transform.position += _velocity * Time.deltaTime;
     }
     protected Vector3 Seek(Vector3 target)

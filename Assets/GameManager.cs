@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _glowMaterial.SetInt("_ActivateOutLine", 0);
-        player = FindObjectOfType<Player>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1f;

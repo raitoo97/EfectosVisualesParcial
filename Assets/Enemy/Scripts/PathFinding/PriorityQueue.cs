@@ -1,18 +1,29 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PriorityQueue : MonoBehaviour
+public class PriorityQueue<T>
 {
-    // Start is called before the first frame update
-    void Start()
+    private Dictionary<T, float> _allElements = new Dictionary<T, float>();
+    public int Count => _allElements.Count;
+    public void Enqueue(T element, float cost)
     {
-        
+        if (!_allElements.ContainsKey(element))
+            _allElements.Add(element, cost);
+        else
+            _allElements[element] = cost;
     }
-
-    // Update is called once per frame
-    void Update()
+    public T Dequeue()
     {
-        
+        T minElement = default;
+        float minCost = Mathf.Infinity;
+        foreach (var element in _allElements)
+        {
+            if (element.Value < minCost)
+            {
+                minCost = element.Value;
+                minElement = element.Key;
+            }
+        }
+        _allElements.Remove(minElement);
+        return minElement;
     }
 }

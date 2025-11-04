@@ -2802,8 +2802,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxVelocity: 5
   _maxSteerForce: 0.2
+  _canMove: 0
   animator: {fileID: 7214884193176798465}
-  _chaseRange: 10
+  atackRange: 35
 --- !u!136 &77143642368913515
 CapsuleCollider:
   m_ObjectHideFlags: 0

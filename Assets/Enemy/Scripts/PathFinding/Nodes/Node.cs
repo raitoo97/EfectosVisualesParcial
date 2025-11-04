@@ -1,18 +1,25 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Node : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]private List<Node> _neighbords = new List<Node>();
+    public float cost = 1f;
+    private void Awake()
+    {
+        NodeManager.RegisterNode(this);
+    }
     void Start()
     {
-        
+        NodeManager.CompleteNeighbords();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        NodeManager.UnregisterNode(this);
     }
+    public void AddNeighbord(Node node)
+    {
+        if (!_neighbords.Contains(node))
+            _neighbords.Add(node);
+    }
+    public List<Node> GetNeighbords { get { return _neighbords; } }
 }

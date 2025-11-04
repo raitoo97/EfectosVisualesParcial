@@ -1,18 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class LineOfSight : MonoBehaviour
+public static class LineOfSight
 {
-    // Start is called before the first frame update
-    void Start()
+    public static bool IsOnSight(Vector3 start,Vector3 end)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        var direction = end - start;
+        return !Physics.Raycast(start, direction.normalized, out RaycastHit hitInfo, direction.magnitude, LayerMask.GetMask("Wall", "Ground"));
     }
 }

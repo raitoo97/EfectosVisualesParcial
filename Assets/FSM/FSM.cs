@@ -3,7 +3,6 @@ public class FSM
 {
     public enum StateID
     {
-        Idle,
         Chase,
         Attack
     }
