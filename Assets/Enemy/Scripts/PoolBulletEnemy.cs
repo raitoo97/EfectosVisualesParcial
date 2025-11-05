@@ -32,13 +32,11 @@ public class PoolBulletEnemy : MonoBehaviour
         {
             if (!bullet.activeSelf)
             {
-                bullet?.SetActive(true);
                 return bullet;
             }
         }
         CompleteList(1);
         var aux = poolBulletEnemy[poolBulletEnemy.Count - 1];
-        aux?.SetActive(true);
         return aux;
     }
 }

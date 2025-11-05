@@ -4,7 +4,7 @@ public class Enemy : Agent , IEnemy
     public Animator animator;
     private FSM _fsm;
     [SerializeField]private float _atackRange;
-    [SerializeField]private Transform _aim; //CONFIGURAR
+    [SerializeField]private Transform _aim;
     private Player _player;
     private float _rotateSpeed = 120f;
     private void OnEnable()

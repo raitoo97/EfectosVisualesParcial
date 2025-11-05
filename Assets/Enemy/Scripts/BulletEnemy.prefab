@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 302611802338111328}
   - component: {fileID: 7114548438962364147}
   - component: {fileID: 7175288445756924447}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: BulletEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5521141979847460032}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -27.75345, y: 19.61, z: 79.29195}
   m_LocalScale: {x: 0.158319, y: 0.122037, z: 0.80016005}
   m_ConstrainProportionsScale: 0
@@ -98,6 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c337bf3b98d9114088ca82ea622afd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletType: 1
+  _speed: 100
+  _damage: 10
+  _maxSpreadAngle: 5
 --- !u!96 &7114548438962364147
 TrailRenderer:
   serializedVersion: 3
@@ -119,7 +123,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 7653c7d40958d1d42b2f37e03880da8d, type: 3}
+  - {fileID: 2100000, guid: 01b9d48e39694be4f817cc85dff2e3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
