@@ -5,13 +5,14 @@ public class AtackState : Istate
     private FSM _fsm;
     private Animator _animator;
     private Player _playerPos;
-    public Transform aim;
-    public AtackState(Enemy enemy,FSM fsm, Animator animator, Player target)
+    private Transform _aim;
+    public AtackState(Enemy enemy,FSM fsm, Animator animator, Player target,Transform aim)
     {
         _fsm = fsm;
         _enemy = enemy;
         _animator = animator;
         _playerPos = target;
+        _aim = aim;
     }
     public void OnEnter()
     {
@@ -31,10 +32,9 @@ public class AtackState : Istate
     }
     public void Shoot()
     {
-        Debug.Log("Shooting at Player");
-        //var bullet = PoolBulletEnemy.instance.GetBullet();
-        //bullet.transform.position = aim.position;
-        //bullet.transform.rotation = aim.rotation;
+        var bullet = PoolBulletEnemy.instance.GetBullet();
+        bullet.transform.position = _aim.position;
+        bullet.transform.rotation = _aim.rotation;
     }
     public void OnExit()
     {

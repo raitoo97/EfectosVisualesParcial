@@ -45,7 +45,6 @@ public class PlayerRayCast
         {
             var enemy = hit.transform.gameObject.GetComponent<IEnemy>();
             if (enemy == null) return false;
-            Debug.Log("Enemy in sight");
             return true;
         }
         return false;

@@ -3,7 +3,8 @@ public class Enemy : Agent , IEnemy
 {
     public Animator animator;
     private FSM _fsm;
-    [SerializeField] private float atackRange;
+    [SerializeField]private float _atackRange;
+    [SerializeField]private Transform _aim; //CONFIGURAR
     private Player _player;
     private float _rotateSpeed = 120f;
     private void OnEnable()
@@ -15,8 +16,8 @@ public class Enemy : Agent , IEnemy
         base.Start();
         _fsm = new FSM();
         _player = GameManager.instance.player;
-        _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, atackRange));
-        _fsm.AddState(FSM.StateID.Attack, new AtackState(this, _fsm, animator, _player));
+        _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, _atackRange));
+        _fsm.AddState(FSM.StateID.Attack, new AtackState(this, _fsm, animator, _player,_aim));
         _fsm.ChangeState(FSM.StateID.Chase);
     }
     protected override void Update()
@@ -54,7 +55,7 @@ public class Enemy : Agent , IEnemy
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, atackRange);
+        Gizmos.DrawWireSphere(transform.position, _atackRange);
         Gizmos.color = Color.blue;
         if(_player != null)
         {
