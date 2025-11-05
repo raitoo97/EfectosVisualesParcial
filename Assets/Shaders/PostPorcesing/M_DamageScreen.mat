@@ -37,6 +37,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - _LerpVignette: 0.375
+    - _OpacityBlend: 0
+    - _VigentteDarkening: 1
+    - _VignetteRadius: 0
+    - _VignetteSmoothnes: 1
+    m_Colors:
+    - _ColorVignette: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
