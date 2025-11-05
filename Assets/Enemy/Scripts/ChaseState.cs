@@ -46,13 +46,6 @@ public class ChaseState : Istate
             _enemy.RotateTo(_playerPos.transform.position);
             return;
         }
-        _repathTimer += Time.deltaTime;
-        if (_path.Count == 0 || _repathTimer >= _repathInterval || (_playerPos.transform.position - _lastGoalPos).magnitude > _repathDistance)
-        {
-            CalculatePath(_playerPos.transform.position);
-            _lastGoalPos = _playerPos.transform.position;
-            _repathTimer = 0f;
-        }
         if (_path.Count > 0)
         {
             var currentTarget = _path[0];
@@ -61,16 +54,24 @@ public class ChaseState : Istate
             _enemy.RotateTo(currentTarget);
             if (distanceToTarget.magnitude < 2f)
                 _path.RemoveAt(0);
+            for (int i = 0; i < _path.Count - 1; i++)
+                Debug.DrawLine(_path[i], _path[i + 1], Color.red);
+            return;
         }
-        for (int i = 0; i < _path.Count - 1; i++)
-            Debug.DrawLine(_path[i], _path[i + 1], Color.red);
+        _repathTimer += Time.deltaTime;
+        if (_path.Count == 0 || _repathTimer >= _repathInterval || (_playerPos.transform.position - _lastGoalPos).magnitude > _repathDistance)
+        {
+            CalculatePath(_playerPos.transform.position);
+            _lastGoalPos = _playerPos.transform.position;
+            _repathTimer = 0f;
+        }
     }
     private void CalculatePath(Vector3 goalPosition)
     {
         CleanUpPath();
         var startNode = NodeManager.GetClosetNode(_enemy.transform.position);
         var endNode = NodeManager.GetClosetNode(goalPosition);
-        _nodesTempList = PathFinding.CalculateDijkstra(startNode, endNode);
+        _nodesTempList = PathFinding.CalculateAStar(startNode, endNode);
         foreach (var node in _nodesTempList)
         {
             _path.Add(node.transform.position);
@@ -86,6 +87,5 @@ public class ChaseState : Istate
     {
         CleanUpPath();
         _enemy.ChangeMove(false);
-        Debug.Log("Exiting Chase State");
     }
 }

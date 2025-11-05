@@ -26,17 +26,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6d86ef4278fcd8c4586631e9de4f377d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.6291933
+      value: 2.7347472
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d86ef4278fcd8c4586631e9de4f377d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.81
+      value: -0.000008106232
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d86ef4278fcd8c4586631e9de4f377d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.97
+      value: 42.769794
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d86ef4278fcd8c4586631e9de4f377d,
         type: 3}
@@ -123,6 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c337bf3b98d9114088ca82ea622afd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletType: 0
+  _speed: 100
+  _enemySpread: 0
 --- !u!96 &8358723835536114075
 TrailRenderer:
   serializedVersion: 3
