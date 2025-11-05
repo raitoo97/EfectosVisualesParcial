@@ -32,9 +32,9 @@ public class AtackState : Istate
     }
     public void Shoot()
     {
-        var bullet = PoolBulletEnemy.instance.GetBullet();
-        bullet.transform.position = _aim.position;
-        bullet.transform.rotation = _aim.rotation;
+        //var bullet = PoolBulletEnemy.instance.GetBullet();
+        //bullet.transform.position = _aim.position;
+        //bullet.transform.rotation = _aim.rotation;
     }
     public void OnExit()
     {
