@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using UnityEngine;
 public static class PathFinding
 {
-    public static List<Node> CalculateDijkstra(Node start, Node goal)
+    public static List<Node> CalculateAStar(Node start, Node goal)
     {
         var frontier = new PriorityQueue<Node>();
         var cameFrom = new Dictionary<Node, Node>();
@@ -26,6 +27,7 @@ public static class PathFinding
             foreach (var node in current.GetNeighbords)
             {
                 var newCost = costSoFar[current] + node.cost;
+                newCost += Vector3.Distance(node.transform.position, goal.transform.position);
                 if (!cameFrom.ContainsKey(node))
                 {
                     frontier.Enqueue(node, newCost);

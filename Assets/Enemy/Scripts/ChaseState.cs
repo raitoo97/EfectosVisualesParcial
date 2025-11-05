@@ -71,7 +71,7 @@ public class ChaseState : Istate
         CleanUpPath();
         var startNode = NodeManager.GetClosetNode(_enemy.transform.position);
         var endNode = NodeManager.GetClosetNode(goalPosition);
-        _nodesTempList = PathFinding.CalculateDijkstra(startNode, endNode);
+        _nodesTempList = PathFinding.CalculateAStar(startNode, endNode);
         foreach (var node in _nodesTempList)
         {
             _path.Add(node.transform.position);
@@ -87,6 +87,5 @@ public class ChaseState : Istate
     {
         CleanUpPath();
         _enemy.ChangeMove(false);
-        Debug.Log("Exiting Chase State");
     }
 }

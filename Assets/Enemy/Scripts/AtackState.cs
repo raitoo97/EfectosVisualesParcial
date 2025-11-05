@@ -41,6 +41,5 @@ public class AtackState : Istate
     public void OnExit()
     {
         _enemy.ChangeMove(true);
-        Debug.Log("Exiting Atack State");
     }
 }
