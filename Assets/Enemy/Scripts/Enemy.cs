@@ -82,12 +82,13 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _atackRange);
-        Gizmos.color = Color.blue;
         if(_player != null)
         {
             var dir = _player.transform.position - transform.position;
             Debug.DrawLine(transform.position + Vector3.up, transform.position + Vector3.up + dir,Color.magenta);
         }
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, _SeparationRange);
     }
     public void TakeDamage(float damage)
     {

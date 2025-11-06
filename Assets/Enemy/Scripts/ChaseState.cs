@@ -54,7 +54,7 @@ public class ChaseState : Istate
         {
             var currentTarget = _path[0];
             var distanceToTarget = currentTarget - _enemy.transform.position;
-            _enemy.GetSeekForce(currentTarget);
+            _enemy.FlockingAndSeek(currentTarget);
             _enemy.RotateTo(currentTarget);
             if (distanceToTarget.magnitude < 2f)
                 _path.RemoveAt(0);
