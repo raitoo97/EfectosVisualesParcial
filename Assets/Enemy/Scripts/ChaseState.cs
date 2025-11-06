@@ -41,10 +41,14 @@ public class ChaseState : Istate
         }
         if (canSeePlayer)
         {
-            CleanUpPath();
-            _enemy.GetSeekForce(_playerPos.transform.position);
-            _enemy.RotateTo(_playerPos.transform.position);
-            return;
+            if (_path.Count > 0)
+            {
+                _path[_path.Count - 1] = _playerPos.transform.position;
+            }
+            else
+            {
+                CalculatePath(_playerPos.transform.position);
+            }
         }
         if (_path.Count > 0)
         {
