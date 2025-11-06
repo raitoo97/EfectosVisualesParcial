@@ -5,7 +5,7 @@ public class PoolBulletEnemy : MonoBehaviour
     public static PoolBulletEnemy instance;
     public GameObject bullet;
     [SerializeField] private int initialCount;
-    [SerializeField]private List<GameObject> poolBulletEnemy = new List<GameObject>();
+    private List<GameObject> poolBulletEnemy = new List<GameObject>();
     private void Awake()
     {
         if (instance == null)

@@ -7,6 +7,12 @@ public class Shield : MonoBehaviour, IShield ,IImpact , IEnemy ,ITakeDamage
     private float _maxIntensity;
     private float _minIntensity;
     private float _flashDuration;
+    [SerializeField]private float _maxHealth;
+    private Life _life;
+    private void Awake()
+    {
+        _life = new Life(_maxHealth);
+    }
     private void OnEnable()
     {
         _material = GetComponent<Renderer>().material;
@@ -17,6 +23,10 @@ public class Shield : MonoBehaviour, IShield ,IImpact , IEnemy ,ITakeDamage
     public void ActivateShield()
     {
         this.gameObject.SetActive(true);
+        if (_life != null)
+        {
+            _life.SetHealthToMax();
+        }
     }
     public void DeactivateShield()
     {
@@ -47,6 +57,7 @@ public class Shield : MonoBehaviour, IShield ,IImpact , IEnemy ,ITakeDamage
     }
     public void TakeDamage(float damage)
     {
-        throw new System.NotImplementedException();
+        _life.TakeDamage(damage, DeactivateShield);
+        print($"Shield Health: {_life.GetHealth}");
     }
 }

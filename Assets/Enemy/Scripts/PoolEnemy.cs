@@ -22,8 +22,8 @@ public class PoolEnemy : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             GameObject enemy = Instantiate(enemyPrefab,this.transform);
-            enemyList.Add(enemy);
             enemy.SetActive(false);
+            enemyList.Add(enemy);
         }
     }
     public GameObject GetEnemy()

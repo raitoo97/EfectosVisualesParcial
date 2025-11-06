@@ -7,23 +7,43 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     [SerializeField]private Transform _aim;
     private Player _player;
     private float _rotateSpeed = 120f;
-    [SerializeField] private float _maxHealth;
+    [SerializeField]private float _maxHealth;
     private Life _life;
     [SerializeField]private Shield _shieldChildRef;
     private void Awake()
     {
-        _shieldChildRef = GetComponentInChildren<Shield>();
+        _life = new Life(_maxHealth);
     }
     private void OnEnable()
     {
-        animator.SetBool("IsDead", false);
-        //_shieldChildRef.ActivateShield();
-        //_life.SetHealthToMax();
+        if(animator != null)
+        {
+            animator.SetBool("IsDead", false);
+        }
+        else
+        {
+            Debug.LogWarning("Animator reference is missing on Enemy.");
+        }
+        if (_life != null)
+        {
+            _life.SetHealthToMax();
+        }
+        else
+        {
+            Debug.LogWarning("Life reference is missing on Enemy.");
+        }
+        if (_shieldChildRef != null)
+        {
+            _shieldChildRef.ActivateShield();
+        }
+        else
+        {
+            Debug.LogWarning("Shield reference is missing on Enemy.");
+        }
     }
     override protected void Start()
     {
         base.Start();
-        _life = new Life(_maxHealth);
         _fsm = new FSM();
         _player = GameManager.instance.player;
         _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, _atackRange));

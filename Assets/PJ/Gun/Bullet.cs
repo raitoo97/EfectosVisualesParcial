@@ -63,8 +63,12 @@ public class Bullet : MonoBehaviour
                 takedamageable.TakeDamage(_damage);
                 DesactivateBullet();
             }
+            else if (_bulletType == BulletType.Player && other.GetComponent<Shield>())
+            {
+                takedamageable.TakeDamage(_damage);
+                DesactivateBullet();
+            }
         }
-
     }
     private void OnDisable()
     {

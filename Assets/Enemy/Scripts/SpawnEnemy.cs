@@ -3,12 +3,10 @@ using UnityEngine;
 public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField]private bool canSpawn = false;
-    public bool inistSpawn = false;  
+    public bool inistSpawn = false;
     private void OnEnable()
     {
-        var enemy = PoolEnemy.instance.GetEnemy();
-        enemy.transform.position = transform.position;
-        enemy.transform.rotation = transform.rotation;
+        StartCoroutine(FirstRespawn());
     }
     private void Update()
     {
@@ -24,8 +22,14 @@ public class SpawnEnemy : MonoBehaviour
         {
             var enemy = PoolEnemy.instance.GetEnemy();
             enemy.transform.position = transform.position;
-            print("Spawn Enemy");
             yield return new WaitForSeconds(3f);
         }
+    }
+    private IEnumerator FirstRespawn()
+    {
+        yield return new WaitForSeconds(1f);
+        var enemy = PoolEnemy.instance.GetEnemy();
+        enemy.transform.position = transform.position;
+        enemy.transform.rotation = transform.rotation;
     }
 }

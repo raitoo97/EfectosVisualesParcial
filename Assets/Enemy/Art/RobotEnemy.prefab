@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a452f827b04eb94f912803ed8b0b0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealth: 20
 --- !u!54 &5504953718890648891
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2838,8 +2839,8 @@ MonoBehaviour:
   animator: {fileID: 7214884193176798465}
   _atackRange: 20
   _aim: {fileID: 7208546577926194475}
-  _maxHealth: 100
-  _shieldChildRef: {fileID: 0}
+  _maxHealth: 20
+  _shieldChildRef: {fileID: 7167898823098151119}
 --- !u!136 &77143642368913515
 CapsuleCollider:
   m_ObjectHideFlags: 0
