@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-public class Shield : MonoBehaviour, IShield ,IImpact , IEnemy
+public class Shield : MonoBehaviour, IShield ,IImpact , IEnemy ,ITakeDamage
 {
     private Material _material;
     private Coroutine _flashCoroutine;
@@ -45,5 +45,8 @@ public class Shield : MonoBehaviour, IShield ,IImpact , IEnemy
         _material.SetFloat("_ColorIntensity", _minIntensity);
         _flashCoroutine = null;
     }
-
+    public void TakeDamage(float damage)
+    {
+        throw new System.NotImplementedException();
+    }
 }

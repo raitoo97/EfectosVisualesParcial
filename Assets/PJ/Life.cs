@@ -17,5 +17,9 @@ public class Life
             Ondead?.Invoke();
         }
     }
+    public void SetHealthToMax()
+    {
+        _currentHealth = _maxHealth;
+    }
     public float GetHealth { get => _currentHealth; }
 }

@@ -211,7 +211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1786320388226535081
 Transform:
   m_ObjectHideFlags: 0
@@ -2764,6 +2764,7 @@ GameObject:
   - component: {fileID: 7214884193176798465}
   - component: {fileID: 7566630658689574885}
   - component: {fileID: 77143642368913515}
+  - component: {fileID: 6882773278116257120}
   m_Layer: 11
   m_Name: RobotEnemy
   m_TagString: Untagged
@@ -2837,6 +2838,8 @@ MonoBehaviour:
   animator: {fileID: 7214884193176798465}
   _atackRange: 20
   _aim: {fileID: 7208546577926194475}
+  _maxHealth: 100
+  _shieldChildRef: {fileID: 0}
 --- !u!136 &77143642368913515
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2860,6 +2863,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1.05, z: 0}
+--- !u!54 &6882773278116257120
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7724002058403324856}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7799924780648604787
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,10 +49,21 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.TryGetComponent<Player>(out var player) && _bulletType == BulletType.Enemy)
         {
             DamageScreen.instance.ShowDamage();
-            player.TakeDamage(_damage);
-            Debug.Log(player.GetLife.GetHealth);
             DesactivateBullet();
         }
+        if (other.gameObject.TryGetComponent<ITakeDamage>(out var takedamageable))
+        {
+            if (_bulletType == BulletType.Enemy && other.GetComponent<Player>())
+            {
+                takedamageable.TakeDamage(_damage);
+            }
+            else if (_bulletType == BulletType.Player && other.GetComponent<Enemy>())
+            {
+                takedamageable.TakeDamage(_damage);
+            }
+            DesactivateBullet();
+        }
+
     }
     private void OnDisable()
     {

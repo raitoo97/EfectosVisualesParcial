@@ -1,5 +1,5 @@
 using UnityEngine;
-public class Enemy : Agent , IEnemy
+public class Enemy : Agent , IEnemy ,ITakeDamage
 {
     public Animator animator;
     private FSM _fsm;
@@ -7,13 +7,23 @@ public class Enemy : Agent , IEnemy
     [SerializeField]private Transform _aim;
     private Player _player;
     private float _rotateSpeed = 120f;
+    [SerializeField] private float _maxHealth;
+    private Life _life;
+    [SerializeField]private Shield _shieldChildRef;
+    private void Awake()
+    {
+        //_shieldChildRef = GetComponentInChildren<Shield>();
+    }
     private void OnEnable()
     {
         animator.SetBool("IsDead", false);
+        //_shieldChildRef.ActivateShield();
+        //_life.SetHealthToMax();
     }
     override protected void Start()
     {
         base.Start();
+        _life = new Life(_maxHealth);
         _fsm = new FSM();
         _player = GameManager.instance.player;
         _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, _atackRange));
@@ -24,10 +34,6 @@ public class Enemy : Agent , IEnemy
     {
         _fsm.onUpdateState();
         base.Update();
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            animator.SetBool("IsDead", true);
-        }
     }
     public void Dead()
     {
@@ -63,5 +69,15 @@ public class Enemy : Agent , IEnemy
             Debug.DrawLine(transform.position + Vector3.up, transform.position + Vector3.up + dir,Color.magenta);
         }
     }
+    public void TakeDamage(float damage)
+    {
+        _life.TakeDamage(damage, ChangeStateDead);
+        print("Enemy=>" +_life.GetHealth);
+    }
+    private void ChangeStateDead()
+    {
+        animator.SetBool("IsDead", true);
+    }
     public FSM GetFSM { get => _fsm; }
+    public Life GetLife { get => _life; }
 }
