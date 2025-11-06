@@ -12,7 +12,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     [SerializeField]private Shield _shieldChildRef;
     private void Awake()
     {
-        //_shieldChildRef = GetComponentInChildren<Shield>();
+        _shieldChildRef = GetComponentInChildren<Shield>();
     }
     private void OnEnable()
     {
@@ -72,7 +72,6 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     public void TakeDamage(float damage)
     {
         _life.TakeDamage(damage, ChangeStateDead);
-        print("Enemy=>" +_life.GetHealth);
     }
     private void ChangeStateDead()
     {
