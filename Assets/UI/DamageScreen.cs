@@ -4,23 +4,18 @@ public class DamageScreen : MonoBehaviour
 {
     [SerializeField]private Material _screenDamageMat;
     private Coroutine _damageCoroutine;
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            ShowDamage();
-        }
-    }
+    private float cameraShakeDuration = 0.3f;
     public void ShowDamage()
     {
         if (_damageCoroutine != null)
             StopCoroutine(_damageCoroutine);
         _damageCoroutine = StartCoroutine(DamageCorutine());
+        CameraShakeManager.instance.ShakeCamera(ShakesType.PlayerUnderAtack, cameraShakeDuration);
     }
     private IEnumerator DamageCorutine()
     {
         float _currentTime = 0;
-        float _duration = 0.25f;
+        float _duration = cameraShakeDuration;
         float _minValue = 0f;
         float _maxValue = 1f;
         while (_currentTime < _duration)
