@@ -5,6 +5,18 @@ public class DamageScreen : MonoBehaviour
     [SerializeField]private Material _screenDamageMat;
     private Coroutine _damageCoroutine;
     private float cameraShakeDuration = 0.3f;
+    public static DamageScreen instance;
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+    private void Start()
+    {
+        _screenDamageMat.SetFloat("_VignetteRadius", 0);
+    }
     public void ShowDamage()
     {
         if (_damageCoroutine != null)

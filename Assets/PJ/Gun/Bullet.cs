@@ -48,7 +48,9 @@ public class Bullet : MonoBehaviour
         }
         if (other.gameObject.TryGetComponent<Player>(out var player) && _bulletType == BulletType.Enemy)
         {
-            Debug.Log(player.name);
+            DamageScreen.instance.ShowDamage();
+            player.TakeDamage(_damage);
+            Debug.Log(player.GetLife.GetHealth);
             DesactivateBullet();
         }
     }
