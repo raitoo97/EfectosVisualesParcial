@@ -10,7 +10,6 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     [SerializeField]private float _maxHealth;
     private Life _life;
     [SerializeField]private Shield _shieldChildRef;
-    [SerializeField]bool isOnCinematic = false;
     private void Awake()
     {
         _life = new Life(_maxHealth);
