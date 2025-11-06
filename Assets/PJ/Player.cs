@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(PlayerInputs))]
 public class Player : MonoBehaviour,ITakeDamage
@@ -55,7 +56,11 @@ public class Player : MonoBehaviour,ITakeDamage
     }
     public void TakeDamage(float damage)
     {
-        _life.TakeDamage(damage);
+        _life.TakeDamage(damage, GoMenu);
+    }
+    private void GoMenu()
+    {
+        SceneManager.LoadScene(0);
     }
     public bool IsGrounded { get => _playerController.IsGrounded; }
     public Vector2 MoveVector { get => _playerController.GetMoveVector; }

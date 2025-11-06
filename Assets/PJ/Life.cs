@@ -1,4 +1,4 @@
-using UnityEngine.SceneManagement;
+using System;
 public class Life
 {
     private float _currentHealth;
@@ -8,12 +8,13 @@ public class Life
         _maxHealth = maxHealth;
         _currentHealth = _maxHealth;
     }
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage , Action Ondead)
     {
         _currentHealth -= damage;
         if (_currentHealth <= 0)
         {
-            SceneManager.LoadScene(0);
+            _currentHealth = 0;
+            Ondead?.Invoke();
         }
     }
     public float GetHealth { get => _currentHealth; }
