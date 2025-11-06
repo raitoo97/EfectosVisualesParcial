@@ -21,5 +21,10 @@ public class Node : MonoBehaviour
         if (!_neighbords.Contains(node))
             _neighbords.Add(node);
     }
+    private void OnDrawGizmos()
+    {
+        //Gizmos.color = Color.green;
+        //Gizmos.DrawWireSphere(this.transform.position, NodeManager._maxDistanceNeighbord);
+    }
     public List<Node> GetNeighbords { get { return _neighbords; } }
 }

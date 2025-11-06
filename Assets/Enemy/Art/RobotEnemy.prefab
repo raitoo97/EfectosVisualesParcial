@@ -2837,7 +2837,7 @@ MonoBehaviour:
   _maxSteerForce: 0.1
   _canMove: 0
   animator: {fileID: 7214884193176798465}
-  _atackRange: 20
+  _atackRange: 10
   _aim: {fileID: 7208546577926194475}
   _maxHealth: 20
   _shieldChildRef: {fileID: 7167898823098151119}
@@ -2889,7 +2889,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &7799924780648604787
 GameObject:

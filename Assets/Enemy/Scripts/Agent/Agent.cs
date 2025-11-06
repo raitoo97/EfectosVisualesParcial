@@ -12,7 +12,6 @@ public abstract class Agent : MonoBehaviour
     protected void AddForce(Vector3 dir)
     {
         _velocity = Vector3.ClampMagnitude(_velocity + dir, _maxVelocity);
-        _velocity.y = 0;
     }
     protected virtual void Update()
     {
