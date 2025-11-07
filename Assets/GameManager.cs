@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1f;
         timer?.OnStart();
+        CinematicDirector.instance.ActivateCleanStair();
     }
     public void StartTimer()
     {
