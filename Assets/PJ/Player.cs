@@ -1,7 +1,8 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(PlayerInputs))]
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour,ITakeDamage
 {
     private PlayerBodyMovement _playerBodyMovement;
     private PlayerRayCast _playerRayCast;
@@ -19,11 +20,15 @@ public class Player : MonoBehaviour
     [SerializeField]private LayerMask _enemyLayer;
     [Header("Interact")]
     private float _interactDistance = 5f;
+    [Header("Life")]
+    [SerializeField]private float _maxHealth;
+    private Life _life;
     private void OnEnable()
     {
         _playerBodyMovement = new PlayerBodyMovement(GetComponent<Rigidbody>(), _walkSpeed);
         _playerRayCast = new PlayerRayCast(Camera.main.transform, _groundChecker, _wallLayer, _groundLayer, _enemyLayer, _rayDistance, _enemyViewDistance, _interactDistance);
         _playerController = new PlayerController(_playerBodyMovement, _playerRayCast, _walkSpeed, _runSpeed);
+        _life = new Life(_maxHealth);
     }
     private void Update()
     {
@@ -49,7 +54,16 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.cyan;
         Gizmos.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * _interactDistance);
     }
+    public void TakeDamage(float damage)
+    {
+        _life.TakeDamage(damage, GoMenu);
+    }
+    private void GoMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     public bool IsGrounded { get => _playerController.IsGrounded; }
     public Vector2 MoveVector { get => _playerController.GetMoveVector; }
     public PlayerController GetPlayerController { get => _playerController; }
+    public Life GetLife { get => _life; }
 }

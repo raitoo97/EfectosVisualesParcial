@@ -3,6 +3,7 @@ using UnityEngine;
 public static class NodeManager
 {
     private static List<Node> _allNode = new List<Node>();
+    public static float _maxDistanceNeighbord = 20;
     public static void RegisterNode(Node node)
     {
         if (!_allNode.Contains(node))
@@ -23,7 +24,8 @@ public static class NodeManager
                 if (otherNode == node) continue;
                 if (LineOfSight.IsOnSight(node.transform.position, otherNode.transform.position))
                 {
-                    node.AddNeighbord(otherNode);
+                    if(Vector3.Distance(node.transform.position,otherNode.transform.position) < _maxDistanceNeighbord)
+                        node.AddNeighbord(otherNode);
                 }
             }
         }

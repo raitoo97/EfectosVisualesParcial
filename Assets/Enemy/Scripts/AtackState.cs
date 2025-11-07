@@ -29,6 +29,9 @@ public class AtackState : Istate
             return;
         }
         _enemy.RotateTo(_playerPos.transform.position);
+        Vector3 sepForce = _enemy.GetSeparationForce();
+        if (sepForce.sqrMagnitude > 0.01f)
+            _enemy.ApplySeparation(sepForce);
     }
     public void Shoot()
     {

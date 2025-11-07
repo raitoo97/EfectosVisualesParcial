@@ -1,5 +1,5 @@
 using UnityEngine;
-public class Enemy : Agent , IEnemy
+public class Enemy : Agent , IEnemy ,ITakeDamage
 {
     public Animator animator;
     private FSM _fsm;
@@ -7,9 +7,39 @@ public class Enemy : Agent , IEnemy
     [SerializeField]private Transform _aim;
     private Player _player;
     private float _rotateSpeed = 120f;
+    [SerializeField]private float _maxHealth;
+    private Life _life;
+    [SerializeField]private Shield _shieldChildRef;
+    private void Awake()
+    {
+        _life = new Life(_maxHealth);
+    }
     private void OnEnable()
     {
-        animator.SetBool("IsDead", false);
+        if(animator != null)
+        {
+            animator.SetBool("IsDead", false);
+        }
+        else
+        {
+            Debug.LogWarning("Animator reference is missing on Enemy.");
+        }
+        if (_life != null)
+        {
+            _life.SetHealthToMax();
+        }
+        else
+        {
+            Debug.LogWarning("Life reference is missing on Enemy.");
+        }
+        if (_shieldChildRef != null)
+        {
+            _shieldChildRef.ActivateShield();
+        }
+        else
+        {
+            Debug.LogWarning("Shield reference is missing on Enemy.");
+        }
     }
     override protected void Start()
     {
@@ -24,10 +54,6 @@ public class Enemy : Agent , IEnemy
     {
         _fsm.onUpdateState();
         base.Update();
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            animator.SetBool("IsDead", true);
-        }
     }
     public void Dead()
     {
@@ -56,12 +82,24 @@ public class Enemy : Agent , IEnemy
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _atackRange);
-        Gizmos.color = Color.blue;
         if(_player != null)
         {
             var dir = _player.transform.position - transform.position;
             Debug.DrawLine(transform.position + Vector3.up, transform.position + Vector3.up + dir,Color.magenta);
         }
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, _SeparationRange);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(_groundCheckObject.position, _groundCheckRadius);
+    }
+    public void TakeDamage(float damage)
+    {
+        _life.TakeDamage(damage, ChangeStateDead);
+    }
+    private void ChangeStateDead()
+    {
+        animator.SetBool("IsDead", true);
     }
     public FSM GetFSM { get => _fsm; }
+    public Life GetLife { get => _life; }
 }

@@ -12,6 +12,7 @@ public class CinematicDirector : MonoBehaviour
     public Transform[] _spawners;
     private SecondCinematic _secondCinematic;
     public static CinematicDirector instance;
+    public List<GameObject> tempEnemies = new List<GameObject>();
     [Header("ThirdCinematic")]
     [SerializeField] private Transform _starshipPos;
     [SerializeField] private Transform _starshipArrivePos;
@@ -26,7 +27,7 @@ public class CinematicDirector : MonoBehaviour
     private void OnEnable()
     {
         _firstCinematic = new FirstCinematic(_waterDrop.transform, this);
-        _secondCinematic = new SecondCinematic(_spawners);
+        _secondCinematic = new SecondCinematic(_spawners, tempEnemies);
         _thirdCinematic = new ThirdCinematic(_starshipPos, _starshipArrivePos,this);
     }
     public void DesactivateGunAndPlayer()
@@ -59,6 +60,10 @@ public class CinematicDirector : MonoBehaviour
     public void ActivateCorutineSpawn()
     {
         _secondCinematic.ActivateCorutineSpawn();
+    }
+    public void DesactivateTempEnemies()
+    {
+        _secondCinematic.DesactivateEnemiesFromList();
     }
     #endregion
     #region ThirdCinematic

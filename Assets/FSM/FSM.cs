@@ -4,7 +4,7 @@ public class FSM
     public enum StateID
     {
         Chase,
-        Attack
+        Attack,
     }
     private Dictionary<StateID, Istate> _allStates = new Dictionary<StateID, Istate>();
     private Istate _currentState;
