@@ -5,9 +5,9 @@ public abstract class Agent : MonoBehaviour
     [SerializeField]protected float _maxVelocity;
     [SerializeField]protected float _maxSteerForce;
     [SerializeField]protected bool _canMove;
-    [SerializeField]protected float _SeparationRange;
-    [SerializeField]protected float _weightSeparation;
-    [SerializeField]protected float _WeightSeek;
+    [Range(0f,10f)][SerializeField]protected float _SeparationRange;
+    [Range(0f,10f)][SerializeField]protected float _weightSeparation;
+    [Range(0f,10f)][SerializeField]protected float _WeightSeek;
     [SerializeField]protected float _gravityForce;
     [SerializeField]protected LayerMask _groundMask;
     protected virtual void Start()
@@ -52,7 +52,13 @@ public abstract class Agent : MonoBehaviour
     }
     public void ApplySeparation(Vector3 force)
     {
-        AddForce(force);
+        force.y = 0;
+        bool hitWall = Physics.Raycast(transform.position, force.normalized, out RaycastHit hit, 0.4f, LayerMask.GetMask("Wall"));
+        if (!hitWall)
+        {
+            AddForce(force);
+        }
+        Debug.DrawRay(transform.position, force.normalized * 0.4f, hitWall ? Color.red : Color.green);
     }
     public Vector3 GetSeparationForce()
     {
