@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_DamageScreen
-  m_Shader: {fileID: -6465566751694194690, guid: 0b0e5636903f48543b09d58d464be5df,
+  m_Name: M_HitEnemy
+  m_Shader: {fileID: -6465566751694194690, guid: 0737994e6478b1e4e97dab4e7441b892,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,11 +38,27 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _LerpVignette: 0.375
-    - _OpacityBlend: 0
-    - _VigentteDarkening: 1
-    - _VignetteRadius: 0
-    - _VignetteSmoothnes: 1
+    - _EffectIntesnity: 0
+    - _Frequency: 30
+    - _GetHit: 1
+    - _IntesnityColor: 1
+    - _PoweFresnel: 0.5
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Speed: 30
     m_Colors:
-    - _ColorVignette: {r: 1, g: 0, b: 0, a: 0}
+    - _ColorHit: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &7806953393956797265
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
