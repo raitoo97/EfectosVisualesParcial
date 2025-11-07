@@ -33,9 +33,8 @@ public abstract class Agent : MonoBehaviour
         float rayLength = 3f;
         if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, rayLength, _groundMask))
         {
-            Debug.DrawLine(rayOrigin, hit.point, Color.green);
             Vector3 pos = transform.position;
-            pos.y = Mathf.Lerp(pos.y, hit.point.y, Time.deltaTime * 50f);
+            pos.y = Mathf.MoveTowards(pos.y, hit.point.y, Time.deltaTime * 50f);
             transform.position = pos;
             _velocity.y = 0;
         }
