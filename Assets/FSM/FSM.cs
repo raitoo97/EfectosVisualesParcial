@@ -5,7 +5,6 @@ public class FSM
     {
         Chase,
         Attack,
-        Idle
     }
     private Dictionary<StateID, Istate> _allStates = new Dictionary<StateID, Istate>();
     private Istate _currentState;
