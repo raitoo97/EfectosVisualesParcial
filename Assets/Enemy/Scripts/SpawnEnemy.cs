@@ -18,7 +18,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             var enemy = PoolEnemy.instance.GetEnemy();
             enemy.transform.position = transform.position;
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(7.5f);
         }
     }
 }

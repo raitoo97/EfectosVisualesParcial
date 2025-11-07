@@ -48,8 +48,15 @@ public class Bullet : MonoBehaviour
         }
         if (other.gameObject.TryGetComponent<Player>(out var player) && _bulletType == BulletType.Enemy)
         {
-            DamageScreen.instance.ShowDamage();
-            DesactivateBullet();
+            if (GameManager.instance.player.GetPlayerController._isOnCinematic)
+            {
+                DamageScreen.instance.HideDamage();
+            }
+            else
+            {
+                DamageScreen.instance.ShowDamage();
+                DesactivateBullet();
+            }
         }
         if (other.gameObject.TryGetComponent<ITakeDamage>(out var takedamageable))
         {

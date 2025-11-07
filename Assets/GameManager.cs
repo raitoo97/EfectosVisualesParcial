@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+[DefaultExecutionOrder(-100)]
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1f;
         timer?.OnStart();
+        CinematicDirector.instance.ActivateCleanStair();
     }
     public void StartTimer()
     {

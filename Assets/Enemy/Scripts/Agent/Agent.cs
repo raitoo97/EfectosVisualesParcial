@@ -100,4 +100,8 @@ public abstract class Agent : MonoBehaviour
         steer = Vector3.ClampMagnitude(steer, _maxSteerForce);
         return steer;
     }
+    public void StopMovement()
+    {
+        _velocity = Vector3.zero;
+    }
 }

@@ -15,6 +15,10 @@ public class DamageScreen : MonoBehaviour
     }
     private void Start()
     {
+        HideDamage();
+    }
+    public void HideDamage()
+    {
         _screenDamageMat.SetFloat("_VignetteRadius", 0);
     }
     public void ShowDamage()

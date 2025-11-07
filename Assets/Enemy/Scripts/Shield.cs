@@ -19,6 +19,7 @@ public class Shield : MonoBehaviour, IShield ,IImpact , IEnemy ,ITakeDamage
         _maxIntensity = 30f;
         _minIntensity = 1f;
         _flashDuration = 0.1f;
+        _material.SetFloat("_ColorIntensity", _minIntensity);
     }
     public void ActivateShield()
     {
@@ -31,6 +32,11 @@ public class Shield : MonoBehaviour, IShield ,IImpact , IEnemy ,ITakeDamage
     public void DeactivateShield()
     {
         this.gameObject.SetActive(false);
+        if (_flashCoroutine != null)
+        {
+            StopCoroutine(_flashCoroutine);
+            _flashCoroutine = null;
+        }
     }
     public void OnImpact(Vector3 hitPosition)
     {
