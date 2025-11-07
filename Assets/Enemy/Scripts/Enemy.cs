@@ -69,8 +69,6 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         }
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, _SeparationRange);
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(_groundCheckObject.position, _groundCheckRadius);
     }
     public void TakeDamage(float damage)
     {
