@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 public class Enemy : Agent , IEnemy ,ITakeDamage
 {
@@ -10,9 +11,23 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     [SerializeField]private float _maxHealth;
     private Life _life;
     [SerializeField]private Shield _shieldChildRef;
+    private EnemyGetHit _hitEffect;
+    List<Material> allHitMaterials = new List<Material>();
     private void Awake()
     {
+        Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);
+        const int HIT_MATERIAL_INDEX = 1;
+        foreach (Renderer renderer in allRenderers)
+        {
+            Material[] currentMaterials = renderer.materials;
+            if (currentMaterials.Length > HIT_MATERIAL_INDEX)
+            {
+                Material hitMaterialInstance = currentMaterials[HIT_MATERIAL_INDEX];
+                allHitMaterials.Add(hitMaterialInstance);
+            }
+        }
         _life = new Life(_maxHealth);
+        _hitEffect = new EnemyGetHit(allHitMaterials, this);
     }
     private void OnEnable()
     {
@@ -24,6 +39,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         if (animator != null) animator.SetBool("IsDead", false);
         if (_life != null) _life.SetHealthToMax();
         if (_shieldChildRef != null) _shieldChildRef.ActivateShield();
+        if (_hitEffect != null) _hitEffect.OnEnable();
     }
     override protected void Start()
     {
@@ -73,6 +89,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     public void TakeDamage(float damage)
     {
         _life.TakeDamage(damage, ChangeStateDead);
+        _hitEffect.ActivteCorutineDamageHit();
     }
     private void ChangeStateDead()
     {
