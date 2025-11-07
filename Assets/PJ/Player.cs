@@ -56,6 +56,7 @@ public class Player : MonoBehaviour,ITakeDamage
     }
     public void TakeDamage(float damage)
     {
+        if(GetPlayerController._isOnCinematic) return;
         _life.TakeDamage(damage, GoMenu);
     }
     private void GoMenu()

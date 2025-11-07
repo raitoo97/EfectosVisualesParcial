@@ -31,7 +31,15 @@ public class AtackState : Istate
         _enemy.RotateTo(_playerPos.transform.position);
         Vector3 sepForce = _enemy.GetSeparationForce();
         if (sepForce.sqrMagnitude > 0.01f)
+        {
+            _enemy.ChangeMove(true);
             _enemy.ApplySeparation(sepForce);
+            _enemy.ChangeMove(false);
+        }
+        else
+        {
+            _enemy.StopMovement();
+        }
     }
     public void Shoot()
     {

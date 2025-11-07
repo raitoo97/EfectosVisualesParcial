@@ -16,43 +16,23 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     }
     private void OnEnable()
     {
-        if(animator != null)
-        {
-            animator.SetBool("IsDead", false);
-        }
-        else
-        {
-            Debug.LogWarning("Animator reference is missing on Enemy.");
-        }
-        if (_life != null)
-        {
-            _life.SetHealthToMax();
-        }
-        else
-        {
-            Debug.LogWarning("Life reference is missing on Enemy.");
-        }
-        if (_shieldChildRef != null)
-        {
-            _shieldChildRef.ActivateShield();
-        }
-        else
-        {
-            Debug.LogWarning("Shield reference is missing on Enemy.");
-        }
+        _player = GameManager.instance.player;
+        _fsm = new FSM();
+        _fsm.AddState(FSM.StateID.Attack, new AtackState(this, _fsm, animator, _player, _aim));
+        _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, _atackRange));
+        _fsm.ChangeState(FSM.StateID.Chase);
+        if (animator != null) animator.SetBool("IsDead", false);
+        if (_life != null) _life.SetHealthToMax();
+        if (_shieldChildRef != null) _shieldChildRef.ActivateShield();
     }
     override protected void Start()
     {
         base.Start();
-        _fsm = new FSM();
-        _player = GameManager.instance.player;
-        _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, _atackRange));
-        _fsm.AddState(FSM.StateID.Attack, new AtackState(this, _fsm, animator, _player,_aim));
-        _fsm.ChangeState(FSM.StateID.Chase);
     }
     protected override void Update()
     {
-        _fsm.onUpdateState();
+        if (_fsm != null)
+            _fsm.onUpdateState();
         base.Update();
     }
     public void Dead()
@@ -99,6 +79,10 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     private void ChangeStateDead()
     {
         animator.SetBool("IsDead", true);
+    }
+    private void OnDisable()
+    {
+        _fsm = null;
     }
     public FSM GetFSM { get => _fsm; }
     public Life GetLife { get => _life; }

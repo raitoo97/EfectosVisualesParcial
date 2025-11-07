@@ -2865,7 +2865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e98fb290ae8baa4c98576d566d3b16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxVelocity: 5
+  _maxVelocity: 10
   _maxSteerForce: 0.1
   _canMove: 0
   _SeparationRange: 3
@@ -2878,7 +2878,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   animator: {fileID: 7214884193176798465}
-  _atackRange: 10
+  _atackRange: 20
   _aim: {fileID: 7208546577926194475}
   _maxHealth: 20
   _shieldChildRef: {fileID: 7167898823098151119}
