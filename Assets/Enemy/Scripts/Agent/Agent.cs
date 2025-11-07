@@ -9,8 +9,6 @@ public abstract class Agent : MonoBehaviour
     [SerializeField]protected float _weightSeparation;
     [SerializeField]protected float _WeightSeek;
     [SerializeField]protected float _gravityForce;
-    [SerializeField]protected Transform _groundCheckObject;
-    [SerializeField]protected float _groundCheckRadius;
     [SerializeField]protected LayerMask _groundMask;
     protected virtual void Start()
     {
@@ -22,31 +20,28 @@ public abstract class Agent : MonoBehaviour
     }
     protected virtual void Update()
     {
+        HandleGroundAdherence();
         if (!_canMove) return;
         if (_velocity.magnitude < 0.1f)
             _velocity += transform.forward * 0.3f;
-        if (!IsGrounded())
+        transform.position += _velocity * Time.deltaTime;
+    }
+    private void HandleGroundAdherence()
+    {
+        Vector3 rayOrigin = transform.position + Vector3.up;
+        Vector3 rayDirection = Vector3.down;
+        float rayLength = 3f;
+        if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, rayLength, _groundMask))
         {
-            _velocity += Vector3.down * _gravityForce * Time.deltaTime;
+            Vector3 pos = transform.position;
+            pos.y = Mathf.MoveTowards(pos.y, hit.point.y, Time.deltaTime * 50f);
+            transform.position = pos;
+            _velocity.y = 0;
         }
         else
         {
-            StickToGround();
-        }
-        transform.position += _velocity * Time.deltaTime;
-    }
-    private bool IsGrounded()
-    {
-        return Physics.CheckSphere(_groundCheckObject.position, _groundCheckRadius, _groundMask);
-    }
-    private void StickToGround()
-    {
-        if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, out RaycastHit hit, 2f, _groundMask))
-        {
-            Vector3 pos = this.transform.position;
-            pos.y = hit.point.y;
-            transform.position = pos;
-            _velocity.y = 0;
+            Debug.DrawRay(rayOrigin, rayDirection * rayLength, Color.red);
+            _velocity += Vector3.down * _gravityForce * 20 * Time.deltaTime;
         }
     }
     public void FlockingAndSeek(Vector3 target)
@@ -58,7 +53,6 @@ public abstract class Agent : MonoBehaviour
     public void ApplySeparation(Vector3 force)
     {
         AddForce(force);
-        transform.position += _velocity * Time.deltaTime;
     }
     public Vector3 GetSeparationForce()
     {

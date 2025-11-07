@@ -34,10 +34,10 @@ public class AtackState : Istate
         {
             _enemy.ChangeMove(true);
             _enemy.ApplySeparation(sepForce);
-            _enemy.ChangeMove(false);
         }
         else
         {
+            _enemy.ChangeMove(false);
             _enemy.StopMovement();
         }
     }
