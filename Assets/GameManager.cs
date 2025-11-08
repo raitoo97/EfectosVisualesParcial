@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         timer = new Timer();
+        OnGameOver -= GoToFinish;
         OnGameOver += GoToFinish;
     }
     private void Update()
@@ -32,9 +33,16 @@ public class GameManager : MonoBehaviour
         _glowMaterial.SetInt("_ActivateOutLine", 0);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        InitializeGameStart();
+    }
+    public void InitializeGameStart()
+    {
         Time.timeScale = 1f;
         timer?.OnStart();
-        CinematicDirector.instance.ActivateCleanStair();
+        if (CinematicDirector.instance != null)
+        {
+            CinematicDirector.instance.ActivateCleanStair();
+        }
     }
     public void StartTimer()
     {
@@ -43,17 +51,34 @@ public class GameManager : MonoBehaviour
     }
     public void GoToFinish()
     {
-        StartCoroutine(OnFinishCorutine());
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(OnFinishCorutine());
+        }
+        else
+        {
+            Debug.LogError("GameManager intentó iniciar GoToFinish, pero fue destruido/inactivo. Se abortó la corrutina.");
+        }
     }
     public void GoToMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
     IEnumerator OnFinishCorutine()
     {
-        CanvasManager.instance.FadeIn();
+        if (CanvasManager.instance != null)
+            CanvasManager.instance.FadeIn();
         yield return new WaitForSeconds(1.3f);
-        CinematicDirector.instance.GetPlayableDirector(2).Play();
+        if (CinematicDirector.instance != null)
+        {
+            CinematicDirector.instance.GetPlayableDirector(2).Play();
+        }
+    }
+    private void OnDisable()
+    {
+        OnGameOver -= GoToFinish;
+        timer = null;
     }
     public string GetTime { get => timer.GetTime; }
 }
