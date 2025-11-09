@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 public static class NodeManager
 {
     private static List<Node> _allNode = new List<Node>();
