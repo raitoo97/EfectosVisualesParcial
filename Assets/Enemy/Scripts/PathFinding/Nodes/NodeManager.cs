@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 public static class NodeManager
 {
     private static List<Node> _allNode = new List<Node>();
@@ -37,6 +38,7 @@ public static class NodeManager
         float closetDistance = Mathf.Infinity;
         foreach (var node in _allNode)
         {
+            if (!LineOfSight.IsOnSight(node.transform.position, poisition)) continue;
             var distance = poisition - node.transform.position; 
             if (distance.magnitude < closetDistance)
             {
