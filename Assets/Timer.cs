@@ -7,8 +7,8 @@ public class Timer
     public void OnStart()
     {
         stop = true;
-        _min = 0;
-        _seg = 20;
+        _min = 1;
+        _seg = 30;
         _mmm = 0;
     }
     public void OnUpdate()
