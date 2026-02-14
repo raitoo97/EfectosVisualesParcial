@@ -11,6 +11,7 @@ public class BounceCapsule : MonoBehaviour
     void Start()
     {
         _rb = GetComponentInChildren<Rigidbody>();
+        _currentBounce = Vector3.zero;
     }
     void Update()
     {
