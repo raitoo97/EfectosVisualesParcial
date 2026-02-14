@@ -55,18 +55,21 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Frequency: 0.5
+    - _CellNoiseDensity: 16.74
+    - _Frequency: 4.33
     - _FresnelPower: 1
-    - _IntensitySlime: 58.8
-    - _NormalStrenght: 2
+    - _IntensitySlime: 0.003
+    - _NormalStrenght: 0
+    - _Offset: 0.000005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothnes: 0
-    - _Speed: 0.5
-    - _TilingUV: 4.02
+    - _Speed: 0.6
+    - _TilingUV: 1
     m_Colors:
     - _DetailsColor: {r: 0.94739765, g: 1, b: 0, a: 0}
-    - _DirectionSlime: {r: 1, g: 0, b: 0.5, a: 0}
+    - _DirectionSlime: {r: 0, g: -1, b: 0, a: 0}
     - _FresnelColor: {r: 0.8862746, g: 1, b: 0.34509796, a: 1}
     - _MainColor: {r: 0.30980387, g: 0.38823527, b: 0.22352937, a: 1}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
