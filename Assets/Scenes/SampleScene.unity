@@ -93579,6 +93579,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7564972808178285126}
   m_Mesh: {fileID: 4300000, guid: 16c8394e6de71fe418ee7d27508f01df, type: 3}
+--- !u!1001 &6798489210375775026
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.7951736
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.9475102
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 64.74173
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056598989847472261, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_Name
+      value: RainAcid
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b6a885d4388a5e4b8f92a57c294149f, type: 3}
 --- !u!4 &6814116357936413441
 Transform:
   m_ObjectHideFlags: 0
@@ -113248,3 +113316,4 @@ SceneRoots:
   - {fileID: 204886977}
   - {fileID: 35092974}
   - {fileID: 760360854344679909}
+  - {fileID: 6798489210375775026}
