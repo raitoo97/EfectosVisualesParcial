@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 public class Enemy : Agent , IEnemy ,ITakeDamage
 {
     public Animator animator;
@@ -13,6 +14,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     [SerializeField]private Shield _shieldChildRef;
     private EnemyGetHit _hitEffect;
     List<Material> allHitMaterials = new List<Material>();
+    public VisualEffect hitParticleEffect;
     private void Awake()
     {
         Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);
@@ -98,6 +100,10 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     private void OnDisable()
     {
         _fsm = null;
+    }
+    public void PlayParticleDeath()
+    {
+        hitParticleEffect.Play();
     }
     public FSM GetFSM { get => _fsm; }
     public Life GetLife { get => _life; }

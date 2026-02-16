@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Liquid
-  m_Shader: {fileID: -6465566751694194690, guid: c1844132483c2454992f56c20cae9b6b,
+  m_Name: M_ImpactFrame
+  m_Shader: {fileID: -6465566751694194690, guid: ef51d402d7beb05429b215c3681d279d,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,29 +38,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BounceX: 0
-    - _BounceZ: 0
-    - _ColorIntensity: 2.27
-    - _Fill: 0.017
-    - _FresnelPower: 1
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    m_Colors:
-    - _Bounce: {r: 0.000000010124218, g: 1.5141219e-10, b: -1.8189755e-11, a: 0}
-    - _FresnelColor: {r: 0.30980387, g: 0.36862746, b: 0.15294117, a: 1}
-    - _LiquidColor: {r: 0.6901961, g: 0.7137255, b: 0.40784317, a: 1}
-    - _SurfaceColor: {r: 0.31372547, g: 0.38431373, b: 0.15686277, a: 1}
+    - _ImpactFrameIntensity: 0.5
+    - _OnImpactFrame: 0
+    - _Saturation: 0.28
+    m_Colors: []
   m_BuildTextureStacks: []
---- !u!114 &4838954053185504878
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 7
