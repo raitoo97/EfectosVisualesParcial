@@ -14,7 +14,7 @@ public abstract class Agent : MonoBehaviour
     {
         _canMove = true;
     }
-    protected void AddForce(Vector3 dir)
+    public void AddForce(Vector3 dir)
     {
         _velocity = Vector3.ClampMagnitude(_velocity + dir, _maxVelocity);
     }
@@ -104,4 +104,7 @@ public abstract class Agent : MonoBehaviour
     {
         _velocity = Vector3.zero;
     }
+    public Vector3 Velocity { get => _velocity; }
+    public float MaxVelocity { get => _maxVelocity; }
+    public float MaxForce { get => _maxSteerForce; }
 }
