@@ -773,9 +773,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.69222516, y: 0, z: 0, w: 0.72168165}
   m_LocalPosition: {x: -2.948, y: 2.959, z: -6.918}
-  m_LocalScale: {x: 256.3951, y: 256.3951, z: 256.3951}
+  m_LocalScale: {x: 455.8192, y: 455.81918, z: 455.81918}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2623569966423567816}
   - {fileID: 5823646722181781284}
   - {fileID: 6011680786467520748}
   - {fileID: 5907646785932697792}
@@ -838,8 +839,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.44419637, g: 0.5566038, b: 0.28617838, a: 1}
-  m_Intensity: 1.34
-  m_Range: 2.16
+  m_Intensity: 5
+  m_Range: 7
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1040,7 +1041,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.44313726, g: 0.5568628, b: 0.28627452, a: 1}
   m_Intensity: 1.34
-  m_Range: 2.16
+  m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1081,7 +1082,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 7
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -1361,3 +1362,82 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &3435118283613216660
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8967460019249260515}
+    m_Modifications:
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.014728604
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7069544
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7069524
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.014728634
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487649452200978783, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: ShapeModule.m_MeshRenderer
+      value: 
+      objectReference: {fileID: 6116031642852722361}
+    - target: {fileID: 6056598989847472261, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: m_Name
+      value: RainAcid
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b6a885d4388a5e4b8f92a57c294149f, type: 3}
+--- !u!4 &2623569966423567816 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 847581743781802588, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3435118283613216660}
+  m_PrefabAsset: {fileID: 0}
