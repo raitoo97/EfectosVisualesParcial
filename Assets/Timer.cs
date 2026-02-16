@@ -4,6 +4,11 @@ public class Timer
     private float _min, _seg ,_mmm;
     private string _timerToString;
     public bool stop;
+    private GameObject _portal;
+    public Timer(GameObject portal)
+    {
+        _portal = portal;
+    }
     public void OnStart()
     {
         stop = true;
@@ -33,7 +38,7 @@ public class Timer
                 _seg = 0;
                 _mmm = 0;
                 stop = true;
-                GameManager.OnGameOver?.Invoke();
+                _portal.SetActive(true);
             }
         }
         int fracciones = Mathf.FloorToInt(_mmm);
