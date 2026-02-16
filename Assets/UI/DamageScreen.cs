@@ -3,7 +3,9 @@ using UnityEngine;
 public class DamageScreen : MonoBehaviour
 {
     [SerializeField]private Material _screenDamageMat;
+    [SerializeField]private Material _impactFrame;
     private Coroutine _damageCoroutine;
+    private Coroutine _impactFrameCoroutine;
     private float cameraShakeDuration = 0.3f;
     public static DamageScreen instance;
     private void Awake()
@@ -20,9 +22,14 @@ public class DamageScreen : MonoBehaviour
     public void HideDamage()
     {
         _screenDamageMat.SetFloat("_VignetteRadius", 0);
+        _impactFrame.SetFloat("_OnImpactFrame", 0);
     }
     public void ShowDamage()
     {
+        if(_impactFrameCoroutine != null)
+            StopCoroutine(_impactFrameCoroutine);
+        _impactFrame.SetFloat("_OnImpactFrame", 1f);
+        _impactFrameCoroutine = StartCoroutine(ImpactFrameFadeOut());
         if (_damageCoroutine != null)
             StopCoroutine(_damageCoroutine);
         _damageCoroutine = StartCoroutine(DamageCorutine());
@@ -53,5 +60,17 @@ public class DamageScreen : MonoBehaviour
         _screenDamageMat.SetFloat("_VignetteRadius", _minValue);
         _currentTime = 0;
         _damageCoroutine = null;
+    }
+    private IEnumerator ImpactFrameFadeOut()
+    {
+        float time = 0f;
+        float duration = 0.15f;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+        _impactFrame.SetFloat("_OnImpactFrame", 0f);
+        _impactFrameCoroutine = null;
     }
 }
