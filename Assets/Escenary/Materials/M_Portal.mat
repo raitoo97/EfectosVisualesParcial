@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Liquid
-  m_Shader: {fileID: -6465566751694194690, guid: c1844132483c2454992f56c20cae9b6b,
+  m_Name: M_Portal
+  m_Shader: {fileID: -6465566751694194690, guid: 1cf5ce9601fd3144c9703d1b43df0a38,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -24,6 +24,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Texture:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -38,20 +42,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BounceX: 0
-    - _BounceZ: 0
-    - _ColorIntensity: 2.27
-    - _Fill: 0.017
-    - _FresnelPower: 1
+    - _CellsVoranoiDensity: 2.5
+    - _ColoIntesity: 10.72
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Size: -1.69
+    - _TwirlStrength: 30
     m_Colors:
-    - _Bounce: {r: 9.8399e-41, g: -2e-44, b: 3.9e-44, a: 0}
-    - _FresnelColor: {r: 0.30980387, g: 0.36862746, b: 0.15294117, a: 1}
-    - _LiquidColor: {r: 0.6901961, g: 0.7137255, b: 0.40784317, a: 1}
-    - _SurfaceColor: {r: 0.31372547, g: 0.38431373, b: 0.15686277, a: 1}
+    - _Color: {r: 0.109889984, g: 1, b: 0, a: 1}
+    - _Offset: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _OffsetSpeed: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4838954053185504878
+--- !u!114 &1685355230681668021
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

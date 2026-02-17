@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Liquid
-  m_Shader: {fileID: -6465566751694194690, guid: c1844132483c2454992f56c20cae9b6b,
+  m_Name: M_Galaxy
+  m_Shader: {fileID: -6465566751694194690, guid: 58379cbe87d2e7549b3e6837f13aede1,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,6 +24,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Galaxy:
+        m_Texture: {fileID: 8900000, guid: 5e857b13166374a4d9483510b78d639b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Stars:
+        m_Texture: {fileID: 2800000, guid: c92df4040e2e84946bd9e39b4cd1a5a5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -38,20 +46,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BounceX: 0
-    - _BounceZ: 0
-    - _ColorIntensity: 2.27
-    - _Fill: 0.017
     - _FresnelPower: 1
+    - _Noise: 100
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Bounce: {r: 9.8399e-41, g: -2e-44, b: 3.9e-44, a: 0}
-    - _FresnelColor: {r: 0.30980387, g: 0.36862746, b: 0.15294117, a: 1}
-    - _LiquidColor: {r: 0.6901961, g: 0.7137255, b: 0.40784317, a: 1}
-    - _SurfaceColor: {r: 0.31372547, g: 0.38431373, b: 0.15686277, a: 1}
+    - _FresnelColor: {r: 0, g: 0.7259936, b: 1, a: 0}
+    - _FresnelOffet: {r: 0.1, g: 0, b: 0, a: 0}
+    - _GalaxyColor: {r: 1, g: 1, b: 1, a: 0}
+    - _StarsColor: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4838954053185504878
+--- !u!114 &8299956717284630947
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

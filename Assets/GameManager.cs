@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Material _glowMaterial;
     private Timer timer;
     public static Action OnGameOver;
+    public GameObject _portal;
     private void Awake()
     {
         if(instance == null)
@@ -20,7 +21,8 @@ public class GameManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        timer = new Timer();
+        _portal.SetActive(false);
+        timer = new Timer(_portal);
         OnGameOver -= GoToFinish;
         OnGameOver += GoToFinish;
     }
