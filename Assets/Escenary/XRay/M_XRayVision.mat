@@ -12,15 +12,17 @@ Material:
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap:
-    RenderType: Opaque
-  disabledShaderPasses: []
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -41,24 +43,24 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Blend: 0
+    - _Blend: 2
     - _CastShadows: 1
     - _Cull: 2
-    - _DstBlend: 0
+    - _DstBlend: 1
     - _FresnelPower: 2
-    - _NoiseAmountLerp: 0
+    - _NoiseAmountLerp: 1
     - _NoisePower: 3
     - _NoiseScale: 10
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SrcBlend: 1
-    - _Surface: 0
+    - _SrcBlend: 5
+    - _Surface: 1
     - _ZTest: 4
-    - _ZWrite: 1
+    - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _ColorXRay: {r: 0, g: 0.6025848, b: 1, a: 1}
-    - _NoiseSpeedOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorXRay: {r: 5.3403134, g: 0.16713794, b: 0, a: 1}
+    - _NoiseSpeedOffset: {r: 1, g: 1, b: 0, a: 0}
     - _Tilling: {r: 0.5, g: 30, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7317398601522217654
