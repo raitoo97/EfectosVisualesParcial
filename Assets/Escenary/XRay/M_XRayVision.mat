@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Liquid
-  m_Shader: {fileID: -6465566751694194690, guid: c1844132483c2454992f56c20cae9b6b,
+  m_Name: M_XRayVision
+  m_Shader: {fileID: -6465566751694194690, guid: d6d54a46a2257f944b62cdedcf9ade9d,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -18,7 +18,8 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -38,20 +39,29 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BounceX: 0
-    - _BounceZ: 0
-    - _ColorIntensity: 2.27
-    - _Fill: 0.017
-    - _FresnelPower: 1
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Blend: 0
+    - _CastShadows: 1
+    - _Cull: 2
+    - _DstBlend: 0
+    - _FresnelPower: 2
+    - _NoiseAmountLerp: 0
+    - _NoisePower: 3
+    - _NoiseScale: 10
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
-    - _Bounce: {r: 1.4e-44, g: -1.4e-44, b: 1.4e-44, a: 0}
-    - _FresnelColor: {r: 0.30980387, g: 0.36862746, b: 0.15294117, a: 1}
-    - _LiquidColor: {r: 0.6901961, g: 0.7137255, b: 0.40784317, a: 1}
-    - _SurfaceColor: {r: 0.31372547, g: 0.38431373, b: 0.15686277, a: 1}
+    - _ColorXRay: {r: 0, g: 0.6025848, b: 1, a: 1}
+    - _NoiseSpeedOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _Tilling: {r: 0.5, g: 30, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4838954053185504878
+--- !u!114 &7317398601522217654
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
