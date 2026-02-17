@@ -42,6 +42,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         if (_life != null) _life.SetHealthToMax();
         if (_shieldChildRef != null) _shieldChildRef.ActivateShield();
         if (_hitEffect != null) _hitEffect.OnEnable();
+        if(hitParticleEffect != null) hitParticleEffect.Stop();
     }
     override protected void Start()
     {
