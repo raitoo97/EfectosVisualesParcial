@@ -18,15 +18,16 @@ public class EnemyGetHit
             part.SetFloat("_EffectIntesnity",0);
         }
     }
-    public void ActivteCorutineDamageHit()
+    public void ActivteCorutineDamageHit(Color color)
     {
         if (_damageHitCoroutine != null)
         {
             _corutineHandler.StopCoroutine(_damageHitCoroutine);
-            foreach (var part in _hitParts)
-            {
-                part.SetFloat("_EffectIntesnity", 0f);
-            }
+        }
+        foreach (var part in _hitParts)
+        {
+            part.SetColor("_ColorHit", color);
+            part.SetFloat("_EffectIntesnity", 0f);
         }
         _damageHitCoroutine = _corutineHandler.StartCoroutine(ShowDamageHit());
     }

@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Liquid
-  m_Shader: {fileID: -6465566751694194690, guid: c1844132483c2454992f56c20cae9b6b,
+  m_Name: M_AcidLake
+  m_Shader: {fileID: -6465566751694194690, guid: 9b3e06d0a491e1244a123f7b29d7bed1,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -38,20 +38,35 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BounceX: 0
-    - _BounceZ: 0
-    - _ColorIntensity: 2.27
-    - _Fill: 0.017
-    - _FresnelPower: 1
+    - _CellDensity: 20
+    - _CellDensityStrecht: 20
+    - _CloudIntensity: 0.468
+    - _CloudScale: 20
+    - _CloudSpeed: 0.002
+    - _Depth: 1.15
+    - _DepthAlpha: 1
+    - _DisplacementStrenght: 1.93
+    - _Distance: 1
+    - _EdgeMaxAlpha: 1
+    - _IntesityAcid: 228.18
+    - _NormalStrenght: 1
+    - _Offset: 0.05
+    - _PowerVoranoi: 2
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RippleIntesity: 0.975
+    - _RippleSpeed: 2
+    - _Smoothness: 0
     m_Colors:
-    - _Bounce: {r: 3e-45, g: 3e-45, b: -3e-45, a: 0}
-    - _FresnelColor: {r: 0.30980387, g: 0.36862746, b: 0.15294117, a: 1}
-    - _LiquidColor: {r: 0.6901961, g: 0.7137255, b: 0.40784317, a: 1}
-    - _SurfaceColor: {r: 0.31372547, g: 0.38431373, b: 0.15686277, a: 1}
+    - _BaseColor: {r: 0.050980397, g: 0.41176474, b: 0.019607844, a: 1}
+    - _DepthColor: {r: 0.03137255, g: 0.1254902, b: 0.011764707, a: 1}
+    - _DirectionStrecht: {r: 0.5, g: 0, b: 0, a: 0}
+    - _DirectionStrechtX: {r: 0.2, g: 0, b: 0, a: 0}
+    - _DirectionStrechtZ: {r: 0, g: 0, b: 0.2, a: 0}
+    - _DirectionStrecht_X: {r: 20, g: 0, b: 0, a: 0}
+    - _DirectionStrecht_Z: {r: 0, g: 0, b: 20, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4838954053185504878
+--- !u!114 &2416336112925327497
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

@@ -509,6 +509,7 @@ GameObject:
   - component: {fileID: 7668426294929055632}
   - component: {fileID: 3890940793071180921}
   - component: {fileID: 169095690006040428}
+  - component: {fileID: 3050916589467038826}
   m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
@@ -584,6 +585,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3050916589467038826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2540882652262795618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e673b64e01e24954aa1505b2b50ec14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bombPrefab: {fileID: 4343062369593503690, guid: 8cc33abe9331d854e852409ffcf3cc67,
+    type: 3}
+  _ThrowPoint: {fileID: 5957439328374765588}
 --- !u!1 &2795979712509824640
 GameObject:
   m_ObjectHideFlags: 0
