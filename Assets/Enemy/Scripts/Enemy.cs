@@ -121,6 +121,8 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     private void OnDisable()
     {
         _fsm = null;
+        if (hitParticleEffect != null) hitParticleEffect.Stop();
+        if (hitAcidEffect != null) hitAcidEffect.Stop();
     }
     public void PlayParticleDeath()
     {
