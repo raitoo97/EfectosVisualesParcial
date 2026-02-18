@@ -119,6 +119,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68acf05ff31f3147a89049598d071e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 4
+  damage: 10
+  tickTime: 1
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1001 &6425019560741371497
 PrefabInstance:
   m_ObjectHideFlags: 0

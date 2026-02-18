@@ -5,6 +5,10 @@ public class AcidPlatform : MonoBehaviour
     private Vector3 _targetSize;
     private Vector3 _initSize;
     private Coroutine _sizeCoroutine;
+    [SerializeField] private float radius = 4f;
+    [SerializeField] private float damage = 10f;
+    [SerializeField] private float tickTime = 1f;
+    [SerializeField] private LayerMask enemyMask;
     private void Awake()
     {
         _initSize = Vector3.zero;
@@ -15,12 +19,22 @@ public class AcidPlatform : MonoBehaviour
     {
         if(_sizeCoroutine == null)
             _sizeCoroutine = StartCoroutine(SizeAnimation());
+        StartCoroutine(AreaDamage());
     }
-    private void OnTriggerEnter(Collider other)
+    private IEnumerator AreaDamage()
     {
-        if(other.gameObject.layer == 11)
+        while (true)
         {
-
+            var hits = Physics.OverlapSphere(transform.position, radius, enemyMask);
+            foreach (var hit in hits)
+            {
+                var enemy = hit.GetComponentInParent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.ReceiveAreaDamage(damage, transform.position);
+                }
+            }
+            yield return new WaitForSeconds(tickTime);
         }
     }
     private IEnumerator SizeAnimation()
@@ -35,5 +49,10 @@ public class AcidPlatform : MonoBehaviour
         }
         transform.localScale = _targetSize;
         _sizeCoroutine = null;
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

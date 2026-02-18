@@ -94,6 +94,18 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         _life.TakeDamage(damage, ChangeStateDead);
         _hitEffect.ActivteCorutineDamageHit();
     }
+    public void ReceiveAreaDamage(float damage, Vector3 hitPos)
+    {
+        if (_shieldChildRef != null && _shieldChildRef.gameObject.activeInHierarchy)
+        {
+            _shieldChildRef.OnImpact(hitPos);
+            _shieldChildRef.TakeDamage(damage);
+        }
+        else
+        {
+            TakeDamage(damage);
+        }
+    }
     private void ChangeStateDead()
     {
         animator.SetBool("IsDead", true);
