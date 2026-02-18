@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 public class AcidPlatform : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class AcidPlatform : MonoBehaviour
     [SerializeField] private float damage = 10f;
     [SerializeField] private float tickTime = 1f;
     [SerializeField] private LayerMask enemyMask;
+    private HashSet<Enemy> enemiesInArea = new HashSet<Enemy>();
     private void Awake()
     {
         _initSize = Vector3.zero;
@@ -29,14 +31,27 @@ public class AcidPlatform : MonoBehaviour
         while (true)
         {
             var hits = Physics.OverlapSphere(transform.position, radius, enemyMask);
+            HashSet<Enemy> currentEnemies = new HashSet<Enemy>();
             foreach (var hit in hits)
             {
                 var enemy = hit.GetComponentInParent<Enemy>();
-                if (enemy != null)
+                if (enemy == null) continue;
+                currentEnemies.Add(enemy);
+                // ENTRA al área
+                if (!enemiesInArea.Contains(enemy))
                 {
-                    enemy.ReceiveAreaDamage(damage, transform.position);
+                    enemy.OnEnterAcid();
+                }
+                enemy.ReceiveAreaDamage(damage, transform.position);
+            }
+            foreach (var enemy in enemiesInArea)
+            {
+                if (!currentEnemies.Contains(enemy))
+                {
+                    enemy.OnExitAcid();
                 }
             }
+            enemiesInArea = currentEnemies;
             yield return new WaitForSeconds(tickTime);
         }
     }
@@ -67,6 +82,12 @@ public class AcidPlatform : MonoBehaviour
         }
         if (_destroyCoroutine == null)
             _destroyCoroutine = StartCoroutine(SizeAnimationDestroy());
+        foreach (var enemy in enemiesInArea)
+        {
+            if (enemy != null)
+                enemy.OnExitAcid();
+        }
+        enemiesInArea.Clear();
     }
     private IEnumerator SizeAnimationDestroy()
     {

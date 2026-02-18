@@ -99,7 +99,6 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     public void TakeAcidDamage(float damage)
     {
         _life.TakeDamage(damage, ChangeStateDead);
-        if(hitAcidEffect != null) hitAcidEffect.Play();
         _hitEffect.ActivteCorutineDamageHit(Color.green * 2f);
     }
     public void ReceiveAreaDamage(float damage, Vector3 hitPos)
@@ -117,6 +116,16 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     private void ChangeStateDead()
     {
         animator.SetBool("IsDead", true);
+    }
+    public void OnEnterAcid()
+    {
+        if (hitAcidEffect != null)
+            hitAcidEffect.Play();
+    }
+    public void OnExitAcid()
+    {
+        if (hitAcidEffect != null)
+            hitAcidEffect.Stop();
     }
     private void OnDisable()
     {
