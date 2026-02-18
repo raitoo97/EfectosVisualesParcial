@@ -16,6 +16,13 @@ public class AcidPlatform : MonoBehaviour
         if(_sizeCoroutine == null)
             _sizeCoroutine = StartCoroutine(SizeAnimation());
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == 11)
+        {
+
+        }
+    }
     private IEnumerator SizeAnimation()
     {
         float time = 0;
