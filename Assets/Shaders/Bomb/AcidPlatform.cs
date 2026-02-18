@@ -5,6 +5,8 @@ public class AcidPlatform : MonoBehaviour
     private Vector3 _targetSize;
     private Vector3 _initSize;
     private Coroutine _sizeCoroutine;
+    private Coroutine _destroyCoroutine;
+    private Coroutine _areaDamageCoroutine;
     [SerializeField] private float radius = 4f;
     [SerializeField] private float damage = 10f;
     [SerializeField] private float tickTime = 1f;
@@ -19,7 +21,8 @@ public class AcidPlatform : MonoBehaviour
     {
         if(_sizeCoroutine == null)
             _sizeCoroutine = StartCoroutine(SizeAnimation());
-        StartCoroutine(AreaDamage());
+        _areaDamageCoroutine = StartCoroutine(AreaDamage());
+        Invoke("DestroyObject", 10f);
     }
     private IEnumerator AreaDamage()
     {
@@ -55,8 +58,28 @@ public class AcidPlatform : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
-    private void DestroObject()
+    private void DestroyObject()
     {
-
+        if (_areaDamageCoroutine != null)
+        {
+            StopCoroutine(_areaDamageCoroutine);
+            _areaDamageCoroutine = null;
+        }
+        if (_destroyCoroutine == null)
+            _destroyCoroutine = StartCoroutine(SizeAnimationDestroy());
+    }
+    private IEnumerator SizeAnimationDestroy()
+    {
+        float time = 0;
+        float duration = 0.5f;
+        while (time < duration)
+        {
+            transform.localScale = Vector3.Lerp(_targetSize, _initSize, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = _initSize;
+        Destroy(gameObject);
+        _destroyCoroutine = null;
     }
 }
