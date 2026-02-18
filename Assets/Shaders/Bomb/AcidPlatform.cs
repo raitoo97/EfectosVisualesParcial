@@ -55,4 +55,8 @@ public class AcidPlatform : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
+    private void DestroObject()
+    {
+
+    }
 }
