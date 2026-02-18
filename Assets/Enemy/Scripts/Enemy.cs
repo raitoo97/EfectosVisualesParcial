@@ -44,6 +44,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         if (_shieldChildRef != null) _shieldChildRef.ActivateShield();
         if (_hitEffect != null) _hitEffect.OnEnable();
         if(hitParticleEffect != null) hitParticleEffect.Stop();
+        if (hitAcidEffect != null) hitAcidEffect.Stop();
     }
     override protected void Start()
     {
@@ -93,7 +94,13 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     public void TakeDamage(float damage)
     {
         _life.TakeDamage(damage, ChangeStateDead);
-        _hitEffect.ActivteCorutineDamageHit();
+        _hitEffect.ActivteCorutineDamageHit(Color.red * 2f);
+    }
+    public void TakeAcidDamage(float damage)
+    {
+        _life.TakeDamage(damage, ChangeStateDead);
+        if(hitAcidEffect != null) hitAcidEffect.Play();
+        _hitEffect.ActivteCorutineDamageHit(Color.green * 2f);
     }
     public void ReceiveAreaDamage(float damage, Vector3 hitPos)
     {
@@ -104,7 +111,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         }
         else
         {
-            TakeDamage(damage);
+            TakeAcidDamage(damage);
         }
     }
     private void ChangeStateDead()
