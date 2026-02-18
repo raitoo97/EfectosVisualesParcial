@@ -15,6 +15,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     private EnemyGetHit _hitEffect;
     List<Material> allHitMaterials = new List<Material>();
     public VisualEffect hitParticleEffect;
+    public VisualEffect hitAcidEffect;
     private void Awake()
     {
         Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);
