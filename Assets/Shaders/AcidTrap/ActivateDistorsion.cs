@@ -11,16 +11,16 @@ public class ActivateDistorsion : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("EyesPlayer"))
-        {
             StartLerp(0f);
-        }
+        if (other.CompareTag("Player"))
+            other.GetComponent<Player>().GetPlayerController.SetUnderAcid(false);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("EyesPlayer"))
-        {
             StartLerp(1f);
-        }
+        if (other.CompareTag("Player"))
+            other.GetComponent<Player>().GetPlayerController.SetUnderAcid(true);
     }
     private void StartLerp(float targetValue)
     {
@@ -30,7 +30,7 @@ public class ActivateDistorsion : MonoBehaviour
     }
     IEnumerator LerpDistorsion(float target)
     {
-        float duration = 1f;
+        float duration = .5f;
         float time = 0f;
         float startValue = distorsionMaterial.GetFloat("_LerpActivate");
         while (time < duration)

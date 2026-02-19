@@ -14,6 +14,10 @@ public class PlayerController
     private bool _triggerJump;
     [Header("ViewEnemy")]
     private bool _viewEnemy;
+    [Header("UnderAcid")]
+    private bool _isUnderAcid;
+    private float _acidSpeedMultiplier = 0.4f;
+    private float _normalSpeedMultiplier = 1f;
     public PlayerController(PlayerBodyMovement playerBodyMovement, PlayerRayCast playerRayCast, float walkSpeed, float runSpeed)
     {
         _playerBodyMovement = playerBodyMovement;
@@ -25,10 +29,11 @@ public class PlayerController
     }
     private void Running()
     {
+        float speedMultiplier = _isUnderAcid ? _acidSpeedMultiplier : _normalSpeedMultiplier;
         if (PlayerInputs.instance.RunAction())
-            _playerBodyMovement.ChangeSpeed(_runSpeed);
+            _playerBodyMovement.ChangeSpeed(_runSpeed * speedMultiplier);
         else
-            _playerBodyMovement.ChangeSpeed(_walkSpeed);
+            _playerBodyMovement.ChangeSpeed(_walkSpeed * speedMultiplier);
     }
     public void OnUpdate()
     {
@@ -46,15 +51,31 @@ public class PlayerController
     public void OnFixedUpdate()
     {
         if (_isOnCinematic) return;
+        Rigidbody rb = _playerBodyMovement.GetRigidbody();
+        if (_isUnderAcid)
+        {
+            rb.useGravity = false;
+            _playerBodyMovement.FloatMove(_moveInputs,_walkSpeed * _acidSpeedMultiplier);
+            return;
+        }
+        rb.useGravity = true;
         if (_canMove)
             _playerBodyMovement.Move(_moveInputs);
         else
             _playerBodyMovement.MoveBlockForward(_moveInputs);
         if (_triggerJump && _isGrounded)
         {
-            _playerBodyMovement.Jump();
+            if (_isUnderAcid)
+                _playerBodyMovement.JumpUnderAcid();
+            else
+                _playerBodyMovement.Jump();
             _triggerJump = false;
         }
+    }
+    public void SetUnderAcid(bool value)
+    {
+        Debug.Log("Under acid: " + value);
+        _isUnderAcid = value;
     }
     public void Disable()
     {

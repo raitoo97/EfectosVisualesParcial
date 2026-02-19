@@ -27,12 +27,26 @@ public class PlayerBodyMovement
         moveVector.y = 0f;
         _rigidbody.MovePosition(_rigidbody.position + moveVector.normalized * _speed * Time.fixedDeltaTime);
     }
+    public void FloatMove(Vector2 moveInput, float speed)
+    {
+        Vector3 move =_cameraTransform.forward * moveInput.y +_cameraTransform.right * moveInput.x;
+        _rigidbody.velocity = move * speed;
+    }
     public void Jump()
     {
         _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
     }
+    public void JumpUnderAcid()
+    {
+        _rigidbody.AddForce(Vector3.up * (_jumpForce * 0.5f), ForceMode.Impulse);
+    }
     public void ChangeSpeed(float _speed)
     {
+        Debug.Log("Speed changed to: " + _speed);
         this._speed = _speed;
+    }
+    public Rigidbody GetRigidbody()
+    {
+        return _rigidbody;
     }
 }
