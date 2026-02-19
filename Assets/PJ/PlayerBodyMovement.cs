@@ -42,7 +42,6 @@ public class PlayerBodyMovement
     }
     public void ChangeSpeed(float _speed)
     {
-        Debug.Log("Speed changed to: " + _speed);
         this._speed = _speed;
     }
     public Rigidbody GetRigidbody()
