@@ -18,6 +18,11 @@ public class PlayerController
     private bool _isUnderAcid;
     private float _acidSpeedMultiplier = 0.4f;
     private float _normalSpeedMultiplier = 1f;
+    private float cooldownDash = 1f;
+    private float currentCooldownDash = 0f;
+    private bool _isDashing;
+    private float dashDuration = 0.12f;
+    private float dashTimer;
     public PlayerController(PlayerBodyMovement playerBodyMovement, PlayerRayCast playerRayCast, float walkSpeed, float runSpeed)
     {
         _playerBodyMovement = playerBodyMovement;
@@ -55,7 +60,24 @@ public class PlayerController
         if (_isUnderAcid)
         {
             rb.useGravity = false;
+            if (_isDashing)
+            {
+                dashTimer -= Time.fixedDeltaTime;
+                if (dashTimer <= 0f)
+                    _isDashing = false;
+                return; // no FloatMove mientras dash
+            }
             _playerBodyMovement.FloatMove(_moveInputs,_walkSpeed * _acidSpeedMultiplier);
+            currentCooldownDash += Time.fixedDeltaTime;
+            if (PlayerInputs.instance.RunAction() && currentCooldownDash >= cooldownDash)
+            {
+                rb.velocity = Vector3.zero;
+                rb.AddForce(Camera.main.transform.forward * _runSpeed * 4f,ForceMode.VelocityChange);
+                _isDashing = true;
+                dashTimer = dashDuration;
+                currentCooldownDash = 0f;
+                Debug.Log("Dash!");
+            }
             return;
         }
         rb.useGravity = true;
