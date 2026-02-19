@@ -18,7 +18,7 @@ public class PlayerController
     private bool _isUnderAcid;
     private float _acidSpeedMultiplier = 0.4f;
     private float _normalSpeedMultiplier = 1f;
-    private float cooldownDash = 1f;
+    private float cooldownDash = 3f;
     private float currentCooldownDash = 0f;
     private bool _isDashing;
     private float dashDuration = 0.12f;
