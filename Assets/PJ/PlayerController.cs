@@ -96,7 +96,6 @@ public class PlayerController
     }
     public void SetUnderAcid(bool value)
     {
-        Debug.Log("Under acid: " + value);
         _isUnderAcid = value;
     }
     public void Disable()
