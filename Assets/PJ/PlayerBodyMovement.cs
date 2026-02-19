@@ -38,7 +38,7 @@ public class PlayerBodyMovement
     }
     public void JumpUnderAcid()
     {
-        _rigidbody.AddForce(Vector3.up * (_jumpForce * 0.5f), ForceMode.Impulse);
+        _rigidbody.AddForce(Vector3.up * _jumpForce , ForceMode.VelocityChange);
     }
     public void ChangeSpeed(float _speed)
     {

@@ -72,11 +72,18 @@ public class PlayerController
             if (PlayerInputs.instance.RunAction() && currentCooldownDash >= cooldownDash)
             {
                 rb.velocity = Vector3.zero;
-                rb.AddForce(Camera.main.transform.forward * _runSpeed * 4f,ForceMode.VelocityChange);
+                Vector3 dashDir = Camera.main.transform.forward;
+                dashDir.y = 0f;
+                dashDir.Normalize();
+                rb.AddForce(dashDir * _runSpeed * 4f,ForceMode.VelocityChange);
                 _isDashing = true;
                 dashTimer = dashDuration;
                 currentCooldownDash = 0f;
-                Debug.Log("Dash!");
+            }
+            if (_triggerJump)
+            {
+                _playerBodyMovement.JumpUnderAcid();
+                _triggerJump = false;
             }
             return;
         }
@@ -87,10 +94,7 @@ public class PlayerController
             _playerBodyMovement.MoveBlockForward(_moveInputs);
         if (_triggerJump && _isGrounded)
         {
-            if (_isUnderAcid)
-                _playerBodyMovement.JumpUnderAcid();
-            else
-                _playerBodyMovement.Jump();
+            _playerBodyMovement.Jump();
             _triggerJump = false;
         }
     }
