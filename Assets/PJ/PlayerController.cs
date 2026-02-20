@@ -14,6 +14,15 @@ public class PlayerController
     private bool _triggerJump;
     [Header("ViewEnemy")]
     private bool _viewEnemy;
+    [Header("UnderAcid")]
+    private bool _isUnderAcid;
+    private float _acidSpeedMultiplier = 0.4f;
+    private float _normalSpeedMultiplier = 1f;
+    private float cooldownDash = 3f;
+    private float currentCooldownDash = 0f;
+    private bool _isDashing;
+    private float dashDuration = 0.12f;
+    private float dashTimer;
     public PlayerController(PlayerBodyMovement playerBodyMovement, PlayerRayCast playerRayCast, float walkSpeed, float runSpeed)
     {
         _playerBodyMovement = playerBodyMovement;
@@ -25,10 +34,11 @@ public class PlayerController
     }
     private void Running()
     {
+        float speedMultiplier = _isUnderAcid ? _acidSpeedMultiplier : _normalSpeedMultiplier;
         if (PlayerInputs.instance.RunAction())
-            _playerBodyMovement.ChangeSpeed(_runSpeed);
+            _playerBodyMovement.ChangeSpeed(_runSpeed * speedMultiplier);
         else
-            _playerBodyMovement.ChangeSpeed(_walkSpeed);
+            _playerBodyMovement.ChangeSpeed(_walkSpeed * speedMultiplier);
     }
     public void OnUpdate()
     {
@@ -46,6 +56,38 @@ public class PlayerController
     public void OnFixedUpdate()
     {
         if (_isOnCinematic) return;
+        Rigidbody rb = _playerBodyMovement.GetRigidbody();
+        if (_isUnderAcid)
+        {
+            rb.useGravity = false;
+            if (_isDashing)
+            {
+                dashTimer -= Time.fixedDeltaTime;
+                if (dashTimer <= 0f)
+                    _isDashing = false;
+                return; // no FloatMove mientras dash
+            }
+            _playerBodyMovement.FloatMove(_moveInputs,_walkSpeed * _acidSpeedMultiplier);
+            currentCooldownDash += Time.fixedDeltaTime;
+            if (PlayerInputs.instance.RunAction() && currentCooldownDash >= cooldownDash)
+            {
+                rb.velocity = Vector3.zero;
+                Vector3 dashDir = Camera.main.transform.forward;
+                dashDir.y = 0f;
+                dashDir.Normalize();
+                rb.AddForce(dashDir * _runSpeed * 4f,ForceMode.VelocityChange);
+                _isDashing = true;
+                dashTimer = dashDuration;
+                currentCooldownDash = 0f;
+            }
+            if (_triggerJump)
+            {
+                _playerBodyMovement.JumpUnderAcid();
+                _triggerJump = false;
+            }
+            return;
+        }
+        rb.useGravity = true;
         if (_canMove)
             _playerBodyMovement.Move(_moveInputs);
         else
@@ -55,6 +97,10 @@ public class PlayerController
             _playerBodyMovement.Jump();
             _triggerJump = false;
         }
+    }
+    public void SetUnderAcid(bool value)
+    {
+        _isUnderAcid = value;
     }
     public void Disable()
     {

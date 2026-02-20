@@ -42,6 +42,23 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &-6810033525981556488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
+  m_Name: Distorsion
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  passMaterial: {fileID: 2100000, guid: 8822e03a68e174e4a9e63232baca482b, type: 2}
+  injectionPoint: 600
+  requirements: 4
+  passIndex: 0
 --- !u!114 &-5445604459226677225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +136,8 @@ MonoBehaviour:
   - {fileID: 8090943058306090126}
   - {fileID: 8694284635979563685}
   - {fileID: -7873063107480882051}
-  m_RendererFeatureMap: adc0de57c6d2eee5e653bcac648d047b17c082ac98536db46c773b3f93ac8a6d27abb8174f4849788e443f08d8cd4870a5c2b2e7cf4da8787d745e28d142bd92
+  - {fileID: -6810033525981556488}
+  m_RendererFeatureMap: adc0de57c6d2eee5e653bcac648d047b17c082ac98536db46c773b3f93ac8a6d27abb8174f4849788e443f08d8cd4870a5c2b2e7cf4da8787d745e28d142bd92f8505ed796e67da1
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
