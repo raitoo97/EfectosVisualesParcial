@@ -33,6 +33,8 @@ public class Player : MonoBehaviour,ITakeDamage
     private void Update()
     {
         _playerController.OnUpdate();
+        if(Input.GetKeyDown(KeyCode.P))
+            SetLifeTo100();
     }
     private void FixedUpdate()
     {
@@ -62,6 +64,11 @@ public class Player : MonoBehaviour,ITakeDamage
     private void GoMenu()
     {
         SceneManager.LoadScene(0);
+    }
+    private void SetLifeTo100()
+    {
+        _life.SetLife = 100f;
+        Debug.Log("Life set to 100");
     }
     public bool IsGrounded { get => _playerController.IsGrounded; }
     public Vector2 MoveVector { get => _playerController.GetMoveVector; }
