@@ -106,12 +106,12 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     }
     public void TakeAcidDamage(float damage)
     {
+        _life.TakeDamage(damage, ChangeStateDead);
         if (_life.GetHealth <= 0 && !_isDead)
         {
             _isDead = true;
-            SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("EnemyDeath"), 1f, false);
+            SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("EnemyDeath"),1f,false);
         }
-        _life.TakeDamage(damage, ChangeStateDead);
         _hitEffect.ActivteCorutineDamageHit(Color.green * 2f);
     }
     public void ReceiveAreaDamage(float damage, Vector3 hitPos)
