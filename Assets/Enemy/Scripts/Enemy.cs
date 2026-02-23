@@ -76,6 +76,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         var currentState = _fsm.getCurrentState;
         if (currentState is AtackState attackState)
         {
+            SoundManager.Instance.PlayClip(SoundManager.Instance.GetAudioClip("EnemyShoot"), 1f, false);
             attackState.Shoot();
         }
     }
