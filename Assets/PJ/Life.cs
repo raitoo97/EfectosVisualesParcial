@@ -21,7 +21,6 @@ public class Life
     {
         _currentHealth = _maxHealth;
     }
-
     public float GetHealth { get => _currentHealth; }
     public float SetLife { set => _currentHealth = value; }
 }

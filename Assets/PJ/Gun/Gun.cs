@@ -46,7 +46,7 @@ public class Gun : MonoBehaviour
     }
     public void CallShootFunction()
     {
-        SoundManager.Instance.PlayClip(SoundManager.Instance.GetAudioClip("PjShoot"), 1f, false);
+        SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("PjShoot"), 0.2f, false);
         _gunShoot?.Shoot();
     }
     private void OnDisable()

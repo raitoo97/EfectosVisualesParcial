@@ -15,6 +15,7 @@ public class Bomb : MonoBehaviour
         GameObject acidPlatform = null;
         if (CheckGround())
         {
+            SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("ExplosionImpact"), 0.5f, false);
             acidPlatform = Instantiate(_acidPlatform, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
