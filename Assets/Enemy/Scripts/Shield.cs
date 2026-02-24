@@ -40,6 +40,7 @@ public class Shield : MonoBehaviour, IShield ,IImpact , IEnemy ,ITakeDamage
     }
     public void OnImpact(Vector3 hitPosition)
     {
+        SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("ShieldImpact"), 0.2f, false);
         if (_flashCoroutine != null)
         {
             StopCoroutine(_flashCoroutine);

@@ -79,6 +79,7 @@ public class PlayerController
                 _isDashing = true;
                 dashTimer = dashDuration;
                 currentCooldownDash = 0f;
+                SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("Dash"),1f,false);
             }
             if (_triggerJump)
             {

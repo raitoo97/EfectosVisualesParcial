@@ -29,6 +29,7 @@ public class Lever : InteractiveObject
     }
     public void OnAnimationEvent()
     {
+        SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("InteractiveSound"), 1f, false);
         switch (leverAction)
         {
             case LeverAction.FirstCinematic:

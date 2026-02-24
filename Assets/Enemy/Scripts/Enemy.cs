@@ -16,6 +16,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     List<Material> allHitMaterials = new List<Material>();
     public VisualEffect hitParticleEffect;
     public VisualEffect hitAcidEffect;
+    private bool _isDead = false;
     private void Awake()
     {
         Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);
@@ -45,6 +46,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         if (_hitEffect != null) _hitEffect.OnEnable();
         if(hitParticleEffect != null) hitParticleEffect.Stop();
         if (hitAcidEffect != null) hitAcidEffect.Stop();
+        _isDead = false;
     }
     override protected void Start()
     {
@@ -76,6 +78,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         var currentState = _fsm.getCurrentState;
         if (currentState is AtackState attackState)
         {
+            SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("EnemyShoot"), 0.2f, false);
             attackState.Shoot();
         }
     }
@@ -93,12 +96,22 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     }
     public void TakeDamage(float damage)
     {
+        if (_life.GetHealth <= 0 && !_isDead)
+        {
+            _isDead = true;
+            SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("EnemyDeath"), 1f, false);
+        }
         _life.TakeDamage(damage, ChangeStateDead);
         _hitEffect.ActivteCorutineDamageHit(Color.red * 2f);
     }
     public void TakeAcidDamage(float damage)
     {
         _life.TakeDamage(damage, ChangeStateDead);
+        if (_life.GetHealth <= 0 && !_isDead)
+        {
+            _isDead = true;
+            SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("EnemyDeath"),1f,false);
+        }
         _hitEffect.ActivteCorutineDamageHit(Color.green * 2f);
     }
     public void ReceiveAreaDamage(float damage, Vector3 hitPos)
