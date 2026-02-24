@@ -49,6 +49,14 @@ public class Gun : MonoBehaviour
         SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("PjShoot"), 0.2f, false);
         _gunShoot?.Shoot();
     }
+    public void FootStep()
+    {
+        var Player = GameObject.FindObjectOfType<Player>();
+        if (Player == null) return;
+        Debug.Log(Player.MoveVector.magnitude);
+        if (Player.MoveVector.magnitude >= 0.01f)
+            SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("FootStep"), 1f, false);
+    }
     private void OnDisable()
     {
         _gunShoot = null;
