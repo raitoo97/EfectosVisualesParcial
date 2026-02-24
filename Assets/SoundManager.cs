@@ -34,14 +34,15 @@ public class SoundManager : MonoBehaviour
     {
         return sources.Find(x => x.isPlaying == false);
     }
-    public void PlayClip(AudioClip clip, float volumen, bool loop)
+    public AudioSource PlayClip(AudioClip clip, float volumen, bool loop)
     {
         var audioSource = GetAudioSourceFromList();
-        if (audioSource == null) return;
+        if (audioSource == null) return null;
         audioSource.volume = volumen;
         audioSource.loop = loop;
         audioSource.clip = clip;
         audioSource.Play();
+        return audioSource;
     }
     public void PlayMusic(AudioClip clip, float volumen, bool loop)
     {
