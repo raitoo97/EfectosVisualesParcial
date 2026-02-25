@@ -48,7 +48,13 @@ public abstract class Agent : MonoBehaviour
     {
         Vector3 seekForce = Seek(target) * _WeightSeek;
         Vector3 sepForce = Separation(_SeparationRange) * _weightSeparation;
-        AddForce(seekForce + sepForce);
+        Vector3 avoidance = Vector3.zero;
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 1.2f, LayerMask.GetMask("Wall")))
+        {
+            Vector3 reflect = Vector3.Reflect(transform.forward, hit.normal);
+            avoidance = reflect.normalized * _maxSteerForce;
+        }
+        AddForce(seekForce + sepForce + avoidance);
     }
     public void ApplySeparation(Vector3 force)
     {
@@ -58,7 +64,6 @@ public abstract class Agent : MonoBehaviour
         {
             AddForce(force);
         }
-        Debug.DrawRay(transform.position, force.normalized * 0.4f, hitWall ? Color.red : Color.green);
     }
     public Vector3 GetSeparationForce()
     {
