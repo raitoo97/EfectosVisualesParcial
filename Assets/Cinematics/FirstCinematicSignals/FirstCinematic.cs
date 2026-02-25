@@ -19,8 +19,9 @@ public class FirstCinematic
     }
     IEnumerator WaterDrop()
     {
+        SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("UnderWater"), 1f, false);
         float elapsedTime = 0f;
-        float duration =3f;
+        float duration =6f;
         yield return new WaitForSeconds(2f);
         while (elapsedTime < duration)
         {
