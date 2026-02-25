@@ -46,6 +46,16 @@ public class SoundManager : MonoBehaviour
         audioSource.Play();
         return audioSource;
     }
+    public AudioSource PlayClipMenu(AudioClip clip, float volumen, bool loop)
+    {
+        var audioSource = GetAudioSourceFromList();
+        if (audioSource == null) return null;
+        audioSource.volume = volumen;
+        audioSource.loop = loop;
+        audioSource.clip = clip;
+        audioSource.Play();
+        return audioSource;
+    }
     public AudioSource PlayCinematicClip(AudioClip clip, float volume, bool loop)
     {
         var audioSource = GetAudioSourceFromList();
