@@ -17,6 +17,8 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     public VisualEffect hitParticleEffect;
     public VisualEffect hitAcidEffect;
     private bool _isDead = false;
+    private AudioSource _audioSource;
+    private bool _isInAcid = false;
     private void Awake()
     {
         Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);
@@ -46,6 +48,12 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         if (_hitEffect != null) _hitEffect.OnEnable();
         if(hitParticleEffect != null) hitParticleEffect.Stop();
         if (hitAcidEffect != null) hitAcidEffect.Stop();
+        if (_audioSource != null)
+        {
+            _audioSource.Stop();
+            _audioSource = null;
+        }
+        _isInAcid = false;
         _isDead = false;
     }
     override protected void Start()
@@ -132,19 +140,35 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     }
     public void OnEnterAcid()
     {
+        if (_isInAcid) return;
+        _isInAcid = true;
         if (hitAcidEffect != null)
             hitAcidEffect.Play();
+        _audioSource = SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("AcidDamage"),1f,true);
     }
     public void OnExitAcid()
     {
+        if (!_isInAcid) return;
+        _isInAcid = false;
         if (hitAcidEffect != null)
             hitAcidEffect.Stop();
+        if (_audioSource != null)
+        {
+            _audioSource.Stop();
+            _audioSource = null;
+        }
     }
     private void OnDisable()
     {
         _fsm = null;
         if (hitParticleEffect != null) hitParticleEffect.Stop();
         if (hitAcidEffect != null) hitAcidEffect.Stop();
+        if (_audioSource != null)
+        {
+            _audioSource.Stop();
+            _audioSource = null;
+        }
+        _isInAcid = false;
     }
     public void PlayParticleDeath()
     {
