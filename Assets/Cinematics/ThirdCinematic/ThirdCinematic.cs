@@ -13,6 +13,8 @@ public class ThirdCinematic
     }
     public void StartCinematic()
     {
+        SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("AirSpace"), 1f, true);
+        SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("StarShip"), 1f, true);
         _corutineHost.StartCoroutine(MoveStarship());
     }
     IEnumerator MoveStarship()
