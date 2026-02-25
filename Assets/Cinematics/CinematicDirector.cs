@@ -34,17 +34,37 @@ public class CinematicDirector : MonoBehaviour
     }
     public void DesactivateGunAndPlayer()
     {
-        foreach (GameObject _currentObject in objectsToDesactivate)
+        for (int i = 0; i < objectsToDesactivate.Count; i++)
         {
-            _currentObject.SetActive(false);
+            if (i == 2)// EL INDICE 2 ES EL PJ
+            {
+                foreach (MeshRenderer mr in objectsToDesactivate[i].GetComponentsInChildren<MeshRenderer>())
+                {
+                    mr.enabled = false;
+                }
+            }
+            else
+            {
+                objectsToDesactivate[i].SetActive(false);
+            }
         }
         GameManager.instance.player.GetPlayerController._isOnCinematic = true;
     }
     public void ActivateGunAndPlayer()
     {
-        foreach (GameObject _currentObject in objectsToDesactivate)
+        for (int i = 0; i < objectsToDesactivate.Count; i++)
         {
-            _currentObject.SetActive(true);
+            if (i == 2)// EL INDICE 2 ES EL PJ
+            {
+                foreach (MeshRenderer mr in objectsToDesactivate[i].GetComponentsInChildren<MeshRenderer>())
+                {
+                    mr.enabled = true;
+                }
+            }
+            else
+            {
+                objectsToDesactivate[i].SetActive(true);
+            }
         }
         GameManager.instance.player.GetPlayerController._isOnCinematic = false;
     }
