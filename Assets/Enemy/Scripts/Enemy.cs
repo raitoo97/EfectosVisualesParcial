@@ -86,7 +86,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         var currentState = _fsm.getCurrentState;
         if (currentState is AtackState attackState)
         {
-            SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("EnemyShoot"), 0.2f, false);
+            SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("EnemyShoot"), 0.1f, false);
             attackState.Shoot();
         }
     }
@@ -104,12 +104,12 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     }
     public void TakeDamage(float damage)
     {
+        _life.TakeDamage(damage, ChangeStateDead);
         if (_life.GetHealth <= 0 && !_isDead)
         {
             _isDead = true;
             SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("EnemyDeath"), 1f, false);
         }
-        _life.TakeDamage(damage, ChangeStateDead);
         _hitEffect.ActivteCorutineDamageHit(Color.red * 2f);
     }
     public void TakeAcidDamage(float damage)

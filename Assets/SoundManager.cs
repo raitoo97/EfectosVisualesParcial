@@ -36,6 +36,8 @@ public class SoundManager : MonoBehaviour
     }
     public AudioSource PlayClip(AudioClip clip, float volumen, bool loop)
     {
+        if (GameManager.instance.player.GetPlayerController._isOnCinematic)
+            return null;
         var audioSource = GetAudioSourceFromList();
         if (audioSource == null) return null;
         audioSource.volume = volumen;
@@ -44,11 +46,21 @@ public class SoundManager : MonoBehaviour
         audioSource.Play();
         return audioSource;
     }
-    public AudioSource PlayMusic(AudioClip clip, float volumen, bool loop)
+    public AudioSource PlayClipMenu(AudioClip clip, float volumen, bool loop)
     {
         var audioSource = GetAudioSourceFromList();
         if (audioSource == null) return null;
         audioSource.volume = volumen;
+        audioSource.loop = loop;
+        audioSource.clip = clip;
+        audioSource.Play();
+        return audioSource;
+    }
+    public AudioSource PlayCinematicClip(AudioClip clip, float volume, bool loop)
+    {
+        var audioSource = GetAudioSourceFromList();
+        if (audioSource == null) return null;
+        audioSource.volume = volume;
         audioSource.loop = loop;
         audioSource.clip = clip;
         audioSource.Play();

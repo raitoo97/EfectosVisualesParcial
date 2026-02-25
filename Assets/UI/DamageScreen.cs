@@ -26,7 +26,7 @@ public class DamageScreen : MonoBehaviour
     }
     public void ShowDamage()
     {
-        SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("Hit"), 1f, false);
+        SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("Hit"), 0.2f, false);
         if (_impactFrameCoroutine != null)
             StopCoroutine(_impactFrameCoroutine);
         _impactFrame.SetFloat("_OnImpactFrame", 1f);

@@ -22,6 +22,7 @@ public class Timer
         _mmm -= Time.deltaTime * 60f;
         if (_mmm < 0)
         {
+            SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("Tick"), 0.1f, false);
             _seg--;
             _mmm += 60f;
         }

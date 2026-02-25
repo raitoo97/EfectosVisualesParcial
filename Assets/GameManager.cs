@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         {
             CinematicDirector.instance.ActivateCleanStair();
         }
+        SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("MusicBackground"), 0.8f, true);
     }
     public void StartTimer()
     {
