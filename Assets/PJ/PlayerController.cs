@@ -112,4 +112,5 @@ public class PlayerController
     public Vector2 GetMoveVector { get => _moveInputs; }
     public bool CanMove { get => _canMove; set => _canMove = value; }
     public bool ViewEnemy { get => _viewEnemy; }
+    public bool IsUnderAcid { get => _isUnderAcid; }
 }
