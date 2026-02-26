@@ -5,7 +5,7 @@ public class PlayerCameraMovement : CinemachineExtension
     private PlayerInputs _characterInputs;
     private Vector3 _startingRotation;
     [SerializeField]private float ClampleAngle = 80f;
-    [SerializeField]private float Sensitivity = 10f;
+    [SerializeField]private float Sensitivity = 8f;
     private Player _player;
     protected override void Awake()
     {
