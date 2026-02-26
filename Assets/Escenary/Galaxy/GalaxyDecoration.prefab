@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 6652577326432706157}
   - component: {fileID: 6522918386753106717}
   - component: {fileID: 3887225520242099729}
+  - component: {fileID: 3294202640819944824}
   m_Layer: 0
   m_Name: Galaxy
   m_TagString: Untagged
@@ -212,6 +213,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3294202640819944824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2274602994140162540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e076d277a8bb21c4bb7af77d8bcd2a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2487413268083110546
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +249,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2487413268083110546}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -4.6585693, y: -0, z: 13.03}
   m_LocalScale: {x: 31.057, y: 31.057, z: 31.057}
   m_ConstrainProportionsScale: 0
@@ -246,7 +259,7 @@ Transform:
   - {fileID: 7313966786600062012}
   - {fileID: 3340215781319011704}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!1 &5568527523293298100
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +492,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7027294523308225117}
     m_Modifications:
+    - target: {fileID: 937182518357442008, guid: 8a4087c308af4684b890eb6908df44db,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2302393857004128356, guid: 8a4087c308af4684b890eb6908df44db,
         type: 3}
       propertyPath: m_LocalScale.x
