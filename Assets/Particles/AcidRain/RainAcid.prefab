@@ -3623,13 +3623,14 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 4
-    type: 1
+    type: 0
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
-    m_Planes: []
+    m_Planes:
+    - {fileID: 511537056293609338, guid: 214c4c61a84dbc548b3eebffaf3660a4, type: 3}
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
@@ -3791,7 +3792,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 0.0001
+    radiusScale: 0.5
     collidesWith:
       serializedVersion: 2
       m_Bits: 256

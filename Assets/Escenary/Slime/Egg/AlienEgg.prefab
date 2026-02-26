@@ -1483,7 +1483,12 @@ PrefabInstance:
     - target: {fileID: 4487649452200978783, guid: 6b6a885d4388a5e4b8f92a57c294149f,
         type: 3}
       propertyPath: startDelay.scalar
-      value: 50
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487649452200978783, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4487649452200978783, guid: 6b6a885d4388a5e4b8f92a57c294149f,
         type: 3}
@@ -1502,6 +1507,11 @@ PrefabInstance:
       objectReference: {fileID: 6116031642852722361}
     - target: {fileID: 4487649452200978783, guid: 6b6a885d4388a5e4b8f92a57c294149f,
         type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487649452200978783, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
       propertyPath: CollisionModule.collisionMessages
       value: 1
       objectReference: {fileID: 0}
@@ -1517,18 +1527,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4487649452200978783, guid: 6b6a885d4388a5e4b8f92a57c294149f,
         type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487649452200978783, guid: 6b6a885d4388a5e4b8f92a57c294149f,
+        type: 3}
       propertyPath: InitialModule.startSize.minMaxState
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4487649452200978783, guid: 6b6a885d4388a5e4b8f92a57c294149f,
         type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4487649452200978783, guid: 6b6a885d4388a5e4b8f92a57c294149f,
         type: 3}
       propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4487649452200978783, guid: 6b6a885d4388a5e4b8f92a57c294149f,
         type: 3}
@@ -1698,11 +1713,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2370222698322977809}
     m_Modifications:
-    - target: {fileID: 742571256675356673, guid: 96baba677673f4441b2802a365cc4cb2,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 742571256675356673, guid: 96baba677673f4441b2802a365cc4cb2,
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
