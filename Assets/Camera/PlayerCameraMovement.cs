@@ -4,12 +4,14 @@ public class PlayerCameraMovement : CinemachineExtension
 {
     private PlayerInputs _characterInputs;
     private Vector3 _startingRotation;
-    [SerializeField]private float ClampleAngle = 80f;
-    [SerializeField]private float Sensitivity = 8f;
+    [SerializeField] private float ClampleAngle;
+    [SerializeField] private float Sensitivity;
     private Player _player;
     protected override void Awake()
     {
         base.Awake();
+        ClampleAngle = 60f;
+        Sensitivity = 50f;
         _characterInputs = PlayerInputs.instance;
     }
     protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam, CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
