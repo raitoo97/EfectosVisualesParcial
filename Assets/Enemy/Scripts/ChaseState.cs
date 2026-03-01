@@ -6,7 +6,6 @@ public class ChaseState : Istate
     private FSM _fsm;
     private Animator _animator;
     private List<Vector3> _path = new List<Vector3>();
-    private List<Node> _nodesTempList = new List<Node>();
     private Player _playerPos;
     private float _rangeAtack;
     private Vector3 _lastGoalPos;
@@ -73,18 +72,10 @@ public class ChaseState : Istate
     private void CalculatePath(Vector3 goalPosition)
     {
         CleanUpPath();
-        var startNode = NodeManager.GetClosetNode(_enemy.transform.position);
-        var endNode = NodeManager.GetClosetNode(goalPosition);
-        _nodesTempList = PathFinding.CalculateAStar(startNode, endNode);
-        foreach (var node in _nodesTempList)
-        {
-            _path.Add(node.transform.position);
-        }
-        _path.Add(goalPosition);
+        _path = PathFinding.CalculateTheta(_enemy.transform.position, goalPosition);
     }
     private void CleanUpPath()
     {
-        _nodesTempList.Clear();
         _path.Clear();
     }
     public void OnExit()
