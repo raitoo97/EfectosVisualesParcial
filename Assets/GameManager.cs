@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        _portal.SetActive(false);
-        timer = new Timer(_portal);
+        //_portal.SetActive(false);
+        //timer = new Timer(_portal);
         OnGameOver -= GoToFinish;
         OnGameOver += GoToFinish;
     }

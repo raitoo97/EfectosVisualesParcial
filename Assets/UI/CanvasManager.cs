@@ -39,7 +39,7 @@ public class CanvasManager : MonoBehaviour
         {
             ChangeColorAim(Color.green);
         }
-        _timer.text = GameManager.instance.GetTime;
+        //_timer.text = GameManager.instance.GetTime;
     }
     public void ShowTime()
     {

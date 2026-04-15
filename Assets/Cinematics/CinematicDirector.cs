@@ -15,10 +15,6 @@ public class CinematicDirector : MonoBehaviour
     public List<GameObject> tempEnemies = new List<GameObject>();
     [SerializeField]private GameObject[] _stairBroke;
     [SerializeField]private GameObject[] _stairNew;
-    [Header("ThirdCinematic")]
-    [SerializeField] private Transform _starshipPos;
-    [SerializeField] private Transform _starshipArrivePos;
-    private ThirdCinematic _thirdCinematic;
     private void Awake()
     {
         if (instance == null)
@@ -30,7 +26,6 @@ public class CinematicDirector : MonoBehaviour
     {
         _firstCinematic = new FirstCinematic(_waterDrop.transform, this);
         _secondCinematic = new SecondCinematic(_spawners, tempEnemies, _stairBroke, _stairNew);
-        _thirdCinematic = new ThirdCinematic(_starshipPos, _starshipArrivePos,this);
     }
     public void DesactivateGunAndPlayer()
     {
@@ -95,13 +90,6 @@ public class CinematicDirector : MonoBehaviour
     {
 
         _secondCinematic.ActivateCleanStair();
-    }
-    #endregion
-    #region ThirdCinematic
-    public void ActivateThirdCinematic()
-    {
-        CanvasManager.instance.HiddenTime();
-        _thirdCinematic.StartCinematic();
     }
     #endregion
     public PlayableDirector GetPlayableDirector(int index)
