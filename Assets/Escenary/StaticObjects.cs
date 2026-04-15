@@ -5,6 +5,7 @@ public class StaticObjects : MonoBehaviour, IImpact
     {
         if (GameManager.instance.impactParticlesPrefab != null)
         {
+            print("si");
             SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("ExplosionGun"), 0.1f, false);
             ParticleSystem ps = Instantiate(GameManager.instance.impactParticlesPrefab, hitPosition, Quaternion.identity);
             ps.Play();

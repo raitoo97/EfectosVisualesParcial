@@ -52,6 +52,7 @@ public class SecondCinematic
     }
     public void ActivateBrokenStair()
     {
+        if (_stairBroke == null || _stairClean == null) return;
         foreach (var stair in _stairBroke)
         {
             stair.SetActive(true);
@@ -63,6 +64,7 @@ public class SecondCinematic
     }
     public void ActivateCleanStair()
     {
+        if (_stairBroke == null || _stairClean == null) return;
         foreach (var stair in _stairBroke)
         {
             stair.SetActive(false);

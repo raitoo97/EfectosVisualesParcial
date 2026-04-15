@@ -25,7 +25,7 @@ public class CinematicDirector : MonoBehaviour
     private void OnEnable()
     {
         _firstCinematic = new FirstCinematic(_waterDrop.transform, this);
-        _secondCinematic = new SecondCinematic(_spawners, tempEnemies, _stairBroke, _stairNew);
+        _secondCinematic = new SecondCinematic(_spawners, tempEnemies, null, null);
     }
     public void DesactivateGunAndPlayer()
     {
