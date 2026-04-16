@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public Material _glowMaterial;
     private Timer timer;
     public static Action OnGameOver;
-    public GameObject _portal;
     private void Awake()
     {
         if(instance == null)
@@ -21,8 +20,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        //_portal.SetActive(false);
-        //timer = new Timer(_portal);
+        timer = new Timer();
         OnGameOver -= GoToFinish;
         OnGameOver += GoToFinish;
     }
@@ -41,10 +39,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         timer?.OnStart();
-        if (CinematicDirector.instance != null)
-        {
-            CinematicDirector.instance.ActivateCleanStair();
-        }
         SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("MusicBackground"), 0.8f, true);
     }
     public void StartTimer()

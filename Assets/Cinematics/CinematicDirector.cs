@@ -13,8 +13,6 @@ public class CinematicDirector : MonoBehaviour
     private SecondCinematic _secondCinematic;
     public static CinematicDirector instance;
     public List<GameObject> tempEnemies = new List<GameObject>();
-    [SerializeField]private GameObject[] _stairBroke;
-    [SerializeField]private GameObject[] _stairNew;
     private void Awake()
     {
         if (instance == null)
@@ -25,7 +23,7 @@ public class CinematicDirector : MonoBehaviour
     private void OnEnable()
     {
         _firstCinematic = new FirstCinematic(_waterDrop.transform, this);
-        _secondCinematic = new SecondCinematic(_spawners, tempEnemies, null, null);
+        _secondCinematic = new SecondCinematic(_spawners, tempEnemies);
     }
     public void DesactivateGunAndPlayer()
     {
@@ -81,15 +79,6 @@ public class CinematicDirector : MonoBehaviour
     public void DesactivateTempEnemies()
     {
         _secondCinematic.DesactivateEnemiesFromList();
-    }
-    public void ActivateBrokenStair()
-    {
-        _secondCinematic.ActivateBrokenStair();
-    }
-    public void ActivateCleanStair()
-    {
-
-        _secondCinematic.ActivateCleanStair();
     }
     #endregion
     public PlayableDirector GetPlayableDirector(int index)

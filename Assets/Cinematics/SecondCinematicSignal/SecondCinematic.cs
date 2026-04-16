@@ -5,14 +5,10 @@ public class SecondCinematic
     private Transform[] _spawners;
     private List<Enemy> _enemies = new List<Enemy>();
     private List<GameObject> _tempEnemies = new List<GameObject>();
-    private GameObject[] _stairBroke;
-    private GameObject[] _stairClean;
-    public SecondCinematic(Transform[] spawners , List<GameObject> tempEnemies, GameObject[] stairBroke, GameObject[] stairClean)
+    public SecondCinematic(Transform[] spawners , List<GameObject> tempEnemies)
     {
         _spawners = spawners;
         _tempEnemies = tempEnemies;
-        _stairBroke = stairBroke;
-        _stairClean = stairClean;
     }
     public void SpawnerEnemies()
     {
@@ -48,30 +44,6 @@ public class SecondCinematic
         foreach (var enemy in _enemies)
         {
             enemy.GetFSM.ChangeState(FSM.StateID.Chase);
-        }
-    }
-    public void ActivateBrokenStair()
-    {
-        if (_stairBroke == null || _stairClean == null) return;
-        foreach (var stair in _stairBroke)
-        {
-            stair.SetActive(true);
-        }
-        foreach (var stair in _stairClean)
-        {
-            stair.SetActive(false);
-        }
-    }
-    public void ActivateCleanStair()
-    {
-        if (_stairBroke == null || _stairClean == null) return;
-        foreach (var stair in _stairBroke)
-        {
-            stair.SetActive(false);
-        }
-        foreach (var stair in _stairClean)
-        {
-            stair.SetActive(true);
         }
     }
 }
