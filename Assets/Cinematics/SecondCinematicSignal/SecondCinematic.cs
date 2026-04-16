@@ -5,10 +5,12 @@ public class SecondCinematic
     private Transform[] _spawners;
     private List<Enemy> _enemies = new List<Enemy>();
     private List<GameObject> _tempEnemies = new List<GameObject>();
-    public SecondCinematic(Transform[] spawners , List<GameObject> tempEnemies)
+    private GameObject _doorRef;
+    public SecondCinematic(Transform[] spawners , List<GameObject> tempEnemies, GameObject doorRef)
     {
         _spawners = spawners;
         _tempEnemies = tempEnemies;
+        _doorRef = doorRef;
     }
     public void SpawnerEnemies()
     {
@@ -45,5 +47,9 @@ public class SecondCinematic
         {
             enemy.GetFSM.ChangeState(FSM.StateID.Chase);
         }
+    }
+    public void CloseDoor()
+    {
+        _doorRef.GetComponent<Animator>()?.SetTrigger("CloseDoor");
     }
 }

@@ -5,10 +5,12 @@ public class ThirdCinematic
     private PortalScript _portalRef;
     private Transform[] _spawners;
     private List<Enemy> _enemies = new List<Enemy>();
-    public ThirdCinematic(PortalScript portal, Transform[] spawners)
+    private GameObject _doorRef;
+    public ThirdCinematic(PortalScript portal, Transform[] spawners, GameObject doorRef)
     {
         _portalRef = portal;
         _spawners = spawners;
+        _doorRef = doorRef;
     }
     public void ActivatePortal()
     {
@@ -27,5 +29,9 @@ public class ThirdCinematic
         {
             enemy.gameObject.SetActive(false);
         }
+    }
+   public void OpenDoor()
+    {
+        _doorRef.GetComponent<Animator>()?.SetTrigger("OpenDoor");
     }
 }
