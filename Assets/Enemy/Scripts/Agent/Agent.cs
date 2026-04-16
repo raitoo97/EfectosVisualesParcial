@@ -41,7 +41,7 @@ public abstract class Agent : MonoBehaviour
         else
         {
             Debug.DrawRay(rayOrigin, rayDirection * rayLength, Color.red);
-            _velocity += Vector3.down * _gravityForce * 20 * Time.deltaTime;
+            _velocity += Vector3.down * _gravityForce * 10 * Time.deltaTime;
         }
     }
     public void FlockingAndSeek(Vector3 target)
