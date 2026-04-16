@@ -3,7 +3,7 @@ using UnityEngine;
 public static class NodeManager
 {
     private static List<Node> _allNode = new List<Node>();
-    public static float _maxDistanceNeighbord = 15;
+    public static float _maxDistanceNeighbord = 10;
     public static void RegisterNode(Node node)
     {
         if (!_allNode.Contains(node))
