@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 public class Timer
 {
     private float _min, _seg ,_mmm;
     private string _timerToString;
     public bool stop;
+    public event Action FinishTimer;
     public Timer()
     {
         //_portal = portal;
@@ -38,6 +40,7 @@ public class Timer
                 _seg = 0;
                 _mmm = 0;
                 stop = true;
+                FinishTimer?.Invoke();
             }
         }
         int fracciones = Mathf.FloorToInt(_mmm);

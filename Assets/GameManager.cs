@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public ParticleSystem impactParticlesPrefab;
     public Material _glowMaterial;
     private Timer timer;
-    public static Action OnGameOver;
     private void Awake()
     {
         if(instance == null)
@@ -21,8 +20,7 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         timer = new Timer();
-        OnGameOver -= GoToFinish;
-        OnGameOver += GoToFinish;
+        timer.FinishTimer += ActivePortal;
     }
     private void Update()
     {
@@ -46,7 +44,7 @@ public class GameManager : MonoBehaviour
         if (timer != null)
             timer.stop = false;
     }
-    public void GoToFinish()
+    public void ActivePortal()
     {
         if (gameObject.activeInHierarchy)
         {
@@ -54,7 +52,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("GameManager intentó iniciar GoToFinish, pero fue destruido/inactivo. Se abortó la corrutina.");
+            Debug.LogError("GameManager intentó iniciar ActivePortal, pero fue destruido/inactivo. Se abortó la corrutina.");
         }
     }
     public void GoToMenu()
@@ -64,18 +62,16 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator OnFinishCorutine()
     {
-        if (CanvasManager.instance != null)
-            CanvasManager.instance.FadeIn();
-        yield return new WaitForSeconds(1.3f);
-        if (CinematicDirector.instance != null)
-        {
-            CinematicDirector.instance.GetPlayableDirector(2).Play();
-        }
+        yield return null;
+        CinematicDirector.instance.GetPlayableDirector(2).Play();
     }
     private void OnDisable()
     {
-        OnGameOver -= GoToFinish;
-        timer = null;
+        if (timer != null)
+        {
+            timer.FinishTimer -= ActivePortal;
+            timer = null;
+        }
     }
     public string GetTime { get => timer.GetTime; }
 }
