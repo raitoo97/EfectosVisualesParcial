@@ -3880,6 +3880,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1664597971}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1001 &160178101
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2772927012467135339, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+        type: 3}
+      propertyPath: m_Name
+      value: PortalShader
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.159
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.692
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.8235393
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 51eaf65221889614c8451ee7cfa8b9bc, type: 3}
 --- !u!1001 &204886977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43616,8 +43684,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Events:
-    m_Signals: []
-    m_Events: []
+    m_Signals:
+    - {fileID: 11400000, guid: abc7a1cab0c997340b0437596256a3e6, type: 2}
+    - {fileID: 11400000, guid: dc30866cf3446c8458e46bea168256fb, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1524215316}
+          m_TargetAssemblyTypeName: CinematicDirector, Assembly-CSharp
+          m_MethodName: DesactivateGunAndPlayer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1524215316}
+          m_TargetAssemblyTypeName: CinematicDirector, Assembly-CSharp
+          m_MethodName: ActivateGunAndPlayer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!320 &1726455883
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -43643,6 +43741,8 @@ PlayableDirector:
     value: {fileID: 1726455882}
   - key: {fileID: -1192222486694949742, guid: d90cbbd2b51aa8842ac5f4109db030b6, type: 2}
     value: {fileID: 330585548}
+  - key: {fileID: 8901042386670454005, guid: d90cbbd2b51aa8842ac5f4109db030b6, type: 2}
+    value: {fileID: 1726455882}
   m_ExposedReferences:
     m_References:
     - fc0531bb85ed2b34493245d65ba6cf38: {fileID: 0}
@@ -66429,3 +66529,4 @@ SceneRoots:
   - {fileID: 1846635213}
   - {fileID: 1898647324}
   - {fileID: 1664597971}
+  - {fileID: 160178101}

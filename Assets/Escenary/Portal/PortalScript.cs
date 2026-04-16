@@ -5,7 +5,7 @@ public class PortalScript : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
-            // Aquí puedes agregar cualquier lógica adicional que quieras ejecutar cuando el jugador entre en el portal
+            Debug.Log("ENTRO AL PORTAL");
         }
     }
 }

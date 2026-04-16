@@ -13,6 +13,8 @@ public class CinematicDirector : MonoBehaviour
     private SecondCinematic _secondCinematic;
     public static CinematicDirector instance;
     public List<GameObject> tempEnemies = new List<GameObject>();
+    [Header("SecondCinematic")]
+    private ThirdCinematic _thirdCinematic;
     private void Awake()
     {
         if (instance == null)
@@ -24,6 +26,7 @@ public class CinematicDirector : MonoBehaviour
     {
         _firstCinematic = new FirstCinematic(_waterDrop.transform, this);
         _secondCinematic = new SecondCinematic(_spawners, tempEnemies);
+        _thirdCinematic = new ThirdCinematic();
     }
     public void DesactivateGunAndPlayer()
     {
