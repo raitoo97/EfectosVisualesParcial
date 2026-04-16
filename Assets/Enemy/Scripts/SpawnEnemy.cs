@@ -21,4 +21,8 @@ public class SpawnEnemy : MonoBehaviour
             yield return new WaitForSeconds(7.5f);
         }
     }
+    public void StopSpawn()
+    {
+        canSpawn = false;
+    }
 }

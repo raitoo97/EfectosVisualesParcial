@@ -13,11 +13,8 @@ public class CinematicDirector : MonoBehaviour
     private SecondCinematic _secondCinematic;
     public static CinematicDirector instance;
     public List<GameObject> tempEnemies = new List<GameObject>();
-    [SerializeField]private GameObject[] _stairBroke;
-    [SerializeField]private GameObject[] _stairNew;
+    public GameObject doorRef;
     [Header("ThirdCinematic")]
-    [SerializeField] private Transform _starshipPos;
-    [SerializeField] private Transform _starshipArrivePos;
     private ThirdCinematic _thirdCinematic;
     private void Awake()
     {
@@ -29,8 +26,8 @@ public class CinematicDirector : MonoBehaviour
     private void OnEnable()
     {
         _firstCinematic = new FirstCinematic(_waterDrop.transform, this);
-        _secondCinematic = new SecondCinematic(_spawners, tempEnemies, _stairBroke, _stairNew);
-        _thirdCinematic = new ThirdCinematic(_starshipPos, _starshipArrivePos,this);
+        _secondCinematic = new SecondCinematic(_spawners, tempEnemies, doorRef);
+        _thirdCinematic = new ThirdCinematic(GameManager.instance.portal, _spawners, doorRef);
     }
     public void DesactivateGunAndPlayer()
     {
@@ -79,6 +76,10 @@ public class CinematicDirector : MonoBehaviour
     {
         _secondCinematic.SpawnerEnemies();
     }
+    public void CloseDoor()
+    {
+        _secondCinematic.CloseDoor();
+    }
     public void ActivateCorutineSpawn()
     {
         _secondCinematic.ActivateCorutineSpawn();
@@ -87,21 +88,19 @@ public class CinematicDirector : MonoBehaviour
     {
         _secondCinematic.DesactivateEnemiesFromList();
     }
-    public void ActivateBrokenStair()
-    {
-        _secondCinematic.ActivateBrokenStair();
-    }
-    public void ActivateCleanStair()
-    {
-
-        _secondCinematic.ActivateCleanStair();
-    }
     #endregion
     #region ThirdCinematic
-    public void ActivateThirdCinematic()
+    public void ActivatePortal()
     {
-        CanvasManager.instance.HiddenTime();
-        _thirdCinematic.StartCinematic();
+        _thirdCinematic.ActivatePortal();
+    }
+    public void DesactivateCorutineSpawn()
+    {
+        _thirdCinematic.DesativateCorutineSpawn();
+    }
+    public void OpenDoor()
+    {
+        _thirdCinematic.OpenDoor();
     }
     #endregion
     public PlayableDirector GetPlayableDirector(int index)

@@ -1,35 +1,37 @@
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 public class ThirdCinematic
 {
-    private Transform _starshipPos;
-    private Transform _starshipArrivePos;
-    private MonoBehaviour _corutineHost;
-    public ThirdCinematic(Transform starshipPos, Transform starshipArrivePos, MonoBehaviour corutineHost)
+    private PortalScript _portalRef;
+    private Transform[] _spawners;
+    private List<Enemy> _enemies = new List<Enemy>();
+    private GameObject _doorRef;
+    public ThirdCinematic(PortalScript portal, Transform[] spawners, GameObject doorRef)
     {
-        _starshipPos = starshipPos;
-        _starshipArrivePos = starshipArrivePos;
-        _corutineHost = corutineHost;
+        _portalRef = portal;
+        _spawners = spawners;
+        _doorRef = doorRef;
     }
-    public void StartCinematic()
+    public void ActivatePortal()
     {
-        SoundManager.Instance?.PlayCinematicClip(SoundManager.Instance.GetAudioClip("AirSpace"), 1f, true);
-        SoundManager.Instance?.PlayCinematicClip(SoundManager.Instance.GetAudioClip("StarShip"), 1f, true);
-        _corutineHost.StartCoroutine(MoveStarship());
+        _portalRef.gameObject.SetActive(true);
     }
-    IEnumerator MoveStarship()
+    public void DesativateCorutineSpawn()
     {
-        float elapsedTime = 0f;
-        float duration = 20f;
-        Vector3 startingPos = _starshipPos.position;
-        Vector3 targetPos = _starshipArrivePos.position;
-        while (elapsedTime < duration)
+        foreach (var spawn in _spawners)
         {
-            float t = Mathf.Clamp01(elapsedTime / duration);
-            _starshipPos.position = Vector3.Lerp(startingPos, targetPos, t);
-            elapsedTime += Time.deltaTime;
-            yield return null;
+            var currentspawn = spawn.GetComponent<SpawnEnemy>();
+            currentspawn.StopSpawn();
+            currentspawn.gameObject.SetActive(false);
         }
-        _starshipPos.position = targetPos;
+        _enemies = new List<Enemy>(GameObject.FindObjectsOfType<Enemy>());
+        foreach (var enemy in _enemies)
+        {
+            enemy.gameObject.SetActive(false);
+        }
+    }
+   public void OpenDoor()
+    {
+        _doorRef.GetComponent<Animator>()?.SetTrigger("OpenDoor");
     }
 }

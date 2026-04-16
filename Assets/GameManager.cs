@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour
     public ParticleSystem impactParticlesPrefab;
     public Material _glowMaterial;
     private Timer timer;
-    public static Action OnGameOver;
-    public GameObject _portal;
+    public PortalScript portal;
     private void Awake()
     {
         if(instance == null)
@@ -21,10 +20,9 @@ public class GameManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        _portal.SetActive(false);
-        timer = new Timer(_portal);
-        OnGameOver -= GoToFinish;
-        OnGameOver += GoToFinish;
+        timer = new Timer();
+        timer.FinishTimer += ActivePortal;
+        portal.gameObject.SetActive(false);
     }
     private void Update()
     {
@@ -41,10 +39,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         timer?.OnStart();
-        if (CinematicDirector.instance != null)
-        {
-            CinematicDirector.instance.ActivateCleanStair();
-        }
         SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("MusicBackground"), 0.8f, true);
     }
     public void StartTimer()
@@ -52,7 +46,7 @@ public class GameManager : MonoBehaviour
         if (timer != null)
             timer.stop = false;
     }
-    public void GoToFinish()
+    public void ActivePortal()
     {
         if (gameObject.activeInHierarchy)
         {
@@ -60,7 +54,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("GameManager intentó iniciar GoToFinish, pero fue destruido/inactivo. Se abortó la corrutina.");
+            Debug.LogError("GameManager intentó iniciar ActivePortal, pero fue destruido/inactivo. Se abortó la corrutina.");
         }
     }
     public void GoToMenu()
@@ -70,18 +64,16 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator OnFinishCorutine()
     {
-        if (CanvasManager.instance != null)
-            CanvasManager.instance.FadeIn();
-        yield return new WaitForSeconds(1.3f);
-        if (CinematicDirector.instance != null)
-        {
-            CinematicDirector.instance.GetPlayableDirector(2).Play();
-        }
+        yield return null;
+        CinematicDirector.instance.GetPlayableDirector(2).Play();
     }
     private void OnDisable()
     {
-        OnGameOver -= GoToFinish;
-        timer = null;
+        if (timer != null)
+        {
+            timer.FinishTimer -= ActivePortal;
+            timer = null;
+        }
     }
     public string GetTime { get => timer.GetTime; }
 }

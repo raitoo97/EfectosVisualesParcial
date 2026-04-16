@@ -5,7 +5,7 @@ public class PortalScript : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
-            GameManager.OnGameOver?.Invoke();
+            Debug.Log("ENTRO AL PORTAL");
         }
     }
 }

@@ -5,14 +5,12 @@ public class SecondCinematic
     private Transform[] _spawners;
     private List<Enemy> _enemies = new List<Enemy>();
     private List<GameObject> _tempEnemies = new List<GameObject>();
-    private GameObject[] _stairBroke;
-    private GameObject[] _stairClean;
-    public SecondCinematic(Transform[] spawners , List<GameObject> tempEnemies, GameObject[] stairBroke, GameObject[] stairClean)
+    private GameObject _doorRef;
+    public SecondCinematic(Transform[] spawners , List<GameObject> tempEnemies, GameObject doorRef)
     {
         _spawners = spawners;
         _tempEnemies = tempEnemies;
-        _stairBroke = stairBroke;
-        _stairClean = stairClean;
+        _doorRef = doorRef;
     }
     public void SpawnerEnemies()
     {
@@ -50,26 +48,8 @@ public class SecondCinematic
             enemy.GetFSM.ChangeState(FSM.StateID.Chase);
         }
     }
-    public void ActivateBrokenStair()
+    public void CloseDoor()
     {
-        foreach (var stair in _stairBroke)
-        {
-            stair.SetActive(true);
-        }
-        foreach (var stair in _stairClean)
-        {
-            stair.SetActive(false);
-        }
-    }
-    public void ActivateCleanStair()
-    {
-        foreach (var stair in _stairBroke)
-        {
-            stair.SetActive(false);
-        }
-        foreach (var stair in _stairClean)
-        {
-            stair.SetActive(true);
-        }
+        _doorRef.GetComponent<Animator>()?.SetTrigger("CloseDoor");
     }
 }
