@@ -14,7 +14,7 @@ public class Timer
     {
         stop = true;
         _min = 0;
-        _seg = 2;
+        _seg = 30;
         _mmm = 0;
     }
     public void OnUpdate()

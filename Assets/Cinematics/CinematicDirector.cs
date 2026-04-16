@@ -13,7 +13,7 @@ public class CinematicDirector : MonoBehaviour
     private SecondCinematic _secondCinematic;
     public static CinematicDirector instance;
     public List<GameObject> tempEnemies = new List<GameObject>();
-    [Header("SecondCinematic")]
+    [Header("ThirdCinematic")]
     private ThirdCinematic _thirdCinematic;
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class CinematicDirector : MonoBehaviour
     {
         _firstCinematic = new FirstCinematic(_waterDrop.transform, this);
         _secondCinematic = new SecondCinematic(_spawners, tempEnemies);
-        _thirdCinematic = new ThirdCinematic();
+        _thirdCinematic = new ThirdCinematic(GameManager.instance.portal, _spawners);
     }
     public void DesactivateGunAndPlayer()
     {
@@ -82,6 +82,16 @@ public class CinematicDirector : MonoBehaviour
     public void DesactivateTempEnemies()
     {
         _secondCinematic.DesactivateEnemiesFromList();
+    }
+    #endregion
+    #region ThirdCinematic
+    public void ActivatePortal()
+    {
+        _thirdCinematic.ActivatePortal();
+    }
+    public void DesactivateCorutineSpawn()
+    {
+        _thirdCinematic.DesativateCorutineSpawn();
     }
     #endregion
     public PlayableDirector GetPlayableDirector(int index)

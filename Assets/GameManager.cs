@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public ParticleSystem impactParticlesPrefab;
     public Material _glowMaterial;
     private Timer timer;
+    public PortalScript portal;
     private void Awake()
     {
         if(instance == null)
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         timer = new Timer();
         timer.FinishTimer += ActivePortal;
+        portal.gameObject.SetActive(false);
     }
     private void Update()
     {

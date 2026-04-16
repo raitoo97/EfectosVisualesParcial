@@ -3886,7 +3886,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 387884905}
     m_Modifications:
     - target: {fileID: 2772927012467135339, guid: 51eaf65221889614c8451ee7cfa8b9bc,
         type: 3}
@@ -3896,17 +3896,17 @@ PrefabInstance:
     - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.159
+      value: 0.11100006
       objectReference: {fileID: 0}
     - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.692
+      value: 2.6919
       objectReference: {fileID: 0}
     - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.8235393
+      value: -0.5835395
       objectReference: {fileID: 0}
     - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
         type: 3}
@@ -3916,7 +3916,7 @@ PrefabInstance:
     - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
         type: 3}
@@ -3926,7 +3926,7 @@ PrefabInstance:
     - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
         type: 3}
@@ -3948,6 +3948,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51eaf65221889614c8451ee7cfa8b9bc, type: 3}
+--- !u!4 &160178102 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5166041578045162594, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 160178101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &160178103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8975540253519630636, guid: 51eaf65221889614c8451ee7cfa8b9bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 160178101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd7c3c6ebb5beb4c9a53c5d9e6022f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &204886977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22340,6 +22358,7 @@ Transform:
   m_Children:
   - {fileID: 6672174583034192949}
   - {fileID: 36526597}
+  - {fileID: 160178102}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &396141970 stripped
@@ -22483,6 +22502,7 @@ MonoBehaviour:
   impactParticlesPrefab: {fileID: 2873823370989727376, guid: 86343074feb3f8844988f3e76dbfb881,
     type: 3}
   _glowMaterial: {fileID: 2100000, guid: 3bc04f40422b6474380bce66294a46e2, type: 2}
+  portal: {fileID: 160178103}
 --- !u!1 &587661789
 GameObject:
   m_ObjectHideFlags: 0
@@ -43693,6 +43713,30 @@ MonoBehaviour:
         - m_Target: {fileID: 1524215316}
           m_TargetAssemblyTypeName: CinematicDirector, Assembly-CSharp
           m_MethodName: DesactivateGunAndPlayer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1524215316}
+          m_TargetAssemblyTypeName: CinematicDirector, Assembly-CSharp
+          m_MethodName: ActivatePortal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1524215316}
+          m_TargetAssemblyTypeName: CinematicDirector, Assembly-CSharp
+          m_MethodName: DesactivateCorutineSpawn
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -66529,4 +66573,3 @@ SceneRoots:
   - {fileID: 1846635213}
   - {fileID: 1898647324}
   - {fileID: 1664597971}
-  - {fileID: 160178101}
