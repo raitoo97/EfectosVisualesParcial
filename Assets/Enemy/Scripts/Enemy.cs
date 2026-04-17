@@ -174,6 +174,17 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     {
         hitParticleEffect.Play();
     }
+    private void OnAnimatorIK(int layerIndex)
+    {
+        if (animator == null || _player == null || _isDead)
+        {
+            animator.SetLookAtWeight(0f);
+            return;
+        }
+        animator.SetLookAtWeight(1f, 0.9f, 1f, 1f, 0.5f);
+        Vector3 targetLookPos = _player.transform.position + Vector3.up * 1.5f;
+        animator.SetLookAtPosition(targetLookPos);
+    }
     public FSM GetFSM { get => _fsm; }
     public Life GetLife { get => _life; }
 }

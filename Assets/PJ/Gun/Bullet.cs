@@ -44,7 +44,6 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.TryGetComponent<IImpact>(out var impact) && _bulletType == BulletType.Player)
         {
             impact.OnImpact(this.transform.position);
-            print("sii");
             DesactivateBullet();
         }
         if (other.gameObject.TryGetComponent<Player>(out var player) && _bulletType == BulletType.Enemy)
