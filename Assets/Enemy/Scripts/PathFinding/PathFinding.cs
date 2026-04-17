@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public static class PathFinding
 {
-    public static List<Vector3> CalculateAStart(Vector3 start, Vector3 goal)
+    public static List<Vector3> CalculateAStar(Vector3 start, Vector3 goal)
     {
         Node startNode = NodeManager.GetClosetNode(start);
         Node endNode = NodeManager.GetClosetNode(goal);
@@ -50,7 +50,7 @@ public static class PathFinding
     }
     public static List<Vector3>CalculateTheta(Vector3 start, Vector3 goal)
     {
-        var aStart = CalculateAStart(start, goal);
+        var aStart = CalculateAStar(start, goal);
         int current = 0;
         while (current + 2 < aStart.Count)
         {

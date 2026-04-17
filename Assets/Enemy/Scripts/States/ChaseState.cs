@@ -59,7 +59,7 @@ public class ChaseState : Istate
     private void CalculatePath(Vector3 goalPosition)
     {
         CleanUpPath();
-        _path = PathFinding.CalculateTheta(_enemy.transform.position, goalPosition);
+        _path = PathFinding.CalculateAStar(_enemy.transform.position, goalPosition);
     }
     private void CleanUpPath()
     {
