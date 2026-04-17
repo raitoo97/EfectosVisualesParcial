@@ -2893,7 +2893,6 @@ GameObject:
   - component: {fileID: 7566630658689574885}
   - component: {fileID: 77143642368913515}
   - component: {fileID: 6882773278116257120}
-  - component: {fileID: 873207696652730223}
   m_Layer: 11
   m_Name: RobotEnemy
   m_TagString: Untagged
@@ -3030,22 +3029,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &873207696652730223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7724002058403324856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8a86d9e01e4b224baeade9cdcf17be9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _obstacleMask:
-    serializedVersion: 2
-    m_Bits: 32768
-  _priority: 3
 --- !u!1 &7799924780648604787
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,8 +13,8 @@ public class Timer
     public void OnStart()
     {
         stop = true;
-        _min = 0;
-        _seg = 2;
+        _min = 10;
+        _seg = 0;
         _mmm = 0;
     }
     public void OnUpdate()

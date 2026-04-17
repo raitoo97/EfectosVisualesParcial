@@ -38,29 +38,6 @@ public class ChaseState : Istate
             _fsm.ChangeState(FSM.StateID.Attack);
             return;
         }
-        if (canSeePlayer)
-        {
-            if (_path.Count > 0)
-            {
-                _path[_path.Count - 1] = _playerPos.transform.position;
-            }
-            else
-            {
-                CalculatePath(_playerPos.transform.position);
-            }
-        }
-        if (_path.Count > 0)
-        {
-            var currentTarget = _path[0];
-            var distanceToTarget = currentTarget - _enemy.transform.position;
-            _enemy.FlockingAndSeek(currentTarget);
-            _enemy.RotateTo(currentTarget);
-            if (distanceToTarget.magnitude < 2f)
-                _path.RemoveAt(0);
-            for (int i = 0; i < _path.Count - 1; i++)
-                Debug.DrawLine(_path[i], _path[i + 1], Color.red);
-            return;
-        }
         _repathTimer += Time.deltaTime;
         if (_path.Count == 0 || _repathTimer >= _repathInterval || (_playerPos.transform.position - _lastGoalPos).magnitude > _repathDistance)
         {
@@ -68,11 +45,20 @@ public class ChaseState : Istate
             _lastGoalPos = _playerPos.transform.position;
             _repathTimer = 0f;
         }
+        if (_path.Count == 0)
+            return;
+        var currentTarget = _path[0];
+        var distanceToTarget = currentTarget - _enemy.transform.position;
+        _enemy.FlockingAndSeek(currentTarget);
+        _enemy.RotateTo(currentTarget);
+        if (distanceToTarget.magnitude < 2f)
+            _path.RemoveAt(0);
+        for (int i = 0; i < _path.Count - 1; i++)
+            Debug.DrawLine(_path[i], _path[i + 1], Color.red);
     }
     private void CalculatePath(Vector3 goalPosition)
     {
-        CleanUpPath();
-        _path = PathFinding.CalculateTheta(_enemy.transform.position, goalPosition);
+        _path = PathFinding.CalculateAStar(_enemy.transform.position, goalPosition);
     }
     private void CleanUpPath()
     {
