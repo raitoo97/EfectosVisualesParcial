@@ -11,6 +11,7 @@ public class Node : MonoBehaviour
     public Dictionary<Node, ConnectionType> _connectionTypes = new Dictionary<Node, ConnectionType>();
     public float cost = 1f;
     public bool isJumpNode = false;
+    [SerializeField] private List<Node> _manualConnections = new List<Node>();
     private void Awake()
     {
         NodeManager.RegisterNode(this);
@@ -18,6 +19,10 @@ public class Node : MonoBehaviour
     void Start()
     {
         NodeManager.CompleteNeighbords();
+        foreach (var manual in _manualConnections)
+        {
+            AddManualConnection(manual, ConnectionType.Jump);
+        }
     }
     private void OnDestroy()
     {
@@ -37,6 +42,14 @@ public class Node : MonoBehaviour
                 _connectionTypes[node] = ConnectionType.Walk;
             }
         }
+    }
+    public void AddManualConnection(Node node, ConnectionType type)
+    {
+        if (!_neighbords.Contains(node))
+        {
+            _neighbords.Add(node);
+        }
+        _connectionTypes[node] = type;
     }
     public ConnectionType GetConnectionType(Node node)
     {
