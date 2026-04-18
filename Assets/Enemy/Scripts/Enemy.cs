@@ -11,7 +11,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     private float _rotateSpeed = 120f;
     [SerializeField]private float _maxHealth;
     private Life _life;
-    [SerializeField]private Shield _shieldChildRef;
+    [HideInInspector]private Shield _shieldChildRef;
     private EnemyGetHit _hitEffect;
     List<Material> allHitMaterials = new List<Material>();
     public VisualEffect hitParticleEffect;
