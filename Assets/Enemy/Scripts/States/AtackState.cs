@@ -17,6 +17,7 @@ public class AtackState : Istate
     public void OnEnter()
     {
         _animator.SetBool("IsRunning", false);
+        _animator.SetBool("OnJump", false);
         _animator.SetBool("Ishoting", true);
         _enemy.ChangeMove(false);
     }

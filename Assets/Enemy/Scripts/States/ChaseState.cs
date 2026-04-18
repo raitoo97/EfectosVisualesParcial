@@ -23,6 +23,7 @@ public class ChaseState : Istate
     public void OnEnter()
     {
         _animator.SetBool("IsRunning", true);
+        _animator.SetBool("OnJump", false);
         _animator.SetBool("Ishoting", false);
         _enemy.ChangeMove(true);
         CleanUpPath();
@@ -48,6 +49,24 @@ public class ChaseState : Istate
         if (_path.Count == 0)
             return;
         var currentTarget = _path[0];
+        if (_path.Count >= 2)
+        {
+            Node currentNode = NodeManager.GetClosetNode(_enemy.transform.position);
+            Node nextNode = NodeManager.GetClosetNode(_path[1]);
+            if (currentNode != null && nextNode != null)
+            {
+                if (currentNode.GetConnectionType(nextNode) == ConnectionType.Jump)
+                {
+                    var jumpState = _fsm.GetState<JumpState>();
+                    if (jumpState != null)
+                    {
+                        jumpState.SetJump(_enemy.transform.position, nextNode.transform.position);
+                    }
+                    _fsm.ChangeState(FSM.StateID.Jump);
+                    return;
+                }
+            }
+        }
         var distanceToTarget = currentTarget - _enemy.transform.position;
         _enemy.FlockingAndSeek(currentTarget);
         _enemy.RotateTo(currentTarget);

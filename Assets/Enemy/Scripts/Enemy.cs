@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -19,6 +20,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     private bool _isDead = false;
     private AudioSource _audioSource;
     private bool _isInAcid = false;
+    public Action _onJumpFinish;
     private void Awake()
     {
         Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);
@@ -41,6 +43,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         _fsm = new FSM();
         _fsm.AddState(FSM.StateID.Attack, new AtackState(this, _fsm, animator, _player, _aim));
         _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, _atackRange));
+        _fsm.AddState(FSM.StateID.Jump, new JumpState(this, _fsm, animator));
         _fsm.ChangeState(FSM.StateID.Chase);
         if (animator != null) animator.SetBool("IsDead", false);
         if (_life != null) _life.SetHealthToMax();
@@ -173,6 +176,10 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     public void PlayParticleDeath()
     {
         hitParticleEffect.Play();
+    }
+    public void OnJumpFinish()
+    {
+        _onJumpFinish?.Invoke();
     }
     private void OnAnimatorIK(int layerIndex)
     {
