@@ -28,6 +28,7 @@ public class JumpState : Istate
         _enemy.ChangeMove(false);
         _enemy.StopMovement();
         _enemy._onJumpFinish = OnJumpFinished;
+        _enemy.isOnJump = true;
     }
     public void OnUpdate()
     {
@@ -47,6 +48,7 @@ public class JumpState : Istate
     }
     public void OnJumpFinished()
     {
+        _enemy.isOnJump = false;
         _enemy.transform.position = _targetPos;
         _fsm.ChangeState(FSM.StateID.Chase);
     }

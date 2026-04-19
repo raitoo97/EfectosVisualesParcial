@@ -34,7 +34,6 @@ public class ChaseState : Istate
     {
         Vector3 origin = _enemy._eyePoint.position;
         Vector3 target = _playerPos.transform.position;
-        var distanceToPlayer = _playerPos.transform.position - _enemy.transform.position;
         int mask = LayerMask.GetMask("Wall", "Ground");
         Vector3 losOrigin = origin + Vector3.up;
         Vector3 direction = (target - losOrigin).normalized;
@@ -43,15 +42,14 @@ public class ChaseState : Istate
         if (Physics.Raycast(losOrigin, direction, out RaycastHit hit, distance, mask))
         {
             Debug.DrawLine(losOrigin, hit.point, Color.red);
-            Debug.Log("LOS HIT: " + hit.collider.name);
         }
         else
         {
             Debug.DrawLine(losOrigin, target, Color.green);
-            Debug.Log("LOS LIBRE");
         }
+
         var canSeePlayer = LineOfSight.IsOnSight(origin, target);
-        if (_enemy.isOnGround && distanceToPlayer.magnitude <= _rangeAtack && canSeePlayer)
+        if (_enemy.isOnGround && distance <= _rangeAtack && canSeePlayer)
         {
             _fsm.ChangeState(FSM.StateID.Attack);
             return;
@@ -68,9 +66,13 @@ public class ChaseState : Istate
         var currentTarget = _path[0];
         if (_path.Count >= 2)
         {
-            Vector3 nextPos = _path[1];
-            if (TryHandleJump(nextPos))
-                return;
+            float distToCurrent = Vector3.Distance(_enemy.transform.position, _path[0]);
+            if (distToCurrent < 1.5f)
+            {
+                Vector3 nextPos = _path[1];
+                if (TryHandleJump(nextPos))
+                    return;
+            }
         }
         var distanceToTarget = currentTarget - _enemy.transform.position;
         _enemy.FlockingAndSeek(currentTarget);
@@ -90,8 +92,10 @@ public class ChaseState : Istate
         if (currentNode.GetConnectionType(nextNode) != ConnectionType.Jump)
             return false;
 
-        float heightDiff = nextPos.y - _enemy.transform.position.y;
+        if (!_enemy.isOnGround)
+            return false;
 
+        float heightDiff = nextPos.y - _enemy.transform.position.y;
         Vector3 flatEnemy = new Vector3(_enemy.transform.position.x, 0, _enemy.transform.position.z);
         Vector3 flatTarget = new Vector3(nextPos.x, 0, nextPos.z);
         float horizontalDist = Vector3.Distance(flatEnemy, flatTarget);

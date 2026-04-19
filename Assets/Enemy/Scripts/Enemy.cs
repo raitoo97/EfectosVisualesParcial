@@ -24,6 +24,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     public Transform _eyePoint;
     public bool isOnGround;
     [SerializeField] private Transform _checkGround;
+    public bool isOnJump;
     private void Awake()
     {
         Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);
@@ -47,6 +48,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         _fsm.AddState(FSM.StateID.Attack, new AtackState(this, _fsm, animator, _player, _aim));
         _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, _atackRange));
         _fsm.AddState(FSM.StateID.Jump, new JumpState(this, _fsm, animator));
+        _fsm.AddState(FSM.StateID.Fall, new FallState(this, _fsm, animator));
         _fsm.ChangeState(FSM.StateID.Chase);
         if (animator != null) animator.SetBool("IsDead", false);
         if (_life != null) _life.SetHealthToMax();
@@ -68,9 +70,20 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     }
     protected override void Update()
     {
-        if (_fsm != null)
-            _fsm.onUpdateState();
         CheckGround();
+        if (_fsm != null)
+        {
+            var current = _fsm.getCurrentState;
+            if (!isOnGround && !isOnJump)
+            {
+                if (!(current is FallState))
+                {
+                    _fsm.ChangeState(FSM.StateID.Fall);
+                    return;
+                }
+            }
+            _fsm.onUpdateState();
+        }
         base.Update();
     }
     public void Dead()
