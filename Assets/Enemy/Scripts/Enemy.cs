@@ -21,6 +21,8 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     private AudioSource _audioSource;
     private bool _isInAcid = false;
     public Action _onJumpFinish;
+    public bool IsJumping;
+    public Transform _eyePoint;
     private void Awake()
     {
         Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);

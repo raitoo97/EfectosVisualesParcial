@@ -53,7 +53,6 @@ public class Gun : MonoBehaviour
     {
         var Player = GameObject.FindObjectOfType<Player>();
         if (Player == null) return;
-        Debug.Log(Player.MoveVector.magnitude);
         if (Player.MoveVector.magnitude >= 0.01f)
             SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("FootStep"), 1f, false);
     }

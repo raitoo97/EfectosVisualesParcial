@@ -60,7 +60,7 @@ public class Node : MonoBehaviour
     public List<Node> GetNeighbords { get { return _neighbords; } }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, NodeManager._maxDistanceNeighbord);
+        //Gizmos.color = Color.blue;
+        //Gizmos.DrawWireSphere(transform.position, NodeManager._maxDistanceNeighbord);
     }
 }

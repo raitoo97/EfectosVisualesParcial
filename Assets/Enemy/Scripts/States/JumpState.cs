@@ -26,19 +26,24 @@ public class JumpState : Istate
         _animator.SetBool("OnJump", true);
         _timer = 0f;
         _enemy.ChangeMove(false);
+        _enemy.StopMovement();
         _enemy._onJumpFinish = OnJumpFinished;
+        _enemy.IsJumping = true;
     }
     public void OnUpdate()
     {
         _timer += Time.deltaTime;
         float t = _timer / _duration;
         t = Mathf.Clamp01(t);
-        Vector3 pos = Vector3.Lerp(_startPos, _targetPos, t);
-        pos.y += Mathf.Sin(t * Mathf.PI) * 2f;
+        Vector3 horizontal = Vector3.Lerp(new Vector3(_startPos.x, 0, _startPos.z),new Vector3(_targetPos.x, 0, _targetPos.z),t);
+        float baseY = Mathf.Lerp(_startPos.y, _targetPos.y, t);
+        float jumpY = Mathf.Sin(t * Mathf.PI) * 2f;
+        Vector3 pos = new Vector3(horizontal.x, baseY + jumpY, horizontal.z);
         _enemy.transform.position = pos;
         if (t >= 1f)
         {
             OnJumpFinished();
+            return;
         }
     }
     public void OnJumpFinished()
@@ -50,6 +55,8 @@ public class JumpState : Istate
     {
         _enemy._onJumpFinish = null;
         _enemy.ChangeMove(true);
+        _enemy.StopMovement();
+        _enemy.IsJumping = false;
     }
 }
 

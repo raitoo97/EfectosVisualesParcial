@@ -32,9 +32,26 @@ public class ChaseState : Istate
     }
     public void OnUpdate()
     {
+        Vector3 origin = _enemy._eyePoint.position;
+        Vector3 target = _playerPos.transform.position;
         var distanceToPlayer = _playerPos.transform.position - _enemy.transform.position;
-        var canSeePlayer = LineOfSight.IsOnSight(_enemy.transform.position, _playerPos.transform.position);
-        if (distanceToPlayer.magnitude <= _rangeAtack && canSeePlayer)
+        int mask = LayerMask.GetMask("Wall", "Ground");
+        Vector3 losOrigin = origin + Vector3.up;
+        Vector3 direction = (target - losOrigin).normalized;
+        float distance = (target - losOrigin).magnitude;
+        Debug.DrawLine(losOrigin, target, Color.yellow);
+        if (Physics.Raycast(losOrigin, direction, out RaycastHit hit, distance, mask))
+        {
+            Debug.DrawLine(losOrigin, hit.point, Color.red);
+            Debug.Log("LOS HIT: " + hit.collider.name);
+        }
+        else
+        {
+            Debug.DrawLine(losOrigin, target, Color.green);
+            Debug.Log("LOS LIBRE");
+        }
+        var canSeePlayer = LineOfSight.IsOnSight(origin, target);
+        if (!_enemy.IsJumping &&distanceToPlayer.magnitude <= _rangeAtack && canSeePlayer)
         {
             _fsm.ChangeState(FSM.StateID.Attack);
             return;
@@ -51,21 +68,9 @@ public class ChaseState : Istate
         var currentTarget = _path[0];
         if (_path.Count >= 2)
         {
-            Node currentNode = NodeManager.GetClosetNode(_enemy.transform.position);
-            Node nextNode = NodeManager.GetClosetNode(_path[1]);
-            if (currentNode != null && nextNode != null)
-            {
-                if (currentNode.GetConnectionType(nextNode) == ConnectionType.Jump)
-                {
-                    var jumpState = _fsm.GetState<JumpState>();
-                    if (jumpState != null)
-                    {
-                        jumpState.SetJump(_enemy.transform.position, nextNode.transform.position);
-                    }
-                    _fsm.ChangeState(FSM.StateID.Jump);
-                    return;
-                }
-            }
+            Vector3 nextPos = _path[1];
+            if (TryHandleJump(nextPos))
+                return;
         }
         var distanceToTarget = currentTarget - _enemy.transform.position;
         _enemy.FlockingAndSeek(currentTarget);
@@ -74,6 +79,21 @@ public class ChaseState : Istate
             _path.RemoveAt(0);
         for (int i = 0; i < _path.Count - 1; i++)
             Debug.DrawLine(_path[i], _path[i + 1], Color.red);
+    }
+    private bool TryHandleJump(Vector3 nextPos)
+    {
+        float heightDiff = nextPos.y - _enemy.transform.position.y;
+        Vector3 flatEnemy = new Vector3(_enemy.transform.position.x, 0, _enemy.transform.position.z);
+        Vector3 flatTarget = new Vector3(nextPos.x, 0, nextPos.z);
+        float horizontalDist = Vector3.Distance(flatEnemy, flatTarget);
+        if (Mathf.Abs(heightDiff) <= 0.5f) return false;
+        var jumpState = _fsm.GetState<JumpState>();
+        if (jumpState != null)
+        {
+            jumpState.SetJump(_enemy.transform.position, nextPos);
+        }
+        _fsm.ChangeState(FSM.StateID.Jump);
+        return true;
     }
     private void CalculatePath(Vector3 goalPosition)
     {
