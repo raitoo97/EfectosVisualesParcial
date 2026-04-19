@@ -82,11 +82,36 @@ public class ChaseState : Istate
     }
     private bool TryHandleJump(Vector3 nextPos)
     {
+        Node currentNode = NodeManager.GetClosetNode(_enemy.transform.position);
+        Node nextNode = NodeManager.GetClosetNode(nextPos);
+        if (currentNode == null || nextNode == null)
+            return false;
+
+        if (currentNode.GetConnectionType(nextNode) != ConnectionType.Jump)
+            return false;
+
         float heightDiff = nextPos.y - _enemy.transform.position.y;
+
         Vector3 flatEnemy = new Vector3(_enemy.transform.position.x, 0, _enemy.transform.position.z);
         Vector3 flatTarget = new Vector3(nextPos.x, 0, nextPos.z);
         float horizontalDist = Vector3.Distance(flatEnemy, flatTarget);
-        if (Mathf.Abs(heightDiff) <= 0.5f) return false;
+
+
+        if (Mathf.Abs(heightDiff) <= 0.2f && horizontalDist < 0.5f)
+            return false;
+        if (horizontalDist < 0.2f)
+            return false;
+
+        Vector3 midPoint = (_enemy.transform.position + nextPos) * 0.5f;
+        Vector3 rayStart = midPoint + Vector3.up;
+        Debug.DrawLine(rayStart, rayStart + Vector3.down * 2f, Color.blue);
+
+        if (Physics.Raycast(midPoint + Vector3.up, Vector3.down, out RaycastHit hit, 2f, LayerMask.GetMask("Ground")))
+        {
+            float slope = Vector3.Angle(hit.normal, Vector3.up);
+            if (slope < 45f)return false;
+        }
+
         var jumpState = _fsm.GetState<JumpState>();
         if (jumpState != null)
         {

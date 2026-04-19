@@ -21,6 +21,7 @@ public class JumpState : Istate
     }
     public void OnEnter()
     {
+        Debug.Log("Entering Jump State");
         _animator.SetBool("IsRunning", false);
         _animator.SetBool("Ishoting", false);
         _animator.SetBool("OnJump", true);

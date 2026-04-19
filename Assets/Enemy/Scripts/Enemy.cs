@@ -196,4 +196,5 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     }
     public FSM GetFSM { get => _fsm; }
     public Life GetLife { get => _life; }
+    public float AttackRange { get => _atackRange; }
 }
