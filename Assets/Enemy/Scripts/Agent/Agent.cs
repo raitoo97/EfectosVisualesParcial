@@ -91,4 +91,5 @@ public abstract class Agent : MonoBehaviour
     public Vector3 Velocity { get => _velocity; }
     public float MaxVelocity { get => _maxVelocity; }
     public float MaxForce { get => _maxSteerForce; }
+    public LayerMask GroundMask { get => _groundMask; }
 }
