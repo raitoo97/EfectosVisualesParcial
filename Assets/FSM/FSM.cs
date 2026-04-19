@@ -6,7 +6,8 @@ public class FSM
         Chase,
         Attack,
         Jump,
-        Fall
+        Fall,
+        Emergency
     }
     private Dictionary<StateID, Istate> _allStates = new Dictionary<StateID, Istate>();
     private Istate _currentState;

@@ -24,6 +24,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     public Transform _eyePoint;
     public bool isOnGround;
     [SerializeField] private Transform _checkGround;
+    public Transform _emergencyCheck;
     public bool isOnJump;
     private void Awake()
     {
@@ -49,6 +50,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, _atackRange));
         _fsm.AddState(FSM.StateID.Jump, new JumpState(this, _fsm, animator));
         _fsm.AddState(FSM.StateID.Fall, new FallState(this, _fsm, animator));
+        _fsm.AddState(FSM.StateID.Emergency, new EmergencyState(this, _fsm));
         _fsm.ChangeState(FSM.StateID.Chase);
         if (animator != null) animator.SetBool("IsDead", false);
         if (_life != null) _life.SetHealthToMax();
@@ -71,6 +73,15 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     protected override void Update()
     {
         CheckGround();
+        print(_fsm.getCurrentState);
+        bool inside = Physics.CheckSphere(_emergencyCheck.position, 0.3f, _groundMask);
+        if (inside)
+        {
+            if (!(_fsm.getCurrentState is EmergencyState))
+            {
+                _fsm.ChangeState(FSM.StateID.Emergency);
+            }
+        }
         if (_fsm != null)
         {
             var current = _fsm.getCurrentState;
@@ -123,6 +134,9 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         Gizmos.DrawWireSphere(transform.position, _SeparationRange);
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(_checkGround.position, 0.5f);
+        bool inside = Physics.CheckSphere(_emergencyCheck.position, 0.3f, LayerMask.GetMask("Ground"));
+        Gizmos.color = inside ? Color.red : Color.green;
+        Gizmos.DrawWireSphere(_emergencyCheck.position, 0.3f);
     }
     public void TakeDamage(float damage)
     {
