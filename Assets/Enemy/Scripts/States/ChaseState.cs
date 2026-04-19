@@ -51,7 +51,7 @@ public class ChaseState : Istate
             Debug.Log("LOS LIBRE");
         }
         var canSeePlayer = LineOfSight.IsOnSight(origin, target);
-        if (!_enemy.IsJumping &&distanceToPlayer.magnitude <= _rangeAtack && canSeePlayer)
+        if (_enemy.isOnGround && distanceToPlayer.magnitude <= _rangeAtack && canSeePlayer)
         {
             _fsm.ChangeState(FSM.StateID.Attack);
             return;

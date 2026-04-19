@@ -21,8 +21,9 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     private AudioSource _audioSource;
     private bool _isInAcid = false;
     public Action _onJumpFinish;
-    public bool IsJumping;
     public Transform _eyePoint;
+    public bool isOnGround;
+    [SerializeField] private Transform _checkGround;
     private void Awake()
     {
         Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);
@@ -69,6 +70,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     {
         if (_fsm != null)
             _fsm.onUpdateState();
+        CheckGround();
         base.Update();
     }
     public void Dead()
@@ -106,6 +108,8 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         }
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, _SeparationRange);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(_checkGround.position, 0.5f);
     }
     public void TakeDamage(float damage)
     {
@@ -193,6 +197,10 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         animator.SetLookAtWeight(1f, 0.9f, 1f, 1f, 0.5f);
         Vector3 targetLookPos = _player.transform.position + Vector3.up * 1.5f;
         animator.SetLookAtPosition(targetLookPos);
+    }
+    private void CheckGround()
+    {
+        isOnGround = Physics.CheckSphere(_checkGround.position, 0.5f, _groundMask);
     }
     public FSM GetFSM { get => _fsm; }
     public Life GetLife { get => _life; }

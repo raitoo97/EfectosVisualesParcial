@@ -21,7 +21,6 @@ public class JumpState : Istate
     }
     public void OnEnter()
     {
-        Debug.Log("Entering Jump State");
         _animator.SetBool("IsRunning", false);
         _animator.SetBool("Ishoting", false);
         _animator.SetBool("OnJump", true);
@@ -29,7 +28,6 @@ public class JumpState : Istate
         _enemy.ChangeMove(false);
         _enemy.StopMovement();
         _enemy._onJumpFinish = OnJumpFinished;
-        _enemy.IsJumping = true;
     }
     public void OnUpdate()
     {
@@ -57,7 +55,6 @@ public class JumpState : Istate
         _enemy._onJumpFinish = null;
         _enemy.ChangeMove(true);
         _enemy.StopMovement();
-        _enemy.IsJumping = false;
     }
 }
 
