@@ -20,29 +20,8 @@ public abstract class Agent : MonoBehaviour
     }
     protected virtual void Update()
     {
-        HandleGroundAdherence();
         if (!_canMove) return;
-        if (_velocity.magnitude < 0.1f)
-            _velocity += transform.forward * 0.3f;
         transform.position += _velocity * Time.deltaTime;
-    }
-    private void HandleGroundAdherence()
-    {
-        Vector3 rayOrigin = transform.position + Vector3.up;
-        Vector3 rayDirection = Vector3.down;
-        float rayLength = 3f;
-        if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, rayLength, _groundMask))
-        {
-            Vector3 pos = transform.position;
-            pos.y = Mathf.MoveTowards(pos.y, hit.point.y, Time.deltaTime * 50f);
-            transform.position = pos;
-            _velocity.y = 0;
-        }
-        else
-        {
-            Debug.DrawRay(rayOrigin, rayDirection * rayLength, Color.red);
-            _velocity += Vector3.down * _gravityForce * 10 * Time.deltaTime;
-        }
     }
     public void FlockingAndSeek(Vector3 target)
     {

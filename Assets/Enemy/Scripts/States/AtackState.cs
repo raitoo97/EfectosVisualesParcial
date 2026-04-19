@@ -17,13 +17,15 @@ public class AtackState : Istate
     public void OnEnter()
     {
         _animator.SetBool("IsRunning", false);
+        _animator.SetBool("OnJump", false);
         _animator.SetBool("Ishoting", true);
         _enemy.ChangeMove(false);
     }
     public void OnUpdate()
     {
         var canSeePlayer = LineOfSight.IsOnSight(_enemy.transform.position, _playerPos.transform.position);
-        if (!canSeePlayer)
+        var isInRange = Vector3.Distance(_enemy.transform.position, _playerPos.transform.position) <= _enemy.AttackRange;
+        if (!canSeePlayer || !isInRange)
         {
             _fsm.ChangeState(FSM.StateID.Chase);
             return;

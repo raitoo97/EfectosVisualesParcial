@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -11,7 +12,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     private float _rotateSpeed = 120f;
     [SerializeField]private float _maxHealth;
     private Life _life;
-    [SerializeField]private Shield _shieldChildRef;
+    [HideInInspector]private Shield _shieldChildRef;
     private EnemyGetHit _hitEffect;
     List<Material> allHitMaterials = new List<Material>();
     public VisualEffect hitParticleEffect;
@@ -19,6 +20,11 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     private bool _isDead = false;
     private AudioSource _audioSource;
     private bool _isInAcid = false;
+    public Action _onJumpFinish;
+    public Transform _eyePoint;
+    public bool isOnGround;
+    [SerializeField] private Transform _checkGround;
+    public bool isOnJump;
     private void Awake()
     {
         Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);
@@ -41,6 +47,8 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         _fsm = new FSM();
         _fsm.AddState(FSM.StateID.Attack, new AtackState(this, _fsm, animator, _player, _aim));
         _fsm.AddState(FSM.StateID.Chase, new ChaseState(this, _fsm, animator, _player, _atackRange));
+        _fsm.AddState(FSM.StateID.Jump, new JumpState(this, _fsm, animator));
+        _fsm.AddState(FSM.StateID.Fall, new FallState(this, _fsm, animator));
         _fsm.ChangeState(FSM.StateID.Chase);
         if (animator != null) animator.SetBool("IsDead", false);
         if (_life != null) _life.SetHealthToMax();
@@ -62,8 +70,20 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     }
     protected override void Update()
     {
+        CheckGround();
         if (_fsm != null)
+        {
+            var current = _fsm.getCurrentState;
+            if (!isOnGround && !isOnJump)
+            {
+                if (!(current is FallState))
+                {
+                    _fsm.ChangeState(FSM.StateID.Fall);
+                    return;
+                }
+            }
             _fsm.onUpdateState();
+        }
         base.Update();
     }
     public void Dead()
@@ -101,6 +121,8 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         }
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, _SeparationRange);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(_checkGround.position, 0.5f);
     }
     public void TakeDamage(float damage)
     {
@@ -174,6 +196,10 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     {
         hitParticleEffect.Play();
     }
+    public void OnJumpFinish()
+    {
+        _onJumpFinish?.Invoke();
+    }
     private void OnAnimatorIK(int layerIndex)
     {
         if (animator == null || _player == null || _isDead)
@@ -185,6 +211,11 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         Vector3 targetLookPos = _player.transform.position + Vector3.up * 1.5f;
         animator.SetLookAtPosition(targetLookPos);
     }
+    private void CheckGround()
+    {
+        isOnGround = Physics.CheckSphere(_checkGround.position, 0.5f, _groundMask);
+    }
     public FSM GetFSM { get => _fsm; }
     public Life GetLife { get => _life; }
+    public float AttackRange { get => _atackRange; }
 }
