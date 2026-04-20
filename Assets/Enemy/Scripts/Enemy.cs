@@ -26,6 +26,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     [SerializeField] private Transform _checkGround;
     public Transform _emergencyCheck;
     public bool isOnJump;
+    public SpawnEnemy spawner;
     private void Awake()
     {
         Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);
@@ -65,6 +66,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         }
         _isInAcid = false;
         _isDead = false;
+        spawner = null;
     }
     override protected void Start()
     {
@@ -73,7 +75,6 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     protected override void Update()
     {
         CheckGround();
-        print(_fsm.getCurrentState);
         bool inside = Physics.CheckSphere(_emergencyCheck.position, 0.3f, _groundMask);
         if (inside)
         {
@@ -99,6 +100,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     }
     public void Dead()
     {
+        spawner?.NotifyEnemyDeath();
         gameObject.SetActive(false);
     }
     public void RotateTo(Vector3 target)

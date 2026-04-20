@@ -47,4 +47,18 @@ public static class NodeManager
         }
         return closetNode;
     }
+    public static Node GetRandomValidNode(Vector3 playerPos, float minDistance)
+    {
+        if (_allNode.Count <= 0) return null;
+        List<Node> validNodes = new List<Node>();
+        foreach (var node in _allNode)
+        {
+            if (Vector3.Distance(node.transform.position, playerPos) < minDistance)
+                continue;
+            validNodes.Add(node);
+        }
+        if (validNodes.Count == 0)
+            return null;
+        return validNodes[Random.Range(0, validNodes.Count)];
+    }
 }
