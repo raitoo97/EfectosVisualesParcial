@@ -23315,8 +23315,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 4058450238919567392, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5, type: 3}
-    - {fileID: 4230265702090077924, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -23334,6 +23334,16 @@ PrefabInstance:
       propertyPath: isJumpNode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: _manualConnections.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: _manualConnections.Array.data[0]
+      value: 
+      objectReference: {fileID: 2048286635}
     - target: {fileID: 7386812288828807474, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
         type: 3}
       propertyPath: m_Name
@@ -23400,6 +23410,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 283361580}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &283361582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+    type: 3}
+  m_PrefabInstance: {fileID: 283361580}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dc0a5a1e95631438ce3896489f75a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &318115532
 GameObject:
   m_ObjectHideFlags: 0
@@ -79208,13 +79230,18 @@ PrefabInstance:
     - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
         type: 3}
       propertyPath: _manualConnections.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
         type: 3}
       propertyPath: _manualConnections.Array.data[0]
       value: 
       objectReference: {fileID: 2069811125}
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: _manualConnections.Array.data[1]
+      value: 
+      objectReference: {fileID: 283361582}
     - target: {fileID: 7386812288828807474, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
         type: 3}
       propertyPath: m_Name
