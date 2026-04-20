@@ -1791,7 +1791,7 @@ Transform:
   m_GameObject: {fileID: 4894028598974932078}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.996, z: 0}
+  m_LocalPosition: {x: 0, y: 0.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2890,7 +2890,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   animator: {fileID: 7214884193176798465}
-  _atackRange: 12
+  _atackRange: 20
   _aim: {fileID: 7208546577926194475}
   _maxHealth: 30
   hitParticleEffect: {fileID: 3373015517218382484}
@@ -2900,6 +2900,7 @@ MonoBehaviour:
   _checkGround: {fileID: 5557533136539340784}
   _emergencyCheck: {fileID: 1742888286518115919}
   isOnJump: 0
+  spawner: {fileID: 0}
 --- !u!136 &77143642368913515
 CapsuleCollider:
   m_ObjectHideFlags: 0
