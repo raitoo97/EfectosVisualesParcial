@@ -25,7 +25,6 @@ public class EmergencyState : Istate
             if (inside)
             {
                 _enemy.transform.position += Vector3.up * _raiseSpeed * Time.deltaTime;
-                Debug.Log("Raising..." + _enemy.transform.position.y);
                 return;
             }
             _isEscaping = false;

@@ -75,7 +75,6 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     protected override void Update()
     {
         CheckGround();
-        print(_fsm.getCurrentState);
         bool inside = Physics.CheckSphere(_emergencyCheck.position, 0.3f, _groundMask);
         if (inside)
         {
