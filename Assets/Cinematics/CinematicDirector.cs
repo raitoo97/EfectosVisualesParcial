@@ -11,6 +11,7 @@ public class CinematicDirector : MonoBehaviour
     [SerializeField]private Animator _bossAnimator;
     [SerializeField]private Animator[] _soldiersAnimator;
     [SerializeField]private Enemy[] _soldiers;
+    public GameObject bossDoorRef;
     [Header("SecondCinematic")]
     public Transform[] _spawners;
     private SecondCinematic _secondCinematic;
@@ -29,7 +30,7 @@ public class CinematicDirector : MonoBehaviour
     }
     private void OnEnable()
     {
-        _firstCinematic = new FirstCinematic(_waterDrop.transform, this, _bossAnimator, _soldiersAnimator, _soldiers);
+        _firstCinematic = new FirstCinematic(_waterDrop.transform, this, _bossAnimator, _soldiersAnimator, _soldiers, bossDoorRef);
         _secondCinematic = new SecondCinematic(_spawners, tempEnemies, doorRef, nodes);
         _thirdCinematic = new ThirdCinematic(GameManager.instance.portal, _spawners, doorRef);
     }
@@ -89,6 +90,10 @@ public class CinematicDirector : MonoBehaviour
     public void DesactivateEnemies()
     {
         _firstCinematic.DesactivateEnemies();
+    }
+    public void CloseBossDoor()
+    {
+        _firstCinematic.CloseBossDoor();
     }
     #endregion
     #region SecondCinematic

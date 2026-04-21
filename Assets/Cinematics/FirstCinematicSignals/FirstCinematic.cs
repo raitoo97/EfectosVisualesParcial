@@ -9,7 +9,8 @@ public class FirstCinematic
     private Animator _bossAnimator;
     private Animator[] _soldiersAnimator;
     private Enemy[] _activateEnemies;
-    public FirstCinematic(Transform waterDrop,MonoBehaviour monoBehaviour, Animator bossAnimator, Animator[] soldiersAnimator, Enemy[] activateEnemies)
+    private GameObject _bossDoorRef;
+    public FirstCinematic(Transform waterDrop,MonoBehaviour monoBehaviour, Animator bossAnimator, Animator[] soldiersAnimator, Enemy[] activateEnemies,GameObject bossDoorRef)
     {
         _monoBehaviour = monoBehaviour;
         _waterDrop = waterDrop;
@@ -18,7 +19,7 @@ public class FirstCinematic
         _bossAnimator = bossAnimator;
         _soldiersAnimator = soldiersAnimator;
         _activateEnemies = activateEnemies;
-
+        _bossDoorRef = bossDoorRef;
     }
     public void StartCinematic()
     {
@@ -48,6 +49,10 @@ public class FirstCinematic
         {
             enemy.gameObject.SetActive(false);
         }
+    }
+    public void CloseBossDoor()
+    {
+        _bossDoorRef.GetComponent<Animator>()?.SetTrigger("CloseDoor");
     }
     IEnumerator WaterDrop()
     {
