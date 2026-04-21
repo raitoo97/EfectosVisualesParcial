@@ -6,16 +6,31 @@ public class FirstCinematic
     private Vector3 _initPos;
     private Vector3 _finalPos;
     private MonoBehaviour _monoBehaviour;
-    public FirstCinematic(Transform waterDrop,MonoBehaviour monoBehaviour)
+    private Animator _bossAnimator;
+    private Animator[] _soldiersAnimator;
+    public FirstCinematic(Transform waterDrop,MonoBehaviour monoBehaviour, Animator bossAnimator, Animator[] soldiersAnimator)
     {
         _monoBehaviour = monoBehaviour;
         _waterDrop = waterDrop;
         _initPos = _waterDrop.position;
         _finalPos = new Vector3(_initPos.x, _initPos.y - 10f, _initPos.z);
+        _bossAnimator = bossAnimator;
+        _soldiersAnimator = soldiersAnimator;
     }
     public void StartCinematic()
     {
         _monoBehaviour.StartCoroutine(WaterDrop());
+    }
+    public void AcitvateBoss()
+    {
+        _bossAnimator.SetBool("StartCinematic", true);
+    }
+    public void ActivateSoldiers()
+    {
+        foreach (Animator animator in _soldiersAnimator)
+        {
+            animator.SetBool("StartCinematic", true);
+        }
     }
     IEnumerator WaterDrop()
     {
