@@ -6,16 +6,53 @@ public class FirstCinematic
     private Vector3 _initPos;
     private Vector3 _finalPos;
     private MonoBehaviour _monoBehaviour;
-    public FirstCinematic(Transform waterDrop,MonoBehaviour monoBehaviour)
+    private Animator _bossAnimator;
+    private Animator[] _soldiersAnimator;
+    private Enemy[] _activateEnemies;
+    private GameObject _bossDoorRef;
+    public FirstCinematic(Transform waterDrop,MonoBehaviour monoBehaviour, Animator bossAnimator, Animator[] soldiersAnimator, Enemy[] activateEnemies,GameObject bossDoorRef)
     {
         _monoBehaviour = monoBehaviour;
         _waterDrop = waterDrop;
         _initPos = _waterDrop.position;
         _finalPos = new Vector3(_initPos.x, _initPos.y - 10f, _initPos.z);
+        _bossAnimator = bossAnimator;
+        _soldiersAnimator = soldiersAnimator;
+        _activateEnemies = activateEnemies;
+        _bossDoorRef = bossDoorRef;
     }
     public void StartCinematic()
     {
         _monoBehaviour.StartCoroutine(WaterDrop());
+    }
+    public void AcitvateBoss()
+    {
+        _bossAnimator.SetBool("StartCinematic", true);
+    }
+    public void ActivateSoldiers()
+    {
+        foreach (Animator animator in _soldiersAnimator)
+        {
+            animator.SetBool("StartCinematic", true);
+        }
+    }
+    public void ActivateEnemies()
+    {
+        foreach (Enemy enemy in _activateEnemies)
+        {
+            enemy.gameObject.SetActive(true);
+        }
+    }
+    public void DesactivateEnemies()
+    {
+        foreach (var enemy in _soldiersAnimator)
+        {
+            enemy.gameObject.SetActive(false);
+        }
+    }
+    public void CloseBossDoor()
+    {
+        _bossDoorRef.GetComponent<Animator>()?.SetTrigger("CloseDoor");
     }
     IEnumerator WaterDrop()
     {
