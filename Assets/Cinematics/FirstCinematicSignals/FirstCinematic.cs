@@ -8,7 +8,8 @@ public class FirstCinematic
     private MonoBehaviour _monoBehaviour;
     private Animator _bossAnimator;
     private Animator[] _soldiersAnimator;
-    public FirstCinematic(Transform waterDrop,MonoBehaviour monoBehaviour, Animator bossAnimator, Animator[] soldiersAnimator)
+    private Enemy[] _activateEnemies;
+    public FirstCinematic(Transform waterDrop,MonoBehaviour monoBehaviour, Animator bossAnimator, Animator[] soldiersAnimator, Enemy[] activateEnemies)
     {
         _monoBehaviour = monoBehaviour;
         _waterDrop = waterDrop;
@@ -16,6 +17,8 @@ public class FirstCinematic
         _finalPos = new Vector3(_initPos.x, _initPos.y - 10f, _initPos.z);
         _bossAnimator = bossAnimator;
         _soldiersAnimator = soldiersAnimator;
+        _activateEnemies = activateEnemies;
+
     }
     public void StartCinematic()
     {
@@ -30,6 +33,20 @@ public class FirstCinematic
         foreach (Animator animator in _soldiersAnimator)
         {
             animator.SetBool("StartCinematic", true);
+        }
+    }
+    public void ActivateEnemies()
+    {
+        foreach (Enemy enemy in _activateEnemies)
+        {
+            enemy.gameObject.SetActive(true);
+        }
+    }
+    public void DesactivateEnemies()
+    {
+        foreach (var enemy in _soldiersAnimator)
+        {
+            enemy.gameObject.SetActive(false);
         }
     }
     IEnumerator WaterDrop()
