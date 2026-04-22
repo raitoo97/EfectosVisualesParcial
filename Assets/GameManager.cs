@@ -71,4 +71,5 @@ public class GameManager : MonoBehaviour
         }
     }
     public string GetTime { get => timer.GetTime; }
+    public Timer Timer { get => timer; }
 }
