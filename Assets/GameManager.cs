@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     {
         timer = new Timer();
         timer.FinishTimer += ActivePortal;
-        portal.gameObject.SetActive(false);
     }
     private void Update()
     {
@@ -51,10 +50,6 @@ public class GameManager : MonoBehaviour
         if (gameObject.activeInHierarchy)
         {
             StartCoroutine(OnFinishCorutine());
-        }
-        else
-        {
-            Debug.LogError("GameManager intentó iniciar ActivePortal, pero fue destruido/inactivo. Se abortó la corrutina.");
         }
     }
     public void GoToMenu()

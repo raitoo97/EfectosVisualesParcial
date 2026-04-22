@@ -24,7 +24,6 @@ public class AimAssistController : MonoBehaviour
         }
         else
         {
-            Debug.Log("No se está apuntando, reseteando objetivo.");
             currentTarget = null;
         }
     }

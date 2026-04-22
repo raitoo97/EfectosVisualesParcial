@@ -32,7 +32,7 @@ public class CinematicDirector : MonoBehaviour
     {
         _firstCinematic = new FirstCinematic(_waterDrop.transform, this, _bossAnimator, _soldiersAnimator, _soldiers, bossDoorRef);
         _secondCinematic = new SecondCinematic(_spawners, tempEnemies, doorRef, nodes);
-        _thirdCinematic = new ThirdCinematic(GameManager.instance.portal, _spawners, doorRef);
+        _thirdCinematic = new ThirdCinematic(GameManager.instance.portal, _spawners, doorRef, bossDoorRef);
     }
     public void DesactivateGunAndPlayer()
     {
@@ -130,6 +130,10 @@ public class CinematicDirector : MonoBehaviour
     public void OpenDoor()
     {
         _thirdCinematic.OpenDoor();
+    }
+    public void OpenBossDoor()
+    {
+        _thirdCinematic.OpenBossDoor();
     }
     #endregion
     public PlayableDirector GetPlayableDirector(int index)
