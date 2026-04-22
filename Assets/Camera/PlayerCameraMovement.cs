@@ -50,6 +50,14 @@ public class PlayerCameraMovement : CinemachineExtension
             angle -= 360f;
         return angle;
     }
+    public void SnapToDirection(Vector3 targetDirection)
+    {
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
+        Vector3 euler = targetRotation.eulerAngles;
+        _startingRotation.x = euler.y;
+        _startingRotation.y = -NormalizeAngle(euler.x);
+        _startingRotation.y = Mathf.Clamp(_startingRotation.y, -ClampleAngle, ClampleAngle);
+    }
     public Vector3 GetCurrentForward()
     {
         return Quaternion.Euler(-_startingRotation.y, _startingRotation.x, 0f) * Vector3.forward;

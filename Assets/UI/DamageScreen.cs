@@ -27,7 +27,7 @@ public class DamageScreen : MonoBehaviour
         if (_damageCoroutine != null)
             StopCoroutine(_damageCoroutine);
         _damageCoroutine = StartCoroutine(DamageCorutine());
-        //CameraShakeManager.instance.ShakeCamera(ShakesType.PlayerUnderAtack, cameraShakeDuration);
+        CameraShakeManager.instance.ShakeCamera(ShakesType.PlayerUnderAtack, cameraShakeDuration);
     }
     private IEnumerator DamageCorutine()
     {
