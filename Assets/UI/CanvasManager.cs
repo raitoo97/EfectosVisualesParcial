@@ -17,6 +17,7 @@ public class CanvasManager : MonoBehaviour
     private void OnEnable()
     {
         _animationCanvas = new AnimationCanvas(_animator);
+        GameManager.instance.Timer.FinishTimer += HiddenTime;
     }
     private void Update()
     {
@@ -55,7 +56,7 @@ public class CanvasManager : MonoBehaviour
     }
     public void ChangeColorAim(Color color)
     {
-        _aim.GetComponent<UnityEngine.UI.Image>().color = color;
+        _aim.GetComponent<Image>().color = color;
     }
     public void FadeIn()
     {
