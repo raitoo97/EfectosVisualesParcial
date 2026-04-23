@@ -25,7 +25,7 @@ public class Assistant : MonoBehaviour
     private void ToggleTalk()
     {
         IsTalking = !IsTalking;
-        OverHere = false;
+        OverHere = IsTalking ? false : true;
         _assistantAnimations.SetBool("OverHere", OverHere);
         _assistantAnimations.SetBool("IsTalking", IsTalking);
         NPCCameraManager.Instance.ChangeCamera(IsTalking);
