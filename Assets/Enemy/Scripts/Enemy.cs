@@ -27,6 +27,10 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     public Transform _emergencyCheck;
     public bool isOnJump;
     public SpawnEnemy spawner;
+    [Header("Drop System")]
+    [SerializeField] private GameObject _ammoPrefab;
+    [SerializeField] private GameObject _healthPrefab;
+    private DropSystem _dropSystem;
     private void Awake()
     {
         Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);
@@ -42,6 +46,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
         }
         _life = new Life(_maxHealth);
         _hitEffect = new EnemyGetHit(allHitMaterials, this);
+        _dropSystem = new DropSystem(_ammoPrefab, _healthPrefab, this.transform);
     }
     private void OnEnable()
     {
@@ -100,6 +105,7 @@ public class Enemy : Agent , IEnemy ,ITakeDamage
     }
     public void Dead()
     {
+        _dropSystem.DropLoot();
         spawner?.NotifyEnemyDeath();
         gameObject.SetActive(false);
     }
