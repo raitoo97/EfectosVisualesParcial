@@ -11,7 +11,7 @@ public class PlayerCameraMovement : CinemachineExtension
     {
         base.Awake();
         ClampleAngle = 60f;
-        Sensitivity = 50f;
+        Sensitivity = 0.35f;
         _characterInputs = PlayerInputs.instance;
     }
     protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam, CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
@@ -27,8 +27,8 @@ public class PlayerCameraMovement : CinemachineExtension
                     _startingRotation = transform.localRotation.eulerAngles;
                 if (_characterInputs == null) return;
                 Vector2 mouseMovement = _characterInputs.GetMouseMovement();
-                _startingRotation.x += mouseMovement.x * Sensitivity * Time.deltaTime;
-                _startingRotation.y += mouseMovement.y * Sensitivity *Time.deltaTime;
+                _startingRotation.x += mouseMovement.x * Sensitivity;
+                _startingRotation.y += mouseMovement.y * Sensitivity; 
                 _startingRotation.y = Mathf.Clamp(_startingRotation.y, -ClampleAngle, ClampleAngle);
                 state.RawOrientation = Quaternion.Euler(-_startingRotation.y, _startingRotation.x,0f);
             }
