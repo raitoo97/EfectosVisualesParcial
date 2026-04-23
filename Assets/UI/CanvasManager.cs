@@ -8,7 +8,8 @@ public class CanvasManager : MonoBehaviour
     [SerializeField]private GameObject _aim;
     [SerializeField]private Text _timer;
     [SerializeField]private TextMeshProUGUI _granades;
-    [SerializeField] private Slider _healthSlider;
+    [SerializeField]private TextMeshProUGUI _talkWhitNullText;
+    [SerializeField]private Slider _healthSlider;
     public static CanvasManager instance;
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class CanvasManager : MonoBehaviour
         UpdateGranades(3);
         GameManager.instance.player.GetComponent<Player>().GetPlayerRecolectObjects.OnBombsCountChanged += UpdateGranades;
         GameManager.instance.player.GetComponent<Player>().GetLife.ChangeLife += UpdateHealth;
+        ShowTalkWhitNullText(false);
     }
     private void OnEnable()
     {
@@ -58,6 +60,10 @@ public class CanvasManager : MonoBehaviour
     public void UpdateHealth(float health)
     {
         _healthSlider.value = health;
+    }
+    public void ShowTalkWhitNullText(bool canInteract)
+    {
+        _talkWhitNullText.gameObject.SetActive(canInteract);
     }
     public void ShowTime()
     {

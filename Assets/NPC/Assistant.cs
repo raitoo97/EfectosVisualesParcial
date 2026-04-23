@@ -43,6 +43,7 @@ public class Assistant : MonoBehaviour
         _assistantAnimations.SetBool("IsTalking", true);
         _assistantAnimations.SetBool("OverHere", false);
         NPCCameraManager.Instance.ChangeCamera(true, dialogue.lines, _myCamera);
+        CanvasManager.instance.ShowTalkWhitNullText(false);
     }
     private void StopTalking()
     {
@@ -51,6 +52,7 @@ public class Assistant : MonoBehaviour
         _assistantAnimations.SetBool("IsTalking", false);
         _assistantAnimations.SetBool("OverHere", true);
         NPCCameraManager.Instance.ChangeCamera(false, null, null);
+        CanvasManager.instance.ShowTalkWhitNullText(true);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -59,6 +61,7 @@ public class Assistant : MonoBehaviour
             playerInRange = true;
             OverHere = true;
             _assistantAnimations.SetBool("OverHere", OverHere);
+            CanvasManager.instance.ShowTalkWhitNullText(true);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -67,6 +70,7 @@ public class Assistant : MonoBehaviour
         {
             playerInRange = false;
             OverHere = false;
+            CanvasManager.instance.ShowTalkWhitNullText(false);
             _assistantAnimations.SetBool("OverHere", OverHere);
             if (IsTalking)
             {
