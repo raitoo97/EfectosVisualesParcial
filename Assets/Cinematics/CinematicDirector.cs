@@ -65,6 +65,10 @@ public class CinematicDirector : MonoBehaviour
                     mr.enabled = true;
                 }
             }
+            else if (i == 5)// EL INDICE 5 ES EL DIALOGO
+            {
+                continue;
+            }
             else
             {
                 objectsToDesactivate[i].SetActive(true);
