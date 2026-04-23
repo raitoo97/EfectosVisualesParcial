@@ -8,7 +8,7 @@ public enum DropType
 public class DropSystem
 {
     private float ammoChance = 0.3f;
-    private float healthChance = 0.8f;
+    private float healthChance = 0.85f;
     private GameObject _ammoPrefab;
     private GameObject _healthPrefab;
     private Transform _transform;
@@ -43,7 +43,7 @@ public class DropSystem
         }
         if (prefabToSpawn != null)
         {
-            Object.Instantiate(prefabToSpawn, _transform.position, Quaternion.identity);
+            Object.Instantiate(prefabToSpawn, _transform.position + Vector3.up, Quaternion.identity);
         }
     }
 }
