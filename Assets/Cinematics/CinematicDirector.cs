@@ -65,7 +65,7 @@ public class CinematicDirector : MonoBehaviour
                     mr.enabled = true;
                 }
             }
-            else if (i == 5)// EL INDICE 5 ES EL DIALOGO
+            else if (i == 5 || i == 6)// EL INDICE 5 ES EL DIALOGO
             {
                 continue;
             }
