@@ -1,4 +1,5 @@
 using Cinemachine;
+using System;
 using System.Collections;
 using UnityEngine;
 public class NPCCameraManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class NPCCameraManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera _mainCamera;
     public static NPCCameraManager Instance;
     private Coroutine deferredPlayerViewCoroutine;
+    public Action<string[]> StartDialogue;
     private void Awake()
     {
         if (Instance == null)
@@ -18,18 +20,25 @@ public class NPCCameraManager : MonoBehaviour
             Destroy(this);
         }
     }
-    public void ChangeCamera(bool isNPC)
+    private void Start()
+    {
+        _npcCamera = null;
+    }
+    public void ChangeCamera(bool isNPC, string[] lines, CinemachineVirtualCamera currentCamera)
     {
         if (isNPC)
         {
+            _npcCamera = currentCamera;
             _npcCamera.Priority = 10;
             _mainCamera.Priority = 0;
             GameManager.instance.player.GetPlayerController._isOnCinematic = true;
             CinematicDirector.instance.DesactivateGunAndPlayer();
+            StartDialogue?.Invoke(lines);
         }
         else
         {
-            _npcCamera.Priority = 0;
+            if (_npcCamera != null)
+                _npcCamera.Priority = 0;
             _mainCamera.Priority = 10;
             if (deferredPlayerViewCoroutine != null)
             {
@@ -44,5 +53,6 @@ public class NPCCameraManager : MonoBehaviour
         CinematicDirector.instance.ActivateGunAndPlayer();
         GameManager.instance.player.GetPlayerController._isOnCinematic = false;
         deferredPlayerViewCoroutine = null;
+        _npcCamera = null;
     }
 }

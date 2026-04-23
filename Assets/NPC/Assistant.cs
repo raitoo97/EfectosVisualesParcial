@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 public class Assistant : MonoBehaviour
 {
@@ -6,6 +7,9 @@ public class Assistant : MonoBehaviour
     public bool IsTalking;
     public bool OverHere;
     private bool playerInRange = false;
+    private bool isOnDialogue = false;
+    [SerializeField]private DialogueData dialogue;
+    [SerializeField]private CinemachineVirtualCamera _myCamera;
     private void Awake()
     {
         _assistantAnimations = new AssistantAnimations(_animator);
@@ -14,27 +18,52 @@ public class Assistant : MonoBehaviour
     {
         _assistantAnimations.SetBool("IsTalking", IsTalking);
         _assistantAnimations.SetBool("OverHere", OverHere);
+        _myCamera = GetComponentInChildren<CinemachineVirtualCamera>();
+        Dialogue.onDialogueEnd += ChangeTalkingMode;
     }
     private void Update()
     {
+        if(isOnDialogue) return;
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            ToggleTalk();
+            isOnDialogue = true;
+            StartTalking();
         }
     }
-    private void ToggleTalk()
+    //private void ToggleTalk()
+    //{
+    //    IsTalking = !IsTalking;
+    //    OverHere = IsTalking ? false : true;
+    //    _assistantAnimations.SetBool("OverHere", OverHere);
+    //    _assistantAnimations.SetBool("IsTalking", IsTalking);
+    //    NPCCameraManager.Instance.ChangeCamera(IsTalking, dialogue.lines, _myCamera);
+    //}
+    private void ChangeTalkingMode()
     {
-        IsTalking = !IsTalking;
-        OverHere = IsTalking ? false : true;
-        _assistantAnimations.SetBool("OverHere", OverHere);
-        _assistantAnimations.SetBool("IsTalking", IsTalking);
-        NPCCameraManager.Instance.ChangeCamera(IsTalking);
+        if (!IsTalking) return;
+        isOnDialogue = false;
+        StopTalking();
+    }
+    private void StartTalking()
+    {
+        IsTalking = true;
+        OverHere = false;
+        _assistantAnimations.SetBool("IsTalking", true);
+        _assistantAnimations.SetBool("OverHere", false);
+        NPCCameraManager.Instance.ChangeCamera(true, dialogue.lines, _myCamera);
+    }
+    private void StopTalking()
+    {
+        IsTalking = false;
+        OverHere = true;
+        _assistantAnimations.SetBool("IsTalking", false);
+        _assistantAnimations.SetBool("OverHere", true);
+        NPCCameraManager.Instance.ChangeCamera(false, null, null);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player entered assistant trigger");
             playerInRange = true;
             OverHere = true;
             _assistantAnimations.SetBool("OverHere", OverHere);
@@ -44,7 +73,6 @@ public class Assistant : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player exited assistant trigger");
             playerInRange = false;
             OverHere = false;
             _assistantAnimations.SetBool("OverHere", OverHere);
@@ -52,7 +80,7 @@ public class Assistant : MonoBehaviour
             {
                 IsTalking = false;
                 _assistantAnimations.SetBool("IsTalking", false);
-                NPCCameraManager.Instance.ChangeCamera(false);
+                NPCCameraManager.Instance.ChangeCamera(false, dialogue.lines, _myCamera);
             }
         }
     }
