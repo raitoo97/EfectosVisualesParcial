@@ -10,8 +10,6 @@ public class SpawnEnemy : MonoBehaviour
     [Header("Aggression")]
     [SerializeField] private float aggressionRamp = 0.98f;
     [SerializeField] private int maxExtraSpawns = 3;
-
-
     [SerializeField]private int enemiesAliveInWave = 0;
     float pressureTimer = 0f;
     float maxPressureTime = 20f;
@@ -38,7 +36,6 @@ public class SpawnEnemy : MonoBehaviour
             enemiesAliveInWave = spawnCount;
             for (int i = 0; i < spawnCount; i++)
             {
-                // DESFASE ENTRE ENEMIGOS DE LA MISMA OLEADA
                 SpawnEnemyUnit();
                 float stagger = Random.Range(1f, 2f);
                 yield return new WaitForSeconds(stagger);
@@ -48,7 +45,7 @@ public class SpawnEnemy : MonoBehaviour
             yield return new WaitForSeconds(randomInterval);
             currentInterval *= aggressionRamp;
             currentInterval = Mathf.Max(currentInterval, 1.5f);
-            currentMaxSpawns += 1;
+            maxExtraSpawns++;
         }
     }
     private IEnumerator PressureClock()
