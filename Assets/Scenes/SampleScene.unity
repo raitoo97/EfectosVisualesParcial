@@ -26643,6 +26643,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 624656222}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &626355270 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4112400657765525584, guid: 4a07e84b125d7b44c83903757d19e915,
+    type: 3}
+  m_PrefabInstance: {fileID: 2030316269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3e948c6c5b91e47a0deb259836883a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &626904147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27045,6 +27057,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1524215316}
           m_TargetAssemblyTypeName: CinematicDirector, Assembly-CSharp
           m_MethodName: DesactivateNodes
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1524215316}
+          m_TargetAssemblyTypeName: CinematicDirector, Assembly-CSharp
+          m_MethodName: DesactivateAssists
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -34351,6 +34375,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1524215316}
+          m_TargetAssemblyTypeName: CinematicDirector, Assembly-CSharp
+          m_MethodName: DesactivateAssists
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1524215316}
@@ -34427,6 +34463,18 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1524215316}
+          m_TargetAssemblyTypeName: CinematicDirector, Assembly-CSharp
+          m_MethodName: ActivateAssist
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -75907,6 +75955,10 @@ MonoBehaviour:
   - {fileID: 1547036723}
   - {fileID: 910352033}
   - {fileID: 721033165}
+  _assists:
+  - {fileID: 626355270}
+  - {fileID: 1693215636}
+  - {fileID: 1595862062}
 --- !u!114 &1526279243 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
@@ -76767,6 +76819,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1591532442}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1595862062 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4112400657765525584, guid: 4a07e84b125d7b44c83903757d19e915,
+    type: 3}
+  m_PrefabInstance: {fileID: 1589401280}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3e948c6c5b91e47a0deb259836883a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1596090242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77502,6 +77566,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1690632149}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1693215636 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4112400657765525584, guid: 4a07e84b125d7b44c83903757d19e915,
+    type: 3}
+  m_PrefabInstance: {fileID: 1272147131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3e948c6c5b91e47a0deb259836883a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1694004211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77996,6 +78072,18 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1524215316}
+          m_TargetAssemblyTypeName: CinematicDirector, Assembly-CSharp
+          m_MethodName: ActivateAssist
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0

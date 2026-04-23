@@ -21,6 +21,8 @@ public class CinematicDirector : MonoBehaviour
     public Node[] nodes;
     [Header("ThirdCinematic")]
     private ThirdCinematic _thirdCinematic;
+    [Header("NPC")]
+    [SerializeField]private Assistant[] _assists;
     private void Awake()
     {
         if (instance == null)
@@ -69,6 +71,21 @@ public class CinematicDirector : MonoBehaviour
             }
         }
         GameManager.instance.player.GetPlayerController._isOnCinematic = false;
+    }
+    public void DesactivateAssists()
+    {
+        for (int i = 0; i < _assists.Length; i++)
+        {
+            _assists[i].gameObject.SetActive(false);
+        }
+    }
+    public void ActivateAssist(int index)
+    {
+        if (index < 0 || index >= _assists.Length)
+        {
+            return;
+        }
+        _assists[index].gameObject.SetActive(true);
     }
     #region FirstCinematic
     public void ActivateFirstCinematic()
