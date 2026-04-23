@@ -30,14 +30,6 @@ public class Assistant : MonoBehaviour
             StartTalking();
         }
     }
-    //private void ToggleTalk()
-    //{
-    //    IsTalking = !IsTalking;
-    //    OverHere = IsTalking ? false : true;
-    //    _assistantAnimations.SetBool("OverHere", OverHere);
-    //    _assistantAnimations.SetBool("IsTalking", IsTalking);
-    //    NPCCameraManager.Instance.ChangeCamera(IsTalking, dialogue.lines, _myCamera);
-    //}
     private void ChangeTalkingMode()
     {
         if (!IsTalking) return;
