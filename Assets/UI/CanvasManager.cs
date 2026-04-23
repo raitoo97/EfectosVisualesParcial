@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class CanvasManager : MonoBehaviour
@@ -6,6 +7,8 @@ public class CanvasManager : MonoBehaviour
     [SerializeField]private Animator _animator;
     [SerializeField]private GameObject _aim;
     [SerializeField]private Text _timer;
+    [SerializeField]private TextMeshProUGUI _granades;
+    [SerializeField] private Slider _healthSlider;
     public static CanvasManager instance;
     private void Awake()
     {
@@ -13,6 +16,12 @@ public class CanvasManager : MonoBehaviour
             instance = this;
         else
             Destroy(this);
+    }
+    private void Start()
+    {
+        UpdateGranades(3);
+        GameManager.instance.player.GetComponent<Player>().GetPlayerRecolectObjects.OnBombsCountChanged += UpdateGranades;
+        GameManager.instance.player.GetComponent<Player>().GetLife.ChangeLife += UpdateHealth;
     }
     private void OnEnable()
     {
@@ -41,6 +50,14 @@ public class CanvasManager : MonoBehaviour
             ChangeColorAim(Color.green);
         }
         _timer.text = GameManager.instance.GetTime;
+    }
+    public void UpdateGranades(int granades)
+    {
+        _granades.text = granades.ToString();
+    }
+    public void UpdateHealth(float health)
+    {
+        _healthSlider.value = health;
     }
     public void ShowTime()
     {
