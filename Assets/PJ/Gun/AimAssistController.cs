@@ -4,7 +4,7 @@ public class AimAssistController : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private PlayerCameraMovement cameraController;
     [Header("Detección")]
-    [SerializeField] private float maxDistance = 30f;
+    [SerializeField] private float maxDistance = Mathf.Infinity;
     [SerializeField] private float maxAngle = 40f;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private LayerMask obstacleMask;
