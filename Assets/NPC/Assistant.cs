@@ -70,14 +70,8 @@ public class Assistant : MonoBehaviour
         {
             playerInRange = false;
             OverHere = false;
-            CanvasManager.instance.ShowTalkWhitNullText(false);
             _assistantAnimations.SetBool("OverHere", OverHere);
-            if (IsTalking)
-            {
-                IsTalking = false;
-                _assistantAnimations.SetBool("IsTalking", false);
-                NPCCameraManager.Instance.ChangeCamera(false, dialogue.lines, _myCamera);
-            }
+            CanvasManager.instance.ShowTalkWhitNullText(false);
         }
     }
 }

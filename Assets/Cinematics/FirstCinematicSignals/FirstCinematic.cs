@@ -52,7 +52,7 @@ public class FirstCinematic
     }
     public void CloseBossDoor()
     {
-        _bossDoorRef.GetComponent<Animator>()?.SetTrigger("CloseDoor");
+        _bossDoorRef?.GetComponent<Animator>()?.SetTrigger("CloseDoor");
     }
     IEnumerator WaterDrop()
     {
