@@ -37,6 +37,10 @@ public class Player : MonoBehaviour,ITakeDamage ,IHealthLife
     private void Update()
     {
         _playerController.OnUpdate();
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            _life.SetHealthToMax();
+        }
     }
     private void FixedUpdate()
     {
