@@ -2539,37 +2539,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 53404107}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &55496450
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 55496451}
-  m_Layer: 0
-  m_Name: PreBody
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &55496451
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55496450}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.200878, y: 1.925602, z: 0.7939689}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &59784720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44292,37 +44261,6 @@ Transform:
   - {fileID: 1316713914}
   m_Father: {fileID: 1664597971}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1362971778
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1362971779}
-  m_Layer: 0
-  m_Name: AlienEggs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1362971779
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1362971778}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.91, y: -4.17, z: 47.18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1363179227
 GameObject:
   m_ObjectHideFlags: 0
@@ -79964,7 +79902,6 @@ SceneRoots:
   - {fileID: 648447344}
   - {fileID: 3953245720505334201}
   - {fileID: 713580501}
-  - {fileID: 1362971779}
   - {fileID: 430085123}
   - {fileID: 244184553}
   - {fileID: 797820052}
@@ -79972,4 +79909,3 @@ SceneRoots:
   - {fileID: 320247635}
   - {fileID: 775833242}
   - {fileID: 1413096586}
-  - {fileID: 55496451}
