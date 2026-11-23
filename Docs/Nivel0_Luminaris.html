@@ -1,0 +1,1078 @@
+<title>Nivel 0 Luminaris</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: una columna de lectura (~68rem) tipo plano técnico; mapa y gráfico a todo el ancho de la columna, fichas de zona apiladas. */
+:root {
+  --bg: #eef1f4;
+  --surface: #ffffff;
+  --surface-2: #f5f7f9;
+  --fg: #121820;
+  --fg-2: #46505c;
+  --muted: #687482;
+  --line: #d3d9e0;
+  --grid: #e3e8ed;
+  --accent: #c2410c;
+  --accent-soft: #fde9de;
+  --on-accent: #ffffff;
+  --zone: #f7f9fb;
+  --zone-stroke: #8b97a5;
+  --walk: #c9d1da;
+  --void: #e34948;
+  --path: #2a78d6;
+  --boss: #6250d6;
+  --enemy: #e34948;
+  --health: #008300;
+  --bomb: #eda100;
+  --npc: #1baf7a;
+  --lever: #e87ba4;
+  --lvl1-bg: #dcebfb; --lvl1-fg: #123a6b;
+  --lvl2-bg: #b7d3f6; --lvl2-fg: #0d2d55;
+  --lvl3-bg: #5598e7; --lvl3-fg: #07172b;
+  --lvl4-bg: #1c5cab; --lvl4-fg: #ffffff;
+  --font-display: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1318; --surface: #151c23; --surface-2: #1a222b; --fg: #e7ecf0; --fg-2: #b6c0ca; --muted: #8c98a5;
+    --line: #2b3540; --grid: #1f2831; --accent: #f07a3e; --accent-soft: #3a2216; --on-accent: #1a0d06;
+    --zone: #18202a; --zone-stroke: #5d6b7a; --walk: #3a4655; --void: #e66767;
+    --path: #3987e5; --boss: #9085e9; --enemy: #e66767; --health: #0ca30c; --bomb: #c98500; --npc: #199e70; --lever: #d55181;
+    --lvl1-bg: #18324f; --lvl1-fg: #cfe3fb; --lvl2-bg: #1f4675; --lvl2-fg: #e3eefc;
+    --lvl3-bg: #2a78d6; --lvl3-fg: #ffffff; --lvl4-bg: #86b6ef; --lvl4-fg: #07172b;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1318; --surface: #151c23; --surface-2: #1a222b; --fg: #e7ecf0; --fg-2: #b6c0ca; --muted: #8c98a5;
+  --line: #2b3540; --grid: #1f2831; --accent: #f07a3e; --accent-soft: #3a2216; --on-accent: #1a0d06;
+  --zone: #18202a; --zone-stroke: #5d6b7a; --walk: #3a4655; --void: #e66767;
+  --path: #3987e5; --boss: #9085e9; --enemy: #e66767; --health: #0ca30c; --bomb: #c98500; --npc: #199e70; --lever: #d55181;
+  --lvl1-bg: #18324f; --lvl1-fg: #cfe3fb; --lvl2-bg: #1f4675; --lvl2-fg: #e3eefc;
+  --lvl3-bg: #2a78d6; --lvl3-fg: #ffffff; --lvl4-bg: #86b6ef; --lvl4-fg: #07172b;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 4rem;
+}
+.wrap { max-width: 68rem; margin: 0 auto; display: grid; gap: 3.5rem; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+h2 { font-size: 1.6rem; font-weight: 600; letter-spacing: 0.01em; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+p { margin: 0; max-width: 68ch; }
+code, .mono { font-family: var(--font-mono); font-size: 0.86em; }
+code { background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px; padding: 0.05em 0.35em; word-break: break-word; }
+a { color: var(--path); }
+a:focus-visible, [tabindex]:focus-visible, summary:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* Header */
+header.top { padding-top: 3rem; display: grid; gap: 1.25rem; }
+header.top h1 { font-size: clamp(2.6rem, 7vw, 4.4rem); font-weight: 700; letter-spacing: 0.02em; }
+header.top h1 span { color: var(--accent); }
+.deck { font-size: 1.15rem; color: var(--fg-2); max-width: 60ch; }
+.facts-row { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; margin: 0.5rem 0 0; padding: 1rem 0 0; border-top: 1px solid var(--line); }
+.facts-row div { display: grid; gap: 0.1rem; }
+.facts-row dt { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.facts-row dd { margin: 0; font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+nav.toc { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+nav.toc a { font-size: 0.85rem; text-decoration: none; color: var(--fg-2); border: 1px solid var(--line); background: var(--surface); padding: 0.25rem 0.7rem; border-radius: 999px; }
+nav.toc a:hover { border-color: var(--path); color: var(--fg); }
+
+section.block { display: grid; gap: 1.25rem; }
+section.block > header { display: grid; gap: 0.4rem; }
+.lede { color: var(--fg-2); }
+
+/* Tablas */
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-family: var(--font-mono); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); white-space: nowrap; }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+td q { color: var(--fg); font-style: italic; }
+td .src { display: block; color: var(--muted); font-size: 0.8rem; margin-top: 0.15rem; }
+
+/* Objetivos encadenados */
+.chain { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; list-style: none; padding: 0; margin: 0; counter-reset: step; }
+.chain li { counter-increment: step; display: flex; align-items: center; gap: 0.4rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.35rem 0.7rem; font-size: 0.9rem; }
+.chain li::before { content: counter(step, decimal); font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); }
+.chain li:not(:last-child)::after { content: "→"; color: var(--muted); margin-left: 0.3rem; }
+
+/* Mapa */
+.figure { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; display: grid; gap: 0.9rem; position: relative; }
+.map-scroll { overflow-x: auto; }
+#map { display: block; width: 100%; min-width: 860px; height: auto; }
+#map text { font-family: var(--font-body); fill: var(--fg-2); }
+#map .zlabel { font-family: var(--font-display); font-weight: 600; font-size: 15px; fill: var(--fg); }
+#map .flabel { font-size: 10.5px; fill: var(--muted); }
+#map .zone-shape { fill: var(--zone); stroke: var(--zone-stroke); stroke-width: 1.5; cursor: pointer; transition: fill .15s; }
+#map .zone:hover .zone-shape, #map .zone:focus .zone-shape { fill: var(--accent-soft); }
+#map .zone:focus { outline: none; }
+#map .zone:focus .zone-shape { stroke: var(--accent); stroke-width: 2.5; }
+#map .bgrid { stroke: var(--grid); stroke-width: 1; }
+#map .deck { fill: var(--surface-2); stroke: var(--zone-stroke); stroke-width: 1; stroke-dasharray: 3 2; pointer-events: none; }
+#map .ramp { fill: var(--walk); pointer-events: none; }
+#map .glass { stroke: var(--path); stroke-width: 3; stroke-opacity: .45; }
+#map .crate { fill: var(--walk); pointer-events: none; }
+#map .pillar { fill: var(--zone-stroke); pointer-events: none; }
+#map .core { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; pointer-events: none; }
+#map .ring-upper { fill: none; stroke: var(--zone-stroke); stroke-width: 1; stroke-dasharray: 4 3; pointer-events: none; }
+#map .tank { fill: var(--surface-2); stroke: var(--zone-stroke); stroke-width: 1.2; stroke-dasharray: 2 2; pointer-events: none; }
+#map .obstacle { fill: var(--zone-stroke); pointer-events: none; }
+#map .trench { fill: url(#hatch-soft); stroke: var(--zone-stroke); stroke-width: 1; pointer-events: none; }
+#map .void { fill: url(#hatch-void); pointer-events: none; }
+#map .walk { fill: var(--walk); stroke: var(--zone-stroke); stroke-width: 1; pointer-events: none; }
+#map .collapse { fill: url(#hatch-void); stroke: var(--void); stroke-width: 1.2; pointer-events: none; }
+#map .bubble { fill: none; stroke: var(--path); stroke-width: 1.2; stroke-opacity: .7; pointer-events: none; }
+#map .sealed { fill: none; stroke: var(--boss); stroke-width: 1.2; stroke-dasharray: 5 4; pointer-events: none; }
+#map .secret { fill: var(--surface); stroke: var(--fg-2); stroke-width: 1.4; stroke-dasharray: 3 3; pointer-events: none; }
+#map .crit { fill: none; stroke: var(--path); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; pointer-events: none; }
+#map .crit-halo { fill: none; stroke: var(--surface); stroke-width: 7; stroke-linejoin: round; stroke-linecap: round; pointer-events: none; }
+#map .crit-arrow { fill: var(--path); pointer-events: none; }
+#map .bosspath { fill: none; stroke: var(--boss); stroke-width: 2.2; stroke-dasharray: 7 5; stroke-linejoin: round; pointer-events: none; }
+#map .jump { font-size: 10px; font-weight: 600; fill: var(--path); }
+#map .scale { stroke: var(--fg-2); stroke-width: 2; }
+.m-hit { fill: transparent; cursor: help; }
+.m-enemy { fill: var(--enemy); }
+.m-health { fill: var(--health); }
+.m-bomb { fill: var(--bomb); }
+.m-npc { fill: var(--npc); }
+.m-lever { fill: var(--lever); }
+.m-boss { fill: var(--boss); }
+.m-story { fill: var(--muted); }
+.m-ring { stroke: var(--surface); stroke-width: 1.5; }
+.m-door { stroke: var(--fg); stroke-width: 4; stroke-linecap: butt; }
+.m-door-sealed { stroke: var(--boss); stroke-width: 4; }
+.m-spawn { fill: var(--surface); stroke: var(--enemy); stroke-width: 1.6; stroke-dasharray: 3 2; }
+.m-cine { fill: var(--accent); }
+.m-cine-t { fill: var(--on-accent) !important; font-family: var(--font-mono) !important; font-size: 9.5px; font-weight: 500; }
+.m-start { fill: none; stroke: var(--path); stroke-width: 2.5; }
+.m-start-dot { fill: var(--path); }
+.m-portal { fill: var(--boss); fill-opacity: .18; stroke: var(--boss); stroke-width: 3; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 0.45rem 1.2rem; list-style: none; padding: 0; margin: 0; font-size: 0.82rem; color: var(--fg-2); }
+.legend li { display: flex; align-items: center; gap: 0.4rem; }
+.legend svg { flex: none; }
+.hint { font-size: 0.82rem; color: var(--muted); }
+
+.tip { position: absolute; z-index: 5; pointer-events: none; background: var(--fg); color: var(--bg); padding: 0.45rem 0.65rem; border-radius: 5px; font-size: 0.8rem; line-height: 1.35; max-width: 17rem; box-shadow: 0 4px 14px rgb(0 0 0 / .18); }
+.tip b { display: block; font-weight: 600; }
+.tip span { opacity: .8; }
+
+/* Curva */
+.chart-scroll { overflow-x: auto; }
+#pacing { display: block; width: 100%; min-width: 640px; height: auto; }
+#pacing text { font-family: var(--font-body); font-size: 11px; fill: var(--muted); }
+#pacing .band { fill: var(--surface-2); }
+#pacing .band-label { font-family: var(--font-mono); font-size: 10.5px; fill: var(--fg-2); }
+#pacing .gridline { stroke: var(--grid); stroke-width: 1; }
+#pacing .axis { stroke: var(--line); stroke-width: 1; }
+#pacing .area { fill: var(--path); fill-opacity: .12; }
+#pacing .line { fill: none; stroke: var(--path); stroke-width: 2; stroke-linejoin: round; }
+#pacing .dot { fill: var(--path); stroke: var(--surface); stroke-width: 2; }
+#pacing .dot.on { r: 6; }
+#pacing .xhair { stroke: var(--fg-2); stroke-width: 1; stroke-dasharray: 3 3; }
+#pacing .dlabel { fill: var(--fg); font-weight: 600; font-size: 11px; }
+details.data { font-size: 0.88rem; }
+details.data summary { cursor: pointer; color: var(--fg-2); }
+details.data .table-scroll { margin-top: 0.6rem; }
+
+/* Fichas de zona */
+.zones { display: grid; gap: 1.25rem; }
+article.zone-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); scroll-margin-top: 1rem; }
+article.zone-card:target { border-color: var(--accent); }
+.zone-num { font-family: var(--font-display); font-weight: 700; font-size: 3.2rem; line-height: 1; color: var(--accent); padding: 1.2rem 0 0 1.2rem; font-variant-numeric: tabular-nums; }
+.zone-body { padding: 1.2rem 1.4rem 1.4rem 0.4rem; display: grid; gap: 1rem; min-width: 0; }
+.zone-head { display: grid; gap: 0.3rem; }
+.zone-head .tag { color: var(--fg-2); font-style: italic; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.chip { font-family: var(--font-mono); font-size: 0.75rem; background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px; padding: 0.1rem 0.45rem; color: var(--fg-2); font-variant-numeric: tabular-nums; }
+dl.spec { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 0.55rem 1rem; margin: 0; }
+dl.spec dt { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-top: 0.2rem; }
+dl.spec dd { margin: 0; }
+dl.spec dd p + p { margin-top: 0.4rem; }
+dl.spec ul { margin: 0; padding-left: 1.1rem; }
+
+/* Matriz de enseñanza */
+table.matrix td, table.matrix th { text-align: center; padding: 0.5rem 0.45rem; }
+table.matrix td:first-child, table.matrix th:first-child { text-align: left; padding-left: 0.8rem; }
+table.matrix td:first-child { font-weight: 500; white-space: nowrap; }
+table.matrix td:last-child { text-align: left; font-size: 0.8rem; color: var(--fg-2); min-width: 12rem; }
+.lv { display: inline-block; font-size: 0.72rem; font-weight: 600; border-radius: 4px; padding: 0.1rem 0.4rem; white-space: nowrap; }
+.lv1 { background: var(--lvl1-bg); color: var(--lvl1-fg); }
+.lv2 { background: var(--lvl2-bg); color: var(--lvl2-fg); }
+.lv3 { background: var(--lvl3-bg); color: var(--lvl3-fg); }
+.lv4 { background: var(--lvl4-bg); color: var(--lvl4-fg); }
+.matrix-key { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; font-size: 0.82rem; color: var(--fg-2); align-items: center; }
+
+/* Diálogos */
+.dialogues { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1rem; }
+.dlg { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; display: grid; gap: 0.6rem; align-content: start; min-width: 0; }
+.dlg header { display: flex; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; align-items: baseline; }
+.dlg header code { font-size: 0.8rem; }
+.dlg ol { margin: 0; padding-left: 1.3rem; display: grid; gap: 0.35rem; font-size: 0.92rem; }
+.dlg ol li::marker { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); }
+
+/* Código */
+pre { margin: 0; background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.75rem 0.9rem; overflow-x: auto; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.5; }
+.changes { display: grid; gap: 1rem; }
+.change { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; display: grid; gap: 0.55rem; min-width: 0; }
+.change h3 { font-size: 1.02rem; }
+.change .where { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
+.change.optional { border-style: dashed; }
+ol.steps { margin: 0; padding-left: 1.4rem; display: grid; gap: 0.5rem; max-width: 72ch; }
+ol.steps li::marker { font-family: var(--font-mono); color: var(--muted); }
+ul.risks { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.5rem; max-width: 72ch; }
+
+footer.end { color: var(--muted); font-size: 0.82rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+
+@media (max-width: 640px) {
+  article.zone-card { grid-template-columns: 1fr; }
+  .zone-num { padding: 1rem 1rem 0; font-size: 2.4rem; }
+  .zone-body { padding: 0.6rem 1rem 1.2rem; }
+  dl.spec { grid-template-columns: 1fr; gap: 0.15rem; }
+  dl.spec dd { margin-bottom: 0.6rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Documento de diseño de nivel · Precuela de <code>SampleScene</code></p>
+  <h1>Nivel 0 <span>·</span> Luminaris</h1>
+  <p class="deck">El nivel que termina exactamente donde empieza el actual: el jugador escapa de una nave que se desarma persiguiendo al Espécimen, y cruza el portal justo antes de que todo explote.</p>
+  <dl class="facts-row">
+    <div><dt>Duración</dt><dd>10 a 13 min</dd></div>
+    <div><dt>Zonas</dt><dd>6 (0 a 5)</dd></div>
+    <div><dt>Robots</dt><dd>≈ 17 a 19</dd></div>
+    <div><dt>Secretos</dt><dd>1</dd></div>
+    <div><dt>Rol</dt><dd>Tutorial + gancho</dd></div>
+    <div><dt>Sale a</dt><dd>Portal → SampleScene</dd></div>
+  </dl>
+  <nav class="toc" aria-label="Secciones">
+    <a href="#origen">De dónde sale</a>
+    <a href="#metricas">Métricas</a>
+    <a href="#mapa">Mapa</a>
+    <a href="#ritmo">Ritmo</a>
+    <a href="#zonas">Zonas</a>
+    <a href="#ensenanza">Enseñanza</a>
+    <a href="#cinematicas">Cinemáticas</a>
+    <a href="#dialogos">Diálogos</a>
+    <a href="#unity">Unity</a>
+  </nav>
+</header>
+
+<section class="block" id="origen">
+  <header>
+    <p class="eyebrow">Continuidad</p>
+    <h2>De dónde sale este nivel</h2>
+    <p class="lede">El Nivel 0 no se inventa de cero: arma cada cosa que <code>SampleScene</code> da por hecha. Estas son las pistas que deja el nivel actual y cómo las paga esta precuela.</p>
+  </header>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Lo que dice o muestra SampleScene</th><th>Dónde</th><th>Cómo lo arma el Nivel 0</th></tr></thead>
+      <tbody>
+        <tr><td><q>El portal colapsó detrás de nosotros</q></td><td>NPCStart · fuego alrededor del portal en <code>Entrance0</code></td><td>El nivel termina cruzando un portal inestable. C2 lo muestra parpadeando y con fuego en la plataforma.</td></tr>
+        <tr><td><q>Esa nave no iba a aguantar mucho más</q></td><td>NPCStart</td><td>Toda la Luminaris se cae a pedazos: temblores, fuego, reactor sobrecargado y un contrarreloj final de 1:00.</td></tr>
+        <tr><td><q>Sigue moviéndose entre portales… intentando mantener distancia</q></td><td>NPCStart</td><td>El Espécimen siempre va un paso adelante: el jugador lo ve en el hangar detrás de un vidrio y lo ve cruzar el portal primero.</td></tr>
+        <tr><td><q>Detecto actividad biológica… como si estuvieran cultivando algo</q></td><td>NPCStart · huevos y frascos en <code>Acid2</code></td><td>Solo se insinúa. El holograma del secreto menciona "el cultivo" y se corta. Lo explica el nivel actual, no este.</td></tr>
+        <tr><td>Robots que acompañan al jefe en la primera cinemática</td><td><code>Conector3</code> · FirstCinematic</td><td>En C1 el Espécimen toma el control de los robots de seguridad de la nave. Por eso del otro lado del portal ya tiene escolta.</td></tr>
+        <tr><td>El asistente ya está esperando: <q>Ahí estás…</q></td><td><code>Lever1</code></td><td>En C2 el asistente cruza el portal antes que el jugador. Llega primero y por eso lo saluda así.</td></tr>
+        <tr><td>Secreto en el fondo del líquido (4 <code>PickUpBomb</code>)</td><td><code>Acid2</code> · trampa</td><td>El secreto del Nivel 0 también está en el fondo de un líquido. El jugador aprende el lenguaje antes de necesitarlo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="block" style="gap:0.7rem">
+    <h3>Fantasía y cadena de objetivos</h3>
+    <p class="lede">Fantasía del jugador: perseguir a un monstruo por una nave que se desarma, llegando siempre un segundo tarde.</p>
+    <ol class="chain">
+      <li>Despertar en contención</li>
+      <li>Reunirse con el asistente</li>
+      <li>Cruzar el hangar</li>
+      <li>Nadar por el tanque</li>
+      <li>Purgar el reactor</li>
+      <li>Escapar por el portal</li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" id="metricas">
+  <header>
+    <p class="eyebrow">Sacado del código</p>
+    <h2>Métricas del jugador</h2>
+    <p class="lede">Las medidas del mapa salen de estos números. Están calculados desde los scripts y prefabs del proyecto (masa del jugador 1, gravedad −9,81, paso fijo 0,02 s).</p>
+  </header>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Métrica</th><th>Valor</th><th>Regla de diseño que sale de ahí</th></tr></thead>
+      <tbody>
+        <tr><td>Caminar / correr<span class="src">Player.cs · _walkSpeed, _runSpeed</span></td><td class="num">5 / 10 m/s</td><td>Un pasillo de 36 m se cruza en 3,6 s corriendo. Los tramos tensos necesitan obstáculos, no solo largo.</td></tr>
+        <tr><td>Altura de salto<span class="src">PlayerBodyMovement.cs · impulso 7,5</span></td><td class="num">≈ 2,9 m</td><td>Bordes trepables de hasta 2,4 m. Más alto, escalera o rampa.</td></tr>
+        <tr><td>Distancia de salto<span class="src">mismo cálculo, 1,53 s en el aire</span></td><td class="num">≈ 7,6 m caminando<br>≈ 15 m corriendo</td><td>Huecos del camino crítico de 5 m como máximo. De 5 a 8 m solo con carrerita y avisados. Nunca más de 10 m.</td></tr>
+        <tr><td>Distancia de interacción<span class="src">Player.cs · _interactDistance</span></td><td class="num">5 m</td><td>Palancas a la altura de los ojos y sin nada que tape el rayo desde la cámara.</td></tr>
+        <tr><td>Vida del jugador<span class="src">PJ.prefab · BulletEnemy.prefab</span></td><td class="num">200 (20 balas)</td><td>Cada bala enemiga saca 10. Un pickup de vida (+40) equivale a 4 balas.</td></tr>
+        <tr><td>Robot<span class="src">RobotEnemy.prefab</span></td><td class="num">30 de vida · 20 m</td><td>Muere con 3 balas y dispara hasta 20 m con línea de visión. Las coberturas tienen que cortar esa línea; un espacio abierto de más de 20 m es zona de francotirador.</td></tr>
+        <tr><td>Granada ácida<span class="src">AcidPlatform.cs · ThrowBomb.cs</span></td><td class="num">radio 4 m · 10/s · 10 s</td><td>Mata a un robot en 3 ticks. Se tira a unos 5 a 10 m según el ángulo. Los embudos de 6 a 8 m de ancho quedan tapados por un solo charco.</td></tr>
+        <tr><td>Nado<span class="src">PlayerController.cs · multiplicador 0,4</span></td><td class="num">2 m/s</td><td>Sin gravedad: vas hacia donde mirás. Los volúmenes de líquido no deberían pasar de 20 m entre salidas.</td></tr>
+        <tr><td>Dash bajo líquido<span class="src">PlayerController.cs · Shift</span></td><td class="num">≈ 5 m cada 3 s</td><td>Un conducto de 16 m tarda 8 s nadando y menos de 4 s con dos dashes. La diferencia se nota sin explicarla.</td></tr>
+        <tr><td>Loot de robots<span class="src">DropSystem.cs</span></td><td class="num">30 / 55 / 15 %</td><td>Granada / vida / nada. Con 5 robots en el hangar caen en promedio 1,5 granadas y casi 3 vidas.</td></tr>
+        <tr><td>Reloj<span class="src">Timer.cs · OnStart</span></td><td class="num">1:30 fijo hoy</td><td>El Nivel 0 usa 1:00 para la huida. Hay que hacerlo configurable (ver cambios de código).</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="mapa">
+  <header>
+    <p class="eyebrow">Vista superior · escala real</p>
+    <h2>Mapa del nivel</h2>
+    <p class="lede">La proa de la nave está a la derecha. El camino azul es el del jugador; el violeta es la ruta del Espécimen, que corta por un pasillo que el jugador nunca puede usar. Lo ve, pero tiene que dar la vuelta.</p>
+  </header>
+  <div class="figure" id="map-figure">
+    <div class="map-scroll">
+      <svg id="map" viewBox="0 0 1135 500" role="img" aria-label="Mapa superior del Nivel 0 con seis zonas, el camino del jugador, la ruta del Espécimen, enemigos, pickups, palancas y cinemáticas"></svg>
+    </div>
+    <ul class="legend" id="legend"></ul>
+    <p class="hint">Pasá el mouse por un ícono para ver el detalle. Hacé clic en una zona para ir a su ficha.</p>
+    <div class="tip" id="map-tip" hidden></div>
+  </div>
+</section>
+
+<section class="block" id="ritmo">
+  <header>
+    <p class="eyebrow">Pacing</p>
+    <h2>Curva de intensidad</h2>
+    <p class="lede">Intensidad estimada de 0 a 10 a lo largo de una partida típica. Dos picos de combate separados por un valle sin enemigos (el tanque), y el máximo al final, en la huida. El nivel actual termina con una espera (sobrevivir 1:30); este termina con una carrera, así no se repite la misma forma.</p>
+  </header>
+  <div class="figure" id="pacing-figure">
+    <div class="chart-scroll">
+      <svg id="pacing" viewBox="0 0 760 300" role="img" aria-label="Curva de intensidad del Nivel 0 por minuto"></svg>
+    </div>
+    <details class="data">
+      <summary>Ver los datos en tabla</summary>
+      <div class="table-scroll"><table id="pacing-table"><thead><tr><th>Minuto</th><th>Zona</th><th>Momento</th><th>Intensidad</th></tr></thead><tbody></tbody></table></div>
+    </details>
+    <div class="tip" id="pacing-tip" hidden></div>
+  </div>
+</section>
+
+<section class="block" id="zonas">
+  <header>
+    <p class="eyebrow">Desglose</p>
+    <h2>Zonas</h2>
+    <p class="lede">Misma convención que <code>SampleScene</code> (Entrance0, Lever1, Acid2…): cada zona es un objeto raíz numerado en la jerarquía.</p>
+  </header>
+  <div class="zones">
+
+    <article class="zone-card" id="zona-0">
+      <div class="zone-num">0</div>
+      <div class="zone-body">
+        <div class="zone-head">
+          <h3>Contención</h3>
+          <p class="tag">Despertar entre vidrios rotos</p>
+          <div class="chips"><span class="chip">20 × 20 m</span><span class="chip">altura 0 m</span><span class="chip">≈ 2 min</span><span class="chip">sin enemigos</span></div>
+        </div>
+        <dl class="spec">
+          <dt>Objetivo</dt><dd>Salir del módulo de contención.</dd>
+          <dt>Enseña</dt><dd>Mirar, caminar, correr (el FOV se abre al correr) y saltar: una viga caída de 0,8 m tapa la salida.</dd>
+          <dt>Beat</dt><dd><p>C0 muestra la Luminaris desde afuera con explosiones en el casco y corta al tanque del Espécimen, reventado. Alarma roja titilando, un temblor de cámara cada 20 s, un guardia muerto y un rastro de baba que sube por la pared hasta un ducto del techo.</p><p>El Espécimen se fue por ahí y el jugador no puede seguirlo. Primera lección del nivel: él tiene atajos, vos no.</p></dd>
+          <dt>Pickups</dt><dd>Ninguno. El jugador arranca con 200 de vida y 0 granadas (requiere un cambio chico, ver Unity).</dd>
+          <dt>Guiado</dt><dd>La única luz blanca y fija de la sala está sobre la puerta de salida, con el cartel Exit. Todo lo demás titila en rojo.</dd>
+          <dt>Reutiliza</dt><dd><code>JarAlien</code>/Glass shader (tanque), Slime shader, <code>Swat</code> + <code>Dead.anim</code> + decals de sangre, fuego de Vefects, <code>Exit Sign</code>, <code>FlashingLights.anim</code>, <code>Luminaris Starship</code> + Galaxy shader para C0.</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="zone-card" id="zona-1">
+      <div class="zone-num">1</div>
+      <div class="zone-body">
+        <div class="zone-head">
+          <h3>Corredor de servicio</h3>
+          <p class="tag">El asistente y la primera palanca</p>
+          <div class="chips"><span class="chip">36 m + 24 m en L · 4 m de ancho</span><span class="chip">altura 0 m</span><span class="chip">≈ 1,5 min</span><span class="chip">sin enemigos</span></div>
+        </div>
+        <dl class="spec">
+          <dt>Objetivo</dt><dd>Reunirse con el asistente y abrir la compuerta del hangar.</dd>
+          <dt>Enseña</dt><dd>Hablar con un NPC (entrar al trigger y apretar E), reconocer un objeto interactivo por el brillo y el sonido, activarlo con E, y saltar un hueco sin castigo.</dd>
+          <dt>Beat</dt><dd><p>El asistente hace la animación OverHere al ver al jugador y dispara el diálogo <code>NPC0_Despertar</code>. Después del diálogo hay una zanja de 3 m: piso de rejilla hundido 1,5 m con rampa para volver. Si el jugador cae, sale caminando.</p><p>Al final del tramo vertical, la compuerta sin energía y la palanca al lado.</p></dd>
+          <dt>Pickups</dt><dd>Ninguno.</dd>
+          <dt>Guiado</dt><dd>Tubos con luz cian en el techo apuntan al asistente. La palanca es lo único con outline en todo el pasillo.</dd>
+          <dt>Reutiliza</dt><dd><code>Corridor Tile 01 Variant</code>, <code>Corridor Entrance Wall Variant</code>, <code>RobotAssistant</code>, <code>PowerLever</code> con <code>LeverAction.OpenDoor</code>, <code>Bay Door Wall Variant</code>, <code>BrokenStair</code>.</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="zone-card" id="zona-2">
+      <div class="zone-num">2</div>
+      <div class="zone-body">
+        <div class="zone-head">
+          <h3>Hangar de carga</h3>
+          <p class="tag">Lo ves, pero no lo alcanzás</p>
+          <div class="chips"><span class="chip">46 × 36 m</span><span class="chip">mirador +5 m · piso 0 m</span><span class="chip">≈ 3 min</span><span class="chip">5 robots</span></div>
+        </div>
+        <dl class="spec">
+          <dt>Objetivo</dt><dd>Sobrevivir a los robots y encontrar otra salida.</dd>
+          <dt>Enseña</dt><dd>Disparar, asistencia de apuntado (clic derecho), granada ácida con F contra un grupo, pickups y loot.</dd>
+          <dt>Beat</dt><dd><p>Al pisar el mirador se dispara C1, armada igual que FirstCinematic: el Espécimen cae desde un ducto al piso del hangar, gira (<code>BossTurn</code>) y mira al jugador a través del vidrio. Sale por la compuerta norte con dos escoltas y la sella. Los robots del piso se encienden.</p></dd>
+          <dt>Encuentros</dt><dd><ul><li><b>Oleada A</b>, 2 robots en el piso. El jugador tiene altura y la baranda del mirador como cobertura: un primer combate amable.</li><li><b>Oleada B</b>, 3 robots que entran por la puerta oeste cuando cae el último de la A, o a los 25 s. Suben por la rampa este, que funciona como embudo: un charco de ácido de 4 m de radio tapa todo el ancho. Es el lugar pensado para la primera granada.</li></ul></dd>
+          <dt>Pickups</dt><dd>3 granadas en un casillero del mirador, visibles antes de C1. 2 de vida (piso suroeste y cerca de la compuerta norte). Más el loot de los robots.</dd>
+          <dt>Salida</dt><dd>El asistente aparece en la escotilla este (<code>ActivateAssist(1)</code>) con el diálogo <code>NPC1_Hangar</code> y la abre.</dd>
+          <dt>Guiado</dt><dd>Por los ventanales altos del muro norte se ve el brillo violeta del portal. La meta final ya está a la vista desde el minuto 4.</dd>
+          <dt>Reutiliza</dt><dd><code>Catwalk Variant</code>, <code>CatWalk Stairs Wide Variant</code>, cajas, pallets, carritos y barriles como cobertura, <code>Bay Door</code> + <code>BossDoor.controller</code>, <code>Boss</code>, <code>RobotEnemyFirst</code>, <code>RobotEnemy</code>, <code>PickUpBomb</code>, <code>PickUpHealth</code>, <code>Node</code> con conexión de salto en la rampa.</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="zone-card" id="zona-3">
+      <div class="zone-num">3</div>
+      <div class="zone-body">
+        <div class="zone-head">
+          <h3>Tanque de refrigeración</h3>
+          <p class="tag">El valle antes del reactor</p>
+          <div class="chips"><span class="chip">cilindro Ø 18 m × 16 m de alto</span><span class="chip">conducto de 16 m</span><span class="chip">≈ 2 min</span><span class="chip">sin enemigos</span><span class="chip">1 secreto</span></div>
+        </div>
+        <dl class="spec">
+          <dt>Objetivo</dt><dd>Subir por el tanque inundado y cruzar el conducto hasta el reactor.</dd>
+          <dt>Enseña</dt><dd>Nadar (vas hacia donde mirás, a 2 m/s, sin gravedad) y el dash con Shift. Es exactamente lo que después pide la sala de ácido del nivel actual.</dd>
+          <dt>Beat</dt><dd><p>Se baja por una escalera hasta el líquido. Al entrar, <code>ActivateDistorsion</code> activa la distorsión de pantalla y el audio UnderWater. Columnas de burbujas marcan la subida.</p><p>Arriba hay un conducto horizontal de 16 m con una corriente animada que empuja la vista hacia adelante. Nadando tarda 8 s; con dos dashes, menos de 4.</p></dd>
+          <dt>Secreto</dt><dd>En el fondo del tanque, detrás de una rejilla rota, un nicho con 2 granadas, 1 vida y un holograma con un registro de la nave: <q>Espécimen 0 en contención criogénica. Destino: estación de salto. El cultivo no debe…</q> y se corta.</dd>
+          <dt>Ritmo</dt><dd>Es el valle de la curva: después del hangar y antes del reactor, el jugador explora sin presión.</dd>
+          <dt>Reutiliza</dt><dd><code>ActivateDistorsion</code> y su material, Liquid shader, <code>P_Bubbles</code>, <code>P_BubblesAir</code>, <code>AirParticles</code>, <code>Duct Straight Variant</code>, FlowMapEnergy, Hologram shader, audios IntoToTheWater, ExitWater y UnderWater.</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="zone-card" id="zona-4">
+      <div class="zone-num">4</div>
+      <div class="zone-body">
+        <div class="zone-head">
+          <h3>Núcleo del reactor</h3>
+          <p class="tag">Dos válvulas, cero tiempo</p>
+          <div class="chips"><span class="chip">sala circular Ø 34 m</span><span class="chip">anillo superior +8 m</span><span class="chip">≈ 3 min</span><span class="chip">3 robots + oleadas</span></div>
+        </div>
+        <dl class="spec">
+          <dt>Objetivo</dt><dd>Activar las dos válvulas de purga para liberar la compuerta de la bahía.</dd>
+          <dt>Combina</dt><dd>Interactuar bajo fuego, granadas contra oleadas y moverse en círculo usando el núcleo como cobertura.</dd>
+          <dt>Beat</dt><dd><p>El conducto sale al anillo superior. El asistente espera ahí con <code>NPC2_Reactor</code>. El núcleo central pulsa y corta la línea de visión: jugador y robots se persiguen a su alrededor.</p><p>Las válvulas están en lados opuestos (noroeste y sureste), así que el jugador tiene que cruzar la sala sí o sí. Al activar la primera se encienden dos <code>SpawnEnemy</code>, igual que <code>ActivateCorutineSpawn</code> en el nivel actual. Al activar la segunda, C2.</p></dd>
+          <dt>Encuentros</dt><dd>3 robots al entrar, más las oleadas de los spawners mientras haya una sola válvula activa: entre 5 y 7 robots en total según lo que tarde el jugador. <code>ArenaBoundsManager</code> limita dónde aparecen.</dd>
+          <dt>Pickups</dt><dd>2 granadas en la entrada. 1 vida al lado de cada válvula, como premio por llegar.</dd>
+          <dt>Guiado</dt><dd>Cada válvula tiene un haz de luz vertical del color del outline. La compuerta norte queda en rojo hasta que se liberan las dos.</dd>
+          <dt>Reutiliza</dt><dd><code>PowerLever</code> ×2, estética de <code>AlienConsola</code> para los paneles, <code>SpawnEnemy</code>, <code>PoolEnemy</code>, <code>ArenaBounds</code>, <code>Pillar Variant</code>, FlowMapEnergy y Hologram para el núcleo, <code>CameraShakeManager</code>.</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="zone-card" id="zona-5">
+      <div class="zone-num">5</div>
+      <div class="zone-body">
+        <div class="zone-head">
+          <h3>Bahía de salto</h3>
+          <p class="tag">Correr antes de que se caiga</p>
+          <div class="chips"><span class="chip">92 × 18 m</span><span class="chip">pasarelas a +10 m sobre el vacío</span><span class="chip">reloj 1:00</span><span class="chip">4 robots</span></div>
+        </div>
+        <dl class="spec">
+          <dt>Objetivo</dt><dd>Llegar al portal antes de que el contador llegue a cero.</dd>
+          <dt>Exige</dt><dd>Dos saltos corriendo (5 m y 4 m), una caída controlada a la pasarela inferior cuando colapsa un tramo, una palanca bajo fuego y decidir entre pelear o correr.</dd>
+          <dt>Beat</dt><dd><p>C2 termina con la cámara en la bahía: el Espécimen cruza el portal y el asistente corre detrás y cruza también. El portal empieza a parpadear y aparece el reloj.</p><p>Temblores cada 8 s, chispas y fuego en los bordes, y un tramo de pasarela que se cae al pisarlo.</p></dd>
+          <dt>Encuentros</dt><dd>4 robots: dos en cornisas lejanas que disparan desde 20 m pero no bloquean, uno en la pasarela inferior junto a la compuerta y uno en la plataforma del portal.</dd>
+          <dt>Pickups</dt><dd>1 vida en una cornisa lateral. Ir a buscarla cuesta unos 4 s de reloj: riesgo contra recompensa.</dd>
+          <dt>Fallo</dt><dd>Caer al vacío (<code>EnemyDeadZone</code>) o llegar a 0:00. La nave explota y se reinicia. Recomendado: checkpoint en la puerta de la bahía (ver riesgos).</dd>
+          <dt>Final</dt><dd>Entrar al portal, fundido a blanco y carga de <code>SampleScene</code>, que arranca con el portal en llamas detrás del jugador.</dd>
+          <dt>Reutiliza</dt><dd><code>Catwalk Variant</code>, <code>BrokenStair</code>, <code>WallDown.anim</code>/<code>WallUp.anim</code>, fuego de Vefects, <code>Portal</code> + <code>PortalShader</code> + <code>PortalScript</code>, Galaxy shader visible por el casco roto, <code>EnemyDeadZone</code>, <code>Timer</code>.</dd>
+        </dl>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="block" id="ensenanza">
+  <header>
+    <p class="eyebrow">Introducir · practicar · combinar · exigir</p>
+    <h2>Matriz de enseñanza</h2>
+    <p class="lede">Cada mecánica aparece primero en un lugar seguro y recién después bajo presión. La última columna muestra dónde la vuelve a usar el nivel actual, que hoy la pide sin haberla enseñado.</p>
+  </header>
+  <div class="matrix-key"><span class="lv lv1">Introduce</span><span class="lv lv2">Practica</span><span class="lv lv3">Combina</span><span class="lv lv4">Exige</span></div>
+  <div class="table-scroll">
+    <table class="matrix">
+      <thead><tr><th>Mecánica</th><th>Z0</th><th>Z1</th><th>Z2</th><th>Z3</th><th>Z4</th><th>Z5</th><th>En SampleScene</th></tr></thead>
+      <tbody>
+        <tr><td>Moverse y correr</td><td><span class="lv lv1">Introduce</span></td><td><span class="lv lv2">Practica</span></td><td></td><td></td><td></td><td><span class="lv lv4">Exige</span></td><td>Todo el nivel</td></tr>
+        <tr><td>Saltar</td><td><span class="lv lv1">Introduce</span></td><td><span class="lv lv2">Practica</span></td><td></td><td></td><td></td><td><span class="lv lv4">Exige</span></td><td>Escaleras rotas, Acid2</td></tr>
+        <tr><td>Interactuar (E + brillo)</td><td></td><td><span class="lv lv1">Introduce</span></td><td></td><td></td><td><span class="lv lv3">Combina</span></td><td><span class="lv lv4">Exige</span></td><td>PowerLever, AlienConsola</td></tr>
+        <tr><td>Hablar con el asistente</td><td></td><td><span class="lv lv1">Introduce</span></td><td><span class="lv lv2">Practica</span></td><td></td><td><span class="lv lv2">Practica</span></td><td></td><td>Tres asistentes</td></tr>
+        <tr><td>Disparar</td><td></td><td></td><td><span class="lv lv1">Introduce</span></td><td></td><td><span class="lv lv3">Combina</span></td><td><span class="lv lv4">Exige</span></td><td>Conector3, Arena4</td></tr>
+        <tr><td>Apuntado asistido (clic der.)</td><td></td><td></td><td><span class="lv lv1">Introduce</span></td><td></td><td><span class="lv lv2">Practica</span></td><td></td><td>Arena4</td></tr>
+        <tr><td>Granada ácida (F)</td><td></td><td></td><td><span class="lv lv1">Introduce</span></td><td></td><td><span class="lv lv3">Combina</span></td><td></td><td>Acid2, Arena4</td></tr>
+        <tr><td>Pickups y loot</td><td></td><td></td><td><span class="lv lv1">Introduce</span></td><td><span class="lv lv2">Practica</span></td><td><span class="lv lv2">Practica</span></td><td><span class="lv lv3">Combina</span></td><td>Todo el nivel</td></tr>
+        <tr><td>Nado y dash</td><td></td><td></td><td></td><td><span class="lv lv1">Introduce</span></td><td></td><td></td><td>Acid2 (con secreto en el fondo)</td></tr>
+        <tr><td>Contrarreloj</td><td></td><td></td><td></td><td></td><td></td><td><span class="lv lv1">Introduce</span></td><td>Supervivencia de 1:30 en Arena4</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="cinematicas">
+  <header>
+    <p class="eyebrow">Timeline + Cinemachine</p>
+    <h2>Cinemáticas</h2>
+    <p class="lede">Todas se arman igual que las tres de <code>SampleScene</code>: un <code>PlayableDirector</code> por cinemática en <code>DirectorCinema</code>, señales que llaman a métodos de <code>CinematicDirector</code>.</p>
+  </header>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>#</th><th>Disparador</th><th>Qué se ve</th><th>Qué reutiliza</th></tr></thead>
+      <tbody>
+        <tr><td class="num">C0</td><td>Al cargar la escena</td><td>Exterior de la Luminaris contra el fondo de galaxia, explosiones en el casco. Corte al tanque reventado y fundido a la vista del jugador.</td><td><code>Luminaris Starship.prefab</code>, Galaxy shader, <code>CanvasManager.FadeIn</code></td></tr>
+        <tr><td class="num">C1</td><td>Trigger al pisar el mirador del hangar</td><td>El Espécimen cae, gira, mira al jugador a través del vidrio, sale con dos escoltas y sella la compuerta norte. Se encienden los robots.</td><td>La clase <code>FirstCinematic</code> casi entera: <code>ActivateBoss</code>, <code>ActivateSoldiers</code>, <code>CloseBossDoor</code>, <code>ActivateEnemies</code>, <code>DesactivateEnemies</code></td></tr>
+        <tr><td class="num">C2</td><td>Al activar la segunda válvula</td><td>El núcleo se pone crítico y las luces pasan a rojo. Corte a la bahía: cruzan el Espécimen y el asistente, el portal parpadea. Vuelta al jugador y aparece el reloj.</td><td><code>DesactivateCorutineSpawn</code>, <code>OpenDoor</code>, <code>ActivateAssist</code>, <code>CanvasManager.ShowTime</code>, <code>GameManager.StartTimer</code></td></tr>
+        <tr><td class="num">C3</td><td>Al entrar al portal</td><td>Destello blanco y fundido a negro. Carga <code>SampleScene</code>.</td><td><code>PortalScript</code> con escena configurable, <code>CanvasManager.FadeOut</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="dialogos">
+  <header>
+    <p class="eyebrow">ScriptableObjects · Assets/UI/Dialogues</p>
+    <h2>Diálogos del asistente</h2>
+    <p class="lede">Tres <code>DialogueData</code> nuevos, en el mismo tono que NPCStart, NPCMid y NPCEnd: frases cortas, voseo, puntos suspensivos. Las instrucciones de controles van dentro de la charla, porque el juego no tiene carteles de tutorial.</p>
+  </header>
+  <div class="dialogues">
+    <div class="dlg">
+      <header><b>Zona 1</b><code>NPC0_Despertar.asset</code></header>
+      <ol>
+        <li>¡Por fin despertás! Pensé que no volvías.</li>
+        <li>El espécimen rompió la contención… y no se fue solo. Tomó el control de los robots de seguridad.</li>
+        <li>Va hacia la bahía de salto. Si cruza el portal, lo perdemos.</li>
+        <li>Si mantenés el clic derecho, te ayudo a apuntar.</li>
+        <li>La compuerta de servicio está sin energía. Usá la palanca de ahí adelante.</li>
+        <li>Y movete… esta nave no está bien.</li>
+      </ol>
+    </div>
+    <div class="dlg">
+      <header><b>Zona 2</b><code>NPC1_Hangar.asset</code></header>
+      <ol>
+        <li>Selló la compuerta desde el otro lado.</li>
+        <li>Pero hay otro camino: el tanque de refrigeración conecta con el núcleo del reactor.</li>
+        <li>Vas a tener que nadar. Abajo del líquido vas hacia donde mirás.</li>
+        <li>Con Shift te impulsás. Usalo en el conducto.</li>
+        <li>Yo busco otra ruta. Te veo del otro lado.</li>
+      </ol>
+    </div>
+    <div class="dlg">
+      <header><b>Zona 4</b><code>NPC2_Reactor.asset</code></header>
+      <ol>
+        <li>Llegaste… mirá eso. Sobrecargó el reactor.</li>
+        <li>No le alcanza con escapar. Quiere que la nave desaparezca con nosotros adentro.</li>
+        <li>Hay dos válvulas de purga, una de cada lado del núcleo. Activalas y se libera la compuerta de la bahía.</li>
+        <li>Cuando abras la primera van a venir más robots. No te quedes quieto.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="unity">
+  <header>
+    <p class="eyebrow">Implementación</p>
+    <h2>Cómo llevarlo a Unity</h2>
+    <p class="lede">Casi todo se arma con lo que ya existe. Estos son los cambios de código chicos que hacen falta, con el archivo y la línea donde está hoy el comportamiento.</p>
+  </header>
+
+  <div class="changes">
+    <div class="change">
+      <h3>El portal carga siempre el menú</h3>
+      <p class="where">Assets/Escenary/Portal/PortalScript.cs:9 · <code>SceneManager.LoadScene(0)</code></p>
+      <p>Agregar un campo con el índice de escena para que el portal del Nivel 0 lleve a <code>SampleScene</code> y el de <code>SampleScene</code> siga yendo al menú.</p>
+<pre>[SerializeField] private int _sceneIndex = 0;
+// ...
+SceneManager.LoadScene(_sceneIndex);</pre>
+    </div>
+    <div class="change">
+      <h3><code>LeverAction.OpenDoor</code> existe pero no hace nada</h3>
+      <p class="where">Assets/Escenary/Lever/Lever.cs:6 (enum) y :33 (switch)</p>
+      <p>El <code>switch</code> solo resuelve <code>FirstCinematic</code>. Las palancas de las zonas 1, 4 y 5 necesitan abrir una puerta. Los animators de puerta ya tienen el trigger <code>OpenDoor</code> (lo usa <code>ThirdCinematic</code>).</p>
+<pre>[SerializeField] private Animator _door;
+// dentro del switch:
+case LeverAction.OpenDoor:
+    _door?.SetTrigger("OpenDoor");
+    break;</pre>
+      <p>Para las dos válvulas del reactor alcanza con un contador en un script de zona que abra la compuerta y dispare C2 cuando llega a 2.</p>
+    </div>
+    <div class="change">
+      <h3>El reloj dura siempre 1:30 y al terminar abre el portal</h3>
+      <p class="where">Assets/Timer.cs:16–17 · Assets/GameManager.cs:24 y :63</p>
+      <p>En el Nivel 0 el reloj dura 1:00 y llegar a cero es derrota. Pasar la duración por parámetro y dejar que cada escena decida qué hacer con <code>FinishTimer</code>: en <code>SampleScene</code> sigue llamando a <code>ActivePortal</code>; en el Nivel 0 recarga la escena.</p>
+<pre>public void OnStart(int min, int seg) { stop = true; _min = min; _seg = seg; _mmm = 0; }</pre>
+    </div>
+    <div class="change">
+      <h3>El jugador arranca siempre con 3 granadas</h3>
+      <p class="where">Assets/PJ/Player.cs:28 · Assets/UI/CanvasManager.cs:23</p>
+      <p>Para que el casillero del hangar sea la presentación de la granada, el Nivel 0 empieza con 0. Hacer <code>_initBombs</code> serializado y que el Canvas lea el valor real en lugar del 3 fijo.</p>
+    </div>
+    <div class="change">
+      <h3>Caer o morir manda al menú</h3>
+      <p class="where">Assets/EnemyDeadZone.cs:15 · Assets/PJ/Player.cs:76</p>
+      <p>En un nivel de 12 minutos, volver al menú por una caída en la zona 5 es muy castigador. Como mínimo, recargar la escena actual (<code>SceneManager.GetActiveScene().buildIndex</code>); idealmente, un checkpoint en la puerta de la bahía.</p>
+    </div>
+    <div class="change">
+      <h3>Temblores de la nave</h3>
+      <p class="where">Assets/CameraShakeManager.cs:8 · enum <code>ShakesType</code></p>
+      <p>Agregar <code>HullTremor</code> con un perfil de ruido más largo y suave que <code>PlayerUnderAtack</code>, y llamarlo desde un script de ambiente cada 20 s en la zona 0 y cada 8 s en la zona 5.</p>
+    </div>
+    <div class="change optional">
+      <h3>Opcional: robots con escudo en el reactor</h3>
+      <p class="where">Assets/Enemy/Scripts/Enemy.cs:15 · <code>_shieldChildRef</code></p>
+      <p>El campo nunca se asigna, así que hoy ningún robot de combate usa escudo (solo los de cinemática). Si querés una variante con escudo en la zona 4, asignarlo en <code>Awake</code> con <code>GetComponentInChildren&lt;Shield&gt;(true)</code>.</p>
+    </div>
+  </div>
+
+  <div class="block" style="gap:0.8rem">
+    <h3>Orden de armado</h3>
+    <ol class="steps">
+      <li>Duplicar <code>SampleScene</code> como <code>Nivel0_Luminaris</code>. Borrar <code>Entrance0</code> a <code>BossRoom5</code>, <code>Ceiling</code> y <code>Nodes</code>. Conservar <code>Managers</code>, <code>Canvas</code>, <code>PJ</code>, <code>Main Camera</code>, <code>Pool</code>, <code>SoundManager</code>, <code>DirectorCinema</code>, <code>CinematicCameras</code>, <code>AudioCinematics</code>, <code>EnemyDeadZone</code> y <code>Global Volume</code>.</li>
+      <li>Build Settings: <code>MainMenu</code> (0), <code>Nivel0_Luminaris</code> (1), <code>SampleScene</code> (2). El menú ya carga el índice 1 (<code>MainMenu.cs:43</code>), así que arranca directo en el Nivel 0.</li>
+      <li>Blockout con cubos grises sobre la grilla de 6 m del prefab <code>Floor</code>, con las medidas del mapa. Sin arte todavía.</li>
+      <li>Probar métricas en el blockout: los dos saltos de la zona 5, la rampa del hangar como embudo y el conducto del tanque con y sin dash.</li>
+      <li>Poner <code>Node</code> en las zonas 2, 4 y 5, con conexiones de salto donde haya desnivel, y un <code>ArenaBounds</code> por zona de combate.</li>
+      <li>Encuentros y pickups según las fichas.</li>
+      <li>Cinemáticas C0 a C3 y los tres <code>DialogueData</code>.</li>
+      <li>Arte final con el kit SciFi Warehouse, luces de guiado y VFX.</li>
+      <li>Playtest con al menos 3 personas que no conozcan el nivel, midiendo tiempo por zona y muertes.</li>
+    </ol>
+  </div>
+
+  <div class="block" style="gap:0.8rem">
+    <h3>Riesgos y qué medir en el playtest</h3>
+    <ul class="risks">
+      <li><b>Reloj de la zona 5.</b> La meta es que 8 de cada 10 lleguen al portal con 10 a 20 s de sobra. Si no, ajustar el reloj, no los saltos.</li>
+      <li><b>Dash.</b> Si nadie lo usa en el conducto, alargarlo o agregar una corriente en contra que solo se venza con dash.</li>
+      <li><b>Oleada B.</b> Si la conexión de salto de la rampa falla, los robots se quedan abajo y el embudo no existe. Revisar los nodos antes que nada.</li>
+      <li><b>Audio en cinemáticas.</b> <code>SoundManager.PlayClip</code> no suena mientras <code>_isOnCinematic</code> es verdadero (<code>SoundManager.cs:39</code>). Los sonidos de C0 a C2 tienen que ir por <code>PlayCinematicClip</code> o por la pista de audio del Timeline, como ya se hace hoy.</li>
+      <li><b>Secreto.</b> Si nadie encuentra el nicho del tanque, poner una burbuja que salga de la rejilla rota.</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="end">Basado en la lectura de los scripts, prefabs, diálogos y la jerarquía de <code>SampleScene.unity</code> del proyecto EfectosVisualesParcial (Unity 2022.3.5f1). Las medidas son de blockout y se ajustan en playtest.</footer>
+
+</div>
+
+<script>
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+
+  /* ---------- MAPA (coordenadas en metros; 1 m = 5 px) ---------- */
+  var S = 5, P = 30;
+  function X(m) { return P + m * S; }
+  function Y(m) { return P + m * S; }
+  var svg = document.getElementById("map");
+  var defs = el("defs", {}, svg);
+
+  function hatch(id, cls) {
+    var p = el("pattern", { id: id, width: 7, height: 7, patternUnits: "userSpaceOnUse", patternTransform: "rotate(45)" }, defs);
+    el("line", { x1: 0, y1: 0, x2: 0, y2: 7, "class": cls }, p);
+  }
+  hatch("hatch-void", "hv");
+  hatch("hatch-soft", "hs");
+  var st = document.createElementNS(NS, "style");
+  st.textContent = ".hv{stroke:var(--void);stroke-width:1.4;stroke-opacity:.45}.hs{stroke:var(--zone-stroke);stroke-width:1;stroke-opacity:.6}";
+  defs.appendChild(st);
+  var arrowM = el("marker", { id: "arrow-end", viewBox: "0 0 10 10", refX: 6, refY: 5, markerWidth: 5, markerHeight: 5, orient: "auto-start-reverse" }, defs);
+  el("path", { d: "M0,0 L10,5 L0,10 z", "class": "crit-arrow" }, arrowM);
+
+  // grilla de fondo cada 10 m
+  var g0 = el("g", {}, svg);
+  for (var gx = 0; gx <= 215; gx += 10) el("line", { x1: X(gx), y1: Y(-2), x2: X(gx), y2: Y(92), "class": "bgrid" }, g0);
+  for (var gy = 0; gy <= 90; gy += 10) el("line", { x1: X(-2), y1: Y(gy), x2: X(213), y2: Y(gy), "class": "bgrid" }, g0);
+
+  function R(x, y, w, h, cls, parent) { return el("rect", { x: X(x), y: Y(y), width: w * S, height: h * S, "class": cls }, parent); }
+  function C(x, y, r, cls, parent) { return el("circle", { cx: X(x), cy: Y(y), r: r * S, "class": cls }, parent); }
+  function T(x, y, txt, cls, parent, anchor) {
+    var t = el("text", { x: X(x), y: Y(y), "class": cls }, parent);
+    if (anchor) t.setAttribute("text-anchor", anchor);
+    t.textContent = txt;
+    return t;
+  }
+
+  var zoneLayer = el("g", {}, svg);
+  var zoneNames = ["Contención", "Corredor de servicio", "Hangar de carga", "Tanque de refrigeración", "Núcleo del reactor", "Bahía de salto"];
+  function zoneGroup(i) {
+    var g = el("g", { "class": "zone", tabindex: "0", role: "link", "aria-label": "Zona " + i + ": " + zoneNames[i] + ". Ir a la ficha" }, zoneLayer);
+    function go() { var t = document.getElementById("zona-" + i); if (t) { t.scrollIntoView({ behavior: "smooth", block: "start" }); try { history.replaceState(null, "", "#zona-" + i); } catch (e) {} } }
+    g.addEventListener("click", go);
+    g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+    return g;
+  }
+
+  // pasillo sellado del Espécimen (no es zona jugable)
+  R(66, 6, 52, 4, "sealed", zoneLayer);
+  R(66, 10, 4, 4, "sealed", zoneLayer);
+
+  // Z0
+  var z0 = zoneGroup(0);
+  R(6, 62, 20, 20, "zone-shape", z0);
+  // Z1 (L)
+  var z1 = zoneGroup(1);
+  el("polygon", { points: [[26,70],[58,70],[58,50],[62,50],[62,74],[26,74]].map(function (p) { return X(p[0]) + "," + Y(p[1]); }).join(" "), "class": "zone-shape" }, z1);
+  // Z2
+  var z2 = zoneGroup(2);
+  R(44, 14, 46, 36, "zone-shape", z2);
+  // Z3
+  var z3 = zoneGroup(3);
+  R(90, 30, 6, 4, "zone-shape", z3);
+  R(112, 30, 17.5, 4, "zone-shape", z3);
+  C(104, 32, 9, "zone-shape", z3);
+  // Z4
+  var z4 = zoneGroup(4);
+  R(144, 19.5, 4, 4, "zone-shape", z4);
+  C(146, 40, 17, "zone-shape", z4);
+  // Z5
+  var z5 = zoneGroup(5);
+  R(118, 2, 92, 18, "zone-shape", z5);
+
+  // detalles (no interactivos)
+  var det = el("g", {}, svg);
+  // Z0
+  C(14, 70, 3.5, "tank", det);
+  R(23, 67, 1, 9, "obstacle", det);
+  T(23.5, 65.6, "Viga caída 0,8 m", "flabel", det, "middle");
+  T(14, 76.4, "Tanque roto", "flabel", det, "middle");
+  // Z1
+  R(47, 70, 3, 4, "trench", det);
+  T(48.5, 68.9, "Zanja 3 m (no letal)", "flabel", det, "middle");
+  // Z2
+  R(50, 44, 24, 6, "deck", det);
+  R(74, 44.5, 10, 5, "ramp", det);
+  el("line", { x1: X(50), y1: Y(44), x2: X(74), y2: Y(44), "class": "glass" }, det);
+  T(50.8, 49.3, "Mirador", "flabel", det);
+  T(79, 51.6, "Rampa (embudo)", "flabel", det, "middle");
+  R(57, 24, 4, 2, "crate", det); R(64.5, 37, 2, 4, "crate", det); R(76, 27, 4, 2, "crate", det); R(53, 33, 2, 4, "crate", det); R(79, 37, 3, 3, "crate", det);
+  // Z3
+  C(100, 28, 1.3, "bubble", det); C(108, 35, 1.3, "bubble", det); C(103, 24.8, 0.8, "bubble", det);
+  R(100, 41, 8, 4, "secret", det);
+  T(104, 47.4, "Secreto (fondo)", "flabel", det, "middle");
+  T(120.5, 28.7, "Conducto de impulso", "flabel", det, "middle");
+  // Z4
+  C(146, 40, 14, "ring-upper", det);
+  C(146, 40, 5, "core", det);
+  [[153.8,32.2],[138.2,32.2],[138.2,47.8],[153.8,47.8]].forEach(function (p) { C(p[0], p[1], 1.2, "pillar", det); });
+  T(146, 44.2, "Núcleo", "flabel", det, "middle");
+  // Z5
+  R(118, 2, 92, 18, "void", det);
+  R(144, 14, 4, 9.5, "walk", det);
+  R(144, 10, 16, 4, "walk", det);
+  R(165, 10, 11, 4, "walk", det);
+  R(180, 10, 8, 4, "walk", det);
+  R(184, 10, 4, 4, "collapse", det);
+  R(184, 15, 16, 4, "walk", det);
+  R(168, 15, 6, 3, "walk", det);
+  R(200, 11.5, 4, 7.5, "walk", det);
+  R(199, 4, 10, 7.5, "walk", det);
+  R(168, 3, 6, 3, "walk", det);
+  R(184, 3, 6, 3, "walk", det);
+  T(122, 17.8, "Vacío: caída letal", "flabel", det);
+  T(162.5, 9.2, "salto 5 m", "jump", det, "middle");
+  T(178, 9.2, "salto 4 m", "jump", det, "middle");
+  T(188.8, 12.9, "colapsa", "flabel", det);
+  T(183.6, 17.2, "cae 3 m", "jump", det, "end");
+  T(92, 5.2, "Pasillo sellado: atajo del Espécimen", "flabel", det, "middle");
+
+  // etiquetas de zona
+  var lab = el("g", { "pointer-events": "none" }, svg);
+  T(6, 60.6, "0 · Contención", "zlabel", lab);
+  T(27, 78.6, "1 · Corredor de servicio", "zlabel", lab);
+  T(45.5, 17.8, "2 · Hangar de carga", "zlabel", lab);
+  T(95, 21.6, "3 · Tanque", "zlabel", lab);
+  T(146, 60.8, "4 · Núcleo del reactor", "zlabel", lab, "middle");
+  T(118, 0.4, "5 · Bahía de salto", "zlabel", lab);
+
+  // ruta del Espécimen
+  var bossPts = [[14,70],[14,64],[40,44],[60,28],[68,14],[68,8],[118,8],[196,4],[205.5,7.5]];
+  el("polyline", { points: bossPts.map(function (p) { return X(p[0]) + "," + Y(p[1]); }).join(" "), "class": "bosspath" }, svg);
+  T(29, 55.5, "por los ductos", "flabel", svg, "middle").setAttribute("transform", "rotate(-38 " + X(29) + " " + Y(55.5) + ")");
+
+  // camino crítico
+  var crit = [[21,77],[25.5,72],[60,72],[60,47],[79,47],[86,47],[86,32],[104,32],[129,32],[132,40],[140,52],[152,55],[161,44],[156,28],[140,26],[146,22.5],[146,12],[160,12],[165,12],[176,12],[180,12],[186,12],[186,17],[197,17],[202,17],[202,12.5],[205,9.5]];
+  var critStr = crit.map(function (p) { return X(p[0]) + "," + Y(p[1]); }).join(" ");
+  el("polyline", { points: critStr, "class": "crit-halo" }, svg);
+  el("polyline", { points: critStr, "class": "crit", "marker-end": "url(#arrow-end)" }, svg);
+  // flechas a mitad de los tramos largos
+  var arrows = el("g", {}, svg);
+  for (var i = 0; i < crit.length - 1; i++) {
+    var a = crit[i], b = crit[i + 1];
+    var dx = b[0] - a[0], dy = b[1] - a[1], len = Math.sqrt(dx * dx + dy * dy);
+    if (len < 9) continue;
+    var mx = X((a[0] + b[0]) / 2), my = Y((a[1] + b[1]) / 2), ang = Math.atan2(dy, dx) * 180 / Math.PI;
+    el("path", { d: "M-5,-4.5 L5,0 L-5,4.5 z", transform: "translate(" + mx + " " + my + ") rotate(" + ang + ")", "class": "crit-arrow" }, arrows);
+  }
+
+  // escala
+  var sc = el("g", {}, svg);
+  el("line", { x1: X(6), y1: Y(88), x2: X(16), y2: Y(88), "class": "scale" }, sc);
+  el("line", { x1: X(6), y1: Y(87), x2: X(6), y2: Y(89), "class": "scale" }, sc);
+  el("line", { x1: X(16), y1: Y(87), x2: X(16), y2: Y(89), "class": "scale" }, sc);
+  T(18, 88.8, "10 m", "flabel", sc);
+  T(210, 88.8, "Popa ← · → Proa", "flabel", sc, "end");
+
+  // íconos
+  var M = [
+    ["start", 21, 77, "Inicio del jugador", "200 de vida, 0 granadas", 0],
+    ["cine", 9.5, 65, "C0 · Intro", "Exterior de la Luminaris y corte al tanque reventado", 0],
+    ["story", 14, 70, "Tanque del Espécimen", "Reventado. Rastro de baba hasta un ducto del techo", 0],
+    ["story", 18.5, 66, "Guardia muerto", "Swat + Dead.anim + decals de sangre", 0],
+    ["door", 26, 72, "Salida de contención", "Única luz blanca fija de la sala", 0, "v"],
+    ["npc", 40, 72, "Asistente · NPC0_Despertar", "Explica la persecución y el apuntado con clic derecho", 1],
+    ["lever", 56.5, 53.5, "Palanca de la compuerta", "LeverAction.OpenDoor", 1],
+    ["door", 60, 50, "Compuerta al hangar", "Sin energía hasta usar la palanca", 1, "h"],
+    ["cine", 57, 45.6, "C1 · El Espécimen cae al hangar", "Se dispara al pisar el mirador", 2],
+    ["bomb", 68, 46.8, "3 granadas", "Casillero del mirador, visible antes de C1", 2],
+    ["boss", 60, 28, "Aquí cae el Espécimen", "Gira, mira al jugador y sale por el norte", 2],
+    ["enemy", 63, 31, "Robot · oleada A", "Se enciende al terminar C1", 2],
+    ["enemy", 72, 34, "Robot · oleada A", "Se enciende al terminar C1", 2],
+    ["door", 44, 26, "Puerta oeste", "Entra la oleada B", 2, "v"],
+    ["enemy", 47.5, 23, "Robot · oleada B", "Entra cuando cae la A o a los 25 s", 2],
+    ["enemy", 48.5, 29, "Robot · oleada B", "Sube por la rampa este", 2],
+    ["enemy", 52, 26, "Robot · oleada B", "Sube por la rampa este", 2],
+    ["health", 52, 40.5, "Vida +40", "Piso suroeste, detrás de cobertura", 2],
+    ["health", 82, 19.5, "Vida +40", "Cerca de la compuerta norte", 2],
+    ["sealed", 68, 14, "Compuerta norte", "Sellada por el Espécimen en C1", 2, "h"],
+    ["npc", 86.5, 36.5, "Asistente · NPC1_Hangar", "Aparece al caer la oleada B y abre la escotilla", 2],
+    ["door", 90, 32, "Escotilla al tanque", "Escalera hacia el líquido", 3, "v"],
+    ["bomb", 102, 43, "2 granadas (secreto)", "Detrás de la rejilla rota, en el fondo", 3],
+    ["health", 106, 43, "Vida +40 (secreto)", "Junto al holograma de registro", 3],
+    ["npc", 131.5, 35, "Asistente · NPC2_Reactor", "Explica las dos válvulas", 4],
+    ["bomb", 134.5, 38.5, "2 granadas", "Entrada del reactor", 4],
+    ["lever", 140, 26, "Válvula norte", "Cualquiera de las dos puede ir primero", 4],
+    ["lever", 152, 55, "Válvula sur", "La primera que se activa enciende los spawners", 4],
+    ["health", 136, 29.5, "Vida +40", "Premio junto a la válvula norte", 4],
+    ["health", 156.5, 51.5, "Vida +40", "Premio junto a la válvula sur", 4],
+    ["enemy", 157, 37, "Robot", "Presente al entrar", 4],
+    ["enemy", 149, 50.5, "Robot", "Presente al entrar", 4],
+    ["enemy", 136.5, 45.5, "Robot", "Presente al entrar", 4],
+    ["spawn", 160, 46.5, "Spawner", "Oleadas de 1 a 3 robots entre la 1ª y la 2ª válvula", 4],
+    ["spawn", 139, 55, "Spawner", "Oleadas de 1 a 3 robots entre la 1ª y la 2ª válvula", 4],
+    ["cine", 146, 36.4, "C2 · Reactor crítico", "Al activar la segunda válvula. Arranca el reloj de 1:00", 4],
+    ["door", 146, 23, "Compuerta a la bahía", "Se libera con las dos válvulas", 4, "h"],
+    ["enemy", 171, 4.5, "Robot en cornisa", "Dispara desde lejos, no bloquea", 5],
+    ["enemy", 187, 4.5, "Robot en cornisa", "Dispara desde lejos, no bloquea", 5],
+    ["enemy", 191.5, 17, "Robot", "Cuida la compuerta inferior", 5],
+    ["enemy", 208, 10.6, "Robot", "En la plataforma del portal", 5],
+    ["health", 171, 16.5, "Vida +40", "Cornisa lateral: cuesta unos 4 s de reloj", 5],
+    ["lever", 195, 15.6, "Palanca de la compuerta inferior", "Bajo fuego y con el reloj corriendo", 5],
+    ["door", 197, 17, "Compuerta inferior", "Se abre con la palanca", 5, "v"],
+    ["npc", 201.2, 5.9, "Asistente", "Cruza el portal en C2, antes que el jugador", 5],
+    ["portal", 205.5, 7.5, "Portal → SampleScene", "C3: fundido y carga del nivel actual", 5]
+  ];
+
+  var mk = el("g", {}, svg);
+  var mapFig = document.getElementById("map-figure");
+  var mapTip = document.getElementById("map-tip");
+
+  function draw(type, cx, cy, orient) {
+    var g = el("g", { transform: "translate(" + cx + " " + cy + ")" }, mk);
+    if (type === "enemy") el("path", { d: "M0,-6.5 L6,4.5 L-6,4.5 z", "class": "m-enemy m-ring" }, g);
+    else if (type === "health") el("path", { d: "M-2,-6 h4 v4 h4 v4 h-4 v4 h-4 v-4 h-4 v-4 h4 z", "class": "m-health m-ring" }, g);
+    else if (type === "bomb") el("path", { d: "M5.5,0 L2.75,4.76 L-2.75,4.76 L-5.5,0 L-2.75,-4.76 L2.75,-4.76 z", "class": "m-bomb m-ring" }, g);
+    else if (type === "npc") el("path", { d: "M0,-6.5 L6.5,0 L0,6.5 L-6.5,0 z", "class": "m-npc m-ring" }, g);
+    else if (type === "lever") el("rect", { x: -5, y: -5, width: 10, height: 10, rx: 1.5, "class": "m-lever m-ring" }, g);
+    else if (type === "boss") el("circle", { r: 5.5, "class": "m-boss m-ring" }, g);
+    else if (type === "story") el("circle", { r: 4, "class": "m-story m-ring" }, g);
+    else if (type === "spawn") { el("circle", { r: 7.5, "class": "m-spawn" }, g); el("path", { d: "M0,-3.8 L3.5,2.6 L-3.5,2.6 z", "class": "m-enemy" }, g); }
+    else if (type === "start") { el("circle", { r: 7, "class": "m-start" }, g); el("circle", { r: 2.6, "class": "m-start-dot" }, g); }
+    else if (type === "portal") el("circle", { r: 11, "class": "m-portal" }, g);
+    else if (type === "door" || type === "sealed") {
+      var c = type === "door" ? "m-door" : "m-door m-door-sealed";
+      if (orient === "v") el("line", { x1: 0, y1: -8, x2: 0, y2: 8, "class": c }, g);
+      else el("line", { x1: -8, y1: 0, x2: 8, y2: 0, "class": c }, g);
+    }
+    else if (type === "cine") return g;
+    return g;
+  }
+
+  M.forEach(function (m) {
+    var type = m[0], cx = X(m[1]), cy = Y(m[2]);
+    var g;
+    if (type === "cine") {
+      g = el("g", { transform: "translate(" + cx + " " + cy + ")" }, mk);
+      el("rect", { x: -9, y: -6.5, width: 18, height: 13, rx: 3, "class": "m-cine" }, g);
+      var t = el("text", { x: 0, y: 3.3, "text-anchor": "middle", "class": "m-cine-t" }, g);
+      t.textContent = m[3].slice(0, 2);
+    } else {
+      g = draw(type, cx, cy, m[6]);
+    }
+    var hit = el("circle", { r: type === "portal" ? 13 : 10, "class": "m-hit", tabindex: "0", "aria-label": m[3] + ". " + m[4] }, g);
+    function show() {
+      mapTip.innerHTML = "";
+      var b = document.createElement("b"); b.textContent = m[3];
+      var s = document.createElement("span"); s.textContent = m[4] + " · Zona " + m[5];
+      mapTip.appendChild(b); mapTip.appendChild(s);
+      mapTip.hidden = false;
+      var fr = mapFig.getBoundingClientRect(), hr = hit.getBoundingClientRect();
+      var left = hr.left - fr.left + hr.width / 2 + 12, top = hr.top - fr.top - 8;
+      var w = mapTip.offsetWidth;
+      if (left + w > fr.width - 8) left = hr.left - fr.left - w - 12;
+      if (left < 8) left = 8;
+      mapTip.style.left = left + "px";
+      mapTip.style.top = Math.max(8, top) + "px";
+    }
+    function hide() { mapTip.hidden = true; }
+    hit.addEventListener("mouseenter", show);
+    hit.addEventListener("focus", show);
+    hit.addEventListener("mouseleave", hide);
+    hit.addEventListener("blur", hide);
+  });
+
+  // leyenda
+  var legend = document.getElementById("legend");
+  var L = [
+    ["crit", "Camino del jugador"], ["bosspath", "Ruta del Espécimen"], ["start", "Inicio"], ["enemy", "Robot"], ["spawn", "Spawner"],
+    ["health", "Vida +40"], ["bomb", "Granada"], ["npc", "Asistente"], ["lever", "Palanca o válvula"], ["door", "Puerta"],
+    ["sealed", "Puerta sellada"], ["cine", "Cinemática"], ["boss", "Espécimen"], ["story", "Narrativa ambiental"], ["portal", "Portal"], ["void", "Caída letal"], ["secret", "Secreto"]
+  ];
+  L.forEach(function (l) {
+    var li = document.createElement("li");
+    var s = el("svg", { width: 26, height: 18, viewBox: "-13 -9 26 18", "aria-hidden": "true" });
+    var t = l[0];
+    if (t === "crit") el("line", { x1: -12, y1: 0, x2: 12, y2: 0, "class": "crit", style: "stroke:var(--path);stroke-width:3" }, s);
+    else if (t === "bosspath") el("line", { x1: -12, y1: 0, x2: 12, y2: 0, style: "stroke:var(--boss);stroke-width:2.2;stroke-dasharray:5 3" }, s);
+    else if (t === "void") el("rect", { x: -11, y: -7, width: 22, height: 14, fill: "url(#hatch-void)", style: "stroke:var(--void);stroke-width:1" }, s);
+    else if (t === "secret") el("rect", { x: -10, y: -6, width: 20, height: 12, style: "fill:var(--surface);stroke:var(--fg-2);stroke-width:1.4;stroke-dasharray:3 3" }, s);
+    else if (t === "cine") { el("rect", { x: -9, y: -6.5, width: 18, height: 13, rx: 3, style: "fill:var(--accent)" }, s); var tt = el("text", { x: 0, y: 3.3, "text-anchor": "middle", style: "fill:var(--on-accent);font-family:var(--font-mono);font-size:9.5px" }, s); tt.textContent = "C"; }
+    else if (t === "portal") el("circle", { r: 7, style: "fill:var(--boss);fill-opacity:.18;stroke:var(--boss);stroke-width:2.5" }, s);
+    else {
+      var gg = el("g", {}, s);
+      var old = mk; mk = gg;
+      var shape = draw(t, 0, 0, "h");
+      mk = old;
+    }
+    li.appendChild(s);
+    var sp = document.createElement("span"); sp.textContent = l[1];
+    li.appendChild(sp);
+    legend.appendChild(li);
+  });
+
+  /* ---------- CURVA DE INTENSIDAD ---------- */
+  var beats = [
+    [0.0, 2, "C0: la Luminaris en llamas", 0],
+    [0.5, 3, "Despertar: alarma y vidrio roto", 0],
+    [1.5, 2, "Salto sobre la viga caída", 0],
+    [2.2, 1, "Encuentro con el asistente", 1],
+    [3.0, 2, "Zanja y palanca de la compuerta", 1],
+    [3.6, 5, "C1: el Espécimen cae al hangar", 2],
+    [4.2, 6, "Oleada A: 2 robots abajo", 2],
+    [5.2, 8, "Oleada B: 3 robots por la rampa", 2],
+    [6.0, 3, "Calma: el asistente abre la escotilla", 2],
+    [6.8, 2, "Tanque: nado entre burbujas", 3],
+    [7.8, 3, "Conducto de impulso (dash)", 3],
+    [8.6, 3, "Asistente: reactor sobrecargado", 4],
+    [9.2, 7, "3 robots en el anillo", 4],
+    [10.2, 8, "Válvula 1: se encienden los spawners", 4],
+    [11.0, 9, "Válvula 2 bajo fuego", 4],
+    [11.4, 7, "C2: reactor crítico, arranca 1:00", 4],
+    [11.9, 9, "Escape: saltos y robots a distancia", 5],
+    [12.4, 10, "Derrumbe y compuerta con palanca", 5],
+    [12.9, 4, "Portal: cruce a SampleScene", 5]
+  ];
+  var bands = [[0, 2.0, "Z0"], [2.0, 3.4, "Z1"], [3.4, 6.4, "Z2"], [6.4, 8.3, "Z3"], [8.3, 11.6, "Z4"], [11.6, 13.2, "Z5"]];
+  var cs = document.getElementById("pacing");
+  var ML = 44, MR = 16, MT = 40, MB = 38, W = 760, H = 300;
+  var xMax = 13.2;
+  function cx(m) { return ML + (m / xMax) * (W - ML - MR); }
+  function cy(v) { return MT + (1 - v / 10) * (H - MT - MB); }
+
+  bands.forEach(function (b, i) {
+    if (i % 2 === 0) el("rect", { x: cx(b[0]), y: MT - 20, width: cx(b[1]) - cx(b[0]), height: H - MT - MB + 20, "class": "band" }, cs);
+    var t = el("text", { x: (cx(b[0]) + cx(b[1])) / 2, y: MT - 8, "text-anchor": "middle", "class": "band-label" }, cs);
+    t.textContent = b[2];
+  });
+  [0, 2, 4, 6, 8, 10].forEach(function (v) {
+    el("line", { x1: ML, y1: cy(v), x2: W - MR, y2: cy(v), "class": v === 0 ? "axis" : "gridline" }, cs);
+    var t = el("text", { x: ML - 8, y: cy(v) + 4, "text-anchor": "end" }, cs); t.textContent = v;
+  });
+  [0, 2, 4, 6, 8, 10, 12].forEach(function (m) {
+    var t = el("text", { x: cx(m), y: H - MB + 16, "text-anchor": "middle" }, cs); t.textContent = m + " min";
+  });
+  var yl = el("text", { x: 12, y: MT + (H - MT - MB) / 2, "text-anchor": "middle", transform: "rotate(-90 12 " + (MT + (H - MT - MB) / 2) + ")" }, cs);
+  yl.textContent = "Intensidad";
+
+  var pts = beats.map(function (b) { return [cx(b[0]), cy(b[1])]; });
+  var area = "M" + pts[0][0] + "," + cy(0) + " L" + pts.map(function (p) { return p[0] + "," + p[1]; }).join(" L") + " L" + pts[pts.length - 1][0] + "," + cy(0) + " Z";
+  el("path", { d: area, "class": "area" }, cs);
+  el("polyline", { points: pts.map(function (p) { return p[0] + "," + p[1]; }).join(" "), "class": "line" }, cs);
+
+  // etiquetas directas selectivas: pico y valle
+  var lp = el("text", { x: cx(12.4) - 10, y: cy(10) + 4, "text-anchor": "end", "class": "dlabel" }, cs); lp.textContent = "Pico: derrumbe";
+  var lv = el("text", { x: cx(2.2), y: cy(1) + 16, "text-anchor": "middle", "class": "dlabel" }, cs); lv.textContent = "Valle: asistente";
+  var lv2 = el("text", { x: cx(6.8), y: cy(2) + 16, "text-anchor": "middle", "class": "dlabel" }, cs); lv2.textContent = "Valle: tanque";
+
+  var xh = el("line", { x1: 0, y1: MT - 20, x2: 0, y2: H - MB, "class": "xhair", visibility: "hidden" }, cs);
+  var dots = beats.map(function (b, i) { return el("circle", { cx: pts[i][0], cy: pts[i][1], r: 4.5, "class": "dot" }, cs); });
+  var hitArea = el("rect", { x: ML, y: MT - 20, width: W - ML - MR, height: H - MT - MB + 20, fill: "transparent", tabindex: "0", "aria-label": "Curva de intensidad. Usá las flechas para recorrer los momentos." }, cs);
+  var ptip = document.getElementById("pacing-tip");
+  var pfig = document.getElementById("pacing-figure");
+  var cur = -1;
+  function showBeat(i) {
+    cur = i;
+    var b = beats[i];
+    dots.forEach(function (d, j) { d.setAttribute("r", j === i ? 6.5 : 4.5); });
+    xh.setAttribute("x1", pts[i][0]); xh.setAttribute("x2", pts[i][0]); xh.setAttribute("visibility", "visible");
+    ptip.innerHTML = "";
+    var bb = document.createElement("b"); bb.textContent = b[2];
+    var ss = document.createElement("span"); ss.textContent = "min " + b[0].toFixed(1).replace(".", ",") + " · Zona " + b[3] + " · intensidad " + b[1];
+    ptip.appendChild(bb); ptip.appendChild(ss);
+    ptip.hidden = false;
+    var fr = pfig.getBoundingClientRect(), dr = dots[i].getBoundingClientRect();
+    var left = dr.left - fr.left + 14, top = dr.top - fr.top - 10;
+    var w = ptip.offsetWidth;
+    if (left + w > fr.width - 8) left = dr.left - fr.left - w - 14;
+    ptip.style.left = Math.max(8, left) + "px";
+    ptip.style.top = Math.max(8, top) + "px";
+  }
+  function hideBeat() { cur = -1; ptip.hidden = true; xh.setAttribute("visibility", "hidden"); dots.forEach(function (d) { d.setAttribute("r", 4.5); }); }
+  hitArea.addEventListener("pointermove", function (e) {
+    var r = cs.getBoundingClientRect();
+    var sx = (e.clientX - r.left) * (W / r.width);
+    var best = 0, bd = Infinity;
+    pts.forEach(function (p, i) { var d = Math.abs(p[0] - sx); if (d < bd) { bd = d; best = i; } });
+    if (best !== cur) showBeat(best);
+  });
+  hitArea.addEventListener("pointerleave", hideBeat);
+  hitArea.addEventListener("blur", hideBeat);
+  hitArea.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") { e.preventDefault(); showBeat(Math.min(beats.length - 1, cur + 1)); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); showBeat(Math.max(0, cur < 0 ? 0 : cur - 1)); }
+    else if (e.key === "Escape") hideBeat();
+  });
+
+  var tb = document.querySelector("#pacing-table tbody");
+  beats.forEach(function (b) {
+    var tr = document.createElement("tr");
+    [b[0].toFixed(1).replace(".", ","), "Z" + b[3], b[2], String(b[1])].forEach(function (v, i) {
+      var td = document.createElement("td"); td.textContent = v; if (i === 0 || i === 3) td.className = "num"; tr.appendChild(td);
+    });
+    tb.appendChild(tr);
+  });
+})();
+</script>
