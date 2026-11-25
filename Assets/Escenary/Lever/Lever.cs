@@ -3,7 +3,8 @@ public enum LeverAction
 {
     FirstCinematic,
     SecondCinematic,
-    OpenDoor
+    OpenDoor,
+    none
 }
 public class Lever : InteractiveObject
 {
@@ -34,6 +35,9 @@ public class Lever : InteractiveObject
         {
             case LeverAction.FirstCinematic:
                 _cinematicDirector?.GetPlayableDirector(0).Play();
+                break;
+            case LeverAction.none:
+                Debug.Log("Interactuo");
                 break;
         }
     }
