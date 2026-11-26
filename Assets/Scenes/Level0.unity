@@ -1229,7 +1229,7 @@ GameObject:
   - component: {fileID: 20674036}
   - component: {fileID: 20674035}
   - component: {fileID: 20674034}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Fence_Long_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42751,7 +42751,7 @@ Transform:
   m_GameObject: {fileID: 188555873}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 143.25, y: 3.26, z: 49.9}
+  m_LocalPosition: {x: 2.658, y: 2.374, z: 1.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -68279,7 +68279,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: 2
     m_CustomResolution: -1
     m_Strength: 0.7
@@ -96940,73 +96940,6 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.21, y: 1, z: 2.55}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &379420379
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 379420380}
-  - component: {fileID: 379420382}
-  - component: {fileID: 379420381}
-  m_Layer: 0
-  m_Name: ArenaBounds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &379420380
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379420379}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 25.561703, y: -4.85, z: 82.55474}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2046840472}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &379420381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379420379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc6c287682b70b4d9917a8f578f6911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arenaCollider: {fileID: 379420382}
---- !u!65 &379420382
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379420379}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 33, y: 10, z: 38}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &379952321
 GameObject:
@@ -195490,7 +195423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 901803083}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Fence_Long_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380748,7 +380681,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: 2
     m_CustomResolution: -1
     m_Strength: 0.7
@@ -380955,7 +380888,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: 2
     m_CustomResolution: -1
     m_Strength: 0.7
@@ -403171,17 +403104,17 @@ PrefabInstance:
     - target: {fileID: 4622262659025474196, guid: cf1c1ce872aab7342b34d369d673c520,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 143.25
+      value: 2.658
       objectReference: {fileID: 0}
     - target: {fileID: 4622262659025474196, guid: cf1c1ce872aab7342b34d369d673c520,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.375
+      value: 1.489
       objectReference: {fileID: 0}
     - target: {fileID: 4622262659025474196, guid: cf1c1ce872aab7342b34d369d673c520,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 49.9
+      value: 1.87
       objectReference: {fileID: 0}
     - target: {fileID: 4622262659025474196, guid: cf1c1ce872aab7342b34d369d673c520,
         type: 3}
@@ -453040,7 +452973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1966897375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457280,7 +457213,6 @@ Transform:
   m_Children:
   - {fileID: 177391109}
   - {fileID: 1381852215}
-  - {fileID: 379420380}
   - {fileID: 217168877}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -486325,7 +486257,7 @@ RectTransform:
   m_Father: {fileID: 146450959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -533985,7 +533917,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: 2
     m_CustomResolution: -1
     m_Strength: 0.7
@@ -607824,7 +607756,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: 2
     m_CustomResolution: -1
     m_Strength: 0.7
@@ -662367,7 +662299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4514760667660655029}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Fence_Long_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662386,7 +662318,7 @@ GameObject:
   - component: {fileID: 4514760667661982103}
   - component: {fileID: 4514760667662949207}
   - component: {fileID: 4514760667658759575}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Fence_Long_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
