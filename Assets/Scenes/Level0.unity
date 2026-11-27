@@ -48728,7 +48728,7 @@ Transform:
   m_GameObject: {fileID: 188555873}
   serializedVersion: 2
   m_LocalRotation: {x: 0.037156887, y: -0.016431926, z: -0.017340256, w: 0.99902385}
-  m_LocalPosition: {x: 2.658, y: 2.374, z: 1.87}
+  m_LocalPosition: {x: 141.286, y: 2.374, z: 45.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -306337,6 +306337,66 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21, y: 1, z: 2.55}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1221243223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221243224}
+  - component: {fileID: 1221243225}
+  m_Layer: 0
+  m_Name: ReactorValves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1221243224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221243223}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2089499782}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1221243225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221243223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e969a2994aa60e14eac50bee1e4ebc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valvesRequired: 2
+  onAllValvesActivated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 494057626597749574}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Open
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1221793489
 GameObject:
   m_ObjectHideFlags: 0
@@ -366842,9 +366902,9 @@ GameObject:
   - component: {fileID: 1540963112}
   - component: {fileID: 1540963111}
   - component: {fileID: 1540963110}
-  - component: {fileID: 1540963109}
   - component: {fileID: 1540963108}
   - component: {fileID: 1540963113}
+  - component: {fileID: 1540963114}
   m_Layer: 13
   m_Name: Valvula2
   m_TagString: Untagged
@@ -366895,22 +366955,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.005, y: 0.005, z: 0.003}
   m_Center: {x: -3.7630103e-12, y: 3.7635364e-12, z: 0.00006313284}
---- !u!114 &1540963109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540963106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79b03bff3cf24c748a703c7dd5c85ed9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _glowMaterial: {fileID: 2100000, guid: 3bc04f40422b6474380bce66294a46e2, type: 2}
-  leverAnimator: {fileID: 0}
-  leverAction: 3
-  _cinematicDirector: {fileID: 0}
 --- !u!95 &1540963110
 Animator:
   serializedVersion: 5
@@ -367009,6 +367053,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1540963114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540963106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4bccda2aa05a3499c0ded7b2545001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _glowMaterial: {fileID: 2100000, guid: 3bc04f40422b6474380bce66294a46e2, type: 2}
+  onActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1221243225}
+        m_TargetAssemblyTypeName: ReactorValvesL0, Assembly-CSharp
+        m_MethodName: ValveActivated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1543184975
 GameObject:
   m_ObjectHideFlags: 0
@@ -448436,7 +448508,7 @@ PrefabInstance:
     - target: {fileID: 4622262659025474196, guid: cf1c1ce872aab7342b34d369d673c520,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.658
+      value: 141.286
       objectReference: {fileID: 0}
     - target: {fileID: 4622262659025474196, guid: cf1c1ce872aab7342b34d369d673c520,
         type: 3}
@@ -448446,7 +448518,7 @@ PrefabInstance:
     - target: {fileID: 4622262659025474196, guid: cf1c1ce872aab7342b34d369d673c520,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.87
+      value: 45.58
       objectReference: {fileID: 0}
     - target: {fileID: 4622262659025474196, guid: cf1c1ce872aab7342b34d369d673c520,
         type: 3}
@@ -526215,6 +526287,7 @@ Transform:
   - {fileID: 6146313509724677587}
   - {fileID: 1540963107}
   - {fileID: 741220473}
+  - {fileID: 1221243224}
   m_Father: {fileID: 1064197460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2089844544
@@ -744741,7 +744814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4505587643438850466}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0021394603, y: -0.9938061, z: 0.10939445, w: 0.01943618}
+  m_LocalRotation: {x: 0.002139464, y: -0.9938061, z: 0.10939444, w: 0.01943618}
   m_LocalPosition: {x: 0.058675647, y: 1.751764, z: 1.4995184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -816172,22 +816245,6 @@ Transform:
   - {fileID: 3398207286907922710}
   m_Father: {fileID: 1992326818101814620}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6163546460928742030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6775603233703509865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79b03bff3cf24c748a703c7dd5c85ed9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _glowMaterial: {fileID: 2100000, guid: 3bc04f40422b6474380bce66294a46e2, type: 2}
-  leverAnimator: {fileID: 0}
-  leverAction: 3
-  _cinematicDirector: {fileID: 0}
 --- !u!4 &6189508069355517586
 Transform:
   m_ObjectHideFlags: 0
@@ -837340,9 +837397,9 @@ GameObject:
   - component: {fileID: 7125763369480350326}
   - component: {fileID: 4974009520675954364}
   - component: {fileID: 6024860753966139167}
-  - component: {fileID: 6163546460928742030}
   - component: {fileID: 6209450520215522602}
   - component: {fileID: 7125763369480350327}
+  - component: {fileID: 7125763369480350328}
   m_Layer: 13
   m_Name: Valvula1
   m_TagString: Untagged
@@ -848883,6 +848940,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7125763369480350328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6775603233703509865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4bccda2aa05a3499c0ded7b2545001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _glowMaterial: {fileID: 2100000, guid: 3bc04f40422b6474380bce66294a46e2, type: 2}
+  onActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1221243225}
+        m_TargetAssemblyTypeName: ReactorValvesL0, Assembly-CSharp
+        m_MethodName: ValveActivated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7132443992662229194
 GameObject:
   m_ObjectHideFlags: 0
