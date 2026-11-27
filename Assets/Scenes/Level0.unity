@@ -669110,18 +669110,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &232663336520860733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6471244066085717626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dd7c3c6ebb5beb4c9a53c5d9e6022f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &239497871400437274
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -891013,7 +891001,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4505587643438850466}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0021394603, y: -0.9938061, z: 0.10939445, w: 0.01943618}
+  m_LocalRotation: {x: 0.0021394603, y: -0.9938061, z: 0.109394446, w: 0.01943618}
   m_LocalPosition: {x: 0.058675647, y: 1.751764, z: 1.4995184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -975072,8 +975060,8 @@ GameObject:
   - component: {fileID: 5855818613745121480}
   - component: {fileID: 5982393456150793247}
   - component: {fileID: 5433688647888786530}
-  - component: {fileID: 232663336520860733}
   - component: {fileID: 6471244066085717627}
+  - component: {fileID: 6471244066085717628}
   m_Layer: 0
   m_Name: PortalShader
   m_TagString: Untagged
@@ -975102,6 +975090,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6471244066085717628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6471244066085717626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd3d3f361a70e7f40842ae833a5150b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Level1
 --- !u!33 &6471820098631724633
 MeshFilter:
   m_ObjectHideFlags: 0
