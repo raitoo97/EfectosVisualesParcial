@@ -96826,7 +96826,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 508950ada31f7d549be058100990f893, type: 2}
   m_InitialState: 0
-  m_WrapMode: 2
+  m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -96852,6 +96852,8 @@ PlayableDirector:
     value: {fileID: 957235481}
   - key: {fileID: -3787339064560205768, guid: 508950ada31f7d549be058100990f893, type: 2}
     value: {fileID: 1696237235}
+  - key: {fileID: 8754948446897617658, guid: 508950ada31f7d549be058100990f893, type: 2}
+    value: {fileID: 775516719}
   m_ExposedReferences:
     m_References:
     - a404c53f1ba8d69488d0d5afd247abc0: {fileID: 297338798}
@@ -173153,7 +173155,13 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'Index_Proximal_Right'\n\tTransform 'Shoulder_Left'\n\tTransform
+    'Index_Intermediate_Right'\n\tTransform 'Hand_Right'\n\tTransform 'UpperLeg_Left'\n\tTransform
+    'Index_Intermediate_Left'\n\tTransform 'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform
+    'Thumb_Proximal_Left'\n\tTransform 'RestOfFingers_Proximal_Left'\n\tand more
+    ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -192487,6 +192495,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774522051}
   m_Mesh: {fileID: 4300002, guid: 540beec6d4ed7424c810691d2bab67f9, type: 3}
+--- !u!1 &775516719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 775516720}
+  - component: {fileID: 775516721}
+  m_Layer: 0
+  m_Name: HeadLook
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &775516720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775516719}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 943261865388682160}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &775516721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775516719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1fd6c7cbbfbb84c9a24cf306d1fbba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 943261865388682160}
+  head: {fileID: 1533371106889802405}
+  target: {fileID: 1806359696}
+  turnDuration: 1
 --- !u!1 &775844940
 GameObject:
   m_ObjectHideFlags: 0
@@ -443409,6 +443465,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1806359692}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1806359696 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4622262659025474196, guid: cf1c1ce872aab7342b34d369d673c520,
+    type: 3}
+  m_PrefabInstance: {fileID: 1806359692}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1806776838
 GameObject:
   m_ObjectHideFlags: 0
@@ -581480,6 +581542,7 @@ Transform:
   - {fileID: 2008970779700001316}
   - {fileID: 2361766307517044952}
   - {fileID: 1125866913611907334}
+  - {fileID: 775516720}
   m_Father: {fileID: 1493343187}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &958406695782805347
@@ -737986,7 +738049,13 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'Index_Proximal_Right'\n\tTransform 'Shoulder_Left'\n\tTransform
+    'Index_Intermediate_Right'\n\tTransform 'Hand_Right'\n\tTransform 'UpperLeg_Left'\n\tTransform
+    'Index_Intermediate_Left'\n\tTransform 'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform
+    'Thumb_Proximal_Left'\n\tTransform 'RestOfFingers_Proximal_Left'\n\tand more
+    ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -738258,7 +738327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4505587643438850466}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0021394603, y: -0.9938061, z: 0.109394446, w: 0.01943618}
+  m_LocalRotation: {x: 0.0021394603, y: -0.9938061, z: 0.10939442, w: 0.01943618}
   m_LocalPosition: {x: 0.058675647, y: 1.751764, z: 1.4995184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
