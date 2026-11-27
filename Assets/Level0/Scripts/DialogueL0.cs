@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueL0 : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private TextMeshProUGUI continuePrompt;
     private string[] currentLines;
     public float textSpeed;
     private int index;
@@ -32,8 +33,15 @@ public class DialogueL0 : MonoBehaviour
             {
                 StopAllCoroutines();
                 _text.text = currentLines[index];
+                ShowContinuePrompt();
             }
         }
+    }
+    private void ShowContinuePrompt()
+    {
+        bool isLastLine = index == currentLines.Length - 1;
+        continuePrompt.text = isLastLine ? "[E] Cerrar" : "[E] Continuar";
+        continuePrompt.gameObject.SetActive(true);
     }
     public void StartDialogue(string[] newLines)
     {
@@ -50,6 +58,7 @@ public class DialogueL0 : MonoBehaviour
             _text.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
+        ShowContinuePrompt();
     }
     public void NextLine()
     {
