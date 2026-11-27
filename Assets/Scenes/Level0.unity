@@ -136175,9 +136175,9 @@ GameObject:
   - component: {fileID: 437524784}
   - component: {fileID: 437524783}
   - component: {fileID: 437524782}
-  - component: {fileID: 437524781}
   - component: {fileID: 437524780}
   - component: {fileID: 437524779}
+  - component: {fileID: 437524785}
   m_Layer: 13
   m_Name: Palanca_Puente
   m_TagString: Untagged
@@ -136255,22 +136255,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.005, y: 0.005, z: 0.003}
   m_Center: {x: -3.7630103e-12, y: 3.7635364e-12, z: 0.00006313284}
---- !u!114 &437524781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 437524777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79b03bff3cf24c748a703c7dd5c85ed9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _glowMaterial: {fileID: 2100000, guid: 3bc04f40422b6474380bce66294a46e2, type: 2}
-  leverAnimator: {fileID: 0}
-  leverAction: 3
-  _cinematicDirector: {fileID: 0}
 --- !u!95 &437524782
 Animator:
   serializedVersion: 5
@@ -136342,6 +136326,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437524777}
   m_Mesh: {fileID: -8335353340682111099, guid: 7420a522767681445a38766508c78235, type: 3}
+--- !u!114 &437524785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437524777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4bccda2aa05a3499c0ded7b2545001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _glowMaterial: {fileID: 2100000, guid: 3bc04f40422b6474380bce66294a46e2, type: 2}
+  onActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1100153952}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Down
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &438179108
 GameObject:
   m_ObjectHideFlags: 0
@@ -201022,13 +201034,7 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Index_Proximal_Right'\n\tTransform 'Shoulder_Left'\n\tTransform
-    'Index_Intermediate_Right'\n\tTransform 'Hand_Right'\n\tTransform 'UpperLeg_Left'\n\tTransform
-    'Index_Intermediate_Left'\n\tTransform 'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform
-    'Thumb_Proximal_Left'\n\tTransform 'RestOfFingers_Proximal_Left'\n\tand more
-    ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -890720,13 +890726,7 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Index_Proximal_Right'\n\tTransform 'Shoulder_Left'\n\tTransform
-    'Index_Intermediate_Right'\n\tTransform 'Hand_Right'\n\tTransform 'UpperLeg_Left'\n\tTransform
-    'Index_Intermediate_Left'\n\tTransform 'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform
-    'Thumb_Proximal_Left'\n\tTransform 'RestOfFingers_Proximal_Left'\n\tand more
-    ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -891013,7 +891013,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4505587643438850466}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.002139464, y: -0.9938061, z: 0.10939444, w: 0.01943618}
+  m_LocalRotation: {x: 0.0021394603, y: -0.9938061, z: 0.10939445, w: 0.01943618}
   m_LocalPosition: {x: 0.058675647, y: 1.751764, z: 1.4995184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
