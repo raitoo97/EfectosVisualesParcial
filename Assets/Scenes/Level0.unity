@@ -53687,7 +53687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 154222351}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fence_Long_01 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54146,7 +54146,7 @@ GameObject:
   - component: {fileID: 158639467}
   - component: {fileID: 158639466}
   - component: {fileID: 158639465}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fence_Long_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133843,7 +133843,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 398734606}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fence_Long_01 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150963,7 +150963,13 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'Index_Proximal_Right'\n\tTransform 'Shoulder_Left'\n\tTransform
+    'Index_Intermediate_Right'\n\tTransform 'Hand_Right'\n\tTransform 'UpperLeg_Left'\n\tTransform
+    'Index_Intermediate_Left'\n\tTransform 'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform
+    'Thumb_Proximal_Left'\n\tTransform 'RestOfFingers_Proximal_Left'\n\tand more
+    ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -152804,7 +152810,7 @@ GameObject:
   - component: {fileID: 546140178}
   - component: {fileID: 546140177}
   - component: {fileID: 546140176}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fence_Long_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193176,7 +193182,13 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'Index_Proximal_Right'\n\tTransform 'Shoulder_Left'\n\tTransform
+    'Index_Intermediate_Right'\n\tTransform 'Hand_Right'\n\tTransform 'UpperLeg_Left'\n\tTransform
+    'Index_Intermediate_Left'\n\tTransform 'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform
+    'Thumb_Proximal_Left'\n\tTransform 'RestOfFingers_Proximal_Left'\n\tand more
+    ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -245371,6 +245383,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1162893992}
     m_Modifications:
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: isJumpNode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: _manualConnections.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: _manualConnections.Array.data[0]
+      value: 
+      objectReference: {fileID: 1782325247}
     - target: {fileID: 7386812288828807474, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
         type: 3}
       propertyPath: m_Name
@@ -245437,6 +245464,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 844102020}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &844102024 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+    type: 3}
+  m_PrefabInstance: {fileID: 844102020}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dc0a5a1e95631438ce3896489f75a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &844273662
 GameObject:
   m_ObjectHideFlags: 0
@@ -245446,7 +245485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 844273663}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fence_Long_01 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309879,7 +309918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1015359528}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fence_Long_01 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366899,7 +366938,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1245041826}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fence_Long_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426516,7 +426555,7 @@ GameObject:
   - component: {fileID: 1502727755}
   - component: {fileID: 1502727754}
   - component: {fileID: 1502727753}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fence_Long_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431604,7 +431643,7 @@ GameObject:
   - component: {fileID: 1510968081}
   - component: {fileID: 1510968080}
   - component: {fileID: 1510968079}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fence_Long_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495444,7 +495483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1688699974}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fence_Long_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534606,6 +534645,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1162893992}
     m_Modifications:
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: isJumpNode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: _manualConnections.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: _manualConnections.Array.data[0]
+      value: 
+      objectReference: {fileID: 844102024}
     - target: {fileID: 7386812288828807474, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
         type: 3}
       propertyPath: m_Name
@@ -534672,6 +534726,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1782325243}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1782325247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1782325243}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dc0a5a1e95631438ce3896489f75a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1782733191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -557117,7 +557183,7 @@ GameObject:
   - component: {fileID: 1832195082}
   - component: {fileID: 1832195081}
   - component: {fileID: 1832195080}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fence_Long_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570037,7 +570103,7 @@ GameObject:
   - component: {fileID: 1903246907}
   - component: {fileID: 1903246906}
   - component: {fileID: 1903246905}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fence_Long_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597389,6 +597455,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1162893992}
     m_Modifications:
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: isJumpNode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: _manualConnections.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: _manualConnections.Array.data[0]
+      value: 
+      objectReference: {fileID: 2033460225}
     - target: {fileID: 7386812288828807474, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
         type: 3}
       propertyPath: m_Name
@@ -597455,6 +597536,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1964189852}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1964189856 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1964189852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dc0a5a1e95631438ce3896489f75a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1964693200
 GameObject:
   m_ObjectHideFlags: 0
@@ -611536,6 +611629,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1162893992}
     m_Modifications:
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: isJumpNode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: _manualConnections.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+        type: 3}
+      propertyPath: _manualConnections.Array.data[0]
+      value: 
+      objectReference: {fileID: 1964189856}
     - target: {fileID: 7386812288828807474, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
         type: 3}
       propertyPath: m_Name
@@ -611602,6 +611710,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2033460221}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2033460225 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6629532036586971361, guid: 9c4ec02d0fa046244ac31f52d9fc9ab5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2033460221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dc0a5a1e95631438ce3896489f75a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2033825904
 GameObject:
   m_ObjectHideFlags: 0
@@ -890743,7 +890863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4505587643438850466}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0021394603, y: -0.9938061, z: 0.10939442, w: 0.01943618}
+  m_LocalRotation: {x: 0.0021394603, y: -0.9938061, z: 0.109394446, w: 0.01943618}
   m_LocalPosition: {x: 0.058675647, y: 1.751764, z: 1.4995184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1047013,7 +1047133,13 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'Index_Proximal_Right'\n\tTransform 'Shoulder_Left'\n\tTransform
+    'Index_Intermediate_Right'\n\tTransform 'Hand_Right'\n\tTransform 'UpperLeg_Left'\n\tTransform
+    'Index_Intermediate_Left'\n\tTransform 'Headgear_Right'\n\tTransform 'Headgear_Left'\n\tTransform
+    'Thumb_Proximal_Left'\n\tTransform 'RestOfFingers_Proximal_Left'\n\tand more
+    ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
