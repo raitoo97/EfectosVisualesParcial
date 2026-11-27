@@ -9,6 +9,8 @@ public class CinematicShooterL0 : MonoBehaviour
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private GameObject impactPrefab;
     private float nextShotTime;
+    [SerializeField] private bool usePlayerBullets;
+    [SerializeField] private string shotSound = "EnemyShoot";
 
     private void OnEnable()
     {
@@ -24,13 +26,13 @@ public class CinematicShooterL0 : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bullet = PoolBulletEnemy.instance.GetBullet();
+        GameObject bullet = usePlayerBullets ? PoolBullets.instance.GetBullet() : PoolBulletEnemy.instance.GetBullet();
         bullet.transform.position = transform.position;
         bullet.transform.rotation = Quaternion.LookRotation(target.position - transform.position);
         bullet.SetActive(true);
 
         if (muzzleFlash != null) muzzleFlash.Play();
-        SoundManager.Instance?.PlayClip(SoundManager.Instance.GetAudioClip("EnemyShoot"), 0.1f, false);
+        SoundManager.Instance?.PlayCinematicClip(SoundManager.Instance.GetAudioClip(shotSound), 0.1f, false);
 
         float travelTime = Vector3.Distance(transform.position, target.position) / bulletSpeed;
         StartCoroutine(SpawnImpact(travelTime));
