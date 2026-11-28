@@ -74,4 +74,8 @@ public class Assistant : MonoBehaviour
             CanvasManager.instance.ShowTalkWhitNullText(false);
         }
     }
+    private void OnDestroy()
+    {
+        Dialogue.onDialogueEnd -= ChangeTalkingMode;
+    }
 }
