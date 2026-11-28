@@ -65,15 +65,15 @@ public class Player : MonoBehaviour,ITakeDamage ,IHealthLife
     public void TakeDamage(float damage)
     {
         if(GetPlayerController._isOnCinematic) return;
-        _life.TakeDamage(damage, GoMenu);
+        _life.TakeDamage(damage, ReloadLevel);
     }
     public void HealthLife(float amount)
     {
         _life.Heal(amount);
     }
-    private void GoMenu()
+    private void ReloadLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public bool IsGrounded { get => _playerController.IsGrounded; }
     public Vector2 MoveVector { get => _playerController.GetMoveVector; }
